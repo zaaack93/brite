@@ -1,0 +1,151 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "1664348178f8e05785": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "16643481783e95d5d4-0": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/Woolworths_TFFP_stacked_CMYK_small_7ceaad6b-3749-45ee-a525-e1614724a666.webp",
+            "title": "Woolworths",
+            "text": "<p>Woolworths Online <a href=\"http:\/\/www2.woolworthsonline.com.au\/#url=\/Shop\/SearchProducts%3Fsearch%3Dbrite%2Borganix\">Click Here<\/a><\/p>",
+            "cta_link": "",
+            "cta_text": "Shop Now",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "16643481783e95d5d4-1": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Peppermayo Online<\/p>",
+            "cta_link": "shopify:\/\/pages\/frontpage",
+            "cta_text": "Shop Now",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "16643481783e95d5d4-2": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "59f42f9a-d5b8-4266-a26d-1593f6b2f497": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "16643481783e95d5d4-0",
+        "16643481783e95d5d4-1",
+        "16643481783e95d5d4-2",
+        "59f42f9a-d5b8-4266-a26d-1593f6b2f497"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "slideshow_on_mobile": false,
+        "title": "",
+        "crop": "",
+        "image_shape": "default",
+        "show_index_on_blocks": false,
+        "index_shape": "star_1",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "16643485086e4ecc04": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "16643485089d39f3e9-0": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "16643485089d39f3e9-1": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "16643485089d39f3e9-2": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "2957cd3d-a965-4885-97c0-c36266b4e243": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "title": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "cta_link": "",
+            "cta_text": "",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "16643485089d39f3e9-0",
+        "16643485089d39f3e9-1",
+        "16643485089d39f3e9-2",
+        "2957cd3d-a965-4885-97c0-c36266b4e243"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "slideshow_on_mobile": false,
+        "title": "",
+        "crop": "",
+        "image_shape": "default",
+        "show_index_on_blocks": false,
+        "index_shape": "star_1",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1664348178f8e05785",
+    "16643485086e4ecc04"
+  ]
+}

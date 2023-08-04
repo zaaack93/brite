@@ -1,0 +1,20 @@
+<div class="rdc-collection-single-main">
+  <div class="rdc-collection-single-inner">
+ <div class="rdc-collection-cards rdc-d-flex rdc-f-wrap">
+    
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+ 
+  <div class="rdc-collection-card rdc-w-25 rdc-i-w-50 rdc-p-20 rdc-i-p-10">
+       <a class="rdc-collection-card-inner rdc-d-flex rdc-ff-c rdc-ai-c" href="{{ variant.url }}">
+    <img src="{{ variant.image | img_url: '300x' }}">
+    <h3>{{ variant.title }}</h3>
+    <span>{{ variant.price | money | remove: '.00 AUD' }}</span>
+      </a>
+  </div>
+  
+      {% endfor %}
+  {% endfor %}
+    </div>
+  </div>
+</div>

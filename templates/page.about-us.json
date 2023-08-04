@@ -1,0 +1,133 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "ba2ce75d-0eee-4a2c-986b-2d7b4f56849e": {
+      "type": "video-with-text-overlay",
+      "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/93f59ad46df646318ef75f6ed4292dba.mp4",
+        "crop": "four-three",
+        "crop_desktop": "cinematic",
+        "fallback_image": "shopify:\/\/shop_images\/Screen_Shot_2022-12-08_at_2.48.52_pm.png",
+        "display_on_card": false,
+        "style": "full",
+        "place_content": "place-content-center-center",
+        "text_align": "text-center",
+        "title": "ABOUT US",
+        "heading_size": "heading-template",
+        "richtext": "<p>We are all about ethical hair colour and empowerment. <\/p>",
+        "cta_url": "",
+        "cta_text": "Shop Now",
+        "color_scheme": "secondary",
+        "use_gradient_background": false,
+        "text_overlay_color": "same_as_section"
+      }
+    },
+    "fa418266-0183-4bef-a199-b9dcb0ccea48": {
+      "type": "image-with-text",
+      "settings": {
+        "show_text_bg_mobile": false,
+        "display_on_card": false,
+        "image": "shopify:\/\/shop_images\/Made_from_Plants_31db9222-0db6-4587-8ac2-256326eb72ad.jpg",
+        "crop": "aspect-w-1 aspect-h-1",
+        "image_shape": "scalloped_circle_1",
+        "blob_type": 1,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": false,
+        "title": "EMBRACING BRITE-NESS",
+        "title_mobile": "",
+        "heading_size": "heading-template",
+        "richtext": "<p>At Brite, we’re all about empowering people around the globe to express themselves through their hair by adding a bit of BRITE-ness to their lives. <\/p>",
+        "text_alignment": "text-left",
+        "button_link": "",
+        "button_label": "Shop Now",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "940f6e9f-4012-4181-94b2-ab5dd0be18ce": {
+      "type": "rich-text",
+      "settings": {
+        "title": "We believe in cultivating an inclusive, ethical, and sustainable culture that supports self-expression, confidence, and happiness through colour.",
+        "heading_size": "heading-base",
+        "rich_text": "<p><\/p>",
+        "display_on_card": false,
+        "content_width_desktop": "lg:w-full",
+        "button_link": "",
+        "button_label": "Shop Now",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "854da3a8-4e74-4014-977a-be5bbd4c4d04": {
+      "type": "image-with-text",
+      "settings": {
+        "show_text_bg_mobile": false,
+        "display_on_card": false,
+        "image": "shopify:\/\/shop_images\/CLEAN_Color_d7c6e66c-542f-4294-a818-d6f19efc920d.jpg",
+        "crop": "aspect-w-1 aspect-h-1",
+        "image_shape": "scalloped_circle_4",
+        "blob_type": 1,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": false,
+        "title": "ENCOURAGING CONFIDENCE",
+        "title_mobile": "",
+        "heading_size": "heading-template",
+        "richtext": "<p>Our range of vegan, cruelty-free, salon quality products are accessible and fun!  From bleachers to hair colour, toners and colour shampoos, everyone can feel confident with BRITE.  <\/p>",
+        "text_alignment": "text-left",
+        "button_link": "",
+        "button_label": "Shop Now",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "58bb1bb7-de5a-4ec7-bde8-1ea8a604b8bc": {
+      "type": "pattern-marquee",
+      "disabled": true,
+      "settings": {
+        "type": "waves",
+        "color": "accent",
+        "size": 12,
+        "speed": 80,
+        "direction": "",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "428a65f6-a4b3-4c00-960c-3e67d75c3f43": {
+      "type": "offset-collection-gallery",
+      "settings": {
+        "collection": "all",
+        "height": "pt-two-thirds-screen-height",
+        "crop": "aspect-w-1 aspect-h-1",
+        "image_shape": "abstract_star",
+        "no_mobile_grid_items": 6,
+        "no_desktop_grid_items": 30,
+        "zoom_level": 1.5,
+        "rotate": -15,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ba2ce75d-0eee-4a2c-986b-2d7b4f56849e",
+    "fa418266-0183-4bef-a199-b9dcb0ccea48",
+    "940f6e9f-4012-4181-94b2-ab5dd0be18ce",
+    "854da3a8-4e74-4014-977a-be5bbd4c4d04",
+    "58bb1bb7-de5a-4ec7-bde8-1ea8a604b8bc",
+    "428a65f6-a4b3-4c00-960c-3e67d75c3f43"
+  ]
+}

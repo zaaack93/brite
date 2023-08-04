@@ -1,0 +1,94 @@
+{% assign countries = "AUSTRALIA,USA,UK" | split: "," %}
+<div class="rdc-stockists-main">
+  <h1>Browse our Stockists below: </h1>
+  <div class="rdc-stockists-inner rdc-d-flex rdc-f-wrap rdc-mx-auto">
+    {% for i in (0..2) %}
+    <div class="rdc-stockists-box rdc-w-33 rdc-m-w-full rdc-p-10">
+      <div class="rdc-stockists-box-inner rdc-p-10">
+      <h3 class="rdc-mb-20">{{ countries[i] }}</h3>
+      {% for block in section.blocks %}
+        {% assign country = countries[i] | downcase %}
+        {% assign blockType = block.type | split: "_" %}
+        
+        {% if country == blockType[1] %}
+        <div class="rdc-stockist rdc-my-10px">
+           <div class="rdc-stockist-inner rdc-d-flex rdc-ai-c rdc-jc-sb">
+             <div class="rdc-stockist-inner-img rdc-d-flex rdc-ai-c rdc-jc-c rdc-w-60"><img src="{{ block.settings.logo | img_url: "200x" }}"></div>
+             <div class="rdc-stockist-inner-link rdc-d-flex rdc-w-40 rdc-ai-c rdc-jc-c"><a href="{{ block.settings.link }}">SHOP NOW</a></div>
+           </div>
+        </div>
+          {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+               
+{% schema %}
+  {
+    "name": "Stockists",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "stockist_australia",
+        "name": "Stockist - Australia",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      },
+       {
+        "type": "stockist_usa",
+        "name": "Stockist - USA",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      },
+        {
+        "type": "stockist_uk",
+        "name": "Stockist - UK",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stockists"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

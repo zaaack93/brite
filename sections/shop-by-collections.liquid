@@ -1,0 +1,180 @@
+<div class="rdc-sbc-main rdc-py-5p rdc-px-2p rdc-py-m-50" {% if section.settings.bg != blank %}style="background-image: url({{ section.settings.bg | img_url: '1800x' }})"{% endif %}>
+  <div class="rdc-sbc-inner">
+    <h2 class="text-center font-heading heading-base">{{ section.settings.header }}</h2>
+    <div class="text-center rdc-mt-20">{{ section.settings.short_text }}</div>
+    <div class="rdc-sbc-rows rdc-my-3 rdc-mx-auto {% if section.settings.btn_text == blank %}rdc-mb-0{% endif %}">
+    {% for block in section.blocks %}
+    <div class="rdc-sbc-cards rdc-d-flex">
+      {% for i in (1..4) %}
+{% assign blockSettings = block.settings %}
+{% assign collection = 'collection_' | append: i %}    
+{% assign card_image = 'card_image_' | append: i %}  
+{% assign card_title = 'card_title_' | append: i %}  
+      
+        <div class="rdc-sbc-card rdc-transition">
+         <div class="rdc-sbc-card-inner">
+        <a href="{{ blockSettings[collection].url }}">
+          <img src="{{ blockSettings[card_image] | img_url: '400x' }}">
+        <h3>{{ blockSettings[card_title] }}</h3>
+        </a>
+               </div>
+    </div>
+      {% endfor %}
+    </div>
+      {% endfor %}
+      </div>
+
+    {% if section.settings.btn_text != blank %}
+    <div class="rdc-sbc-cta-container rdc-d-flex rdc-mx-auto">
+      {% if section.settings.cta_text != blank %}
+    <p>{{ section.settings.cta_text }}</p>
+         {% endif %}
+      <a class="rdc-scroll-vid-btn push-btn" 
+      href="{{ section.settings.btn_link }}">
+        <span class="push-btn-surface">{{ section.settings.btn_text }}</span></a>
+    </div>
+      {% endif %}
+</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Shop by Collections",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Header"
+      },
+       {
+        "type": "richtext",
+        "id": "short_text",
+        "label": "Short text"
+      },
+       {
+        "type": "header",
+        "content": "CTA"
+      },
+       {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+       {
+        "type": "image_picker",
+        "id": "bg",
+        "label": "Section BG"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "row",
+        "name": "Row",
+        "settings": [
+           {
+            "type": "header",
+            "content": "Card 1"
+          },
+          {
+            "type": "collection",
+            "id": "collection_1",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image_1",
+            "label": "Card image"
+          },
+          {
+            "type": "text",
+            "id": "card_title_1",
+            "label": "Card title"
+          },
+           {
+            "type": "header",
+            "content": "Card 2"
+          },
+          {
+            "type": "collection",
+            "id": "collection_2",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image_2",
+            "label": "Card image"
+          },
+          {
+            "type": "text",
+            "id": "card_title_2",
+            "label": "Card title"
+          },
+            {
+            "type": "header",
+            "content": "Card 3"
+          },
+          {
+            "type": "collection",
+            "id": "collection_3",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image_3",
+            "label": "Card image"
+          },
+          {
+            "type": "text",
+            "id": "card_title_3",
+            "label": "Card title"
+          },
+          {
+            "type": "header",
+            "content": "Card 4"
+          },
+          {
+            "type": "collection",
+            "id": "collection_4",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image_4",
+            "label": "Card image"
+          },
+          {
+            "type": "text",
+            "id": "card_title_4",
+            "label": "Card title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shob by Collections"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

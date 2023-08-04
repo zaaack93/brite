@@ -1,0 +1,156 @@
+<div class="rdc-scroll-vid-main">
+<div class="rdc-scroll-vid-inner">
+<div class="rdc-scroll-vid-text">
+<h2 class="rdc-scroll-vid-header text-center font-heading heading-base">{{ section.settings.section_header }}</h2>
+<p class="rdc-scroll-vid-p text-center rdc-mt-20">{{ section.settings.short_text }}</p>
+</div>
+<div class="rdc-scroll-vid-vids rdc-d-flex">
+  {% for block in section.blocks %}
+ {% assign video_img = block.settings.video_img %}
+  <div class="rdc-scroll-vid-card rdc-scroll-vid-card-{{ forloop.index0 }}">
+    <div class="rdc-scroll-vid-display">
+<img src="{{ video_img | img_url: '300x' }}">
+      <img class="rdc-watch-me" src="https://cdn.shopify.com/s/files/1/0594/1529/files/br_watch_me_icon_2.svg">
+    </div>
+
+  </div>
+  {% endfor %}
+  </div>
+
+
+  {% if section.blocks.size > 0 %}
+  <div class="rdc-scroll-vid-modals rdc-d-none">
+    <div class="rdc-scroll-vid-close-bg"></div>
+  {% for block in section.blocks %}
+       {% assign video_url = block.settings.video_url %}
+ {% assign video_id = video_url | split: '/' %}
+    <div class="rdc-scroll-vid-modal rdc-scroll-vid-modal-{{ forloop.index0 }} rdc-d-none  rdc-h-full">
+    <div class="rdc-scroll-vid-modal-inner rdc-h-full rdc-d-flex rdc-ai-c">
+      <span class="rdc-scroll-vid-close-btn">X</span>
+      <blockquote class="tiktok-embed" cite="{{ video_url }}" 
+  data-video-id="{{ video_id[5] }}" 
+  style="max-width: 605px;min-width: 325px;"> 
+  <section> 
+  </section> 
+</blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  
+
+
+<a class="rdc-scroll-vid-btn push-btn" href="{{ section.settings.button_link }}" target="_blank">
+<span class="rdc-d-flex rdc-ai-c push-btn-surface">
+{{ section.settings.button_text }}
+{% if section.settings.button_icon != blank %}
+<img src="{{ section.settings.button_icon | img_url: '35px'}}">
+  {% endif %}
+  </span>
+</a>
+
+
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Scrolling Videos",
+  "settings": [
+      {
+        "type": "text",
+        "id": "section_header",
+        "label": "Header"
+      },
+     {
+        "type": "text",
+        "id": "short_text",
+        "label": "Short text"
+      },
+       {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+       {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+    {
+        "type": "image_picker",
+        "id": "button_icon",
+        "label": "Button icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video card",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_img",
+          "label": "Cover image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Videos"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+{% comment %}
+  <div class="rdc-scroll-vid-vids rdc-scroll-vid-vids-2 rdc-d-flex">
+  {% for block in section.blocks %}
+
+   {% assign video_url = block.settings.video_url %}
+ {% assign video_id = video_url | split: '/' %}
+ {% assign video_img = block.settings.video_img %}
+
+
+  
+  <div class="rdc-scroll-vid-card">
+    <div class="rdc-scroll-vid-display">
+
+     
+<img src="{{ video_img | img_url: '300x' }}">
+
+      
+<!--    <div class="rdc-scroll-vid-display-bg"></div>  -->
+    </div>
+    <div class="rdc-scroll-vid-modal rdc-d-none">
+      <blockquote class="tiktok-embed" cite="{{ video_url }}" 
+  data-video-id="{{ video_id[5] }}" 
+  style="max-width: 605px;min-width: 325px;" > 
+
+        
+
+        
+  <section> 
+  </section> 
+</blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+  </div>
+  {% endfor %}
+  
+</div>
+{% endcomment %}

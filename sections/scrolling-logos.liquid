@@ -1,0 +1,68 @@
+<div class="rdc-scrolling-logos">
+  <div class="rdc-scrolling-logos-inner">
+  
+   <div class="rdc-scrolling-logos-items rdc-d-flex rdc-ai-c">
+         <div class="rdc-scrolling-logo-text rdc-d-flex rdc-ai-c">
+ <p>{{ section.settings.text }}</p>
+  <img class="rdc-ten-p-star-black" src="https://cdn.shopify.com/s/files/1/0594/1529/files/ten-p-star-icon.svg">
+</div>
+     {% for block in section.blocks %}
+     <div class="rdc-scrolling-logo rdc-d-flex rdc-ai-c">
+  <img src="{{ block.settings.logo | img_url: '300x' }}">
+  <img class="rdc-ten-p-star-black" src="https://cdn.shopify.com/s/files/1/0594/1529/files/ten-p-star-icon.svg">
+</div>
+       
+     {% endfor %}
+</div>
+       <div class="rdc-scrolling-logos-items rdc-scrolling-logos-items-2 rdc-d-flex rdc-ai-c">
+         <div class="rdc-scrolling-logo-text rdc-d-flex rdc-ai-c">
+ <p>{{ section.settings.text }}</p>
+  <img class="rdc-ten-p-star-black" src="https://cdn.shopify.com/s/files/1/0594/1529/files/ten-p-star-icon.svg">
+</div>
+     {% for block in section.blocks %}
+     <div class="rdc-scrolling-logo rdc-d-flex rdc-ai-c">
+  <img src="{{ block.settings.logo | img_url: '300x' }}">
+  <img class="rdc-ten-p-star-black" src="https://cdn.shopify.com/s/files/1/0594/1529/files/ten-p-star-icon.svg">
+</div>
+       
+     {% endfor %}
+</div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Scrolling Logos",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "blocks": [
+        {
+          "type": "logo",
+          "name": "Logo",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "logo",
+              "label": "Logo"
+            }
+          ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Scrolling Logos"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

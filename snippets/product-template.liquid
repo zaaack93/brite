@@ -1,0 +1,355 @@
+{% liquid
+  assign section_color = section.settings.color_scheme
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = current_variant.featured_media | default: product.featured_media
+  assign models = product.media | where: 'media_type', 'model'
+  assign image_index = 0
+  for media in product.media
+    if media.media_type != 'image'
+      assign has_interactive_media = true
+      break
+    endif
+  endfor
+
+  assign product_form_id = 'product-form-' | append: section.id
+  assign media_desktop_width = section.settings.desktop_media_width | split: '_' | first
+  assign content_desktop_width = section.settings.desktop_media_width | split: '_' | last
+  assign media_desktop_cols = section.settings.desktop_media_width | split: '_' | first | split: '' | last | plus: 0
+  if section.settings.crop != ''
+    assign ratio_1 = section.settings.crop | split: ' ' | first | split: '' | last | plus: 0.0
+    assign ratio_2 = section.settings.crop | split: ' ' | last | split: '' | last | plus: 0.0
+    assign tallest_media_aspect_ratio = ratio_1 | divided_by: ratio_2
+  else
+    assign tallest_media_aspect_ratio = product.media | map: 'aspect_ratio' | sort | first
+  endif
+%}
+
+{% unless request.design_mode %}
+  <script src="{{ 'vendor-product.bundle.min.js' | asset_url }}" type="module"></script>
+  <script src="{{ 'product.js' | asset_url }}" type="module"></script>
+{% endunless %}
+
+<style>
+  :root {
+    --max-possible-width: min(var(--max-site-width), 100vw);
+    --column-width: calc((var(--max-possible-width) - (var(--section-x-padding) * 2)  - var(--grid-gap)*11) / 12);
+    --media-width: calc((var(--column-width) * {{ media_desktop_cols }}) + (var(--grid-gap) * {{ media_desktop_cols | minus: 1 }}));
+    --media-column-width: calc((var(--media-width) - (calc(var(--grid-gap)/2)*11)) / 12);
+    --feature-media-width: calc((var(--media-width) - (var(--media-column-width)*2) - (calc(var(--grid-gap)/2)*2)));
+    --largest-media-aspect-ratio: {{ tallest_media_aspect_ratio }};
+    --thumbnails-height:  calc(var(--feature-media-width) / var(--largest-media-aspect-ratio));
+  }
+</style>
+
+
+<section
+  class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
+  data-color-scheme="{{ section_color }}"
+  x-data="
+    ThemeSection_Product({
+      product: {{ product | json | escape }},
+      variant: {{ current_variant | json | escape }},
+      featuredMediaID: {{ featured_media.id | json }},
+      template: {{ template | json | escape }},
+      thumbnailsPosition: {{ section.settings.thumbnails_position | json | escape }}
+    })"
+  data-product-section
+  >
+
+  <div class="section-content rdc-m-p-0 py-section-vertical-spacing lg:px-section max-w-site mx-auto relative z-10">
+
+    {% if section.settings.title != '' %}
+      <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">{{ section.settings.title }}</h2>
+      {% endif %}
+
+    <div class="{% if is_feature %}lg:grid grid-cols-1 lg:grid-cols-12 {% if section.settings.title != '' %}section-content-top-margin{% endif %}{% endif %}">
+      <div class="rdc-product-page-details grid grid-cols-1 lg:grid-cols-12 gap-10 {% if is_feature %}{{ section.settings.section_desktop_width }}{% endif %}">
+
+        <div class="rdc-product-media-main-wrapper col-span-full {{ media_desktop_width }}">
+       {% for variant in product.variants %}
+<div class="rdc-product-media-main rdc-p-relative 
+           {% if variant.id == product.selected_or_first_available_variant.id %}
+             rdc-active
+  {% else %}
+    rdc-d-none
+    {% endif %}" 
+         data-id="{{ variant.id }}">
+<div class="rdc-product-media-inner">
+ <div class="rdc-product-media-viewer rdc-p-relative">
+ <img src="{{ variant.image | img_url: "1000x" }}">
+           {% if product.metafields.info.image_benefit != blank %}
+                  <span class="br-img-benefit rdc-p-absolute">{{ product.metafields.info.image_benefit }}</span>
+                    {% endif %}
+</div>
+  <div class="rdc-product-media-thumbnails rdc-d-flex rdc-f-wrap rdc-mm-d-none">
+    <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ variant.image | img_url: "200x" }}"></span>
+
+         {% if variant.metafields.details.images.value != blank %}
+      {% for varImage in variant.metafields.details.images.value %}
+ <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ varImage | img_url: "200x" }}"></span>
+         {% assign dotCount = forloop.index | plus: 1 %}
+          {% endfor %}
+           {% endif %}
+
+</div>
+         <div class="rdc-pm-dots rdc-media-dots rdc-d-flex">
+            {% if variant.metafields.details.images.value != blank %}
+               <span class="rdc-pm-dot rdc-media-dot rdc-active">
+           </span>
+      {% for varImage in variant.metafields.details.images.value %}
+       
+           <span class="rdc-pm-dot rdc-media-dot">
+           </span>
+             {% endfor %}
+            {% endif %}
+         </div>
+</div>
+</div>
+         {% endfor %}
+        </div>
+
+        <div class="product-content col-span-full {{ content_desktop_width }} px-section lg:px-0  {% if is_feature %}lg:flex lg:items-center{% endif %}">
+          <div class="product-block-container w-full max-w-full xl:grid xl:grid-cols-12">
+            <div class="xl:col-span-10 xl:col-start-2 relative">
+
+            {%- assign last_block_was_card = false -%}
+            {% for block in section.blocks %}
+              {%- liquid
+                if block.type == 'variant_picker' and product.has_only_default_variant
+                  continue
+                endif
+                assign block_base_classes = 'product-block product-block-' | append: block.type | replace: '_', '-'
+                assign is_card = block.settings.display_on_card | default: false
+                assign card_start = false
+                assign card_end = false
+                if is_card and last_block_was_card == false
+                  assign card_start = true
+                endif
+                if is_card == false and last_block_was_card == true
+                  assign card_end = true
+                endif
+                if forloop.first and is_card
+                  assign card_start = true
+                endif
+              -%}
+              {% comment %} theme-check-disable LiquidTag {% endcomment %}
+              {%- if section.blocks.size > 1 -%}
+                {%- capture card_end_code %}
+                    </div>
+                    {% if settings.card_show_border_on_shadow %}<div class="card-border"></div>{% endif %}
+                  </div>
+                </div>
+                {%- endcapture %}
+                {%- if card_start -%}
+                <div class="{{ block_base_classes }} {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}">
+                  <div class="card-container">
+                    <div class="card p-5">
+                {%- endif -%}
+                {%- if card_end -%}
+                  {{ card_end_code }}
+                {%- endif -%}
+              {%- endif -%}
+              {% case block.type %}
+                {% when '@app' %}
+                  {% render block %}
+                {% when 'title' %}
+                  <div class="{{ block_base_classes }} break-words" {{ block.shopify_attributes }}>
+                    {% assign header_tag = 'h1' %}
+                    {% if is_feature %}
+                      {% assign header_tag = 'h2' %}
+                    {% endif %}
+                    <{{ header_tag }} class="font-heading heading-template {{ block.settings.text_align }}">
+                      {%- if is_feature -%}
+                      <a href="{{ product.url }}">
+                      {%- endif -%}
+                      {{ product.title | escape }}
+                      {%- if is_feature -%}
+                      </a>
+                      {%- endif -%}
+                    </{{ header_tag }}>
+                  </div>
+                {% when 'price' %}
+                  {% render 'product-block-price',
+                    product: product,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {% when 'variant_picker' %}
+                  {%- liquid
+                    if block.settings.hide_option_labels
+                      assign label_class = 'sr-only'
+                    else
+                      assign label_class = 'block font-secondary text-scheme-text text-sm'
+                    endif
+                    render 'product-block-variant-picker', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
+                  -%}
+                {% when 'quantity_selector' %}
+                  {% render 'product-block-quantity',
+                    product_form_id: product_form_id,
+                    label_class: label_class,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {% when 'buy_buttons' %}
+                  {% render 'product-block-buy-buttons',
+                    product: product,
+                    product_form_id: product_form_id,
+                    label_class: label_class,
+                    current_variant: current_variant,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {% if product.metafields.info.atc_benefit != blank %}
+                <div class="br-atc-benefit rdc-m-20 rdc-ta-c"><span>{{ product.metafields.info.atc_benefit }}</span></div>
+                  {% endif %}
+                
+                {%- when 'vendor' -%}
+                  {% render 'product-block-vendor',
+                    product: product,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'star_rating' -%}
+                  {% render 'product-block-star-rating',
+                    product: product,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'text' -%}
+                  {% render 'product-block-text',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'description' -%}
+                  {% render 'product-block-description',
+                    product: product,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'popup' -%}
+                  {% render 'product-block-popup',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'collapsible_tab' -%}
+                  {% render 'product-block-collapsible-tab',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'icon_row' -%}
+                  {% render 'product-block-icon-row',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'nutritional_information' -%}
+                  {% render 'product-block-nutritional-information',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'horizontal_bar_chart' -%}
+                  {% render 'product-block-horizontal-bar-chart',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'comparative_scale' -%}
+                  {% render 'product-block-comparative-scale',
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                {%- when 'share_buttons' -%}
+                  <div class="{{ block_base_classes }}" {{ block.shopify_attributes }}>
+                    {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+                  </div>
+                {%- when 'liquid' -%}
+                  <div class="{{ block_base_classes }}" {{ block.shopify_attributes }}>
+                    {{ block.settings.liquid }}
+                  </div>
+              {% endcase %}
+              {%- liquid
+                if block.settings.display_on_card
+                  assign last_block_was_card = true
+                else
+                  assign last_block_was_card = false
+                endif
+                if forloop.last and is_card and section.blocks.size > 1
+                  echo card_end_code
+                endif
+              -%}
+              {% comment %} theme-check-enable LiquidTag {% endcomment %}
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- liquid
+    for block in section.blocks
+      case block.type
+        when 'background_shape'
+          render 'block-background-shape' with block: block, section: section
+        when 'background_pattern'
+          render 'block-background-pattern' with block: block, section: section, scheme: section.settings.color_scheme
+      endcase
+    endfor
+
+    if section.settings.enable_image_zoom
+      render 'photoswipe'
+    endif
+  -%}
+
+</section>
+
+{%- liquid
+  assign stickers = section.blocks | where: "type", "sticker"
+  assign shape_dividers = section.blocks | where: "type", "shape_divider"
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section
+  endfor
+-%}
+
+{% if models.size %}
+  <script type="application/json" id="ModelJson-{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+  <script>
+    window.ProductModel = {
+      loadShopifyXR() {
+        Shopify.loadFeatures([
+          {
+            name: 'shopify-xr',
+            version: '1.0',
+            onLoad: this.setupShopifyXR.bind(this),
+          },
+        ]);
+      },
+
+      setupShopifyXR(errors) {
+        if (errors) return;
+
+        if (!window.ShopifyXR) {
+          document.addEventListener('shopify_xr_initialized', () =>
+            this.setupShopifyXR()
+          );
+          return;
+        }
+
+        document.querySelectorAll('[id^="ModelJson-"]').forEach((modelJSON) => {
+          window.ShopifyXR.addModels(JSON.parse(modelJSON.textContent));
+          modelJSON.remove();
+        });
+        window.ShopifyXR.setupXRElements();
+      },
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (Shopify.designMode) {
+        document.querySelectorAll("[data-shopify-xr-hidden]").forEach(element => element.classList.add('hidden'));
+      }
+      if (window.ProductModel) window.ProductModel.loadShopifyXR();
+    });
+  </script>
+{% endif %}

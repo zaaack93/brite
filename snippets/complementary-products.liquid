@@ -1,0 +1,41 @@
+
+{% assign complementaryProducts = product.metafields.conversion.complementary_products.value %}
+    {% if complementaryProducts != blank %}
+<div class="rdc-cp-main rdc-mt-10p">
+       <div class="rdc-cp-title rdc-mb-20 rdc-d-flex rdc-jc-sb rdc-ai-c">
+  <h3 class="">Complete the Routine</h3>
+         <div class="rdc-cp-navs rdc-d-flex">
+      <span class="rdc-cp-nav-prev rdc-cursor-p rdc-d-none">{% render 'icon-chevron-down' %}</span>
+      <span class="rdc-cp-nav-next rdc-ml-20 rdc-cursor-p">{% render 'icon-chevron-down' %}</span>
+         </div>
+       </div>
+  <div class="rdc-cp-inner rdc-d-flex">
+              {% for cp in complementaryProducts %}
+
+    {% assign colorsAvail = false %}
+  {% for product_option in cp.options_with_values %}
+    {% if product_option.name == "Color" %} 
+      {% assign colorsAvail = true %}
+  {% for value in product_option.values %}
+    {% assign colorCount = forloop.index %}
+  {% endfor %}
+       {% endif %}
+{% endfor %}
+                  <a href="{{ cp.url }}" class="rdc-cp-box">
+                    <div class="rdc-cp-box-inner rdc-d-flex rdc-ai-c rdc-p-20">
+<div class="rdc-cp-image rdc-w-25 rdc-oflow-h">
+<img src="{{ cp.featured_image | img_url: "100x" }}">
+</div>
+    <div class="rdc-cp-text rdc-w-75 rdc-pl-20">
+
+    
+      <h4>{{ cp.title }}</h4>
+      <div><span class="rdc-cp-price rdc-d-flex rdc-my-10px">{{ cp.first_available_variant.price | money | remove: ".00 AUD" }}</span></div>
+      <div><span class="rdc-cp-colors">{{ colorCount }} Colours</span></div>
+    </div>
+                    </div>
+      </a>
+          {% endfor %}
+</div>
+</div>
+{% endif %}

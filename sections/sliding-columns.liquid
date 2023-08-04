@@ -1,0 +1,85 @@
+<div class="sliding-columns-main rdc-py-5p rdc-py-m-50">
+  <div class="sliding-columns-inner">
+    <h2 class="text-center font-heading heading-base rdc-mb-20">{{ section.settings.header }}</h2>
+    <div class="sliding-columns-outer rdc-oflow-h rdc-w-full">
+      <div class="sliding-columns-container rdc-d-flex rdc-jc-c rdc-w-fit rdc-transition">
+        {% for block in section.blocks %}
+
+            <div class="sliding-columns-box {{ forloop.index0 }}">
+               <div class="sliding-columns-box-img">
+                 <img src="{{ block.settings.image | img_url: '600x' }}">
+                 <h3>{{ block.settings.title }}</h3>
+               </div>
+            <div class="sliding-columns-box-text rdc-m-20">
+              {{ block.settings.description }}
+            </div>
+            {% if block.settings.button_text != blank %}
+              <a class="rdc-scroll-vid-btn push-btn rdc-mt-40" href="{{ block.settings.link }}"><span class="push-btn-surface">{{ block.settings.button_text }}</span></a>
+            {% endif %}
+            </div>
+
+        {% endfor %}
+    </div>
+      <span id="sliding-col-prev" class="sliding-col-btn-outer sliding-col-btn-outer-left rdc-d-none"><span class="sliding-col-btn"><img src="https://cdn.shopify.com/s/files/1/0594/1529/files/br-arrow-right.svg"></span></span>
+      <span id="sliding-col-next" class="sliding-col-btn-outer"><span class="sliding-col-btn"><img src="https://cdn.shopify.com/s/files/1/0594/1529/files/br-arrow-right.svg"></span></span>
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Sliding Columns",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Header"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }
+          
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sliding Columns"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

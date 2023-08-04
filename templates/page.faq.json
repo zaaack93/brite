@@ -1,0 +1,248 @@
+{
+  "sections": {
+    "9223f302-c883-4512-b786-31c5f8b9c05f": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "template--14420446609492__9223f302-c883-4512-b786-31c5f8b9c05f-16680476519bd8b6ce-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/B_A_March_2022_Nat.png",
+            "title": "Frequently Asked Questions",
+            "richtext": "",
+            "cta_url": "",
+            "cta_text": "Shop Now",
+            "place_content": "inherit",
+            "text_align": "inherit",
+            "text_overlay_color": "same_as_section"
+          }
+        },
+        "template--14420446609492__9223f302-c883-4512-b786-31c5f8b9c05f-16680476519bd8b6ce-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "Hero slideshow",
+            "richtext": "<p><\/p>",
+            "cta_url": "",
+            "cta_text": "Shop Now",
+            "place_content": "inherit",
+            "text_align": "inherit",
+            "text_overlay_color": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "template--14420446609492__9223f302-c883-4512-b786-31c5f8b9c05f-16680476519bd8b6ce-0",
+        "template--14420446609492__9223f302-c883-4512-b786-31c5f8b9c05f-16680476519bd8b6ce-1"
+      ],
+      "settings": {
+        "style": "full",
+        "height": "pt-two-thirds-screen-height",
+        "display_on_card": false,
+        "display_content_below_image_on_mobile": true,
+        "place_content": "lg:place-content-center-start",
+        "text_align": "text-left",
+        "heading_size": "heading-base",
+        "color_scheme": "secondary",
+        "use_gradient_background": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "1664345191404b47ce": {
+      "type": "faq",
+      "blocks": {
+        "1664345190c0bc6ddb-0": {
+          "type": "question",
+          "settings": {
+            "question": "I'm vegan, can I use your products?",
+            "answer": "<p>Absolutely, all of our products are 100% vegan friendly. We don’t use any animal products<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-1": {
+          "type": "question",
+          "settings": {
+            "question": "Do you test on animals?",
+            "answer": "<p>We love animals so we don’t test our products on them. We are PETA certified, we’ve never tested on animals and never will, and we don’t work with companies who do.<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-2": {
+          "type": "question",
+          "settings": {
+            "question": "Do your products contain palm oil?",
+            "answer": "<p>No, none of our products contain palm oil<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-3": {
+          "type": "question",
+          "settings": {
+            "question": "What colour should I dye my hair?",
+            "answer": "<p>The possibilities are endless! We have a huge range of vibrant, neon and pastel semi permanent colours for you to choose from. If you’re feeling spoiled for choice check out our tiktok or Instagram @britehair for inspiration.<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-4": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use your products while I'm pregnant?",
+            "answer": "<p>Our products do not contain Paraphenylenediamine (PPD), however it is always best to check the ingredients with a healthcare professional to determine what is best for you.<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-5": {
+          "type": "question",
+          "settings": {
+            "question": "Do the semi permanent dyes work on dark hair?",
+            "answer": "<p>Our vibrant and neon range of semi permanent dyes are packed with strong colour pigment so that they work on dark hair as well as light hair. The colour will turn out brightest on light blonde hair and will give a more tonal result on dark hair. Semi permanent dyes coat the outside of the hair rather than developing on it so your base colour will have a big impact on your final result. We recommend always performing a strand test before you do a full application to see how the colour turns out on your hair. <\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-6": {
+          "type": "question",
+          "settings": {
+            "question": "Do the liquid hair chalks work on dark hair?",
+            "answer": "<p>Yes, our liquid hair chalk works on blondes, brunettes, and everything in between. The colour sits on top of your hair, and the base colour of your hair typically won’t affect the outcome much, if at all. The colour washes off with shampoo.<\/p>"
+          }
+        },
+        "1664345190c0bc6ddb-7": {
+          "type": "question",
+          "settings": {
+            "question": "DO I NEED TO BLEACH MY HAIR TO USE YOUR PASTEL RANGE OF SEMI PERMANENT DYES?",
+            "answer": "<p>Our pastel range delivers the best results on very light blonde hair with no yellow tones. Your base colour will affect how the colour turns out on your hair, so we recommend you always strand test before dyeing your hair to make sure you’re happy with the colour.  If you find from the strand test you need to pre-lighten your hair for the colour to come through how you’d like it, you can use our bleach kit before dyeing. Please wait at least 48–72 hours after bleaching to dye your hair so that the cuticles have time to settle. To eliminate yellow tones from blonde hair before colouring we suggest using a purple shampoo like <a href=\"\/products\/shampoo-color-300ml-10-14floz\" title=\"Shampoo Color\">Brite Shampoo Color Pastel Purple<\/a> or <a href=\"\/products\/toners-300ml-10-14floz\" title=\"Toner Kits\">Brite White Toner<\/a>.<\/p>"
+          }
+        },
+        "2b60f60a-a144-4114-85ad-fb0f0a64c6ec": {
+          "type": "question",
+          "settings": {
+            "question": "Can I mix two semi permanent colours together?",
+            "answer": "<p>Absolutely! You can mix two or more of our semi permanent dyes together to make your own personal custom colour.  Just remember that the colour can turn out quite differently on your hair compared to how it looks in the mixing bowl, so please strand test first to check how the colour will turn out on your hair and adjust as necessary before a full application. You can also add white conditioner to semi permanent dyes to lighten the colour. Just be aware that this can make them fade a little faster.<\/p>"
+          }
+        },
+        "f1738ad4-d78f-41f1-a5b4-e81349be7cdf": {
+          "type": "question",
+          "settings": {
+            "question": "I'm done with the colour, how can I get it out of my hair?",
+            "answer": "<p>To speed up colour removal of our semi permanent dyes you can mix a little baking soda with tea tree or anti-dandruff shampoo and massage this into your hair, leave for 10–15 minutes then rinse and condition well. A few applications may be necessary to fully fade the colour. Please patch test this first to ensure you don’t have an adverse reaction.<\/p>"
+          }
+        },
+        "d7c33220-2317-4484-a22c-a945ea6176ba": {
+          "type": "question",
+          "settings": {
+            "question": "How do I avoid getting colour on my skin or bathroom when I use the semi permanent dye?",
+            "answer": "<p>To avoid colour transfer, wear latex gloves while colouring your hair, and apply petroleum jelly around your hairline before colouring. Always rinse the colour out over a sink or basin and never in the shower.<\/p>"
+          }
+        },
+        "8b219779-04b1-44c2-a5be-74b0cad3121c": {
+          "type": "question",
+          "settings": {
+            "question": "I've spilled some of the semi permanent dye in the bathroom, what do I do?",
+            "answer": "<p>Accidents happen, but never fear; if there’s any staining on your surface after cleaning up the initial spill then spraying your normal shower cleaner and leaving overnight will knock out most of the colour staining. If it is safe to use a bleach-based cleaner on the surface this will help to get rid of any staining quickly.<\/p>"
+          }
+        },
+        "a88eb90e-c3a6-4152-bfae-20980a74ca49": {
+          "type": "question",
+          "settings": {
+            "question": "I've coloured my hair and found some semi permanent dye on my skin, what do I do?",
+            "answer": "<p>To remove any colour from your skin, use hand sanitiser, dish soap or baby oil on a damp cloth to help lift the colour. Alternatively you can mix a bit of baking soda with your regular body wash. (Please patch test these suggestions first to ensure they don't irritate your skin!) <\/p>"
+          }
+        },
+        "4dc986a2-c806-4f0a-99ec-ca7ec5adc410": {
+          "type": "question",
+          "settings": {
+            "question": "The colour looks different to on the box, what happened?",
+            "answer": "<p>Semi permanent dyes coat the outside of the hair follicle rather than developing on it, so your base colour plays a big part in how the colour turns out on your hair. Everyone’s hair is different so the colour will turn out differently on different people. We recommend always performing a strand test on a small, hidden section of your hair before you do a full application. Even if you’ve dyed your hair many times before. If you’re not satisfied with the results of the strand test you can send a photo to <a href=\"mailto:hello@britehair.com\" target=\"_blank\">hello@britehair.com<\/a> and we can help you with some specific advice.<\/p>"
+          }
+        },
+        "73e2bcd6-219e-40f7-8651-a77733dac445": {
+          "type": "question",
+          "settings": {
+            "question": "How do your shampoo and conditioners work?",
+            "answer": "<p>Our tonal shampoo and conditioners contain a small amount of colour pigment which allows you to gradually build up the colour in your hair to your desired intensity. To increase the intensity of the colour leave the shampoo and conditioner in for longer before rinsing or use it more regularly.  To fade the colour wash with your regular shampoo and conditioner.<\/p>"
+          }
+        },
+        "b9cb7a97-005d-4a82-be25-588326df8f9d": {
+          "type": "question",
+          "settings": {
+            "question": "Do you need to have light hair to use your shampOo and conditioner?",
+            "answer": "<p>Our tonal shampoo and conditioners give the brightest results on light blonde hair, however they may give a tonal effect on darker blondes.  The shampoo and conditioner also help to keep your coloured hair looking its brightest.<\/p>"
+          }
+        },
+        "24db395d-fb97-4125-be73-666a659865d9": {
+          "type": "question",
+          "settings": {
+            "question": "Will the shampoo and conditioner colour fade if I switch back to regular shampoo and conditioner?",
+            "answer": "<p>Yes, if you would like to fade the colour from our shampoo and conditioner simply switch back to your regular shampoo and conditioner. The colour will gradually fade with washing.<\/p>"
+          }
+        },
+        "2182e1d3-11c4-4b7b-a4b0-718a9eff5855": {
+          "type": "question",
+          "settings": {
+            "question": "What peroxide volume is your bleach kit?",
+            "answer": "<p>The developing cream in our bleach kit is 30 volume peroxide.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1664345190c0bc6ddb-0",
+        "1664345190c0bc6ddb-1",
+        "1664345190c0bc6ddb-2",
+        "1664345190c0bc6ddb-3",
+        "1664345190c0bc6ddb-4",
+        "1664345190c0bc6ddb-5",
+        "1664345190c0bc6ddb-6",
+        "1664345190c0bc6ddb-7",
+        "2b60f60a-a144-4114-85ad-fb0f0a64c6ec",
+        "f1738ad4-d78f-41f1-a5b4-e81349be7cdf",
+        "d7c33220-2317-4484-a22c-a945ea6176ba",
+        "8b219779-04b1-44c2-a5be-74b0cad3121c",
+        "a88eb90e-c3a6-4152-bfae-20980a74ca49",
+        "4dc986a2-c806-4f0a-99ec-ca7ec5adc410",
+        "73e2bcd6-219e-40f7-8651-a77733dac445",
+        "b9cb7a97-005d-4a82-be25-588326df8f9d",
+        "24db395d-fb97-4125-be73-666a659865d9",
+        "2182e1d3-11c4-4b7b-a4b0-718a9eff5855"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "heading_text_style": "heading",
+        "two_columns_desktop": true,
+        "title": "We are here to help!",
+        "richtext": "<p>Find our most frequently asked questions below, or feel free to <a href=\"\/pages\/frontpage\" title=\"Contact Us\">contact us<\/a> at anytime.<\/p>",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "3fcf551e-b1bc-495a-963a-cb0e7b2225db": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "SHOP ALL",
+        "subheading": "",
+        "collection": "all",
+        "no_products": 4,
+        "show_view_all": false,
+        "enable_quick_buy": false,
+        "display_on_card": false,
+        "layout": "carousel",
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "slideshow_focus": "center",
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 40,
+        "autoscroll_mode": "1",
+        "product_tiles_aspect_ratio": "",
+        "image_shape": "",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "9223f302-c883-4512-b786-31c5f8b9c05f",
+    "main",
+    "1664345191404b47ce",
+    "3fcf551e-b1bc-495a-963a-cb0e7b2225db"
+  ]
+}

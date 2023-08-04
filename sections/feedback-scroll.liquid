@@ -1,0 +1,83 @@
+<div class="feedback-scroll-main rdc-p-5p" {% if section.settings.background != blank %}style="background-image: url({{ section.settings.background | img_url: '1500x' }})"{% endif %}>
+<div class="feedback-scroll-inner rdc-d-flex rdc-ai-c rdc-jc-c">
+
+  <div class="feedback-scroll-text">
+
+     <div class="feedback-scroll-content-outer rdc-oflow-h">
+       <div class="feedback-scroll-content rdc-d-flex rdc-w-fit">
+    {% for block in section.blocks %}
+      <div class="{% unless forloop.index0 == 0 %}rdc-d-none{% endunless %} rdc-transition feedback-scroll-content-inner feedback-scroll-content-{{ forloop.index0 }}">
+    <p class="rdc-ws-nw"><span>{{ block.settings.content_1 }}</span><br>
+    <span>{{ block.settings.content_2 }}</span></p>
+        </div>
+   {% endfor %}
+    </div>
+        </div>
+
+    <div class="feedback-scroll-logo-outer rdc-oflow-h">
+          <div class="feedback-scroll-logo rdc-transition rdc-d-flex rdc-ai-c">
+            {% for block in section.blocks %}
+    <img class="{% if forloop.index0 == 0 %}rdc-active-logo{% endif %} rdc-transition" id="logo-{{ forloop.index0 }}" src="{{ block.settings.logo | img_url: '300x' }}">
+            {% endfor %}
+</div>
+      </div>
+ 
+</div>
+      <div class="feedback-scroll-image">
+        <img src="{{ section.settings.image | img_url: '500x' }}">
+</div>
+
+</div>
+</div>
+{% schema %}
+{
+"name": "Feedback Scroll",
+"settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background"          
+    }
+],
+"blocks": [
+    {
+      "type": "feedback",
+      "name": "Feedback",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "content_1",
+          "label": "Smaller text"
+        },
+        {
+          "type": "text",
+          "id": "content_2",
+          "label": "Bigger text"
+        }
+      ]
+    }
+  
+],
+"presets": [
+  {
+    "name": "Feedback Scroll"
+  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

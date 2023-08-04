@@ -1,0 +1,16 @@
+{
+  "wrapper": "div[data-color-scheme=primary].bg-scheme-background.text-scheme-text",
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "settings": {
+        "display_on_card": true,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "cart"
+  ]
+}

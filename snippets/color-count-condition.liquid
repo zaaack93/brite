@@ -1,0 +1,9 @@
+{% assign colorsAvail = false %}
+  {% for product_option in product.options_with_values %}
+    {% if product_option.name == "Color" %} 
+      {% assign colorsAvail = true %}
+  {% for value in product_option.values %}
+    {% assign colorCount = forloop.index %}
+  {% endfor %}
+       {% endif %}
+{% endfor %}
