@@ -65,7 +65,7 @@
     <div class="{% if is_feature %}lg:grid grid-cols-1 lg:grid-cols-12 {% if section.settings.title != '' %}section-content-top-margin{% endif %}{% endif %}">
       <div class="rdc-product-page-details grid grid-cols-1 lg:grid-cols-12 gap-10 {% if is_feature %}{{ section.settings.section_desktop_width }}{% endif %}">
 
-        <div class="rdc-product-media-main-wrapper col-span-full {{ media_desktop_width }}">
+        <div class="rdc-product-media-main-wrapper col-span-full {{ media_desktop_width }}" id="sidebar">
        {% for variant in product.variants %}
 <div class="rdc-product-media-main rdc-p-relative 
            {% if variant.id == product.selected_or_first_available_variant.id %}
