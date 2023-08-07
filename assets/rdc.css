@@ -763,16 +763,25 @@ text-decoration: underline;
     padding-top: 15px;
 }
   .rdc-product-media-main-wrapper {
-    position: sticky;
+    /* position: sticky;
     top: 0;
     height: fit-content;
-    display: flex;
+    display: flex; */
 }
   .rdc-product-page-details {
-    max-height: 1000px;
-        overflow-y: scroll;
+    /* max-height: 1000px;
+        overflow-y: scroll; */
 }
+#sidebar{
+  will-change: min-height;
 }
+
+.rdc-product-media-inner{
+  transform: translate(0, 0); /* For browsers don't support translate3d. */
+  transform: translate3d(0, 0, 0);
+  will-change: position, transform;
+}
+
 
 @media only screen and (max-width: 1200px) {
 .rdc-scroll-vid-vids {
