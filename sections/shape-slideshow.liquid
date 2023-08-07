@@ -1,181 +1,181 @@
-<!-- sections/gallery.liquid -->
-{%- liquid
-case section.settings.mobile_slide_width
-  when 'three_fifths'
-    assign mobile_slide_width = 'w-3/5'
-  when 'full_width'
-    assign mobile_slide_width = 'w-full'
-endcase
--%}
-
-
-{%- for block in section.blocks -%}
-  {%- render 'shape-defs',
-    shape: block.settings.image_shape,
-    shape_id: block.id,
-    index: forloop.index0
-  -%}
-{%- endfor -%}
-
-<section class="relative gallery overflow-hidden text-scheme-text bg-scheme-background  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
-  data-section-type="gallery"
-  data-section-id="{{ section.id }}">
-
-  <div class="section-content relative py-section-vertical-spacing">
-    {% unless section.settings.title == blank %}
-    <div class="max-w-site mx-auto px-section">
-      <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">
-        {{ section.settings.title | strip | escape }}
-      </h2>
-    </div>
-    {% endunless %}
-
-    <div
-      {% if section.blocks.size > 1 %}
-        id="slideshow-{{ section.id }}"
-        class="splide relative z-10 {% if section.settings.title != '' %}section-content-top-margin{% endif %}"
-      {% endif %}
-    >
-      <div class="splide__track splide__track--overflow-visible {% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}">
-        <ul class="splide__list  w-full {% if section.settings.title != '' %}section-content-top-margin{% endif %}">
-          {%- for block in section.blocks -%}
-            {% unless block.type == 'sticker' or block.type == 'background_pattern' or block.type == 'background_shape' or block.type == 'shape_divider' %}
-            <li class="splide__slide w-full {{ mobile_slide_width }} lg:w-1/4" {% unless block.settings.color_scheme == 'same_as_section' %}data-color-scheme="{{ block.settings.color_scheme }}"{% endunless %} {{ block.shopify_attributes }}>
-              {%- liquid
-                case block.type
-                  when 'image'
-                    assign url = block.settings.url
-                    assign image = block.settings.image
-                    assign button_text = block.settings.button_text
-                  when 'product'
-                    assign product = block.settings.product
-                    assign url = product.url
-                    assign image = product.featured_image
-                    assign button_text = product.title
-                  when 'collection'
-                    assign collection = block.settings.collection
-                    assign url = collection.url
-                    assign image = collection.featured_image
-                    assign button_text = collection.title
-                  when 'article'
-                    assign article = block.settings.article
-                    assign url = article.url
-                    assign image = article.image
-                    assign button_text = article.title
-                endcase
-              -%}
-          
-              {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-              <div class="gallery-item relative flex items-center justify-center h-full {{ desktop_size }}" {{ block.shopify_attributes }} >
-              {% comment %}theme-check-enable UndefinedObject{% endcomment %}
-                {% if url != blank %}
-                <a href="{{ url }}" class="block group w-full">
-                {% endif %}
-          
-                  {%- if image != blank -%}
-                  <div class="w-full">
-                    {%- render 'media-image',
-                        media: image,
-                        shape_id: block.id,
-                        shape: block.settings.image_shape,
-                        crop: section.settings.crop,
-                        is_card: false,
-                        container_id: block.id
-                    -%}
-                  </div>
-                  {%- else -%}
-                  <div class="w-full">
-                    {%- render 'media-image-placeholder',
-                        container_id: section.id,
-                        shape_id: block.id,
-                        index: forloop.index0,
-                        shape: block.settings.image_shape,
-                        crop: section.settings.crop,
-                        is_card: false
-                    -%}
-                  </div>
-                  {%- endif -%}
-          
-                  {%- if button_text != blank -%}
-                  <div class="{% if section.settings.show_buttons_on_mobile %}flex{% else %}hidden lg:flex{% endif %} gallery-item__content absolute top-0 left-0 right-0 bottom-0  items-center justify-center text-scheme-text text-center z-10 px-5  {% if section.settings.only_show_button_on_hover %}lg:opacity-0 group-hover:lg:opacity-100 transition duration-200 ease-in-out{% endif %}">
-                    <span class="push-btn  text-center inline-block break-words">
-                      <span class="{{ section.settings.button_style }}">{{ button_text }}</span>
-                    </span>
-                  </div>
-                  {%- endif -%}
-          
-                {%- if url != blank -%}
-                </a>
-                {%- endif -%}
-              </div>
-            </li>
-          {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-      {% if section.blocks.size > 1 %}
-      <div class="splide__arrows flex justify-between items-center mt-5 px-section">
-        {%- render 'splide-navigation' -%}
-      </div>
-      {% endif %}
-      <script class="slideshow-options" type="application/json">
-        {
-          "mediaQuery": "min",
-          "arrows": true,
-          "pagination": false,
-          "rewind": true,
-          "autoWidth": true,
-          "gap": "2.5rem",
-          "focus": {{ section.settings.slideshow_focus | json }},
-          "type": "loop",
-          "autoScroll": {
-            "autoStart": {% if section.settings.autoscroll_mode == '0' %}false{% else %}true{% endif %},
-            "speed": {{ section.settings.autoscroll_mode | plus: 0 | json }}
-          },
-          "padding": {
-            "left": "1.25rem",
-            "right": "1.25rem"
-          }
-        }
-      </script>
-      <style>
-        @media (min-width: 990px) {
-          #slideshow-{{ section.id }} .splide__slide {
-            width: {{ section.settings.desktop_slide_width }}%;
-          }
-        }
-      </style>
-      {% unless request.design_mode %}
-        <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
-      {% endunless %}
-      {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
-    </div> 
-  </div>
-
-  {%- liquid
-    for block in section.blocks
-      case block.type
-        when 'background_shape'
-          render 'block-background-shape' with block: block, section: section
-        when 'background_pattern'
-          render 'block-background-pattern' with block: block, section: section, scheme: section.settings.color_scheme
-      endcase
-    endfor
-  -%}
-
-</section>
-
-{%- liquid
-  assign stickers = section.blocks | where: "type", "sticker" 
-  assign shape_dividers = section.blocks | where: "type", "shape_divider" 
-  for sticker in stickers
-    render 'block-sticker' with block: sticker, section: section
-  endfor
-  for shape_divider in shape_dividers
-    render 'block-shape-divider' with block: shape_divider, section: section
-  endfor
--%}
-
+<!-- sections/gallery.liquid -->
+{%- liquid
+case section.settings.mobile_slide_width
+  when 'three_fifths'
+    assign mobile_slide_width = 'w-3/5'
+  when 'full_width'
+    assign mobile_slide_width = 'w-full'
+endcase
+-%}
+
+
+{%- for block in section.blocks -%}
+  {%- render 'shape-defs',
+    shape: block.settings.image_shape,
+    shape_id: block.id,
+    index: forloop.index0
+  -%}
+{%- endfor -%}
+
+<section class="relative gallery overflow-hidden text-scheme-text bg-scheme-background  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
+  data-section-type="gallery"
+  data-section-id="{{ section.id }}">
+
+  <div class="section-content relative py-section-vertical-spacing">
+    {% unless section.settings.title == blank %}
+    <div class="max-w-site mx-auto px-section">
+      <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">
+        {{ section.settings.title | strip | escape }}
+      </h2>
+    </div>
+    {% endunless %}
+
+    <div
+      {% if section.blocks.size > 1 %}
+        id="slideshow-{{ section.id }}"
+        class="splide relative z-10 {% if section.settings.title != '' %}section-content-top-margin{% endif %}"
+      {% endif %}
+    >
+      <div class="splide__track splide__track--overflow-visible {% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}">
+        <ul class="splide__list  w-full {% if section.settings.title != '' %}section-content-top-margin{% endif %}">
+          {%- for block in section.blocks -%}
+            {% unless block.type == 'sticker' or block.type == 'background_pattern' or block.type == 'background_shape' or block.type == 'shape_divider' %}
+            <li class="splide__slide w-full {{ mobile_slide_width }} lg:w-1/4" {% unless block.settings.color_scheme == 'same_as_section' %}data-color-scheme="{{ block.settings.color_scheme }}"{% endunless %} {{ block.shopify_attributes }}>
+              {%- liquid
+                case block.type
+                  when 'image'
+                    assign url = block.settings.url
+                    assign image = block.settings.image
+                    assign button_text = block.settings.button_text
+                  when 'product'
+                    assign product = block.settings.product
+                    assign url = product.url
+                    assign image = product.featured_image
+                    assign button_text = product.title
+                  when 'collection'
+                    assign collection = block.settings.collection
+                    assign url = collection.url
+                    assign image = collection.featured_image
+                    assign button_text = collection.title
+                  when 'article'
+                    assign article = block.settings.article
+                    assign url = article.url
+                    assign image = article.image
+                    assign button_text = article.title
+                endcase
+              -%}
+          
+              {% comment %}theme-check-disable UndefinedObject{% endcomment %}
+              <div class="gallery-item relative flex items-center justify-center h-full {{ desktop_size }}" {{ block.shopify_attributes }} >
+              {% comment %}theme-check-enable UndefinedObject{% endcomment %}
+                {% if url != blank %}
+                <a href="{{ url }}" class="block group w-full">
+                {% endif %}
+          
+                  {%- if image != blank -%}
+                  <div class="w-full">
+                    {%- render 'media-image',
+                        media: image,
+                        shape_id: block.id,
+                        shape: block.settings.image_shape,
+                        crop: section.settings.crop,
+                        is_card: false,
+                        container_id: block.id
+                    -%}
+                  </div>
+                  {%- else -%}
+                  <div class="w-full">
+                    {%- render 'media-image-placeholder',
+                        container_id: section.id,
+                        shape_id: block.id,
+                        index: forloop.index0,
+                        shape: block.settings.image_shape,
+                        crop: section.settings.crop,
+                        is_card: false
+                    -%}
+                  </div>
+                  {%- endif -%}
+          
+                  {%- if button_text != blank -%}
+                  <div class="{% if section.settings.show_buttons_on_mobile %}flex{% else %}hidden lg:flex{% endif %} gallery-item__content absolute top-0 left-0 right-0 bottom-0  items-center justify-center text-scheme-text text-center z-10 px-5  {% if section.settings.only_show_button_on_hover %}lg:opacity-0 group-hover:lg:opacity-100 transition duration-200 ease-in-out{% endif %}">
+                    <span class="push-btn  text-center inline-block break-words">
+                      <span class="{{ section.settings.button_style }}">{{ button_text }}</span>
+                    </span>
+                  </div>
+                  {%- endif -%}
+          
+                {%- if url != blank -%}
+                </a>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      {% if section.blocks.size > 1 %}
+      <div class="splide__arrows flex justify-between items-center mt-5 px-section">
+        {%- render 'splide-navigation' -%}
+      </div>
+      {% endif %}
+      <script class="slideshow-options" type="application/json">
+        {
+          "mediaQuery": "min",
+          "arrows": true,
+          "pagination": false,
+          "rewind": true,
+          "autoWidth": true,
+          "gap": "2.5rem",
+          "focus": {{ section.settings.slideshow_focus | json }},
+          "type": "loop",
+          "autoScroll": {
+            "autoStart": {% if section.settings.autoscroll_mode == '0' %}false{% else %}true{% endif %},
+            "speed": {{ section.settings.autoscroll_mode | plus: 0 | json }}
+          },
+          "padding": {
+            "left": "1.25rem",
+            "right": "1.25rem"
+          }
+        }
+      </script>
+      <style>
+        @media (min-width: 990px) {
+          #slideshow-{{ section.id }} .splide__slide {
+            width: {{ section.settings.desktop_slide_width }}%;
+          }
+        }
+      </style>
+      {% unless request.design_mode %}
+        <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
+      {% endunless %}
+      {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
+    </div> 
+  </div>
+
+  {%- liquid
+    for block in section.blocks
+      case block.type
+        when 'background_shape'
+          render 'block-background-shape' with block: block, section: section
+        when 'background_pattern'
+          render 'block-background-pattern' with block: block, section: section, scheme: section.settings.color_scheme
+      endcase
+    endfor
+  -%}
+
+</section>
+
+{%- liquid
+  assign stickers = section.blocks | where: "type", "sticker" 
+  assign shape_dividers = section.blocks | where: "type", "shape_divider" 
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section
+  endfor
+-%}
+
 {% schema %}
 {
   "name": "Shape slideshow",
@@ -2425,4 +2425,4 @@ endcase
     }
   ]
 }
-{% endschema %}
+{% endschema %}

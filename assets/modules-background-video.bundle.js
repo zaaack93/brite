@@ -338,15 +338,15 @@ document.addEventListener('alpine:init', () => {
         }
       },
 
-      /**
-       * Watch the aspect ratio of the container
-       * and assign classes accordingly; for tall
-       * iframes, calculate width and left offset
+      /**
+       * Watch the aspect ratio of the container
+       * and assign classes accordingly; for tall
+       * iframes, calculate width and left offset
        */
       _checkContainerSize() {
         const playerEl = document.getElementById(this.playerId);
-        /**
-         * Assume 16/9 ratio
+        /**
+         * Assume 16/9 ratio
          */
 
         const videoRatio = (16 / 9).toFixed(2);

@@ -1,45 +1,45 @@
-<section
-  class="grid text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% unless section.settings.style == 'inset' %}full-bleed-section{% endunless %}"
-  data-color-scheme="{{ section.settings.color_scheme }}"
-> 
-
-  <div class="section-content {% if  section.settings.style == 'inset' %}py-section-vertical-spacing{% endif %} ">
-    {% render 'video-with-text-overlay',
-      video: section.settings.video_url,
-      fallback_image: section.settings.fallback_image,
-      place_content: section.settings.place_content,
-      text_align: section.settings.text_align,
-      color_scheme: section.settings.color_scheme,
-      text_overlay_color: section.settings.text_overlay_color,
-      use_gradient_background: section.settings.use_gradient_background,
-      title: section.settings.title,
-      richtext: section.settings.richtext,
-      cta_url: section.settings.cta_url,
-      cta_text: section.settings.cta_text,
-      display_on_card: section.settings.display_on_card,
-      style: section.settings.style,
-      crop: section.settings.crop,
-      crop_desktop: section.settings.crop_desktop,
-      heading_size: section.settings.heading_size
-    %}
-  </div>
-</section>
-
-{%- liquid
-  assign stickers = section.blocks | where: "type", "sticker" 
-  assign shape_dividers = section.blocks | where: "type", "shape_divider"
-  assign no_padding = true
-  if section.settings.style == 'inset'
-    assign no_padding = false
-  endif 
-  for sticker in stickers
-    render 'block-sticker' with block: sticker, section: section
-  endfor
-  for shape_divider in shape_dividers
-    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: no_padding
-  endfor
--%}
-
+<section
+  class="grid text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% unless section.settings.style == 'inset' %}full-bleed-section{% endunless %}"
+  data-color-scheme="{{ section.settings.color_scheme }}"
+> 
+
+  <div class="section-content {% if  section.settings.style == 'inset' %}py-section-vertical-spacing{% endif %} ">
+    {% render 'video-with-text-overlay',
+      video: section.settings.video_url,
+      fallback_image: section.settings.fallback_image,
+      place_content: section.settings.place_content,
+      text_align: section.settings.text_align,
+      color_scheme: section.settings.color_scheme,
+      text_overlay_color: section.settings.text_overlay_color,
+      use_gradient_background: section.settings.use_gradient_background,
+      title: section.settings.title,
+      richtext: section.settings.richtext,
+      cta_url: section.settings.cta_url,
+      cta_text: section.settings.cta_text,
+      display_on_card: section.settings.display_on_card,
+      style: section.settings.style,
+      crop: section.settings.crop,
+      crop_desktop: section.settings.crop_desktop,
+      heading_size: section.settings.heading_size
+    %}
+  </div>
+</section>
+
+{%- liquid
+  assign stickers = section.blocks | where: "type", "sticker" 
+  assign shape_dividers = section.blocks | where: "type", "shape_divider"
+  assign no_padding = true
+  if section.settings.style == 'inset'
+    assign no_padding = false
+  endif 
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: no_padding
+  endfor
+-%}
+
 {% schema %}
 {
   "name": "Video with text overlay",
@@ -838,4 +838,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}

@@ -3,12 +3,12 @@
   * (c) 2022 Dmytro Semenov
   */
 
-/**
-  * Creates element and optionally appends it to another.
-  *
-  * @param {String} className
-  * @param {String|NULL} tagName
-  * @param {Element|NULL} appendToEl
+/**
+  * Creates element and optionally appends it to another.
+  *
+  * @param {String} className
+  * @param {String|NULL} tagName
+  * @param {Element|NULL} appendToEl
   */
 function createElement(className, tagName, appendToEl) {
   const el = document.createElement(tagName || 'div');
@@ -39,11 +39,11 @@ function roundPoint(p) {
   p.x = Math.round(p.x);
   p.y = Math.round(p.y);
 }
-/**
- * Returns distance between two points.
- *
- * @param {Object} p1 Point
- * @param {Object} p2 Point
+/**
+ * Returns distance between two points.
+ *
+ * @param {Object} p1 Point
+ * @param {Object} p2 Point
  */
 
 
@@ -52,35 +52,35 @@ function getDistanceBetween(p1, p2) {
   const y = Math.abs(p1.y - p2.y);
   return Math.sqrt(x * x + y * y);
 }
-/**
- * Whether X and Y positions of points are qual
- *
- * @param {Object} p1
- * @param {Object} p2
+/**
+ * Whether X and Y positions of points are qual
+ *
+ * @param {Object} p1
+ * @param {Object} p2
  */
 
 
 function pointsEqual(p1, p2) {
   return p1.x === p2.x && p1.y === p2.y;
 }
-/**
- * The float result between the min and max values.
- *
- * @param {Number} val
- * @param {Number} min
- * @param {Number} max
+/**
+ * The float result between the min and max values.
+ *
+ * @param {Number} val
+ * @param {Number} min
+ * @param {Number} max
  */
 
 
 function clamp(val, min, max) {
   return Math.min(Math.max(val, min), max);
 }
-/**
- * Get transform string
- *
- * @param {Number} x
- * @param {Number|null} y
- * @param {Number|null} scale
+/**
+ * Get transform string
+ *
+ * @param {Number} x
+ * @param {Number|null} y
+ * @param {Number|null} scale
  */
 
 
@@ -93,13 +93,13 @@ function toTransformString(x, y, scale) {
 
   return propValue;
 }
-/**
- * Apply transform:translate(x, y) scale(scale) to element
- *
- * @param {DOMElement} el
- * @param {Number} x
- * @param {Number|null} y
- * @param {Number|null} scale
+/**
+ * Apply transform:translate(x, y) scale(scale) to element
+ *
+ * @param {DOMElement} el
+ * @param {Number} x
+ * @param {Number|null} y
+ * @param {Number|null} scale
  */
 
 
@@ -108,13 +108,13 @@ function setTransform(el, x, y, scale) {
 }
 
 const defaultCSSEasing = 'cubic-bezier(.4,0,.22,1)';
-/**
- * Apply CSS transition to element
- *
- * @param {Element} el
- * @param {String} prop CSS property to animate
- * @param {Number} duration in ms
- * @param {String|NULL} ease CSS easing function
+/**
+ * Apply CSS transition to element
+ *
+ * @param {Element} el
+ * @param {String} prop CSS property to animate
+ * @param {Number} duration in ms
+ * @param {String|NULL} ease CSS easing function
  */
 
 function setTransitionStyle(el, prop, duration, ease) {
@@ -123,8 +123,8 @@ function setTransitionStyle(el, prop, duration, ease) {
   // in: 'cubic-bezier(.4, 0, 1, 1)'// for "hide" transitions
   el.style.transition = prop ? prop + ' ' + duration + 'ms ' + (ease || defaultCSSEasing) : 'none';
 }
-/**
- * Apply width and height CSS properties to element
+/**
+ * Apply width and height CSS properties to element
  */
 
 
@@ -159,11 +159,11 @@ const LOAD_STATE = {
   LOADED: 'loaded',
   ERROR: 'error'
 };
-/**
- * Check if click or keydown event was dispatched
- * with a special key or via mouse wheel.
- *
- * @param {Event} e
+/**
+ * Check if click or keydown event was dispatched
+ * with a special key or via mouse wheel.
+ *
+ * @param {Event} e
  */
 
 function specialKeyUsed(e) {
@@ -171,13 +171,13 @@ function specialKeyUsed(e) {
     return true;
   }
 }
-/**
- * Parse `gallery` or `children` options.
- *
- * @param {Element|NodeList|String} option
- * @param {String|null} legacySelector
- * @param {Element|null} parent
- * @returns Element[]
+/**
+ * Parse `gallery` or `children` options.
+ *
+ * @param {Element|NodeList|String} option
+ * @param {String|null} legacySelector
+ * @param {Element|null} parent
+ * @returns Element[]
  */
 
 
@@ -218,34 +218,34 @@ class DOMEvents {
   constructor() {
     this._pool = [];
   }
-  /**
-   * Adds event listeners
-   *
-   * @param {DOMElement} target
-   * @param {String} type Can be multiple, separated by space.
-   * @param {Function} listener
-   * @param {Boolean} passive
+  /**
+   * Adds event listeners
+   *
+   * @param {DOMElement} target
+   * @param {String} type Can be multiple, separated by space.
+   * @param {Function} listener
+   * @param {Boolean} passive
    */
 
 
   add(target, type, listener, passive) {
     this._toggleListener(target, type, listener, passive);
   }
-  /**
-   * Removes event listeners
-   *
-   * @param {DOMElement} target
-   * @param {String} type
-   * @param {Function} listener
-   * @param {Boolean} passive
+  /**
+   * Removes event listeners
+   *
+   * @param {DOMElement} target
+   * @param {String} type
+   * @param {Function} listener
+   * @param {Boolean} passive
    */
 
 
   remove(target, type, listener, passive) {
     this._toggleListener(target, type, listener, passive, true);
   }
-  /**
-   * Removes all bound events
+  /**
+   * Removes all bound events
    */
 
 
@@ -256,15 +256,15 @@ class DOMEvents {
 
     this._pool = [];
   }
-  /**
-   * Adds or removes event
-   *
-   * @param {DOMElement} target
-   * @param {String} type
-   * @param {Function} listener
-   * @param {Boolean} passive
-   * @param {Boolean} unbind Whether the event should be added or removed
-   * @param {Boolean} skipPool Whether events pool should be skipped
+  /**
+   * Adds or removes event
+   *
+   * @param {DOMElement} target
+   * @param {String} type
+   * @param {Function} listener
+   * @param {Boolean} passive
+   * @param {Boolean} unbind Whether the event should be added or removed
+   * @param {Boolean} skipPool Whether events pool should be skipped
    */
 
 
@@ -326,40 +326,40 @@ function getViewportSize(options, pswp) {
     y: window.innerHeight
   };
 }
-/**
- * Parses padding option.
- * Supported formats:
- *
- * // Object
- * padding: {
- *  top: 0,
- *  bottom: 0,
- *  left: 0,
- *  right: 0
- * }
- *
- * // A function that returns the object
- * paddingFn: (viewportSize, itemData, index) => {
- *  return {
- *    top: 0,
- *    bottom: 0,
- *    left: 0,
- *    right: 0
- *  };
- * }
- *
- * // Legacy variant
- * paddingLeft: 0,
- * paddingRight: 0,
- * paddingTop: 0,
- * paddingBottom: 0,
- *
- * @param {String}  prop 'left', 'top', 'bottom', 'right'
- * @param {Object}  options PhotoSwipe options
- * @param {Object}  viewportSize PhotoSwipe viewport size, for example: { x:800, y:600 }
- * @param {Object}  itemData Data about the slide
- * @param {Integer} index Slide index
- * @returns {Number}
+/**
+ * Parses padding option.
+ * Supported formats:
+ *
+ * // Object
+ * padding: {
+ *  top: 0,
+ *  bottom: 0,
+ *  left: 0,
+ *  right: 0
+ * }
+ *
+ * // A function that returns the object
+ * paddingFn: (viewportSize, itemData, index) => {
+ *  return {
+ *    top: 0,
+ *    bottom: 0,
+ *    left: 0,
+ *    right: 0
+ *  };
+ * }
+ *
+ * // Legacy variant
+ * paddingLeft: 0,
+ * paddingRight: 0,
+ * paddingTop: 0,
+ * paddingBottom: 0,
+ *
+ * @param {String}  prop 'left', 'top', 'bottom', 'right'
+ * @param {Object}  options PhotoSwipe options
+ * @param {Object}  viewportSize PhotoSwipe viewport size, for example: { x:800, y:600 }
+ * @param {Object}  itemData Data about the slide
+ * @param {Integer} index Slide index
+ * @returns {Number}
  */
 
 
@@ -387,8 +387,8 @@ function getPanAreaSize(options, viewportSize, itemData, index) {
     y: viewportSize.y - parsePaddingOption('top', options, viewportSize, itemData, index) - parsePaddingOption('bottom', options, viewportSize, itemData, index)
   };
 }
-/**
- * Calculates minimum, maximum and initial (center) bounds of a slide
+/**
+ * Calculates minimum, maximum and initial (center) bounds of a slide
  */
 
 
@@ -446,11 +446,11 @@ class PanBounds {
     this.min.x = 0;
     this.min.y = 0;
   }
-  /**
-   * Correct pan position if it's beyond the bounds
-   *
-   * @param {String} axis x or y
-   * @param {Object} panOffset
+  /**
+   * Correct pan position if it's beyond the bounds
+   *
+   * @param {String} axis x or y
+   * @param {Object} panOffset
    */
 
 
@@ -460,20 +460,20 @@ class PanBounds {
   }
 
 }
-/**
- * Calculates zoom levels for specific slide.
- * Depends on viewport size and image size.
+/**
+ * Calculates zoom levels for specific slide.
+ * Depends on viewport size and image size.
  */
 
 
 const MAX_IMAGE_WIDTH = 4000;
 
 class ZoomLevel {
-  /**
-   * @param {Object} options PhotoSwipe options
-   * @param {Object} itemData Slide data
-   * @param {Integer} index Slide index
-   * @param {PhotoSwipe|undefined} pswp PhotoSwipe instance, can be undefined if not initialized yet
+  /**
+   * @param {Object} options PhotoSwipe options
+   * @param {Object} itemData Slide data
+   * @param {Integer} index Slide index
+   * @param {PhotoSwipe|undefined} pswp PhotoSwipe instance, can be undefined if not initialized yet
    */
   constructor(options, itemData, index, pswp) {
     this.pswp = pswp;
@@ -481,12 +481,12 @@ class ZoomLevel {
     this.itemData = itemData;
     this.index = index;
   }
-  /**
-   * Calculate initial, secondary and maximum zoom level for the specified slide.
-   *
-   * It should be called when either image or viewport size changes.
-   *
-   * @param {Slide} slide
+  /**
+   * Calculate initial, secondary and maximum zoom level for the specified slide.
+   *
+   * It should be called when either image or viewport size changes.
+   *
+   * @param {Slide} slide
    */
 
 
@@ -515,10 +515,10 @@ class ZoomLevel {
       });
     }
   }
-  /**
-   * Parses user-defined zoom option.
-   *
-   * @param {Mixed} optionPrefix Zoom level option prefix (initial, secondary, max)
+  /**
+   * Parses user-defined zoom option.
+   *
+   * @param {Mixed} optionPrefix Zoom level option prefix (initial, secondary, max)
    */
 
 
@@ -546,13 +546,13 @@ class ZoomLevel {
 
     return Number(optionValue);
   }
-  /**
-   * Get zoom level to which image will be zoomed after double-tap gesture,
-   * or when user clicks on zoom icon,
-   * or mouse-click on image itself.
-   * If you return 1 image will be zoomed to its original size.
-   *
-   * @return {Number}
+  /**
+   * Get zoom level to which image will be zoomed after double-tap gesture,
+   * or when user clicks on zoom icon,
+   * or mouse-click on image itself.
+   * If you return 1 image will be zoomed to its original size.
+   *
+   * @return {Number}
    */
 
 
@@ -572,22 +572,22 @@ class ZoomLevel {
 
     return currZoomLevel;
   }
-  /**
-   * Get initial image zoom level.
-   *
-   * @return {Number}
+  /**
+   * Get initial image zoom level.
+   *
+   * @return {Number}
    */
 
 
   _getInitial() {
     return this._parseZoomLevelOption('initial') || this.fit;
   }
-  /**
-   * Maximum zoom level when user zooms
-   * via zoom/pinch gesture,
-   * via cmd/ctrl-wheel or via trackpad.
-   *
-   * @return {Number}
+  /**
+   * Maximum zoom level when user zooms
+   * via zoom/pinch gesture,
+   * via cmd/ctrl-wheel or via trackpad.
+   *
+   * @return {Number}
    */
 
 
@@ -604,8 +604,8 @@ class ZoomLevel {
   }
 
 }
-/**
- * Renders and allows to control a single slide
+/**
+ * Renders and allows to control a single slide
  */
 
 
@@ -640,10 +640,10 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * If this slide is active/current/visible
-   *
-   * @param {Boolean} isActive
+  /**
+   * If this slide is active/current/visible
+   *
+   * @param {Boolean} isActive
    */
 
 
@@ -656,8 +656,8 @@ class Slide {
       this.deactivate();
     }
   }
-  /**
-   * Appends slide content to DOM
+  /**
+   * Appends slide content to DOM
    */
 
 
@@ -696,11 +696,11 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * Append "heavy" DOM elements
-   *
-   * This may depend on a type of slide,
-   * but generally these are large images.
+  /**
+   * Append "heavy" DOM elements
+   *
+   * This may depend on a type of slide,
+   * but generally these are large images.
    */
 
 
@@ -727,11 +727,11 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * Triggered when this slide is active (selected).
-   *
-   * If it's part of opening/closing transition -
-   * activate() will trigger after the transition is ended.
+  /**
+   * Triggered when this slide is active (selected).
+   *
+   * If it's part of opening/closing transition -
+   * activate() will trigger after the transition is ended.
    */
 
 
@@ -743,10 +743,10 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * Triggered when this slide becomes inactive.
-   *
-   * Slide can become inactive only after it was active.
+  /**
+   * Triggered when this slide becomes inactive.
+   *
+   * Slide can become inactive only after it was active.
    */
 
 
@@ -762,9 +762,9 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * The slide should destroy itself, it will never be used again.
-   * (unbind all events and destroy internal components)
+  /**
+   * The slide should destroy itself, it will never be used again.
+   * (unbind all events and destroy internal components)
    */
 
 
@@ -793,11 +793,11 @@ class Slide {
       this.panTo(this.pan.x, this.pan.y);
     }
   }
-  /**
-   * Apply size to current slide content,
-   * based on the current resolution and scale.
-   *
-   * @param {Boolean} force if size should be updated even if dimensions weren't changed
+  /**
+   * Apply size to current slide content,
+   * based on the current resolution and scale.
+   *
+   * @param {Boolean} force if size should be updated even if dimensions weren't changed
    */
 
 
@@ -835,15 +835,15 @@ class Slide {
       return this.content.placeholder.element;
     }
   }
-  /**
-   * Zoom current slide image to...
-   *
-   * @param  {Number} destZoomLevel      Destination zoom level.
-   * @param  {Object|false} centerPoint  Transform origin center point,
-   *                                     or false if viewport center should be used.
-   * @param  {Number} transitionDuration Transition duration, may be set to 0.
-   * @param  {Boolean|null} ignoreBounds Minimum and maximum zoom levels will be ignored.
-   * @return {Boolean|null}              Returns true if animated.
+  /**
+   * Zoom current slide image to...
+   *
+   * @param  {Number} destZoomLevel      Destination zoom level.
+   * @param  {Object|false} centerPoint  Transform origin center point,
+   *                                     or false if viewport center should be used.
+   * @param  {Number} transitionDuration Transition duration, may be set to 0.
+   * @param  {Boolean|null} ignoreBounds Minimum and maximum zoom levels will be ignored.
+   * @return {Boolean|null}              Returns true if animated.
    */
 
 
@@ -904,11 +904,11 @@ class Slide {
   toggleZoom(centerPoint) {
     this.zoomTo(this.currZoomLevel === this.zoomLevels.initial ? this.zoomLevels.secondary : this.zoomLevels.initial, centerPoint, this.pswp.options.zoomAnimationDuration);
   }
-  /**
-   * Updates zoom level property and recalculates new pan bounds,
-   * unlike zoomTo it does not apply transform (use applyCurrentZoomPan)
-   *
-   * @param {Number} currZoomLevel
+  /**
+   * Updates zoom level property and recalculates new pan bounds,
+   * unlike zoomTo it does not apply transform (use applyCurrentZoomPan)
+   *
+   * @param {Number} currZoomLevel
    */
 
 
@@ -916,17 +916,17 @@ class Slide {
     this.currZoomLevel = currZoomLevel;
     this.bounds.update(this.currZoomLevel);
   }
-  /**
-   * Get pan position after zoom at a given `point`.
-   *
-   * Always call setZoomLevel(newZoomLevel) beforehand to recalculate
-   * pan bounds according to the new zoom level.
-   *
-   * @param {String} axis
-   * @param {Object|null} centerPoint point based on which zoom is performed,
-   *                                  usually refers to the current mouse position,
-   *                                  if false - viewport center will be used.
-   * @param {Number|null} prevZoomLevel Zoom level before new zoom was applied.
+  /**
+   * Get pan position after zoom at a given `point`.
+   *
+   * Always call setZoomLevel(newZoomLevel) beforehand to recalculate
+   * pan bounds according to the new zoom level.
+   *
+   * @param {String} axis
+   * @param {Object|null} centerPoint point based on which zoom is performed,
+   *                                  usually refers to the current mouse position,
+   *                                  if false - viewport center will be used.
+   * @param {Number|null} prevZoomLevel Zoom level before new zoom was applied.
    */
 
 
@@ -944,11 +944,11 @@ class Slide {
     const zoomFactor = this.currZoomLevel / prevZoomLevel;
     return this.bounds.correctPan(axis, (this.pan[axis] - point[axis]) * zoomFactor + point[axis]);
   }
-  /**
-   * Apply pan and keep it within bounds.
-   *
-   * @param {Number} panX
-   * @param {Number} panY
+  /**
+   * Apply pan and keep it within bounds.
+   *
+   * @param {Number} panX
+   * @param {Number} panY
    */
 
 
@@ -957,25 +957,25 @@ class Slide {
     this.pan.y = this.bounds.correctPan('y', panY);
     this.applyCurrentZoomPan();
   }
-  /**
-   * If the slide in the current state can be panned by the user
+  /**
+   * If the slide in the current state can be panned by the user
    */
 
 
   isPannable() {
     return this.width && this.currZoomLevel > this.zoomLevels.fit;
   }
-  /**
-   * If the slide can be zoomed
+  /**
+   * If the slide can be zoomed
    */
 
 
   isZoomable() {
     return this.width && this.content.isZoomable();
   }
-  /**
-   * Apply transform and scale based on
-   * the current pan position (this.pan) and zoom level (this.currZoomLevel)
+  /**
+   * Apply transform and scale based on
+   * the current pan position (this.pan) and zoom level (this.currZoomLevel)
    */
 
 
@@ -998,12 +998,12 @@ class Slide {
       slide: this
     });
   }
-  /**
-   * Set translate and scale based on current resolution
-   *
-   * @param {Number} x
-   * @param {Number} y
-   * @param {Number} zoom
+  /**
+   * Set translate and scale based on current resolution
+   *
+   * @param {Number} x
+   * @param {Number} y
+   * @param {Number} zoom
    */
 
 
@@ -1027,20 +1027,20 @@ class Slide {
     const scale = this.currZoomLevel / (this.currentResolution || this.zoomLevels.initial);
     return toTransformString(this.pan.x, this.pan.y, scale);
   }
-  /**
-   * Set resolution and re-render the image.
-   *
-   * For example, if the real image size is 2000x1500,
-   * and resolution is 0.5 - it will be rendered as 1000x750.
-   *
-   * Image with zoom level 2 and resolution 0.5 is
-   * the same as image with zoom level 1 and resolution 1.
-   *
-   * Used to optimize animations and make
-   * sure that browser renders image in highest quality.
-   * Also used by responsive images to load the correct one.
-   *
-   * @param {Number} newResolution
+  /**
+   * Set resolution and re-render the image.
+   *
+   * For example, if the real image size is 2000x1500,
+   * and resolution is 0.5 - it will be rendered as 1000x750.
+   *
+   * Image with zoom level 2 and resolution 0.5 is
+   * the same as image with zoom level 1 and resolution 1.
+   *
+   * Used to optimize animations and make
+   * sure that browser renders image in highest quality.
+   * Also used by responsive images to load the correct one.
+   *
+   * @param {Number} newResolution
    */
 
 
@@ -1055,8 +1055,8 @@ class Slide {
   }
 
 }
-/**
- * Handles single pointer dragging
+/**
+ * Handles single pointer dragging
  */
 
 
@@ -1245,13 +1245,13 @@ class DragHandler {
       }
     });
   }
-  /**
-   * Update position of the main scroll,
-   * or/and update pan position of the current slide.
-   *
-   * Should return true if it changes (or can change) main scroll.
-   *
-   * @param {String} axis
+  /**
+   * Update position of the main scroll,
+   * or/and update pan position of the current slide.
+   *
+   * Should return true if it changes (or can change) main scroll.
+   *
+   * @param {String} axis
    */
 
 
@@ -1353,28 +1353,28 @@ class DragHandler {
   // If we move above - the ratio is negative
   // If we move below the ratio is positive
 
-  /**
-   * Relation between pan Y position and third of viewport height.
-   *
-   * When we are at initial position (center bounds) - the ratio is 0,
-   * if position is shifted upwards - the ratio is negative,
-   * if position is shifted downwards - the ratio is positive.
-   *
-   * @param {Number} panY The current pan Y position.
+  /**
+   * Relation between pan Y position and third of viewport height.
+   *
+   * When we are at initial position (center bounds) - the ratio is 0,
+   * if position is shifted upwards - the ratio is negative,
+   * if position is shifted downwards - the ratio is positive.
+   *
+   * @param {Number} panY The current pan Y position.
    */
 
 
   _getVerticalDragRatio(panY) {
     return (panY - this.pswp.currSlide.bounds.center.y) / (this.pswp.viewportSize.y / 3);
   }
-  /**
-   * Set pan position of the current slide.
-   * Apply friction if the position is beyond the pan bounds,
-   * or if custom friction is defined.
-   *
-   * @param {String} axis
-   * @param {Number} potentialPan
-   * @param {Number|null} customFriction (0.1 - 1)
+  /**
+   * Set pan position of the current slide.
+   * Apply friction if the position is beyond the pan bounds,
+   * or if custom friction is defined.
+   *
+   * @param {String} axis
+   * @param {Number} potentialPan
+   * @param {Number|null} customFriction (0.1 - 1)
    */
 
 
@@ -1397,12 +1397,12 @@ class DragHandler {
 
 const UPPER_ZOOM_FRICTION = 0.05;
 const LOWER_ZOOM_FRICTION = 0.15;
-/**
- * Get center point between two points
- *
- * @param {Point} p
- * @param {Point} p1
- * @param {Point} p2
+/**
+ * Get center point between two points
+ *
+ * @param {Point} p
+ * @param {Point} p1
+ * @param {Point} p2
  */
 
 function getZoomPointsCenter(p, p1, p2) {
@@ -1499,13 +1499,13 @@ class ZoomHandler {
     const zoomFactor = currZoomLevel / this._startZoomLevel;
     return this._zoomPoint[axis] - (this._startZoomPoint[axis] - this._startPan[axis]) * zoomFactor;
   }
-  /**
-   * Correct currZoomLevel and pan if they are
-   * beyond minimum or maximum values.
-   * With animation.
-   *
-   * @param {Boolean} ignoreGesture Wether gesture coordinates should be ignored
-   *                                when calculating destination pan position.
+  /**
+   * Correct currZoomLevel and pan if they are
+   * beyond minimum or maximum values.
+   * With animation.
+   *
+   * @param {Boolean} ignoreGesture Wether gesture coordinates should be ignored
+   *                                when calculating destination pan position.
    */
 
 
@@ -1625,15 +1625,15 @@ class ZoomHandler {
   }
 
 }
-/**
- * Tap, double-tap handler.
+/**
+ * Tap, double-tap handler.
  */
 
-/**
- * Whether the tap was performed on the main slide
- * (rather than controls or caption).
- *
- * @param {Event} event
+/**
+ * Whether the tap was performed on the main slide
+ * (rather than controls or caption).
+ *
+ * @param {Event} event
  */
 
 
@@ -1724,12 +1724,12 @@ class TapHandler {
   }
 
 }
-/**
- * Gestures class bind touch, pointer or mouse events
- * and emits drag to drag-handler and zoom events zoom-handler.
- *
- * Drag and zoom events are emited in requestAnimationFrame,
- * and only when one of pointers was actually changed.
+/**
+ * Gestures class bind touch, pointer or mouse events
+ * and emits drag to drag-handler and zoom events zoom-handler.
+ *
+ * Drag and zoom events are emited in requestAnimationFrame,
+ * and only when one of pointers was actually changed.
  */
 // How far should user should drag
 // until we can determine that the gesture is swipe and its direction
@@ -2016,8 +2016,8 @@ class Gestures {
       this.raf = requestAnimationFrame(this._rafRenderLoop.bind(this));
     }
   }
-  /**
-   * Update velocity at 50ms interval
+  /**
+   * Update velocity at 50ms interval
    */
 
 
@@ -2087,11 +2087,11 @@ class Gestures {
       this._tapTimer = null;
     }
   }
-  /**
-   * Get velocity for axis
-   *
-   * @param {Number} axis
-   * @param {Number} duration
+  /**
+   * Get velocity for axis
+   *
+   * @param {Number} axis
+   * @param {Number} duration
    */
 
 
@@ -2120,12 +2120,12 @@ class Gestures {
     e.preventDefault();
     return true;
   }
-  /**
-   * Parses and normalizes points from the touch, mouse or pointer event.
-   * Updates p1 and p2.
-   *
-   * @param {Event} e
-   * @param {String} pointerType Normalized pointer type ('up', 'down' or 'move')
+  /**
+   * Parses and normalizes points from the touch, mouse or pointer event.
+   * Updates p1 and p2.
+   *
+   * @param {Event} e
+   * @param {String} pointerType Normalized pointer type ('up', 'down' or 'move')
    */
 
 
@@ -2220,12 +2220,12 @@ class Gestures {
       }
     }
   }
-  /**
-   * Converts touch, pointer or mouse event
-   * to PhotoSwipe point.
-   *
-   * @param {Event} e
-   * @param {Point} p
+  /**
+   * Converts touch, pointer or mouse event
+   * to PhotoSwipe point.
+   *
+   * @param {Event} e
+   * @param {Point} p
    */
 
 
@@ -2251,11 +2251,11 @@ class Gestures {
   }
 
 }
-/**
- * Handles movement of the main scrolling container
- * (for example, it repositions when user swipes left or right).
- *
- * Also stores its state.
+/**
+ * Handles movement of the main scrolling container
+ * (for example, it repositions when user swipes left or right).
+ *
+ * Also stores its state.
  */
 
 
@@ -2264,19 +2264,19 @@ const MAIN_SCROLL_END_FRICTION = 0.35; // const MIN_SWIPE_TRANSITION_DURATION = 
 // const DEFAULT_SWIPE_TRANSITION_DURATION = 333;
 
 class MainScroll {
-  /**
-   * @param {PhotoSwipe} pswp
+  /**
+   * @param {PhotoSwipe} pswp
    */
   constructor(pswp) {
     this.pswp = pswp;
     this.x = 0;
     this.resetPosition();
   }
-  /**
-   * Position the scroller and slide containers
-   * according to viewport size.
-   *
-   * @param {Boolean} resizeSlides Whether slides content should resized
+  /**
+   * Position the scroller and slide containers
+   * according to viewport size.
+   *
+   * @param {Boolean} resizeSlides Whether slides content should resized
    */
 
 
@@ -2305,8 +2305,8 @@ class MainScroll {
       }
     });
   }
-  /**
-   * Reset X position of the main scroller to zero
+  /**
+   * Reset X position of the main scroller to zero
    */
 
 
@@ -2320,9 +2320,9 @@ class MainScroll {
 
     this._containerShiftIndex = -1;
   }
-  /**
-   * Create and append array of three items
-   * that hold data about slides in DOM
+  /**
+   * Create and append array of three items
+   * that hold data about slides in DOM
    */
 
 
@@ -2340,26 +2340,26 @@ class MainScroll {
       });
     }
   }
-  /**
-   * Whether the main scroll can be horizontally swiped to the next or previous slide.
+  /**
+   * Whether the main scroll can be horizontally swiped to the next or previous slide.
    */
 
 
   canBeSwiped() {
     return this.pswp.getNumItems() > 1;
   }
-  /**
-   * Move main scroll by X amount of slides.
-   * For example:
-   *   `-1` will move to the previous slide,
-   *    `0` will reset the scroll position of the current slide,
-   *    `3` will move three slides forward
-   *
-   * If loop option is enabled - index will be automatically looped too,
-   * (for example `-1` will move to the last slide of the gallery).
-   *
-   * @param {Integer} diff
-   * @returns {Boolean} whether index was changed or not
+  /**
+   * Move main scroll by X amount of slides.
+   * For example:
+   *   `-1` will move to the previous slide,
+   *    `0` will reset the scroll position of the current slide,
+   *    `3` will move three slides forward
+   *
+   * If loop option is enabled - index will be automatically looped too,
+   * (for example `-1` will move to the last slide of the gallery).
+   *
+   * @param {Integer} diff
+   * @returns {Boolean} whether index was changed or not
    */
 
 
@@ -2441,26 +2441,26 @@ class MainScroll {
       return true;
     }
   }
-  /**
-   * X position of the main scroll for the current slide
-   * (ignores position during dragging)
+  /**
+   * X position of the main scroll for the current slide
+   * (ignores position during dragging)
    */
 
 
   getCurrSlideX() {
     return this.slideWidth * this._currPositionIndex;
   }
-  /**
-   * Whether scroll position is shifted.
-   * For example, it will return true if the scroll is being dragged or animated.
+  /**
+   * Whether scroll position is shifted.
+   * For example, it will return true if the scroll is being dragged or animated.
    */
 
 
   isShifted() {
     return this.x !== this.getCurrSlideX();
   }
-  /**
-   * Update slides X positions and set their content
+  /**
+   * Update slides X positions and set their content
    */
 
 
@@ -2526,11 +2526,11 @@ class MainScroll {
     pswp.currSlide.applyCurrentZoomPan();
     pswp.dispatch('change');
   }
-  /**
-   * Move the X position of the main scroll container
-   *
-   * @param {Number} x
-   * @param {Boolean} dragging
+  /**
+   * Move the X position of the main scroll container
+   *
+   * @param {Number} x
+   * @param {Boolean} dragging
    */
 
 
@@ -2558,13 +2558,13 @@ class MainScroll {
   }
 
 }
-/**
- *
- * keyboard.js
- *
- * - Manages keyboard shortcuts.
- * - Heps trap focus within photoswipe.
- *
+/**
+ *
+ * keyboard.js
+ *
+ * - Manages keyboard shortcuts.
+ * - Heps trap focus within photoswipe.
+ *
  */
 
 
@@ -2688,10 +2688,10 @@ class Keyboard {
       pswp[keydownAction]();
     }
   }
-  /**
-   * Trap focus inside photoswipe
-   *
-   * @param {Event} e
+  /**
+   * Trap focus inside photoswipe
+   *
+   * @param {Event} e
    */
 
 
@@ -2707,8 +2707,8 @@ class Keyboard {
   }
 
 }
-/**
- * Runs CSS transition.
+/**
+ * Runs CSS transition.
  */
 
 
@@ -2787,8 +2787,8 @@ class CSSAnimation {
   }
 
 }
-/**
- * Spring easing helper
+/**
+ * Spring easing helper
  */
 
 
@@ -2796,18 +2796,18 @@ const DEFAULT_NATURAL_FREQUENCY = 12;
 const DEFAULT_DAMPING_RATIO = 0.75;
 
 class SpringEaser {
-  /**
-   * @param {Number} initialVelocity Initial velocity, px per ms.
-   *
-   * @param {Number} dampingRatio Determines how bouncy animation will be.
-   *                              From 0 to 1, 0 - always overshoot, 1 - do not overshoot.
-   *                              "overshoot" refers to part of animation that
-   *                              goes beyond the final value.
-   *
-   * @param {Number} naturalFrequency Determines how fast animation will slow down.
-   *                                  The higher value - the stiffer the transition will be,
-   *                                  and the faster it will slow down.
-   *                                  Recommended value from 10 to 50
+  /**
+   * @param {Number} initialVelocity Initial velocity, px per ms.
+   *
+   * @param {Number} dampingRatio Determines how bouncy animation will be.
+   *                              From 0 to 1, 0 - always overshoot, 1 - do not overshoot.
+   *                              "overshoot" refers to part of animation that
+   *                              goes beyond the final value.
+   *
+   * @param {Number} naturalFrequency Determines how fast animation will slow down.
+   *                                  The higher value - the stiffer the transition will be,
+   *                                  and the faster it will slow down.
+   *                                  Recommended value from 10 to 50
    */
   constructor(initialVelocity, dampingRatio, naturalFrequency) {
     this.velocity = initialVelocity * 1000; // convert to "pixels per second"
@@ -2821,11 +2821,11 @@ class SpringEaser {
       this._dampedFrequency = this._naturalFrequency * Math.sqrt(1 - this._dampingRatio * this._dampingRatio);
     }
   }
-  /**
-   * @param {Number} deltaPosition Difference between current and end position of the animation
-   * @param {Number} deltaTime Frame duration in milliseconds
-   *
-   * @returns {Number} Displacement, relative to the end position.
+  /**
+   * @param {Number} deltaPosition Difference between current and end position of the animation
+   * @param {Number} deltaTime Frame duration in milliseconds
+   *
+   * @returns {Number} Displacement, relative to the end position.
    */
 
 
@@ -2909,8 +2909,8 @@ class SpringAnimation {
   }
 
 }
-/**
- * Manages animations
+/**
+ * Manages animations
  */
 
 
@@ -2959,8 +2959,8 @@ class Animations {
     });
     this.activeAnimations = [];
   }
-  /**
-   * Stop all pan or zoom transitions
+  /**
+   * Stop all pan or zoom transitions
    */
 
 
@@ -2985,8 +2985,8 @@ class Animations {
       return true;
     });
   }
-  /**
-   * Returns true if main scroll transition is running
+  /**
+   * Returns true if main scroll transition is running
    */
   // isMainScrollRunning() {
   //   return this.activeAnimations.some((animation) => {
@@ -2994,8 +2994,8 @@ class Animations {
   //   });
   // }
 
-  /**
-   * Returns true if any pan or zoom transition is running
+  /**
+   * Returns true if any pan or zoom transition is running
    */
 
 
@@ -3006,9 +3006,9 @@ class Animations {
   }
 
 }
-/**
- * Handles scroll wheel.
- * Can pan and zoom current slide image.
+/**
+ * Handles scroll wheel.
+ * Can pan and zoom current slide image.
  */
 
 
@@ -3204,8 +3204,8 @@ class UIElement {
   }
 
 }
-/*
-  Backward and forward arrow buttons
+/*
+  Backward and forward arrow buttons
  */
 
 
@@ -3344,13 +3344,13 @@ const counterIndicator = {
     });
   }
 };
-/**
- * Set special class on element when image is zoomed.
- *
- * By default it is used to adjust
- * zoom icon and zoom cursor via CSS.
- *
- * @param {Boolean} isZoomedIn
+/**
+ * Set special class on element when image is zoomed.
+ *
+ * By default it is used to adjust
+ * zoom icon and zoom cursor via CSS.
+ *
+ * @param {Boolean} isZoomedIn
  */
 
 function setZoomedIn(el, isZoomedIn) {
@@ -3392,9 +3392,9 @@ class UI {
       this.uiElementsData.push(elementData);
     }
   }
-  /**
-   * Fired each time zoom or pan position is changed.
-   * Update classes that control visibility of zoom button and cursor icon.
+  /**
+   * Fired each time zoom or pan position is changed.
+   * Update classes that control visibility of zoom button and cursor icon.
    */
 
 
@@ -3486,14 +3486,14 @@ function getCroppedBoundsByElement(el, imageWidth, imageHeight) {
   };
   return bounds;
 }
-/**
- * Get dimensions of thumbnail image
- * (click on which opens photoswipe or closes photoswipe to)
- *
- * @param {Integer} index
- * @param {Object} itemData
- * @param {PhotoSwipe} instance PhotoSwipe instance
- * @returns Object|undefined
+/**
+ * Get dimensions of thumbnail image
+ * (click on which opens photoswipe or closes photoswipe to)
+ *
+ * @param {Integer} index
+ * @param {Object} itemData
+ * @param {PhotoSwipe} instance PhotoSwipe instance
+ * @returns Object|undefined
  */
 
 
@@ -3532,8 +3532,8 @@ function getThumbBounds(index, itemData, instance) {
 
   return instance.applyFilters('thumbBounds', thumbBounds, itemData, index);
 }
-/**
- * Base PhotoSwipe event object
+/**
+ * Base PhotoSwipe event object
  */
 
 
@@ -3551,9 +3551,9 @@ class PhotoSwipeEvent {
   }
 
 }
-/**
- * PhotoSwipe base class that can listen and dispatch for events.
- * Shared by PhotoSwipe Core and PhotoSwipe Lightbox, extended by base.js
+/**
+ * PhotoSwipe base class that can listen and dispatch for events.
+ * Shared by PhotoSwipe Core and PhotoSwipe Lightbox, extended by base.js
  */
 
 
@@ -3654,9 +3654,9 @@ class Eventable {
 }
 
 class Placeholder {
-  /**
-   * @param {String|false} imageSrc
-   * @param {Element} container
+  /**
+   * @param {String|false} imageSrc
+   * @param {Element} container
    */
   constructor(imageSrc, container) {
     // Create placeholder
@@ -3701,12 +3701,12 @@ class Placeholder {
 }
 
 class Content {
-  /**
-   * @param {Object} itemData Slide data
-   * @param {PhotoSwipeBase} instance PhotoSwipe or PhotoSwipeLightbox instance
-   * @param {Slide|undefined} slide Slide that requested the image,
-   *                                can be undefined if image was requested by something else
-   *                                (for example by lazy-loader)
+  /**
+   * @param {Object} itemData Slide data
+   * @param {PhotoSwipeBase} instance PhotoSwipe or PhotoSwipeLightbox instance
+   * @param {Slide|undefined} slide Slide that requested the image,
+   *                                can be undefined if image was requested by something else
+   *                                (for example by lazy-loader)
    */
   constructor(itemData, instance, index) {
     this.instance = instance;
@@ -3742,10 +3742,10 @@ class Content {
       }, 500);
     }
   }
-  /**
-   * Preload content
-   *
-   * @param {Boolean} isLazy
+  /**
+   * Preload content
+   *
+   * @param {Boolean} isLazy
    */
 
 
@@ -3779,10 +3779,10 @@ class Content {
       this.slide.updateContentSize(true);
     }
   }
-  /**
-   * Preload image
-   *
-   * @param {Boolean} isLazy
+  /**
+   * Preload image
+   *
+   * @param {Boolean} isLazy
    */
 
 
@@ -3816,10 +3816,10 @@ class Content {
       };
     }
   }
-  /**
-   * Assign slide to content
-   *
-   * @param {Slide} slide
+  /**
+   * Assign slide to content
+   *
+   * @param {Slide} slide
    */
 
 
@@ -3828,8 +3828,8 @@ class Content {
     this.hasSlide = true;
     this.instance = slide.pswp; // todo: do we need to unset slide?
   }
-  /**
-   * Content load success handler
+  /**
+   * Content load success handler
    */
 
 
@@ -3849,8 +3849,8 @@ class Content {
       }
     }
   }
-  /**
-   * Content load error handler
+  /**
+   * Content load error handler
    */
 
 
@@ -3870,8 +3870,8 @@ class Content {
       });
     }
   }
-  /**
-   * @returns {Boolean} If the content is currently loading
+  /**
+   * @returns {Boolean} If the content is currently loading
    */
 
 
@@ -3882,19 +3882,19 @@ class Content {
   isError() {
     return this.state === LOAD_STATE.ERROR;
   }
-  /**
-   * @returns {Boolean} If the content is image
+  /**
+   * @returns {Boolean} If the content is image
    */
 
 
   isImageContent() {
     return this.type === 'image';
   }
-  /**
-   * Update content size
-   *
-   * @param {Number} width
-   * @param {Number} height
+  /**
+   * Update content size
+   *
+   * @param {Number} width
+   * @param {Number} height
    */
 
 
@@ -3939,26 +3939,26 @@ class Content {
       }
     }
   }
-  /**
-   * @returns {Boolean} If the content can be zoomed
+  /**
+   * @returns {Boolean} If the content can be zoomed
    */
 
 
   isZoomable() {
     return this.instance.applyFilters('isContentZoomable', this.isImageContent() && this.state !== LOAD_STATE.ERROR, this);
   }
-  /**
-   * @returns {Boolean} If content should use a placeholder (from msrc by default)
+  /**
+   * @returns {Boolean} If content should use a placeholder (from msrc by default)
    */
 
 
   usePlaceholder() {
     return this.instance.applyFilters('useContentPlaceholder', this.isImageContent(), this);
   }
-  /**
-   * Preload content with lazy-loading param
-   *
-   * @param {Boolean} isLazy
+  /**
+   * Preload content with lazy-loading param
+   *
+   * @param {Boolean} isLazy
    */
 
 
@@ -3971,16 +3971,16 @@ class Content {
 
     this.load(true);
   }
-  /**
-   * @returns {Boolean} If placeholder should be kept after content is loaded
+  /**
+   * @returns {Boolean} If placeholder should be kept after content is loaded
    */
 
 
   keepPlaceholder() {
     return this.instance.applyFilters('isKeepingPlaceholder', this.isLoading(), this);
   }
-  /**
-   * Destroy the content
+  /**
+   * Destroy the content
    */
 
 
@@ -4002,8 +4002,8 @@ class Content {
       this.element = null;
     }
   }
-  /**
-   * Display error message
+  /**
+   * Display error message
    */
 
 
@@ -4020,8 +4020,8 @@ class Content {
       this.removePlaceholder();
     }
   }
-  /**
-   * Append the content
+  /**
+   * Append the content
    */
 
 
@@ -4078,10 +4078,10 @@ class Content {
       this.slide.container.appendChild(this.element);
     }
   }
-  /**
-   * Activate the slide,
-   * active slide is generally the current one,
-   * meaning the user can see it.
+  /**
+   * Activate the slide,
+   * active slide is generally the current one,
+   * meaning the user can see it.
    */
 
 
@@ -4102,8 +4102,8 @@ class Content {
       }
     }
   }
-  /**
-   * Deactivate the content
+  /**
+   * Deactivate the content
    */
 
 
@@ -4112,8 +4112,8 @@ class Content {
       content: this
     });
   }
-  /**
-   * Remove the content from DOM
+  /**
+   * Remove the content from DOM
    */
 
 
@@ -4130,8 +4130,8 @@ class Content {
       this.element.remove();
     }
   }
-  /**
-   * Append the image content to slide container
+  /**
+   * Append the image content to slide container
    */
 
 
@@ -4157,15 +4157,15 @@ class Content {
   }
 
 }
-/**
- * PhotoSwipe base class that can retrieve data about every slide.
- * Shared by PhotoSwipe Core and PhotoSwipe Lightbox
+/**
+ * PhotoSwipe base class that can retrieve data about every slide.
+ * Shared by PhotoSwipe Core and PhotoSwipe Lightbox
  */
 
 
 class PhotoSwipeBase extends Eventable {
-  /**
-   * Get total number of slides
+  /**
+   * Get total number of slides
    */
   getNumItems() {
     let numItems;
@@ -4200,14 +4200,14 @@ class PhotoSwipeBase extends Eventable {
   createContentFromData(slideData, index) {
     return new Content(slideData, this, index);
   }
-  /**
-   * Get item data by index.
-   *
-   * "item data" should contain normalized information that PhotoSwipe needs to generate a slide.
-   * For example, it may contain properties like
-   * `src`, `srcset`, `w`, `h`, which will be used to generate a slide with image.
-   *
-   * @param {Integer} index
+  /**
+   * Get item data by index.
+   *
+   * "item data" should contain normalized information that PhotoSwipe needs to generate a slide.
+   * For example, it may contain properties like
+   * `src`, `srcset`, `w`, `h`, which will be used to generate a slide with image.
+   *
+   * @param {Integer} index
    */
 
 
@@ -4246,11 +4246,11 @@ class PhotoSwipeBase extends Eventable {
     });
     return this.applyFilters('itemData', event.itemData, index);
   }
-  /**
-   * Get array of gallery DOM elements,
-   * based on childSelector and gallery element.
-   *
-   * @param {Element} galleryElement
+  /**
+   * Get array of gallery DOM elements,
+   * based on childSelector and gallery element.
+   *
+   * @param {Element} galleryElement
    */
 
 
@@ -4261,10 +4261,10 @@ class PhotoSwipeBase extends Eventable {
 
     return [galleryElement];
   }
-  /**
-   * Converts DOM element to item data object.
-   *
-   * @param {Element} element DOM element
+  /**
+   * Converts DOM element to item data object.
+   *
+   * @param {Element} element DOM element
    */
   // eslint-disable-next-line class-methods-use-this
 
@@ -4313,10 +4313,10 @@ class PhotoSwipeBase extends Eventable {
   }
 
 }
-/**
- * Manages opening and closing transitions of the PhotoSwipe.
- *
- * It can perform zoom, fade or no transition.
+/**
+ * Manages opening and closing transitions of the PhotoSwipe.
+ *
+ * It can perform zoom, fade or no transition.
  */
 // some browsers do not paint
 // elements which opacity is set to 0,
@@ -4653,10 +4653,10 @@ class Opener {
       currSlide.applyCurrentZoomPan();
     }
   }
-  /**
-   * @param {Element} target
-   * @param {String} prop
-   * @param {String} propValue
+  /**
+   * @param {Element} target
+   * @param {String} prop
+   * @param {String} propValue
    */
 
 
@@ -4686,15 +4686,15 @@ class Opener {
 }
 
 const MIN_SLIDES_TO_CACHE = 5;
-/**
- * Lazy-load an image
- * This function is used both by Lightbox and PhotoSwipe core,
- * thus it can be called before dialog is opened.
- *
- * @param {Object} itemData Data about the slide
- * @param {PhotoSwipeBase}  instance PhotoSwipe or PhotoSwipeLightbox
- * @param {Integer} index
- * @returns {Object|Boolean} Image that is being decoded or false.
+/**
+ * Lazy-load an image
+ * This function is used both by Lightbox and PhotoSwipe core,
+ * thus it can be called before dialog is opened.
+ *
+ * @param {Object} itemData Data about the slide
+ * @param {PhotoSwipeBase}  instance PhotoSwipe or PhotoSwipeLightbox
+ * @param {Integer} index
+ * @returns {Object|Boolean} Image that is being decoded or false.
  */
 
 function lazyLoadData(itemData, instance, index) {
@@ -4718,15 +4718,15 @@ function lazyLoadData(itemData, instance, index) {
   content.setDisplayedSize(Math.ceil(content.width * zoomLevel.initial), Math.ceil(content.height * zoomLevel.initial));
   return content;
 }
-/**
- * Lazy-loads specific slide.
- * This function is used both by Lightbox and PhotoSwipe core,
- * thus it can be called before dialog is opened.
- *
- * By default it loads image based on viewport size and initial zoom level.
- *
- * @param {Integer} index Slide index
- * @param {Object}  instance PhotoSwipe or PhotoSwipeLightbox eventable instance
+/**
+ * Lazy-loads specific slide.
+ * This function is used both by Lightbox and PhotoSwipe core,
+ * thus it can be called before dialog is opened.
+ *
+ * By default it loads image based on viewport size and initial zoom level.
+ *
+ * @param {Integer} index Slide index
+ * @param {Object}  instance PhotoSwipe or PhotoSwipeLightbox eventable instance
  */
 
 
@@ -4750,10 +4750,10 @@ class ContentLoader {
     this.limit = Math.max(pswp.options.preload[0] + pswp.options.preload[1] + 1, MIN_SLIDES_TO_CACHE);
     this._cachedItems = [];
   }
-  /**
-   * Lazy load nearby slides based on `preload` option.
-   *
-   * @param {Integer} diff Difference between slide indexes that was changed recently, or 0.
+  /**
+   * Lazy load nearby slides based on `preload` option.
+   *
+   * @param {Integer} diff Difference between slide indexes that was changed recently, or 0.
    */
 
 
@@ -4816,8 +4816,8 @@ class ContentLoader {
 
     return content;
   }
-  /**
-   * @param {Content} content
+  /**
+   * @param {Content} content
    */
 
 
@@ -4840,10 +4840,10 @@ class ContentLoader {
       }
     }
   }
-  /**
-   * Removes an image from cache, does not destroy() it, just removes.
-   *
-   * @param {Integer} index
+  /**
+   * Removes an image from cache, does not destroy() it, just removes.
+   *
+   * @param {Integer} index
    */
 
 
@@ -4985,11 +4985,11 @@ class PhotoSwipe extends PhotoSwipeBase {
     this.dispatch('afterInit');
     return true;
   }
-  /**
-   * Get looped slide index
-   * (for example, -1 will return the last slide)
-   *
-   * @param {Integer} index
+  /**
+   * Get looped slide index
+   * (for example, -1 will return the last slide)
+   *
+   * @param {Integer} index
    */
 
 
@@ -5017,50 +5017,50 @@ class PhotoSwipe extends PhotoSwipeBase {
       }
     });
   }
-  /**
-   * Change the slide
-   * @param  {Integer} New index
+  /**
+   * Change the slide
+   * @param  {Integer} New index
    */
 
 
   goTo(index) {
     this.mainScroll.moveIndexBy(this.getLoopedIndex(index) - this.potentialIndex);
   }
-  /**
-   * Go to the next slide.
+  /**
+   * Go to the next slide.
    */
 
 
   next() {
     this.goTo(this.potentialIndex + 1);
   }
-  /**
-   * Go to the previous slide.
+  /**
+   * Go to the previous slide.
    */
 
 
   prev() {
     this.goTo(this.potentialIndex - 1);
   }
-  /**
-   * @see slide/slide.js zoomTo
+  /**
+   * @see slide/slide.js zoomTo
    */
 
 
   zoomTo() {
     this.currSlide.zoomTo(...arguments);
   }
-  /**
-   * @see slide/slide.js toggleZoom
+  /**
+   * @see slide/slide.js toggleZoom
    */
 
 
   toggleZoom() {
     this.currSlide.toggleZoom();
   }
-  /**
-   * Close the gallery.
-   * After closing transition ends - destroy it
+  /**
+   * Close the gallery.
+   * After closing transition ends - destroy it
    */
 
 
@@ -5074,12 +5074,12 @@ class PhotoSwipe extends PhotoSwipeBase {
     this.events.removeAll();
     this.opener.close();
   }
-  /**
-   * Destroys the gallery:
-   * - instantly closes the gallery
-   * - unbinds events,
-   * - cleans intervals and timeouts
-   * - removes elements from DOM
+  /**
+   * Destroys the gallery:
+   * - instantly closes the gallery
+   * - unbinds events,
+   * - cleans intervals and timeouts
+   * - removes elements from DOM
    */
 
 
@@ -5103,10 +5103,10 @@ class PhotoSwipe extends PhotoSwipeBase {
     this.contentLoader.destroy();
     this.events.removeAll();
   }
-  /**
-   * Refresh/reload content of a slide by its index
-   *
-   * @param {Integer} slideIndex
+  /**
+   * Refresh/reload content of a slide by its index
+   *
+   * @param {Integer} slideIndex
    */
 
 
@@ -5131,12 +5131,12 @@ class PhotoSwipe extends PhotoSwipeBase {
     });
     this.dispatch('change');
   }
-  /**
-   * Set slide content
-   *
-   * @param {Object} holder mainScroll.itemHolders array item
-   * @param {Integer} index Slide index
-   * @param {Boolean} force If content should be set even if index wasn't changed
+  /**
+   * Set slide content
+   *
+   * @param {Object} holder mainScroll.itemHolders array item
+   * @param {Integer} index Slide index
+   * @param {Boolean} force If content should be set even if index wasn't changed
    */
 
 
@@ -5178,11 +5178,11 @@ class PhotoSwipe extends PhotoSwipeBase {
       y: this.viewportSize.y / 2
     };
   }
-  /**
-   * Update size of all elements.
-   * Executed on init and on page resize.
-   *
-   * @param  {Boolean} force Update size even if size of viewport was not changed.
+  /**
+   * Update size of all elements.
+   * Executed on init and on page resize.
+   *
+   * @param  {Boolean} force Update size even if size of viewport was not changed.
    */
 
 
@@ -5228,8 +5228,8 @@ class PhotoSwipe extends PhotoSwipeBase {
     this.bgOpacity = Math.max(opacity, 0);
     this.bg.style.opacity = this.bgOpacity * this.options.bgOpacity;
   }
-  /**
-   * Whether mouse is detected
+  /**
+   * Whether mouse is detected
    */
 
 
@@ -5239,8 +5239,8 @@ class PhotoSwipe extends PhotoSwipeBase {
       this.element.classList.add('pswp--has_mouse');
     }
   }
-  /**
-   * Page resize event handler
+  /**
+   * Page resize event handler
    */
 
 
@@ -5257,10 +5257,10 @@ class PhotoSwipe extends PhotoSwipeBase {
       }, 500);
     }
   }
-  /**
-   * Page scroll offset is used
-   * to get correct coordinates
-   * relative to PhotoSwipe viewport.
+  /**
+   * Page scroll offset is used
+   * to get correct coordinates
+   * relative to PhotoSwipe viewport.
    */
 
 
@@ -5273,9 +5273,9 @@ class PhotoSwipe extends PhotoSwipeBase {
     this.offset.y = y;
     this.dispatch('updateScrollOffset');
   }
-  /**
-   * Create main HTML structure of PhotoSwipe,
-   * and add it to DOM
+  /**
+   * Create main HTML structure of PhotoSwipe,
+   * and add it to DOM
    */
 
 
@@ -5297,20 +5297,20 @@ class PhotoSwipe extends PhotoSwipeBase {
 
     (this.options.appendToEl || document.body).appendChild(this.element);
   }
-  /**
-   * Get position and dimensions of small thumbnail
-   *   {x:,y:,w:}
-   *
-   * Height is optional (calculated based on the large image)
+  /**
+   * Get position and dimensions of small thumbnail
+   *   {x:,y:,w:}
+   *
+   * Height is optional (calculated based on the large image)
    */
 
 
   getThumbBounds() {
     return getThumbBounds(this.currIndex, this.currSlide ? this.currSlide.data : this._initialItemData, this);
   }
-  /**
-   * If the PhotoSwipe can have continious loop
-   * @returns Boolean
+  /**
+   * If the PhotoSwipe can have continious loop
+   * @returns Boolean
    */
 
 

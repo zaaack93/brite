@@ -1,74 +1,74 @@
-<section class="text-scheme-text bg-scheme-background overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
-  <div class="section-content py-section-vertical-spacing">
-    <div
-      {% if section.blocks.size > 1 %}
-        id="slideshow-{{ section.id }}"
-        class="splide"
-      {% endif %}
-    >
-      <div class="splide__track">
-        <ul class="w-full splide__list" role="list">
-          {%- assign slides = section.blocks | where: "type", "slide" -%}
-          {% for block in slides %}
-            <li class="block w-full splide__slide {% if section.settings.display_on_card %}{% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}{% endif %}" {{ block.shopify_attributes }}>
-              {%- render 'image-with-text',
-                  display_on_card: section.settings.display_on_card,
-                  image: block.settings.image,
-                  section_id: block.id,
-                  index: forloop.index0,
-                  image_position: block.settings.image_position,
-                  text_alignment: block.settings.text_alignment,
-                  image_size: section.settings.image_size,
-                  crop: section.settings.crop,
-                  image_shape: block.settings.image_shape,
-                  rotate_image: block.settings.rotate_image,
-                  title: block.settings.title,
-                  richtext: block.settings.richtext,
-                  button_link: block.settings.button_link,
-                  button_label: block.settings.button_label,
-                  heading_size: section.settings.heading_size,
-                  index: forloop.index0
-              -%}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% if section.blocks.size > 1 %}
-        <div class="splide__arrows flex justify-between items-center mt-5 px-section">
-          {%- render 'splide-navigation' -%}
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% unless request.design_mode %}
-    <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
-  {% endunless %}
-  {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
-
-  {%- liquid
-    for block in section.blocks
-      case block.type
-        when 'background_shape'
-          render 'block-background-shape' with block: block, section: section
-        when 'background_pattern'
-          render 'block-background-pattern' with block: block, section: section, scheme: section.settings.color_scheme
-      endcase
-    endfor
-  -%}
-</section>
-
-{%- liquid
-  assign stickers = section.blocks | where: "type", "sticker" 
-  assign shape_dividers = section.blocks | where: "type", "shape_divider" 
-  for sticker in stickers
-    render 'block-sticker' with block: sticker, section: section
-  endfor
-  for shape_divider in shape_dividers
-    render 'block-shape-divider' with block: shape_divider, section: section
-  endfor
--%}
-
-
+<section class="text-scheme-text bg-scheme-background overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
+  <div class="section-content py-section-vertical-spacing">
+    <div
+      {% if section.blocks.size > 1 %}
+        id="slideshow-{{ section.id }}"
+        class="splide"
+      {% endif %}
+    >
+      <div class="splide__track">
+        <ul class="w-full splide__list" role="list">
+          {%- assign slides = section.blocks | where: "type", "slide" -%}
+          {% for block in slides %}
+            <li class="block w-full splide__slide {% if section.settings.display_on_card %}{% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}{% endif %}" {{ block.shopify_attributes }}>
+              {%- render 'image-with-text',
+                  display_on_card: section.settings.display_on_card,
+                  image: block.settings.image,
+                  section_id: block.id,
+                  index: forloop.index0,
+                  image_position: block.settings.image_position,
+                  text_alignment: block.settings.text_alignment,
+                  image_size: section.settings.image_size,
+                  crop: section.settings.crop,
+                  image_shape: block.settings.image_shape,
+                  rotate_image: block.settings.rotate_image,
+                  title: block.settings.title,
+                  richtext: block.settings.richtext,
+                  button_link: block.settings.button_link,
+                  button_label: block.settings.button_label,
+                  heading_size: section.settings.heading_size,
+                  index: forloop.index0
+              -%}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if section.blocks.size > 1 %}
+        <div class="splide__arrows flex justify-between items-center mt-5 px-section">
+          {%- render 'splide-navigation' -%}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% unless request.design_mode %}
+    <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
+  {% endunless %}
+  {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
+
+  {%- liquid
+    for block in section.blocks
+      case block.type
+        when 'background_shape'
+          render 'block-background-shape' with block: block, section: section
+        when 'background_pattern'
+          render 'block-background-pattern' with block: block, section: section, scheme: section.settings.color_scheme
+      endcase
+    endfor
+  -%}
+</section>
+
+{%- liquid
+  assign stickers = section.blocks | where: "type", "sticker" 
+  assign shape_dividers = section.blocks | where: "type", "shape_divider" 
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section
+  endfor
+-%}
+
+
 {% schema %}
 {
   "name": "Image with text slideshow",
@@ -1529,4 +1529,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}

@@ -1,173 +1,173 @@
-{%- liquid
-  assign total_mobile_items = section.settings.no_mobile_grid_items
-  assign total_desktop_items = section.settings.no_desktop_grid_items | minus: 1
-
-  if section.settings.no_mobile_grid_items > 8
-    assign number_of_mobile_columns = 3
-    assign mobile_grid_class = 'grid-cols-3'
-  else
-    assign number_of_mobile_columns = 2
-    assign mobile_grid_class = 'grid-cols-2'
-  endif 
-
-  if section.settings.no_desktop_grid_items > 20
-    assign number_of_desktop_columns = 5
-    assign desktop_grid_class = 'lg:grid-cols-5'
-  else
-    assign number_of_desktop_columns = 6
-    assign desktop_grid_class = 'lg:grid-cols-6'
-  endif 
-
-  assign stickers = section.blocks | where: "type", "sticker"
-  assign shape_dividers = section.blocks | where: "type", "shape_divider"
-  assign background_shapes = section.blocks | where: "type", "background_shape"
-  assign background_patterns = section.blocks | where: "type", "background_pattern"
-  assign non_grid_blocks_size = stickers.size | plus: shape_dividers.size | plus: background_shapes.size | plus: background_pattern.size
-  assign total_grid_blocks_size = section.blocks.size | minus: non_grid_blocks_size
-
--%}
-
-<section class="relative overflow-hidden text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} full-bleed-section" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
-  data-section-type="gallery"
-  data-section-id="{{ section.id }}">
-  <div class="{{ section.settings.height }} overflow-hidden relative relative z-10">
-    <div id="FeatureGallery-{{ section.id }}" class="grid  {{ mobile_grid_class }} {{ desktop_grid_class }} gap-theme w-full absolute top-1/2 left-1/2">
-      {% for i in (0..total_desktop_items) %}
-        {%- liquid
-          assign index =  i | modulo: total_grid_blocks_size
-          assign block = section.blocks[index]
-          assign image = blank
-        -%}
-        {% unless block.type == 'sticker' or block.type == 'background_pattern' or block.type == 'background_shape' or block.type == 'shape_divider' %}
-        {%- liquid
-          case block.type
-            when 'image'
-              assign url = block.settings.url
-              assign image = block.settings.image
-            when 'product'
-              assign product = block.settings.product
-              assign url = product.url
-              assign image = product.featured_image
-            when 'collection'
-              assign collection = block.settings.collection
-              assign url = collection.url
-              assign image = collection.featured_image
-            when 'article'
-              assign article = block.settings.article
-              assign url = article.url
-              assign image = article.image
-          endcase
-
-
-          capture mobile_class
-            case number_of_mobile_columns
-              when 2
-                cycle '', 'max-lg:-translate-y-1/2'
-              when 3
-                cycle '', 'max-lg:-translate-y-1/2', ''
-            endcase
-          endcapture
-
-          capture desktop_class
-            case number_of_desktop_columns
-              when 3
-                cycle '', 'lg:-translate-y-1/2', ''
-              when 4
-               cycle '', 'lg:-translate-y-1/2'
-              when 6
-                cycle '', 'lg:-translate-y-1/2'
-              when 5
-                cycle '', 'lg:-translate-y-1/2', '', 'lg:-translate-y-1/2', ''
-            endcase
-          endcapture
-
-
-          if block.settings.image_shape != ''
-            assign shape = block.settings.image_shape
-          else
-            assign shape = section.settings.image_shape
-          endif
-        -%}
-        {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-        <div x-data="ThemeComponent_OffsetGalleryItem()" x-init="mounted()" class="{{ mobile_class }} {{ desktop_class }} gallery-item relative {% if forloop.index > total_mobile_items %}hidden lg:block{% endif %}" {{ block.shopify_attributes }}>
-        {% comment %}theme-check-enable UndefinedObject{% endcomment %}
-
-        {%- render 'shape-defs',
-          shape: shape,
-          shape_id: block.id,
-          index: forloop.index0
-        -%}
-
-          {% if url != blank %}
-          <a href="{{ url }}"  x-on:focus="focused()"  :tabindex="tabIndex" class="block group  transform hover:scale-110 transition ease-in-out duration-200">
-          {% endif %}
-
-            <div class="relative">
-            {%- if image != blank -%}
-              <div class="relative">
-                {%- render 'media-image',
-                    media: image,
-                    shape_id: block.id,
-                    shape: shape,
-                    crop: section.settings.crop,
-                    is_card: false,
-                    container_id: section.id,
-                    index: forloop.index0
-                -%}
-              </div>
-              {%- else -%}
-              <div class="relative w-full">
-                {%- render 'media-image-placeholder',
-                    container_id: section.id,
-                    shape_id: block.id,
-                    index: forloop.index0,
-                    shape: shape,
-                    crop: section.settings.crop,
-                    is_card: false
-                -%}
-              </div>
-              {%- endif -%}
-            </div>
-
-          {%- if url != blank -%}
-          </a>
-          {%- endif -%}
-        </div>
-        {% endunless %}
-      {% endfor %}
-    </div>
-  </div>
-
-
-  {%- liquid
-    for background_shape in background_shapes
-      render 'block-background-shape' with block: background_shape, section: section
-    endfor
-    for background_pattern in background_patterns
-      render 'block-background-pattern' with block: background_pattern, section: section, scheme: section.settings.color_scheme
-    endfor
-  -%}
-</section>
-
-{% unless request.design_mode %}
-  <script src="{{ 'offset-gallery-item.js' | asset_url }}" type="module"></script>
-{% endunless %}
-
-{%- liquid
-  for sticker in stickers
-    render 'block-sticker' with block: sticker, section: section
-  endfor
-  for shape_divider in shape_dividers
-    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: true
-  endfor
--%}
-
-<style>
-#FeatureGallery-{{ section.id }} {
-  transform: translate(-50%, -50%) scale({{ section.settings.zoom_level }})  rotate({{ section.settings.rotate }}deg);
-}
-</style>
-
+{%- liquid
+  assign total_mobile_items = section.settings.no_mobile_grid_items
+  assign total_desktop_items = section.settings.no_desktop_grid_items | minus: 1
+
+  if section.settings.no_mobile_grid_items > 8
+    assign number_of_mobile_columns = 3
+    assign mobile_grid_class = 'grid-cols-3'
+  else
+    assign number_of_mobile_columns = 2
+    assign mobile_grid_class = 'grid-cols-2'
+  endif 
+
+  if section.settings.no_desktop_grid_items > 20
+    assign number_of_desktop_columns = 5
+    assign desktop_grid_class = 'lg:grid-cols-5'
+  else
+    assign number_of_desktop_columns = 6
+    assign desktop_grid_class = 'lg:grid-cols-6'
+  endif 
+
+  assign stickers = section.blocks | where: "type", "sticker"
+  assign shape_dividers = section.blocks | where: "type", "shape_divider"
+  assign background_shapes = section.blocks | where: "type", "background_shape"
+  assign background_patterns = section.blocks | where: "type", "background_pattern"
+  assign non_grid_blocks_size = stickers.size | plus: shape_dividers.size | plus: background_shapes.size | plus: background_pattern.size
+  assign total_grid_blocks_size = section.blocks.size | minus: non_grid_blocks_size
+
+-%}
+
+<section class="relative overflow-hidden text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} full-bleed-section" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
+  data-section-type="gallery"
+  data-section-id="{{ section.id }}">
+  <div class="{{ section.settings.height }} overflow-hidden relative relative z-10">
+    <div id="FeatureGallery-{{ section.id }}" class="grid  {{ mobile_grid_class }} {{ desktop_grid_class }} gap-theme w-full absolute top-1/2 left-1/2">
+      {% for i in (0..total_desktop_items) %}
+        {%- liquid
+          assign index =  i | modulo: total_grid_blocks_size
+          assign block = section.blocks[index]
+          assign image = blank
+        -%}
+        {% unless block.type == 'sticker' or block.type == 'background_pattern' or block.type == 'background_shape' or block.type == 'shape_divider' %}
+        {%- liquid
+          case block.type
+            when 'image'
+              assign url = block.settings.url
+              assign image = block.settings.image
+            when 'product'
+              assign product = block.settings.product
+              assign url = product.url
+              assign image = product.featured_image
+            when 'collection'
+              assign collection = block.settings.collection
+              assign url = collection.url
+              assign image = collection.featured_image
+            when 'article'
+              assign article = block.settings.article
+              assign url = article.url
+              assign image = article.image
+          endcase
+
+
+          capture mobile_class
+            case number_of_mobile_columns
+              when 2
+                cycle '', 'max-lg:-translate-y-1/2'
+              when 3
+                cycle '', 'max-lg:-translate-y-1/2', ''
+            endcase
+          endcapture
+
+          capture desktop_class
+            case number_of_desktop_columns
+              when 3
+                cycle '', 'lg:-translate-y-1/2', ''
+              when 4
+               cycle '', 'lg:-translate-y-1/2'
+              when 6
+                cycle '', 'lg:-translate-y-1/2'
+              when 5
+                cycle '', 'lg:-translate-y-1/2', '', 'lg:-translate-y-1/2', ''
+            endcase
+          endcapture
+
+
+          if block.settings.image_shape != ''
+            assign shape = block.settings.image_shape
+          else
+            assign shape = section.settings.image_shape
+          endif
+        -%}
+        {% comment %}theme-check-disable UndefinedObject{% endcomment %}
+        <div x-data="ThemeComponent_OffsetGalleryItem()" x-init="mounted()" class="{{ mobile_class }} {{ desktop_class }} gallery-item relative {% if forloop.index > total_mobile_items %}hidden lg:block{% endif %}" {{ block.shopify_attributes }}>
+        {% comment %}theme-check-enable UndefinedObject{% endcomment %}
+
+        {%- render 'shape-defs',
+          shape: shape,
+          shape_id: block.id,
+          index: forloop.index0
+        -%}
+
+          {% if url != blank %}
+          <a href="{{ url }}"  x-on:focus="focused()"  :tabindex="tabIndex" class="block group  transform hover:scale-110 transition ease-in-out duration-200">
+          {% endif %}
+
+            <div class="relative">
+            {%- if image != blank -%}
+              <div class="relative">
+                {%- render 'media-image',
+                    media: image,
+                    shape_id: block.id,
+                    shape: shape,
+                    crop: section.settings.crop,
+                    is_card: false,
+                    container_id: section.id,
+                    index: forloop.index0
+                -%}
+              </div>
+              {%- else -%}
+              <div class="relative w-full">
+                {%- render 'media-image-placeholder',
+                    container_id: section.id,
+                    shape_id: block.id,
+                    index: forloop.index0,
+                    shape: shape,
+                    crop: section.settings.crop,
+                    is_card: false
+                -%}
+              </div>
+              {%- endif -%}
+            </div>
+
+          {%- if url != blank -%}
+          </a>
+          {%- endif -%}
+        </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+  {%- liquid
+    for background_shape in background_shapes
+      render 'block-background-shape' with block: background_shape, section: section
+    endfor
+    for background_pattern in background_patterns
+      render 'block-background-pattern' with block: background_pattern, section: section, scheme: section.settings.color_scheme
+    endfor
+  -%}
+</section>
+
+{% unless request.design_mode %}
+  <script src="{{ 'offset-gallery-item.js' | asset_url }}" type="module"></script>
+{% endunless %}
+
+{%- liquid
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: true
+  endfor
+-%}
+
+<style>
+#FeatureGallery-{{ section.id }} {
+  transform: translate(-50%, -50%) scale({{ section.settings.zoom_level }})  rotate({{ section.settings.rotate }}deg);
+}
+</style>
+
 {% schema %}
 {
   "name": "Offset gallery",
@@ -1924,4 +1924,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}

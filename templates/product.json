@@ -60,20 +60,20 @@
             "icon": "check-mark"
           }
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "display_on_card": false,
+            "option_style": "buttons",
+            "hide_option_labels": false,
+            "enable_color_swatches": true
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
             "display_on_card": false,
             "show_label": true
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "display_on_card": false,
-            "option_style": "drop_down",
-            "hide_option_labels": false,
-            "enable_color_swatches": true
           }
         },
         "baf3083e-d14d-435d-bca3-100d6ac490ce": {
@@ -83,6 +83,13 @@
             "show_price": true,
             "enable_payment_button": false,
             "show_pickup_availability": false
+          }
+        },
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "disabled": true,
+          "settings": {
+            "publishId": "publishId"
           }
         },
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
@@ -126,6 +133,7 @@
         },
         "47038e2f-b337-41bd-920d-c5c616182ccf": {
           "type": "shape_divider",
+          "disabled": true,
           "settings": {
             "target_section": "below",
             "target_section_color_scheme": "tertiary",
@@ -173,9 +181,10 @@
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
         "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
         "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
-        "quantity_selector",
         "variant_picker",
+        "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
@@ -301,6 +310,17 @@
             "question": "Frequently asked question",
             "answer": "<p>Use this text to share the answer to the question with your customers.<\/p>"
           }
+        },
+        "ab246adc-2d98-4f23-830e-061980e5c974": {
+          "type": "shape_divider",
+          "settings": {
+            "target_section": "above",
+            "target_section_color_scheme": "primary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": false,
+            "enable_animation": false,
+            "animation_direction": ""
+          }
         }
       },
       "block_order": [
@@ -311,7 +331,8 @@
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-6",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7"
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
+        "ab246adc-2d98-4f23-830e-061980e5c974"
       ],
       "settings": {
         "display_on_card": true,
@@ -319,7 +340,7 @@
         "two_columns_desktop": true,
         "title": "FAQ",
         "richtext": "<p>Find the most frequently asked questions below.<\/p>",
-        "color_scheme": "secondary",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     },
@@ -338,6 +359,7 @@
     },
     "25c2413a-a407-4a10-9700-034f0b659b31": {
       "type": "comparison-table",
+      "disabled": true,
       "blocks": {
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0": {
           "type": "row",
@@ -413,7 +435,7 @@
         "column_3_title": "Other Brands",
         "enable_column_4": false,
         "column_4_title": "Column 4",
-        "color_scheme": "tertiary",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     },
@@ -451,7 +473,7 @@
         "autoscroll_mode": "1",
         "product_tiles_aspect_ratio": "aspect-w-1 aspect-h-1",
         "image_shape": "default_archway",
-        "color_scheme": "tertiary",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     }

@@ -1,80 +1,80 @@
-{%- liquid
-  assign text = section.settings.text
-  assign link = section.settings.link
-  assign show_announcement_bar = false
-  if section.settings.show_announcement_bar
-    if section.settings.home_page_only == false or template.name == 'index'
-      assign show_announcement_bar = true
-    endif
-  endif
--%}
-
-{%- if show_announcement_bar -%}
-  <style>
-    :root {
-      --ab-height: 3rem;
-    }
-
-    #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].h-screen {
-      height: calc(100vh - var(--ab-height));
-    }
-
-    @media (min-width: 990px) {
-      #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].lg\:h-auto {
-        height: auto;
-      }
-
-      #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].lg\:h-screen {
-        height: calc(100vh - var(--ab-height));
-      }
-    }
-  </style>
-  <section class="relative bg-scheme-background text-scheme-text {% if link != blank %}hover:bg-scheme-accent hover:text-scheme-accent-overlay{% endif %} text-center min-h-12 border-b-section border-border {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" id="AnnouncementBar">
-    {%- if section.settings.display == 'static' -%}
-      {%- if link != blank -%}
-        <a class="block text-sm text-current  py-1 lg:py-2 px-5 lg:px-0 w-full" href="{{ link }}">
-          {{ text | escape }}
-        </a>
-      {%- else -%}
-        <div class="text-sm text-current text-center py-1 lg:py-2" role="complementary">
-          <p class="px-5 lg:px-0">{{ text | escape }}</p>
-        </div>
-      {%- endif -%}
-    {%- else -%}
-      {%- render 'text-marquee', section: section, class: 'py-1 lg:py-2' %}
-      {{ 'section-marquee.css' | asset_url | stylesheet_tag }}
-    {%- endif -%}
-  </section>
-  <script>
-    document.documentElement.style.setProperty(
-      '--ab-height',
-      `${document.getElementById('AnnouncementBar').clientHeight}px`
-    );
-  </script>
-  {%- if request.design_mode %}
-    <script>
-      document.addEventListener(
-        'shopify:section:select',
-        (e) => {
-          if (e.detail.sectionId !== 'announcement-bar') return;
-
-          if (document.getElementById('AnnouncementBar')) {
-            document.documentElement.style.setProperty(
-              '--ab-height',
-              `${document.getElementById('AnnouncementBar').clientHeight}px`
-            );
-          } else {
-            document.documentElement.style.setProperty(
-              '--ab-height',
-              ''
-            );
-          }
-        }
-      );
-    </script>
-  {%- endif -%}
-{%- endif -%}
-
+{%- liquid
+  assign text = section.settings.text
+  assign link = section.settings.link
+  assign show_announcement_bar = false
+  if section.settings.show_announcement_bar
+    if section.settings.home_page_only == false or template.name == 'index'
+      assign show_announcement_bar = true
+    endif
+  endif
+-%}
+
+{%- if show_announcement_bar -%}
+  <style>
+    :root {
+      --ab-height: 3rem;
+    }
+
+    #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].h-screen {
+      height: calc(100vh - var(--ab-height));
+    }
+
+    @media (min-width: 990px) {
+      #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].lg\:h-auto {
+        height: auto;
+      }
+
+      #MainContent > .shopify-section.banner-section:first-child [data-blocks-container].lg\:h-screen {
+        height: calc(100vh - var(--ab-height));
+      }
+    }
+  </style>
+  <section class="relative bg-scheme-background text-scheme-text {% if link != blank %}hover:bg-scheme-accent hover:text-scheme-accent-overlay{% endif %} text-center min-h-12 border-b-section border-border {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" id="AnnouncementBar">
+    {%- if section.settings.display == 'static' -%}
+      {%- if link != blank -%}
+        <a class="block text-sm text-current  py-1 lg:py-2 px-5 lg:px-0 w-full" href="{{ link }}">
+          {{ text | escape }}
+        </a>
+      {%- else -%}
+        <div class="text-sm text-current text-center py-1 lg:py-2" role="complementary">
+          <p class="px-5 lg:px-0">{{ text | escape }}</p>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      {%- render 'text-marquee', section: section, class: 'py-1 lg:py-2' %}
+      {{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+  </section>
+  <script>
+    document.documentElement.style.setProperty(
+      '--ab-height',
+      `${document.getElementById('AnnouncementBar').clientHeight}px`
+    );
+  </script>
+  {%- if request.design_mode %}
+    <script>
+      document.addEventListener(
+        'shopify:section:select',
+        (e) => {
+          if (e.detail.sectionId !== 'announcement-bar') return;
+
+          if (document.getElementById('AnnouncementBar')) {
+            document.documentElement.style.setProperty(
+              '--ab-height',
+              `${document.getElementById('AnnouncementBar').clientHeight}px`
+            );
+          } else {
+            document.documentElement.style.setProperty(
+              '--ab-height',
+              ''
+            );
+          }
+        }
+      );
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Announcement bar",
@@ -232,4 +232,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}

@@ -87,19 +87,19 @@
           "settings": {
             "text": "10M+ HEADS BRITENED",
             "shape": "scalloped_circle_3",
-            "width": 120,
+            "width": 140,
             "sticker_font_size": "1.563rem",
             "half_image_width_on_mobile": false,
             "horizontal_position": 87,
-            "vertical_position": 12,
+            "vertical_position": 97,
             "rotate": 12,
             "show_sticker_on_mobile": true,
             "show_sticker_on_desktop": true,
             "rotation_animation": "rotate_when_scrolling",
             "enable_parallax": false,
             "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
+            "color": "bg-scheme-gradient text-scheme-text",
+            "color_scheme": "tertiary"
           }
         }
       },
@@ -136,12 +136,11 @@
     },
     "1691058444d1e54179": {
       "type": "apps",
-      "disabled": true,
       "blocks": {
         "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
           "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
-            "publishId": "publishId"
+            "publishId": "xs4fw5jmdxndf"
           }
         }
       },
@@ -153,6 +152,7 @@
     },
     "16648046768565ca3d": {
       "type": "scrolling-videos",
+      "disabled": true,
       "blocks": {
         "98e32822-9534-4a1d-a575-b529132773ec": {
           "type": "video",

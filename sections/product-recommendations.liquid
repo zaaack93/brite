@@ -1,112 +1,112 @@
-
-
-{%- if section.settings.show_product_recommendations -%}
-  {%- if recommendations.performed -%}
-    {% if recommendations.products_count > 0 %}
-    {%- liquid
-      case recommendations.products_count
-        when 2
-          assign grid_class = 'lg:grid-cols-2'
-        when 3
-          assign grid_class = 'lg:grid-cols-3'
-        when 4
-          assign grid_class = 'lg:grid-cols-4'
-        when 6
-          assign grid_class = 'lg:grid-cols-3'
-      endcase
-
-      assign shape_id = section.id
-      if section.settings.image_shape != ''
-        assign image_shape = section.settings.image_shape
-      else
-        assign image_shape = settings.product_tile_media_shape
-      endif
-    -%}
-
-
-
-    <div class="product-recommendations">
-      <section class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} " data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
-       
-        {%- render 'collection-shape-defs',
-          shape: image_shape,
-          section_id: section.id,
-          item_count: recommendations.products_count
-        -%}
-
-        <div class="section-content py-section-vertical-spacing px-section">
-
-          <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">{{ section.settings.product_recommendations_heading | escape }}</h2>
-
-          <div class="section-content-top-margin">
-            <ul class="grid {{ grid_class }} gap-theme" role="list">
-              {%- for product in recommendations.products -%}
-                {%- liquid
-                  if image_shape == 'blob'
-                    assign shape_id = section.id | append: '-' | append: forloop.index0
-                  endif
-                -%}
-                <li class="">
-                  {%- liquid
-                    if settings.product_tiles_scatter
-                      capture class
-                        case section.settings.products_per_row_mobile
-                          when '2'
-                          cycle 'max-lg:-translate-y-4 ', 'max-lg:translate-y-4 '
-                        endcase
-                        case section.settings.products_per_row_desktop
-                          when 3
-                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                          when 2 or 4
-                            cycle 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                          when 5
-                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                        endcase
-                      endcapture
-                    endif
-                    capture odd_even
-                      cycle 'odd', 'even'
-                    endcapture
-                  -%}
-                  {%- render 'product-tile'
-                    product: product,
-                    crop: section.settings.product_tiles_aspect_ratio,
-                    shape_id: shape_id,
-                    shape: image_shape,
-                    display_on_card: section.settings.display_on_card,
-                    class: class,
-                    odd_even: odd_even, 
-                    index: forloop.index0,
-                    enable_quick_buy: section.settings.enable_quick_buy
-                  -%}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-  {%- else -%}
-    {%- capture section_url -%}{{ routes.product_recommendations_url }}?section_id={{ section.id }}&limit={{ section.settings.max_products }}&product_id={{ product.id }}{%- endcapture -%}
-    <div
-      class="product-recommendations"
-      x-data
-      x-html="$fetchedSection(
-        '{{ section_url }}',
-        '.product-recommendations'
-      )"
-    ></div>
-  {%- endif -%}
-{%- endif -%}
-
-{%- if section.settings.enable_quick_buy -%}
-{%- unless request.design_mode -%}
-<script src="{{ 'vendor-product.bundle.min.js' | asset_url }}" type="module"></script>
-<script src="{{ 'product-quick-buy.js' | asset_url }}" type="module"></script>
-{%- endunless -%}
-{%- endif -%}
-
+
+
+{%- if section.settings.show_product_recommendations -%}
+  {%- if recommendations.performed -%}
+    {% if recommendations.products_count > 0 %}
+    {%- liquid
+      case recommendations.products_count
+        when 2
+          assign grid_class = 'lg:grid-cols-2'
+        when 3
+          assign grid_class = 'lg:grid-cols-3'
+        when 4
+          assign grid_class = 'lg:grid-cols-4'
+        when 6
+          assign grid_class = 'lg:grid-cols-3'
+      endcase
+
+      assign shape_id = section.id
+      if section.settings.image_shape != ''
+        assign image_shape = section.settings.image_shape
+      else
+        assign image_shape = settings.product_tile_media_shape
+      endif
+    -%}
+
+
+
+    <div class="product-recommendations">
+      <section class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} " data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
+       
+        {%- render 'collection-shape-defs',
+          shape: image_shape,
+          section_id: section.id,
+          item_count: recommendations.products_count
+        -%}
+
+        <div class="section-content py-section-vertical-spacing px-section">
+
+          <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">{{ section.settings.product_recommendations_heading | escape }}</h2>
+
+          <div class="section-content-top-margin">
+            <ul class="grid {{ grid_class }} gap-theme" role="list">
+              {%- for product in recommendations.products -%}
+                {%- liquid
+                  if image_shape == 'blob'
+                    assign shape_id = section.id | append: '-' | append: forloop.index0
+                  endif
+                -%}
+                <li class="">
+                  {%- liquid
+                    if settings.product_tiles_scatter
+                      capture class
+                        case section.settings.products_per_row_mobile
+                          when '2'
+                          cycle 'max-lg:-translate-y-4 ', 'max-lg:translate-y-4 '
+                        endcase
+                        case section.settings.products_per_row_desktop
+                          when 3
+                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                          when 2 or 4
+                            cycle 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                          when 5
+                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                        endcase
+                      endcapture
+                    endif
+                    capture odd_even
+                      cycle 'odd', 'even'
+                    endcapture
+                  -%}
+                  {%- render 'product-tile'
+                    product: product,
+                    crop: section.settings.product_tiles_aspect_ratio,
+                    shape_id: shape_id,
+                    shape: image_shape,
+                    display_on_card: section.settings.display_on_card,
+                    class: class,
+                    odd_even: odd_even, 
+                    index: forloop.index0,
+                    enable_quick_buy: section.settings.enable_quick_buy
+                  -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  {%- else -%}
+    {%- capture section_url -%}{{ routes.product_recommendations_url }}?section_id={{ section.id }}&limit={{ section.settings.max_products }}&product_id={{ product.id }}{%- endcapture -%}
+    <div
+      class="product-recommendations"
+      x-data
+      x-html="$fetchedSection(
+        '{{ section_url }}',
+        '.product-recommendations'
+      )"
+    ></div>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if section.settings.enable_quick_buy -%}
+{%- unless request.design_mode -%}
+<script src="{{ 'vendor-product.bundle.min.js' | asset_url }}" type="module"></script>
+<script src="{{ 'product-quick-buy.js' | asset_url }}" type="module"></script>
+{%- endunless -%}
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Product recommendations",
@@ -472,4 +472,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}

@@ -1,95 +1,95 @@
-{%- liquid
-  assign section_color = section.settings.color_scheme | default: 'primary'
-  assign slides = section.blocks | where: "type", "slide"
-  assign style = section.settings.style
-  assign height = section.settings.height
--%}
-
-<section class="text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}  {% unless style == 'inset' %}full-bleed-section{% endunless %} overflow-hidden" data-color-scheme="{{ section_color }}">
-  <div
-    {% if section.blocks.size > 1 %}
-      id="slideshow-{{ section.id }}"
-      class="section-content splide {% if style == 'inset' %}py-section-vertical-spacing{% endif %}"
-    {% endif %}
-  >
-    <div class="splide__track">
-      <ul class="w-full splide__list" role="list">
-        {% for block in slides %}
-          <li class="block w-full splide__slide" {{ block.shopify_attributes }}>
-            {% liquid
-              if block.settings.place_content == 'inherit'
-                assign place_content = section.settings.place_content
-              else
-                assign place_content = block.settings.place_content
-              endif
-
-              if block.settings.text_align == 'inherit'
-                assign text_align = section.settings.text_align
-              else
-                assign text_align = block.settings.text_align
-              endif
-
-              if height == 'natural'
-                if forloop.index > 1
-                  assign crop = 'image-slideshow'
-                else
-                  assign crop = 'image-wrapper-none'
-                endif
-              else
-                assign crop = 'image-wrapper ' | append: height
-              endif
-            %}
-            {% render 'image-with-text-overlay',
-              image: block.settings.image,
-              image_mobile: block.settings.image_mobile,
-              place_content: place_content,
-              text_align: text_align,
-              color_scheme: section.settings.color_scheme,
-              text_overlay_color: block.settings.text_overlay_color,
-              use_gradient_background: block.settings.use_gradient_background,
-              title: block.settings.title,
-              richtext: block.settings.richtext,
-              cta_url: block.settings.cta_url,
-              cta_text: block.settings.cta_text,
-              display_on_card: section.settings.display_on_card,
-              style: style,
-              crop: crop,
-              slideshow_height: height,
-              display_content_below_image_on_mobile: section.settings.display_content_below_image_on_mobile,
-              heading_size: section.settings.heading_size
-            %}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% if section.blocks.size > 1 %}
-      <div class="splide__arrows flex justify-between items-center mt-5 px-section {% if style == 'full' %}lg:absolute bottom-0 right-0 pb-5{% endif %}">
-      {%- render 'splide-navigation' -%}
-      </div>
-    {% endif %}
-  </div>
-  {% unless request.design_mode %}
-    <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
-  {% endunless %}
-  
-  {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
-</section>
-
-{%- liquid
-  assign stickers = section.blocks | where: "type", "sticker" 
-  assign shape_dividers = section.blocks | where: "type", "shape_divider"
-  assign no_padding = true
-  if style == 'inset'
-    assign no_padding = false
-  endif 
-  for sticker in stickers
-    render 'block-sticker' with block: sticker, section: section
-  endfor
-  for shape_divider in shape_dividers
-    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: no_padding
-  endfor
--%}
-
+{%- liquid
+  assign section_color = section.settings.color_scheme | default: 'primary'
+  assign slides = section.blocks | where: "type", "slide"
+  assign style = section.settings.style
+  assign height = section.settings.height
+-%}
+
+<section class="text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}  {% unless style == 'inset' %}full-bleed-section{% endunless %} overflow-hidden" data-color-scheme="{{ section_color }}">
+  <div
+    {% if section.blocks.size > 1 %}
+      id="slideshow-{{ section.id }}"
+      class="section-content splide {% if style == 'inset' %}py-section-vertical-spacing{% endif %}"
+    {% endif %}
+  >
+    <div class="splide__track">
+      <ul class="w-full splide__list" role="list">
+        {% for block in slides %}
+          <li class="block w-full splide__slide" {{ block.shopify_attributes }}>
+            {% liquid
+              if block.settings.place_content == 'inherit'
+                assign place_content = section.settings.place_content
+              else
+                assign place_content = block.settings.place_content
+              endif
+
+              if block.settings.text_align == 'inherit'
+                assign text_align = section.settings.text_align
+              else
+                assign text_align = block.settings.text_align
+              endif
+
+              if height == 'natural'
+                if forloop.index > 1
+                  assign crop = 'image-slideshow'
+                else
+                  assign crop = 'image-wrapper-none'
+                endif
+              else
+                assign crop = 'image-wrapper ' | append: height
+              endif
+            %}
+            {% render 'image-with-text-overlay',
+              image: block.settings.image,
+              image_mobile: block.settings.image_mobile,
+              place_content: place_content,
+              text_align: text_align,
+              color_scheme: section.settings.color_scheme,
+              text_overlay_color: block.settings.text_overlay_color,
+              use_gradient_background: block.settings.use_gradient_background,
+              title: block.settings.title,
+              richtext: block.settings.richtext,
+              cta_url: block.settings.cta_url,
+              cta_text: block.settings.cta_text,
+              display_on_card: section.settings.display_on_card,
+              style: style,
+              crop: crop,
+              slideshow_height: height,
+              display_content_below_image_on_mobile: section.settings.display_content_below_image_on_mobile,
+              heading_size: section.settings.heading_size
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if section.blocks.size > 1 %}
+      <div class="splide__arrows flex justify-between items-center mt-5 px-section {% if style == 'full' %}lg:absolute bottom-0 right-0 pb-5{% endif %}">
+      {%- render 'splide-navigation' -%}
+      </div>
+    {% endif %}
+  </div>
+  {% unless request.design_mode %}
+    <script src="{{ 'modules-slideshow.bundle.min.js' | asset_url }}" type="module"></script>
+  {% endunless %}
+  
+  {{ 'modules-slideshow.bundle.css' | asset_url | stylesheet_tag }}
+</section>
+
+{%- liquid
+  assign stickers = section.blocks | where: "type", "sticker" 
+  assign shape_dividers = section.blocks | where: "type", "shape_divider"
+  assign no_padding = true
+  if style == 'inset'
+    assign no_padding = false
+  endif 
+  for sticker in stickers
+    render 'block-sticker' with block: sticker, section: section
+  endfor
+  for shape_divider in shape_dividers
+    render 'block-shape-divider' with block: shape_divider, section: section, no_padding: no_padding
+  endfor
+-%}
+
 {% schema %}
 {
   "name": "Hero slideshow",
@@ -970,4 +970,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}
