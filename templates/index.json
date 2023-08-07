@@ -115,7 +115,7 @@
         "text_box_bg": "shopify:\/\/shop_images\/hero_left_bg.jpg",
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/gifmaker_me.gif",
+        "image": "shopify:\/\/shop_images\/gifmaker_me_1_3237271e-6985-4dc1-bfce-603119dd70bd.gif",
         "crop": "",
         "image_shape": "default",
         "blob_type": 2,
@@ -244,10 +244,32 @@
             "enable_parallax": false,
             "parallax_speed": 3
           }
+        },
+        "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 250,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 9,
+            "vertical_position": 0,
+            "rotate": 34,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
         }
       },
       "block_order": [
-        "c630e940-0dad-4356-b24b-79bbc81d8ea0"
+        "c630e940-0dad-4356-b24b-79bbc81d8ea0",
+        "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29"
       ],
       "settings": {
         "title": "Shop The Range",
@@ -350,45 +372,6 @@
         "index_shape": "scalloped_circle_2",
         "color_scheme": "quaternary",
         "use_gradient_background": false
-      }
-    },
-    "ab60c2c7-5754-4171-aa13-027011164036": {
-      "type": "feedback-scroll",
-      "disabled": true,
-      "blocks": {
-        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify:\/\/shop_images\/beauty-crew-logo.png",
-            "content_1": "\"Cruelty-free, vegan and organic,",
-            "content_2": "this is our top pick for the<br> conscious beauty lover.\""
-          }
-        },
-        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify:\/\/shop_images\/Byrdie_Logo.png",
-            "content_1": "\"Best Bargain: Brite Instant Color\"",
-            "content_2": ""
-          }
-        },
-        "4d8c98bf-c157-4d15-9d4a-375e018d5587": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify:\/\/shop_images\/mamamia.png",
-            "content_1": "“Ideal for even the biggest <br>hair-dye commitment phobes”",
-            "content_2": ""
-          }
-        }
-      },
-      "block_order": [
-        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a",
-        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9",
-        "4d8c98bf-c157-4d15-9d4a-375e018d5587"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Group_1.png",
-        "background": "shopify:\/\/shop_images\/feedback_scroll_bg.jpg"
       }
     },
     "f45e1af3-75cf-486d-ab0d-348e87bd55e9": {
@@ -754,6 +737,45 @@
         "use_gradient_background": false
       }
     },
+    "ab60c2c7-5754-4171-aa13-027011164036": {
+      "type": "feedback-scroll",
+      "disabled": true,
+      "blocks": {
+        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a": {
+          "type": "feedback",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/beauty-crew-logo.png",
+            "content_1": "\"Cruelty-free, vegan and organic,",
+            "content_2": "this is our top pick for the<br> conscious beauty lover.\""
+          }
+        },
+        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9": {
+          "type": "feedback",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Byrdie_Logo.png",
+            "content_1": "\"Best Bargain: Brite Instant Color\"",
+            "content_2": ""
+          }
+        },
+        "4d8c98bf-c157-4d15-9d4a-375e018d5587": {
+          "type": "feedback",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/mamamia.png",
+            "content_1": "“Ideal for even the biggest <br>hair-dye commitment phobes”",
+            "content_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a",
+        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9",
+        "4d8c98bf-c157-4d15-9d4a-375e018d5587"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_1.png",
+        "background": "shopify:\/\/shop_images\/feedback_scroll_bg.jpg"
+      }
+    },
     "1650891804363a2769": {
       "type": "newsletter",
       "blocks": {
@@ -827,6 +849,53 @@
       "settings": {
         "section_bg": "#eccfff"
       }
+    },
+    "4135f8b3-d782-4fa5-81a9-705185187051": {
+      "type": "testimonials",
+      "disabled": true,
+      "blocks": {
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5_stars",
+            "quote": "<p>A quote from a customer or staff member can help show of your products' unique selling points.<\/p>",
+            "source": "Source"
+          }
+        },
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5_stars",
+            "quote": "<p>A quote from a customer or staff member can help show of your products' unique selling points.<\/p>",
+            "source": "Source"
+          }
+        },
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5_stars",
+            "quote": "<p>A quote from a customer or staff member can help show of your products' unique selling points.<\/p>",
+            "source": "Source"
+          }
+        }
+      },
+      "block_order": [
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-1",
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-2",
+        "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-3"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "title": "Brite in the Press",
+        "max_width": 100,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "0",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
     }
   },
   "order": [
@@ -835,14 +904,15 @@
     "16648046768565ca3d",
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57",
     "276ebf26-6bf7-475c-8b06-2bf6bf585819",
-    "ab60c2c7-5754-4171-aa13-027011164036",
     "f45e1af3-75cf-486d-ab0d-348e87bd55e9",
     "4d27f5ea-174a-4bd2-8dda-f89c065c473a",
     "33e41a9e-6191-4360-948a-4644f1a3af68",
     "a56ce090-a916-44c4-b8ce-dd907815e36e",
     "16644402366062ca99",
     "165089168609b8f684",
+    "ab60c2c7-5754-4171-aa13-027011164036",
     "1650891804363a2769",
-    "9117f9a3-6549-430b-a166-f051d2130969"
+    "9117f9a3-6549-430b-a166-f051d2130969",
+    "4135f8b3-d782-4fa5-81a9-705185187051"
   ]
 }

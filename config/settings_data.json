@@ -7,7 +7,7 @@
     "color_primary_gradient": "linear-gradient(135deg, rgba(241, 139, 226, 1) 11%, rgba(236, 179, 255, 1) 84%)",
     "color_secondary_text": "#000000",
     "color_secondary_background": "#d9bcec",
-    "color_secondary_accent": "#fc7e05",
+    "color_secondary_accent": "#d9bcec",
     "color_secondary_card": "#f9a9ce",
     "color_secondary_gradient": "linear-gradient(95deg, rgba(241, 139, 226, 1) 11%, rgba(147, 79, 223, 1) 100%)",
     "color_tertiary_text": "#010d2d",
