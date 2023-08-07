@@ -11,4 +11,6 @@
         display: none !important;
     }
 }
-
+.tolstoy-carousel-title {
+  font-family: var(--heading-font-stack);
+}
