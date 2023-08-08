@@ -65,7 +65,7 @@
           <span class="rdc-rotating-sticker"><img src="{{ rotating_sticker_img | img_url: '130x'}}"><span>{{ rotating_sticker_text }}</span></span>
           {% endif %}
         </div>
-        <div class="flex items-center rdc-bg-center {{ text_width_desktop }} {% unless show_text_bg_mobile %}rdc-no-img-bg-mob{% endunless %}" 
+        <div class="flex items-center  padd-on-mobile {{ text_width_desktop }} {% unless show_text_bg_mobile %}rdc-no-img-bg-mob{% endunless %}" 
         {% if text_box_bg != blank %}
           style="background-image:url({{ text_box_bg | img_url: '700x' }})"
           {% endif %}>

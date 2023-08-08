@@ -76,6 +76,15 @@ span.push-btn-surface {z-index: 1}
     border-radius: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .padd-on-mobile{
+    background-image: url(//briteorganix.myshopify.com/cdn/shop/files/hero_left_bg_700x.jpg?v=1665495566);
+    padding-top: 2.5rem;
+    padding-left: var(--section-x-padding);
+    padding-right: var(--section-x-padding);
+    padding-bottom: 2.5rem;
+  }
+}
 .rdc-img-text-sec-inner,
 .template-index #shopify-section-template--14420446511188__1650891033bae15b05 > section,
 .rdc-img-text-sec-inner>div{padding: 0}
