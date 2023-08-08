@@ -10,6 +10,7 @@
       <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
       <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
       <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+      
   
       {%- liquid
         assign main_font = settings.type_main_font
@@ -46,6 +47,7 @@
       <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
       <script src="{{ 'utils.js' | asset_url }}" defer></script>
       <script src="{{ 'global.bundle.min.js' | asset_url }}" type="module"></script>
+      <script type="module" src="{{ 'custom-sections.js' | asset_url }}"></script>
       {% if template == 'cart' or settings.cart_type == 'modal' %}
         <script src="{{ 'cart-items.js' | asset_url }}" type="module"></script>
         <script src="{{ 'cart-footer.js' | asset_url }}" type="module"></script>

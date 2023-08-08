@@ -19,12 +19,16 @@
         endif
       %}
       {% assign option_array_index = forloop.index0 %}
- {% if is_color %}    
+ {% if is_color %}  
+ 
+ <icon-links-slider>
             <legend class="{{ label_class }} lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5 rdc-d-flex rdc-ai-c">
               {{ option.name }}{% if is_color %}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
-            </legend>
+            </legend> 
+            <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
+            <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
             {% endif %}
-      <div class="rdc-vp-fieldset-wrapper">
+      <div class="rdc-vp-fieldset-wrapper content_icon_container">
       <fieldset class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
         {%- unless is_color or option_style == 'buttons' -%}
           <div class="my-1 lg:flex lg:items-center lg:justify-start">
@@ -127,14 +131,16 @@
 
            
             </div>
-              <div class="rdc-vp-more rdc-d-none">{% render 'icon-chevron-down' %}</div>
-            
             </div>
           </div>
         {%- endunless -%}
       
       </fieldset>
+
         </div>
+        {% if is_color %} 
+    </icon-links-slider>
+    {%endif%}
     {% endfor %}
   </div>
 {% endunless %}

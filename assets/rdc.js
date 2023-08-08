@@ -498,12 +498,12 @@ const variantPickerMain = document.querySelector(".product-block-variant-picker"
 const variantPickerMore = document.querySelector(".rdc-vp-more")
 
 
-if(variantPickerCon) {
-if(variantPickerMain.clientWidth < variantPickerCon.clientWidth) {
-  variantPickerCon.style.paddingRight = '50px'
-  variantPickerMore.style.display = 'flex'
-}
-}
+// if(variantPickerCon) {
+// if(variantPickerMain.clientWidth < variantPickerCon.clientWidth) {
+//   variantPickerCon.style.paddingRight = '50px'
+//   variantPickerMore.style.display = 'flex'
+// }
+// }
 
 
 // Animated Feedback
