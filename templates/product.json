@@ -208,7 +208,7 @@
         "thumbnail_shape": "default",
         "hide_media_shadow": false,
         "thumbnail_size": "standard",
-        "color_scheme": "primary",
+        "color_scheme": "tertiary",
         "use_gradient_background": false
       }
     },

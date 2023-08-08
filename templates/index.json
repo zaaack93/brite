@@ -275,13 +275,13 @@
         "title": "Shop The Range",
         "subheading": "Choose from our bestselling ranges below.",
         "collection": "all",
-        "no_products": 6,
+        "no_products": 4,
         "show_view_all": true,
         "enable_quick_buy": false,
         "display_on_card": false,
         "layout": "grid",
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
+        "products_per_row_desktop": 4,
         "slideshow_focus": "center",
         "mobile_slide_width": "three_fifths",
         "desktop_slide_width": 40,
@@ -896,6 +896,53 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
+    },
+    "752e2726-c3ed-4a1e-b7d1-4f03f4d48074": {
+      "type": "hero-slideshow",
+      "disabled": true,
+      "blocks": {
+        "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/gifmaker_me_1_3237271e-6985-4dc1-bfce-603119dd70bd.gif",
+            "title": "Hero slideshow",
+            "richtext": "",
+            "cta_url": "",
+            "cta_text": "Shop Now",
+            "place_content": "inherit",
+            "text_align": "inherit",
+            "text_overlay_color": "same_as_section"
+          }
+        },
+        "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "Hero slideshow",
+            "richtext": "",
+            "cta_url": "",
+            "cta_text": "Shop Now",
+            "place_content": "inherit",
+            "text_align": "inherit",
+            "text_overlay_color": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-1",
+        "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-2"
+      ],
+      "settings": {
+        "style": "full",
+        "height": "pt-screen-height",
+        "display_on_card": false,
+        "display_content_below_image_on_mobile": true,
+        "place_content": "lg:place-content-center-start",
+        "text_align": "text-left",
+        "heading_size": "heading-base",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
     }
   },
   "order": [
@@ -913,6 +960,7 @@
     "ab60c2c7-5754-4171-aa13-027011164036",
     "1650891804363a2769",
     "9117f9a3-6549-430b-a166-f051d2130969",
-    "4135f8b3-d782-4fa5-81a9-705185187051"
+    "4135f8b3-d782-4fa5-81a9-705185187051",
+    "752e2726-c3ed-4a1e-b7d1-4f03f4d48074"
   ]
 }
