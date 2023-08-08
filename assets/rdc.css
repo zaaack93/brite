@@ -76,7 +76,7 @@ span.push-btn-surface {z-index: 1}
     border-radius: 0;
 }
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .padd-on-mobile{
     background-image: url(//briteorganix.myshopify.com/cdn/shop/files/hero_left_bg_700x.jpg?v=1665495566);
     padding-top: 2.5rem;
@@ -86,10 +86,7 @@ span.push-btn-surface {z-index: 1}
     border-top: 2px solid;
   }
 }
-.padd-on-mobile{
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
+ */
 .rdc-img-text-sec-inner,
 .template-index #shopify-section-template--14420446511188__1650891033bae15b05 > section,
 .rdc-img-text-sec-inner>div{padding: 0}
@@ -786,16 +783,7 @@ text-decoration: underline;
     /* max-height: 1000px;
         overflow-y: scroll; */
 }
-#sidebar{
-  will-change: min-height;
 }
-
-.rdc-product-media-inner{
-  transform: translate(0, 0); /* For browsers don't support translate3d. */
-  transform: translate3d(0, 0, 0);
-  will-change: position, transform;
-}
-
 
 @media only screen and (max-width: 1200px) {
 .rdc-scroll-vid-vids {
@@ -1089,4 +1077,17 @@ span.rdc-cp-price {margin: 5px 0}
   }
   .feedback-scroll-logo img.rdc-active-logo {height: 15px}
 
+}
+#sidebar{
+  will-change: min-height;
+}
+
+.rdc-product-media-inner{
+  transform: translate(0, 0); /* For browsers don't support translate3d. */
+  transform: translate3d(0, 0, 0);
+  will-change: position, transform;
+}
+.padd-on-mobile{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
