@@ -184,7 +184,7 @@
           "repeat_text": true,
           "shape_between_text": "10_point_star",
           "animate_shape_between_text": false,
-          "speed": 50,
+          "speed": 80,
           "direction": ""
         }
       },
