@@ -83,7 +83,12 @@ span.push-btn-surface {z-index: 1}
     padding-left: var(--section-x-padding);
     padding-right: var(--section-x-padding);
     padding-bottom: 2.5rem;
+    border-top: 2px solid;
   }
+}
+.padd-on-mobile{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .rdc-img-text-sec-inner,
 .template-index #shopify-section-template--14420446511188__1650891033bae15b05 > section,
