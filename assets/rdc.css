@@ -767,6 +767,10 @@ text-decoration: underline;
     border-radius: 8px;
     overflow: hidden;
 }
+
+.rdc-product-media-viewer img{
+  width: 100%;
+}
   span.rdc-pm-thumbnail {
     margin-right: 1%;
     max-width: 150px;

@@ -419,13 +419,16 @@ const pmThumbnails = document.querySelectorAll(".rdc-pm-thumbnail")
 // })
 
 const changePMDisplay = function () {
+  console.log(new Date())
   let thisImageSrc = this.children[0].src;
-  thisImageSrc = thisImageSrc.split("_")
-thisImageSrc[thisImageSrc.length-1] = "1000x"
-thisImageSrc = thisImageSrc.join("_")
+//   thisImageSrc = thisImageSrc.split("_")
+// thisImageSrc[thisImageSrc.length-1] = "1000x"
+// thisImageSrc = thisImageSrc.join("_")
 
 let pmImageDisplayed = this.parentElement.parentElement.children[0].children[0]
-  pmImageDisplayed.src=`${thisImageSrc}.jpg`
+  pmImageDisplayed.src=`${thisImageSrc}`
+
+  console.log(new Date())
 }
 
 

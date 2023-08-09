@@ -82,11 +82,11 @@
                     {% endif %}
 </div>
   <div class="rdc-product-media-thumbnails rdc-d-flex rdc-f-wrap rdc-mm-d-none">
-    <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ variant.image | img_url: "200x" }}"></span>
+    <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ variant.image | img_url: "1000x" }}"></span>
 
          {% if variant.metafields.details.images.value != blank %}
       {% for varImage in variant.metafields.details.images.value %}
- <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ varImage | img_url: "200x" }}"></span>
+ <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ varImage | img_url: "1000x" }}"></span>
          {% assign dotCount = forloop.index | plus: 1 %}
           {% endfor %}
            {% endif %}

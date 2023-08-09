@@ -9,7 +9,7 @@
        <a class="rdc-collection-card-inner rdc-d-flex rdc-ff-c rdc-ai-c" href="{{ variant.url }}">
     <img src="{{ variant.image | img_url: '300x' }}">
     <h3>{{ variant.title }}</h3>
-    <span>{{ variant.price | money | remove: '.00 AUD' }}</span>
+    <span>{{ variant.price | money | remove: '.00 AUD' | replace : ' AUD', ''  }}</span>
       </a>
   </div>
   
