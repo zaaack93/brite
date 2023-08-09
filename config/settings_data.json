@@ -139,7 +139,7 @@
               "button_link": "shopify:\/\/collections\/all",
               "button_label": "Shop All",
               "position": "right_of_cart",
-              "hide_button_shadow": true
+              "hide_button_shadow": false
             }
           }
         },
