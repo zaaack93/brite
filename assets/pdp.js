@@ -22,10 +22,3 @@ function updateURLAndRemoveParams() {
   
   // Call the function to update the URL and remove query parameters
   updateURLAndRemoveParams();
-
-  var sidebar = new StickySidebar('#sidebar', {
-    containerSelector: '.rdc-product-page-details',
-    innerWrapperSelector: '.inner-wrapper-sticky',
-    topSpacing: 10,
-    minWidth: 992
-});

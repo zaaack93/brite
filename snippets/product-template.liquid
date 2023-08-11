@@ -43,7 +43,7 @@
 
 
 <section
-  class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
+  class="text-scheme-text bg-scheme-background relative {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
   data-color-scheme="{{ section_color }}"
   x-data="
     ThemeSection_Product({
@@ -353,6 +353,4 @@
     });
   </script>
 {% endif %}
-<script src="{{ 'sticky-bar.js' | asset_url }}" defer></script>
-
 <script src="{{ 'pdp.js' | asset_url }}" defer></script>
