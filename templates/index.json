@@ -152,7 +152,6 @@
     },
     "16648046768565ca3d": {
       "type": "scrolling-videos",
-      "disabled": true,
       "blocks": {
         "98e32822-9534-4a1d-a575-b529132773ec": {
           "type": "video",
@@ -223,6 +222,7 @@
         "b724b6b1-c6b8-4a4c-b5f7-b7ced6d2ec2f",
         "2d9ef907-d0f0-47cf-b056-68d6c615c32b"
       ],
+      "disabled": true,
       "settings": {
         "section_header": "INSPIRING SELF EXPRESSION THROUGH COLOR",
         "short_text": "Need some hair inspo? See BRITE in action below.",
@@ -255,7 +255,7 @@
             "image": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 9,
-            "vertical_position": 0,
+            "vertical_position": 100,
             "rotate": 34,
             "show_sticker_on_mobile": true,
             "show_sticker_on_desktop": true,
@@ -472,7 +472,6 @@
     },
     "4d27f5ea-174a-4bd2-8dda-f89c065c473a": {
       "type": "shop-by-collections",
-      "disabled": true,
       "blocks": {
         "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32": {
           "type": "row",
@@ -511,6 +510,7 @@
         "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32",
         "7ad109e0-1a5e-456a-94a2-27c9457b32d3"
       ],
+      "disabled": true,
       "settings": {
         "header": "SHOP THE RANGE",
         "short_text": "<p>Choose from our bestselling ranges below.<\/p>",
@@ -522,7 +522,6 @@
     },
     "33e41a9e-6191-4360-948a-4644f1a3af68": {
       "type": "comparison-table",
-      "disabled": true,
       "blocks": {
         "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-1": {
           "type": "row",
@@ -572,6 +571,7 @@
         "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-2",
         "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-3"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": false,
         "title": "Brite vs the other guys",
@@ -588,7 +588,6 @@
     },
     "a56ce090-a916-44c4-b8ce-dd907815e36e": {
       "type": "sliding-columns",
-      "disabled": true,
       "blocks": {
         "c6573561-1999-472a-978c-9f14419c2db4": {
           "type": "column",
@@ -673,6 +672,7 @@
         "9c2d9823-c325-46ea-ab67-5ee70fc40efe",
         "2fdec677-0900-49a8-a2c3-feeb2288f4ee"
       ],
+      "disabled": true,
       "settings": {
         "header": "TELL ME WHAT’S YOUR FLAVOR?"
       }
@@ -692,7 +692,6 @@
     },
     "165089168609b8f684": {
       "type": "blog-posts",
-      "disabled": true,
       "blocks": {
         "821c67ed-463f-43b1-8388-52f9db81567a": {
           "type": "shape_divider",
@@ -722,6 +721,7 @@
         "821c67ed-463f-43b1-8388-52f9db81567a",
         "c53ffb1d-5f58-4d1c-87fc-3f9eb20f26dc"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": true,
         "title": "Blog posts",
@@ -739,7 +739,6 @@
     },
     "ab60c2c7-5754-4171-aa13-027011164036": {
       "type": "feedback-scroll",
-      "disabled": true,
       "blocks": {
         "a523bcdb-ffc8-49bf-9801-cdfcb090c33a": {
           "type": "feedback",
@@ -771,6 +770,7 @@
         "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9",
         "4d8c98bf-c157-4d15-9d4a-375e018d5587"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Group_1.png",
         "background": "shopify:\/\/shop_images\/feedback_scroll_bg.jpg"
@@ -805,7 +805,6 @@
     },
     "9117f9a3-6549-430b-a166-f051d2130969": {
       "type": "scrolling-texts",
-      "disabled": true,
       "blocks": {
         "f27e4102-74c3-4edc-9725-5a9d6bdb5c9b": {
           "type": "text",
@@ -846,13 +845,13 @@
         "f193defb-b8ba-433b-95e2-b5e1d8b9b0b8",
         "0ab63a77-bd8e-4d20-83fd-1e828b6ade51"
       ],
+      "disabled": true,
       "settings": {
         "section_bg": "#eccfff"
       }
     },
     "4135f8b3-d782-4fa5-81a9-705185187051": {
       "type": "testimonials",
-      "disabled": true,
       "blocks": {
         "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-1": {
           "type": "testimonial",
@@ -884,6 +883,7 @@
         "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-2",
         "template--20237412466979__4135f8b3-d782-4fa5-81a9-705185187051-testimonial-3"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": true,
         "title": "Brite in the Press",
@@ -899,7 +899,6 @@
     },
     "752e2726-c3ed-4a1e-b7d1-4f03f4d48074": {
       "type": "hero-slideshow",
-      "disabled": true,
       "blocks": {
         "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-1": {
           "type": "slide",
@@ -932,6 +931,7 @@
         "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-1",
         "template--20237412466979__752e2726-c3ed-4a1e-b7d1-4f03f4d48074-slide-2"
       ],
+      "disabled": true,
       "settings": {
         "style": "full",
         "height": "pt-screen-height",

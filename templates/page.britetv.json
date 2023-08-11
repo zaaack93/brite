@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "16917037160a9604de": {
+      "type": "apps",
+      "blocks": {
+        "2a4ae80a-1e48-416e-afda-2065819324e2": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/video-page-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "sugi3useimp0r"
+          }
+        }
+      },
+      "block_order": [
+        "2a4ae80a-1e48-416e-afda-2065819324e2"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16917037160a9604de"
+  ]
+}

@@ -85,11 +85,18 @@
             "show_pickup_availability": false
           }
         },
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "",
+            "icon": "none"
+          }
+        },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
           "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "disabled": true,
           "settings": {
-            "publishId": "publishId"
+            "publishId": "w1p0r7yavqugq"
           }
         },
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
@@ -184,6 +191,7 @@
         "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
@@ -214,7 +222,6 @@
     },
     "941029c2-e1a4-4694-9ce9-e9c63efed86e": {
       "type": "scrolling-videos",
-      "disabled": true,
       "blocks": {
         "96b43c76-0c55-40b0-bf76-95f5a06e1671": {
           "type": "video",
@@ -243,6 +250,7 @@
         "acde03d4-3d03-406f-b3eb-c7830fcae14f",
         "babc364d-b24a-412f-b768-b254cafab45c"
       ],
+      "disabled": true,
       "settings": {
         "section_header": "GET BLEACHED",
         "short_text": "Watch our community get expressive with our signature Bleach Kits.",
@@ -253,7 +261,6 @@
     },
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
       "type": "faq",
-      "disabled": true,
       "blocks": {
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0": {
           "type": "question",
@@ -334,6 +341,7 @@
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
         "ab246adc-2d98-4f23-830e-061980e5c974"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": true,
         "heading_text_style": "heading",
@@ -359,7 +367,6 @@
     },
     "25c2413a-a407-4a10-9700-034f0b659b31": {
       "type": "comparison-table",
-      "disabled": true,
       "blocks": {
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0": {
           "type": "row",
@@ -424,6 +431,7 @@
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
         "142db635-746a-4827-88ff-c90c1c20c2e7"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": false,
         "title": "Brite vs the other guys",
@@ -476,6 +484,38 @@
         "color_scheme": "quaternary",
         "use_gradient_background": false
       }
+    },
+    "1691702316a265b1ef": {
+      "type": "apps",
+      "blocks": {
+        "e06db6e3-1830-4cb7-83f2-13d9a4369101": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "publishId"
+          }
+        }
+      },
+      "block_order": [
+        "e06db6e3-1830-4cb7-83f2-13d9a4369101"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1691705782b1a68713": {
+      "type": "apps",
+      "blocks": {
+        "92abd682-2549-4eb6-a685-db2df1513cf0": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "92abd682-2549-4eb6-a685-db2df1513cf0"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -485,6 +525,8 @@
     "1bb3293b-4166-4127-acbf-4378e30cbe81",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "product-recommendations",
-    "b9840557-6047-445f-8e23-ec62568e83c0"
+    "b9840557-6047-445f-8e23-ec62568e83c0",
+    "1691702316a265b1ef",
+    "1691705782b1a68713"
   ]
 }
