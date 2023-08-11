@@ -688,7 +688,7 @@ span.rdc-media-dot.rdc-active {
 }
 
 /*STOCKISTS*/
-.rdc-stockists-inner {max-width: 1200px}
+.rdc-stockists-inner {max-width: 1200px;justify-content: center;}
 .rdc-stockists-box-inner {
     background-color: #ECDDF5;
     border: 1px solid;
