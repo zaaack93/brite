@@ -165,7 +165,9 @@
           document.body.dispatchEvent(new CustomEvent('youtubeiframeapiready'));
         };
       </script>
-    </head>
+    
+	{{ shop.metafields.loox["global_html_head"] }}
+</head>
   
     <body data-color-scheme="primary" class="template-{{ template.name }}">
       {% comment %}theme-check-disable MissingTemplate{% endcomment %}
@@ -215,5 +217,7 @@
       
       {% endcomment %}
       <script src="{{ 'rdc.js' | asset_url }}"></script>
-    </body>
+    
+	{{ shop.metafields.loox["global_html_body"] }}
+</body>
   </html>

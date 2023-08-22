@@ -2,12 +2,26 @@
   "sections": {
     "featured-image": {
       "type": "main-article-featured-image",
+      "disabled": true,
       "settings": {
+        "style": "full",
+        "height": "pt-two-thirds-screen-height",
+        "color_scheme": "primary",
+        "use_gradient_background": false
       }
     },
     "main": {
       "type": "main-article",
       "settings": {
+        "display_on_card": false,
+        "show_image": true,
+        "show_author": false,
+        "show_date": false,
+        "show_share_links": true,
+        "show_tags": true,
+        "show_next_previous_links": true,
+        "color_scheme": "primary",
+        "use_gradient_background": false
       }
     }
   },

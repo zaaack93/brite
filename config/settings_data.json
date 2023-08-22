@@ -17,9 +17,9 @@
     "color_tertiary_gradient": "linear-gradient(310deg, rgba(34, 232, 245, 1) 15%, rgba(126, 255, 193, 1) 84%)",
     "color_quaternary_text": "#062833",
     "color_quaternary_background": "#dce9ff",
-    "color_quaternary_accent": "#eccfff",
+    "color_quaternary_accent": "#b3edfc",
     "color_quaternary_card": "#ffffff",
-    "color_quaternary_gradient": "linear-gradient(172deg, rgba(255, 188, 0, 1), rgba(224, 82, 219, 1) 100%)",
+    "color_quaternary_gradient": "linear-gradient(172deg, rgba(244, 219, 149, 1), rgba(234, 165, 232, 1) 100%)",
     "button_color": "accent",
     "secondary_button_color": "match_background",
     "color_border": "#000000",
@@ -266,11 +266,11 @@
       "stockists": {
         "type": "stockists",
         "blocks": {
-          "01428e42-fa5e-4755-84f5-004ace3d0e59": {
-            "type": "stockist_australia",
+          "1b8304fa-fd92-463a-91ee-d2a8117a133b": {
+            "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Woolworths-logo-png-horizontal.png",
-              "link": "https:\/\/www.woolworths.com.au\/shop\/productgroup\/brite-hair-colors"
+              "logo": "shopify:\/\/shop_images\/Walmart_logo_993637ad-2a72-4204-b472-f8e753cf1ff2.png",
+              "link": "https:\/\/www.walmart.com\/c\/brand\/brite"
             }
           },
           "6888b46f-93ba-4b2a-8ddb-174a698bf388": {
@@ -280,18 +280,18 @@
               "link": "https:\/\/www.target.com\/b\/brite\/-\/N-o3wia"
             }
           },
-          "1b8304fa-fd92-463a-91ee-d2a8117a133b": {
-            "type": "stockist_usa",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/Walmart_logo_993637ad-2a72-4204-b472-f8e753cf1ff2.png",
-              "link": "https:\/\/www.walmart.com\/c\/brand\/brite"
-            }
-          },
           "3bc45826-bc1f-4ef9-9221-b61d1c6d8ef0": {
             "type": "stockist_usa",
             "disabled": true,
             "settings": {
               "logo": "shopify:\/\/shop_images\/sally-beauty-logo-freelogovectors_2b63eb64-ae75-4d83-a8e7-3a4ace07b327.png",
+              "link": ""
+            }
+          },
+          "2a91f2b9-e3e5-417b-8d84-5099814a2f3f": {
+            "type": "stockist_usa",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Meijer_logo_2039bb73-0db9-4408-b03b-26c7c2c49d91.png",
               "link": ""
             }
           },
@@ -305,15 +305,8 @@
           "ffc48fa1-838d-4179-bab6-309d0d49aee5": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/bed_bath__beyond-brandlogo_7549f4d3-8448-4f10-a7cb-d4b920905b0e.png",
+              "logo": "shopify:\/\/shop_images\/desktoplogo.png",
               "link": "https:\/\/www.bedbathandbeyond.com\/store\/s\/brite-hair"
-            }
-          },
-          "2a91f2b9-e3e5-417b-8d84-5099814a2f3f": {
-            "type": "stockist_usa",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/Meijer_logo_2039bb73-0db9-4408-b03b-26c7c2c49d91.png",
-              "link": ""
             }
           },
           "f900adcb-7e56-454b-a249-deff0a990bc4": {
@@ -329,6 +322,13 @@
             "settings": {
               "logo": "shopify:\/\/shop_images\/image_280.png",
               "link": "https:\/\/www.priceline.com.au\/search\/?q=brite"
+            }
+          },
+          "01428e42-fa5e-4755-84f5-004ace3d0e59": {
+            "type": "stockist_australia",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Woolworths-logo-png-horizontal.png",
+              "link": "https:\/\/www.woolworths.com.au\/shop\/productgroup\/brite-hair-colors"
             }
           },
           "6fead04c-472d-4629-a431-cc7811a10b09": {
@@ -362,15 +362,15 @@
           }
         },
         "block_order": [
-          "01428e42-fa5e-4755-84f5-004ace3d0e59",
-          "6888b46f-93ba-4b2a-8ddb-174a698bf388",
           "1b8304fa-fd92-463a-91ee-d2a8117a133b",
+          "6888b46f-93ba-4b2a-8ddb-174a698bf388",
           "3bc45826-bc1f-4ef9-9221-b61d1c6d8ef0",
+          "2a91f2b9-e3e5-417b-8d84-5099814a2f3f",
           "c9d7a179-013b-41f9-9e9f-8e1273e7db8c",
           "ffc48fa1-838d-4179-bab6-309d0d49aee5",
-          "2a91f2b9-e3e5-417b-8d84-5099814a2f3f",
           "f900adcb-7e56-454b-a249-deff0a990bc4",
           "2c12b3c0-9f53-47f5-a2df-054b1500420d",
+          "01428e42-fa5e-4755-84f5-004ace3d0e59",
           "6fead04c-472d-4629-a431-cc7811a10b09",
           "5bd2fecb-932b-46f1-bcf4-2080dd7d0ada",
           "53cd60b9-28a7-4332-9520-0c8ac502c22f",
@@ -386,6 +386,12 @@
     "blocks": {
       "4705145147225299685": {
         "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/widget-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "11532412952436166569": {
+        "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {
         }
