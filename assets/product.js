@@ -122,6 +122,27 @@ window['ThemeSection_Product'] = ({
       });
 
       this.updateStoreAvailability(this.current_variant);
+      setTimeout(() => {
+        // Get all div elements with the class 'variant-input'
+        const variantDivs = document.querySelectorAll('.variant-input');
+
+        // Iterate through the div elements
+        variantDivs.forEach(div => {
+          // Find the radio input inside the current div
+          const radioInput = div.querySelector('input[type="radio"]');
+
+          // Check if the radio input is checked
+          if (radioInput && radioInput.checked) {
+            // Create a new 'change' event
+            const changeEvent = new Event('change', {
+              bubbles: true
+            });
+
+            // Dispatch the 'change' event on the radio input
+            radioInput.dispatchEvent(changeEvent);
+          }
+        });
+      }, 50);
     },
     getAddToCartButtonHeight() {
       window.onload = function () {
@@ -142,14 +163,13 @@ window['ThemeSection_Product'] = ({
         this.storeAvailability.fetchContent(variant);
       }
     },
-    optionChange() {
+    optionChange(name, value) {
       this.getOptions();
 
       const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
         this.product,
         this.options
       );
-
       this.current_variant = matchedVariant;
 
       if (this.current_variant) {
@@ -164,22 +184,56 @@ window['ThemeSection_Product'] = ({
           this.current_variant.id
         );
 
-        window.history.replaceState({ path: url }, '', url);
+        window.history.replaceState({
+          path: url
+        }, '', url);
         this.$refs.singleVariantSelector.dispatchEvent(
-          new Event('change', { bubbles: true })
+          new Event('change', {
+            bubbles: true
+          })
         );
         this.$root.dispatchEvent(
           new CustomEvent('shapes:product:variantchange', {
             bubbles: true,
-            detail: { variant: this.current_variant },
+            detail: {
+              variant: this.current_variant
+            },
           })
         );
 
 
         //update price
-        if(document.querySelector('.currentPrice .money')){
-          document.querySelector('.currentPrice .money').innerHTML=formatMoney(this.current_variant.price)
+        if (document.querySelector('.currentPrice .money')) {
+          document.querySelector('.currentPrice .money').innerHTML = formatMoney(this.current_variant.price)
         }
+        //filter options
+        const productFilterdWithOption = this.product.variants.filter((variant) => variant.options.includes(value))
+
+        // Get all div elements with the class 'variant-input'
+        const variantDivs = document.querySelectorAll('.variant-input');
+
+        // Define the value you want to filter out
+        const excludedValue = name;
+
+        // Filter the div elements based on the data-option-name attribute
+        const filteredDivs = Array.from(variantDivs).filter(div => {
+          const optionName = div.getAttribute('data-option-name');
+          return optionName !== excludedValue;
+        });
+
+        filteredDivs.filter(div => {
+          const optionValue = div.getAttribute('data-option-value');
+          const existValue = productFilterdWithOption.filter(product => {
+            return product.options.includes(optionValue) && product.options.includes(value);
+          });
+          if (existValue.length != 0) {
+            div.classList.remove('hide')
+          } else {
+            div.classList.add('hide')
+          }
+        });
+
+
       }
     },
     getOptions() {
@@ -211,7 +265,9 @@ window['ThemeSection_Product'] = ({
       this.$root.dispatchEvent(
         new CustomEvent('shapes:product:arrow-change', {
           bubbles: true,
-          detail: { direction: direction },
+          detail: {
+            direction: direction
+          },
         })
       );
       if (this.thumbnailsPosition == 'under') {
@@ -219,9 +275,9 @@ window['ThemeSection_Product'] = ({
           '.product-thumbnail-list-item--active'
         );
         const nextElement =
-          direction == 'prev'
-            ? currentThumbnail.previousElementSibling
-            : currentThumbnail.nextElementSibling;
+          direction == 'prev' ?
+          currentThumbnail.previousElementSibling :
+          currentThumbnail.nextElementSibling;
         if (nextElement !== null) {
           nextElement.querySelector('.media-thumbnail').click();
         }
@@ -262,7 +318,9 @@ window['ThemeSection_Product'] = ({
             document.body.dispatchEvent(
               new CustomEvent('shapes:modalcart:afteradditem', {
                 bubbles: true,
-                detail: { response: data },
+                detail: {
+                  response: data
+                },
               })
             );
           }

@@ -14,3 +14,7 @@
 .tolstoy-carousel-title {
   font-family: var(--heading-font-stack);
 }
+
+.hide {
+  display: none !important;
+}
