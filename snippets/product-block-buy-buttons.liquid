@@ -64,7 +64,7 @@
           <span class="{% if product.available %}{{ add_to_cart_class }}{% endif %}">
           <span x-text="addToCartText">{% if current_variant.available %}{{ button_text }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
           {%- if block.settings.show_price -%}
-            <span x-show="currentVariantAvailable">&nbsp;&#8211;&nbsp;</span><span x-show="currentVariantAvailable" {% comment %}x-html="formatMoney(current_price){% endcomment %}">{{ current_variant.price | money | remove: 'AUD' }}</span>
+            <span x-show="currentVariantAvailable">&nbsp;&#8211;&nbsp;</span><span x-show="currentVariantAvailable" class="currentPrice" {% comment %}x-html="formatMoney(current_price){% endcomment %}">{{ current_variant.price | money | remove: 'AUD' }}</span>
             {% if product.compare_at_price_max > product.price %}
               <template  x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price">
                 <span x-show="currentVariantAvailable" class="{{ price_text_size }}">

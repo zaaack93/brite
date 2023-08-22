@@ -174,6 +174,12 @@ window['ThemeSection_Product'] = ({
             detail: { variant: this.current_variant },
           })
         );
+
+
+        //update price
+        if(document.querySelector('.currentPrice .money')){
+          document.querySelector('.currentPrice .money').innerHTML=formatMoney(this.current_variant.price)
+        }
       }
     },
     getOptions() {
