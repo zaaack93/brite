@@ -10,3 +10,10 @@
         display: none !important;
     }
 }
+@media only screen and (max-width: 989px) {
+    .template-product{
+        #MainContent{
+            overflow: hidden;
+        }
+    }
+}

@@ -484,13 +484,12 @@ function checkDirection() {
  
 const pmThumbnailsActive = document.querySelectorAll(".rdc-product-media-main.rdc-active .rdc-pm-thumbnail")  
 let imageSrc = pmThumbnailsActive[pmDotActiveIndex].children[0].src;
-
-  imageSrc = imageSrc.split("_")
-imageSrc[imageSrc.length-1] = "1000x"
-imageSrc = imageSrc.join("_")
+//   imageSrc = imageSrc.split("_")
+// imageSrc[imageSrc.length-1] = "1000x"
+// imageSrc = imageSrc.join("_")
 
 let pmImageDisplayed = document.querySelector(".rdc-product-media-main.rdc-active").children[0].children[0].children[0]
-  pmImageDisplayed.src=`${imageSrc}.jpg`
+  pmImageDisplayed.src=`${imageSrc}`
 
 }
 
