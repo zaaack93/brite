@@ -21,4 +21,4 @@ function updateURLAndRemoveParams() {
   }
   
   // Call the function to update the URL and remove query parameters
-  updateURLAndRemoveParams();
+//  updateURLAndRemoveParams();

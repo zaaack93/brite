@@ -121,10 +121,12 @@ const variantPrices = document.querySelectorAll('.rdc-variant-price');
 
 const showVariantDesc = function () {
   setTimeout(function() {
-  let variantId = window.location.href;
-  variantId = variantId.split('?');
-  variantId = variantId[1].split('=');
-  variantId = variantId[1];
+  var url = new URL(location.href);
+
+  let variantId = url.searchParams.get('variant');;
+  // variantId = variantId.split('?');
+  // variantId = variantId[1].split('=');
+  // variantId = variantId[1];
 
     const variantDescClass = `rdc-variant-desc-${variantId}`
     const variantLongDescClass = `rdc-variant-long-desc-${variantId}`
