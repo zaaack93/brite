@@ -113,9 +113,12 @@ window['ThemeSection_Product'] = ({
 
       this.$watch('current_media_id', (value, oldValue) => {
         if (this.isUsingSlideshowToDisplayMedia) return;
-        this.$root
-          .querySelector(`[data-product-single-media-wrapper="${oldValue}"]`)
-          .dispatchEvent(new CustomEvent('mediaHidden'));
+        if(this.$root.querySelector(`[data-product-single-media-wrapper="${oldValue}"]`))
+          this.$root
+            .querySelector(`[data-product-single-media-wrapper="${oldValue}"]`)
+            .dispatchEvent(new CustomEvent('mediaHidden'));
+
+        if(this.$root.querySelector(`[data-product-single-media-wrapper="${value}"]`))
         this.$root
           .querySelector(`[data-product-single-media-wrapper="${value}"]`)
           .dispatchEvent(new CustomEvent('mediaVisible'));
@@ -143,6 +146,36 @@ window['ThemeSection_Product'] = ({
           }
         });
       }, 50);
+      //working on scroll thumbnail
+      // Get all the div elements with class "rdc-product-media-inner"
+      const divElements = document.querySelectorAll('.rdc-product-media-inner');
+
+      // Function to check screen size and perform action
+      function checkScreenSize() {
+        // Check if the screen width is greater than 990 pixels
+        if (window.innerWidth > 990) {
+          // Loop through each div element
+          divElements.forEach(divElement => {
+            // Check if the div element has the class "rdc-product-media-inner"
+            if (divElement.classList.contains('displayleft-to-right')) {
+              // Get the first div element with class "rdc-product-media-viewer"
+              const firstDiv = divElement.querySelector('.rdc-product-media-viewer');
+
+              // Get the second div element with class "rdc-product-media-thumbnails"
+              const secondDiv = divElement.querySelector('.rdc-product-media-thumbnails');
+
+              // Set the height of the second div equal to the height of the first div
+              secondDiv.style.height = `${firstDiv.offsetHeight}px`;
+            }
+          });
+        }
+      }
+
+// Call the function initially
+checkScreenSize();
+
+// Add an event listener to check screen size on window resize
+window.addEventListener('resize', checkScreenSize);
     },
     getAddToCartButtonHeight() {
       window.onload = function () {
@@ -164,6 +197,7 @@ window['ThemeSection_Product'] = ({
       }
     },
     optionChange(name, value) {
+      
       this.getOptions();
 
       const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
@@ -187,6 +221,7 @@ window['ThemeSection_Product'] = ({
         window.history.replaceState({
           path: url
         }, '', url);
+
         this.$refs.singleVariantSelector.dispatchEvent(
           new Event('change', {
             bubbles: true
@@ -232,8 +267,6 @@ window['ThemeSection_Product'] = ({
             div.classList.add('hide')
           }
         });
-
-
       }
     },
     getOptions() {

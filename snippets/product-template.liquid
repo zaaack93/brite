@@ -74,7 +74,7 @@
     rdc-d-none
     {% endif %}" 
          data-id="{{ variant.id }}">
-<div class="rdc-product-media-inner">
+<div class="rdc-product-media-inner {%if section.settings.thumbnails_position == 'left'%} displayleft-to-right {%endif%}">
  <div class="rdc-product-media-viewer rdc-p-relative">
  <img src="{{ variant.image | img_url: "1000x" }}">
            {% if product.metafields.info.image_benefit != blank %}

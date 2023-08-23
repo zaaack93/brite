@@ -1,22 +1,60 @@
-.rdc-vp-inner{
+.rdc-vp-inner {
     -moz-column-gap: 15px;
          column-gap: 15px;
-}  
+}
 
-.rdc-vp-fieldset-wrapper{
+.rdc-vp-fieldset-wrapper {
     position: relative;
 }
+
 @media only screen and (min-width: 768px) {
-    .rdc-vp-more{
+    .rdc-vp-more {
         display: none !important;
     }
 }
+
 @media only screen and (max-width: 989px) {
-    .template-product{
-        #MainContent{
+    .template-product {
+        #MainContent {
             overflow: hidden;
         }
     }
+}
+
+@media only screen and (min-width: 990px) {
+    .rdc-product-media-inner.displayleft-to-right {
+        display: flex;
+        -moz-column-gap: 15px;
+             column-gap: 15px;
+
+        .rdc-product-media-viewer {
+            flex-grow: 1;
+            order: 2;
+            width: -moz-fit-content;
+            width: fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+        }
+
+        .rdc-product-media-thumbnails {
+            width: 25%;
+            padding: 0px;
+            overflow-y: scroll;
+            display: block;
+
+            .rdc-pm-thumbnail {
+                margin-right: 0px;
+                max-width: initial;
+                max-height: initial;
+                margin-bottom: 15px;
+                width: 100%;
+                height: -moz-fit-content;
+                height: fit-content;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
 }
 .tolstoy-carousel-title {
   font-family: var(--heading-font-stack);

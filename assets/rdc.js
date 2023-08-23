@@ -174,6 +174,9 @@ for(let i=0; i<variantDescs.length; i++) {
 
 
   console.log(variantId);
+  //to handle scrolling
+  const resizeEvent = new Event('resize');
+  window.dispatchEvent(resizeEvent);
     }, 200);
 }
  if(variantSelect) {
@@ -427,7 +430,7 @@ const changePMDisplay = function () {
 
 let pmImageDisplayed = this.parentElement.parentElement.children[0].children[0]
   pmImageDisplayed.src=`${thisImageSrc}`
-
+debugger
   console.log(new Date())
 }
 
