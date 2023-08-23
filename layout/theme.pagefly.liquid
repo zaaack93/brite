@@ -169,7 +169,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           document.body.dispatchEvent(new CustomEvent('youtubeiframeapiready'));
         };
       </script>
-    </head>
+    
+	{{ shop.metafields.loox["global_html_head"] }}
+</head>
   
     <body data-color-scheme="primary" class="template-{{ template.name }}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
   </html>

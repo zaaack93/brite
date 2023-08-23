@@ -203,7 +203,7 @@
             "sticker_font_size": "1.563rem",
             "image": "shopify:\/\/shop_images\/Rainbow.png",
             "half_image_width_on_mobile": true,
-            "horizontal_position": 87,
+            "horizontal_position": 59,
             "vertical_position": 100,
             "rotate": 14,
             "show_sticker_on_mobile": true,
@@ -310,7 +310,7 @@
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0": {
           "type": "row",
           "settings": {
-            "title": "Cruelty Free",
+            "title": "Cruelty Free & Vegan",
             "column_1_icon": "check-mark",
             "column_1_text": "",
             "column_2_icon": "check_close",
@@ -324,7 +324,7 @@
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1": {
           "type": "row",
           "settings": {
-            "title": "Vegan",
+            "title": "Brite-ning heads for 12+ years",
             "column_1_icon": "check-mark",
             "column_1_text": "",
             "column_2_icon": "check_close",
@@ -392,6 +392,7 @@
         "142db635-746a-4827-88ff-c90c1c20c2e7",
         "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
       ],
+      "disabled": true,
       "settings": {
         "display_on_card": false,
         "title": "Brite vs the other dyes",
