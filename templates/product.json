@@ -243,8 +243,8 @@
       "settings": {
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "default",
-        "desktop_media_width": "lg:col-span-6_lg:col-span-6",
-        "show_slideshow_arrows_on_desktop": false,
+        "desktop_media_width": "lg:col-span-7_lg:col-span-5",
+        "show_slideshow_arrows_on_desktop": true,
         "enable_image_zoom": false,
         "enable_video_looping": true,
         "autoplay_videos_on_desktop": true,
