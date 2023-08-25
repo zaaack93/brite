@@ -431,7 +431,7 @@ const changePMDisplay = function () {
 
 let pmImageDisplayed = this.closest('.rdc-product-media-main').querySelector('.rdc-product-media-viewer').children[0]
   pmImageDisplayed.src=`${thisImageSrc}`
-  pmThumbnails.forEach(pmThumbnail => {
+  this.closest('.rdc-product-media-thumbnails').querySelectorAll('.rdc-pm-thumbnail').forEach(pmThumbnail => {
     pmThumbnail.classList.remove('current-thumb')
   })
   this.classList.add('current-thumb')
