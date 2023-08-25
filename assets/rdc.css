@@ -580,7 +580,7 @@ a.rdc-collection-card-inner>span,
 .product-tile .price__container {font-size: 16px}
 
 .rdc-variant-price span {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 600;
 }
 .br-atc-benefit {font-size: 16px}
@@ -1089,7 +1089,7 @@ span.rdc-cp-price {margin: 5px 0}
 }
 @media only screen and (min-width: 990px) {
 #sidebar{
-  top:0;
+  top:20;
   height: fit-content;
   position: sticky;
 }

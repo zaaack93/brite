@@ -424,16 +424,17 @@ const pmThumbnails = document.querySelectorAll(".rdc-pm-thumbnail")
 // })
 
 const changePMDisplay = function () {
-  console.log(new Date())
   let thisImageSrc = this.children[0].src;
 //   thisImageSrc = thisImageSrc.split("_")
 // thisImageSrc[thisImageSrc.length-1] = "1000x"
 // thisImageSrc = thisImageSrc.join("_")
 
-let pmImageDisplayed = this.parentElement.parentElement.children[0].children[0]
+let pmImageDisplayed = this.closest('.rdc-product-media-main').querySelector('.rdc-product-media-viewer').children[0]
   pmImageDisplayed.src=`${thisImageSrc}`
-debugger
-  console.log(new Date())
+  pmThumbnails.forEach(pmThumbnail => {
+    pmThumbnail.classList.remove('current-thumb')
+  })
+  this.classList.add('current-thumb')
 }
 
 

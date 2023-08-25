@@ -75,14 +75,47 @@
     {% endif %}" 
          data-id="{{ variant.id }}">
 <div class="rdc-product-media-inner {%if section.settings.thumbnails_position == 'left'%} displayleft-to-right {%endif%}">
+ <div class="viewer-container">
  <div class="rdc-product-media-viewer rdc-p-relative">
  <img src="{{ variant.image | img_url: "1000x" }}">
            {% if product.metafields.info.image_benefit != blank %}
                   <span class="br-img-benefit rdc-p-absolute">{{ product.metafields.info.image_benefit }}</span>
                     {% endif %}
+{%- if section.settings.show_slideshow_arrows_on_desktop -%}
+                    {%- endif -%}
 </div>
+                    <div class="splide__arrows flex items-center justify-end gap-2 mt-4 hidden lg:block text-right">
+                      <div class="inline-block controls relative z-10 ml-auto {% if settings.button_shadow_direction contains 'top' %}pt-button-shadow{% else %}pb-button-shadow{% endif %}">
+                        <div class="flex gap-2">
+                          <button class="push-btn"
+                            @click="changeMediaOp('prev')"
+                            @keydown.space="changeMediaOp('prev')"
+                            @keydown.left.prevent="changeMediaOp('prev')"
+                            @keydown.enter="changeMediaOp('prev')">
+                            <span class="sr-only">{{ 'sections.slideshow.previous_slide' | t }}</span>
+                            <span class="push-btn-surface align-bottom p-2">
+                              <span class="block w-5 h-5">{% render 'icon-previous' %}</span>
+                            </span>
+                          </button>
+                          <button class="push-btn"
+                            @click="changeMediaOp('next')"
+                            @keydown.space="changeMediaOp('next')"
+                            @keydown.right.prevent="changeMediaOp('next')"
+                            @keydown.enter="changeMediaOp('next')">
+                            <span class="sr-only">{{ 'sections.slideshow.next_slide' | t }}</span>
+                            <span class="push-btn-surface align-bottom p-2">
+                              <span class="block w-5 h-5">{% render 'icon-next' %}</span>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+</div>
+<div class="container--thumbnail">
+<div class="thumbnails-overflow-indicator-bottom z-[2] absolute bottom-0 left-0 right-0 bg-gradient-to-b from-scheme-background to-transparent w-full h-24 pointer-events-none transition-opacity duration-150 max-lg:hidden"></div>
   <div class="rdc-product-media-thumbnails rdc-d-flex rdc-f-wrap rdc-mm-d-none">
-    <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ variant.image | img_url: "1000x" }}"></span>
+    <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p current-thumb"><img src="{{ variant.image | img_url: "1000x" }}"></span>
 
          {% if variant.metafields.details.images.value != blank %}
       {% for varImage in variant.metafields.details.images.value %}
@@ -90,7 +123,7 @@
          {% assign dotCount = forloop.index | plus: 1 %}
           {% endfor %}
            {% endif %}
-
+</div>
 </div>
          <div class="rdc-pm-dots rdc-media-dots rdc-d-flex">
             {% if variant.metafields.details.images.value != blank %}

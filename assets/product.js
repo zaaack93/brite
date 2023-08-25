@@ -165,7 +165,18 @@ window['ThemeSection_Product'] = ({
               const secondDiv = divElement.querySelector('.rdc-product-media-thumbnails');
 
               // Set the height of the second div equal to the height of the first div
-              secondDiv.style.height = `${firstDiv.offsetHeight}px`;
+              secondDiv.style.height = `${firstDiv.offsetHeight+45}px`;
+
+              secondDiv.addEventListener('scroll', function() {
+                if (secondDiv.scrollTop + secondDiv.clientHeight + 40 >= secondDiv.scrollHeight) {
+                  // Perform your action here when scrolling to the bottom
+                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=0
+                  // You can replace the console.log statement with your desired action
+                }
+                else{
+                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=1
+                }
+              });
             }
           });
         }
@@ -194,6 +205,34 @@ window.addEventListener('resize', checkScreenSize);
 
       if (this.storeAvailability && variant) {
         this.storeAvailability.fetchContent(variant);
+      }
+    },
+    
+    changeMediaOp(ope) {
+      const thumbContainer = this.$root.querySelector('.rdc-product-media-main.rdc-active .container--thumbnail .rdc-product-media-thumbnails')
+      if(thumbContainer){
+        const ActivateContainer = thumbContainer.querySelector('.rdc-pm-thumbnail.current-thumb')
+        const thumbItems = thumbContainer.querySelectorAll('.rdc-pm-thumbnail')
+
+        if(!ActivateContainer)
+          thumbContainer.querySelector('.rdc-pm-thumbnail').classList.add('current-thumb')
+
+
+        const index = Array.from(thumbItems).indexOf(ActivateContainer);
+        if(ope=='next'){
+          if(thumbItems.length>index+1){
+            thumbItems[index+1].click()
+            thumbContainer.scrollTop = thumbItems[index+1].offsetTop;
+
+          }
+        }
+        else if(ope=='prev'){
+          if(index>0){
+            thumbItems[index-1].click()
+            thumbContainer.scrollTop = thumbItems[index-1].offsetTop;
+          }
+        }
+
       }
     },
     optionChange(name, value) {
