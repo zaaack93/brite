@@ -304,6 +304,151 @@
         "use_gradient_background": false
       }
     },
+    "cc2a2e2b-79a1-488a-9004-0db944388dd6": {
+      "type": "image-with-text-slideshow",
+      "blocks": {
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Before & Brite-er!",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        },
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Image with text slideshow",
+            "richtext": "",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1",
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-base",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
+      "type": "faq",
+      "blocks": {
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q1.value }}",
+            "answer": "{{ product.metafields.custom.faq_a1 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q2.value }}",
+            "answer": "{{ product.metafields.custom.faq_a2 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q3.value }}",
+            "answer": "{{ product.metafields.custom.faq_a3 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q4.value }}",
+            "answer": "{{ product.metafields.custom.faq_a4 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q5.value }}",
+            "answer": "{{ product.metafields.custom.faq_a5 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q6.value }}",
+            "answer": "{{ product.metafields.custom.faq_a6 | metafield_tag }}"
+          }
+        },
+        "ab246adc-2d98-4f23-830e-061980e5c974": {
+          "type": "shape_divider",
+          "settings": {
+            "target_section": "above",
+            "target_section_color_scheme": "primary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": false,
+            "enable_animation": false,
+            "animation_direction": ""
+          }
+        },
+        "ec8370ab-b71f-4870-89fa-28dce2889d27": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 190,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/S-26.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 89,
+            "vertical_position": 80,
+            "rotate": 20,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
+        "ab246adc-2d98-4f23-830e-061980e5c974",
+        "ec8370ab-b71f-4870-89fa-28dce2889d27"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": true,
+        "heading_text_style": "heading",
+        "two_columns_desktop": false,
+        "title": "FAQ",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false
+      }
+    },
     "25c2413a-a407-4a10-9700-034f0b659b31": {
       "type": "comparison-table",
       "blocks": {
@@ -321,17 +466,17 @@
             "column_4_text": ""
           }
         },
-        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1": {
+        "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc": {
           "type": "row",
           "settings": {
-            "title": "Brite-ning heads for 12+ years",
+            "title": "Easy to apply",
             "column_1_icon": "check-mark",
             "column_1_text": "",
-            "column_2_icon": "check_close",
+            "column_2_icon": "check-mark",
             "column_2_text": "",
             "column_3_icon": "check_close",
             "column_3_text": "",
-            "column_4_icon": "check_close",
+            "column_4_icon": "",
             "column_4_text": ""
           }
         },
@@ -344,6 +489,20 @@
             "column_2_icon": "check_close",
             "column_2_text": "",
             "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1": {
+          "type": "row",
+          "settings": {
+            "title": "Coloring lives for 12+ years",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check-mark",
             "column_3_text": "",
             "column_4_icon": "check_close",
             "column_4_text": ""
@@ -373,7 +532,7 @@
             "image": "shopify:\/\/shop_images\/Loveit.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 14,
-            "vertical_position": 45,
+            "vertical_position": 53,
             "rotate": 0,
             "show_sticker_on_mobile": true,
             "show_sticker_on_desktop": true,
@@ -387,12 +546,12 @@
       },
       "block_order": [
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0",
-        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
+        "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
         "142db635-746a-4827-88ff-c90c1c20c2e7",
         "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
       ],
-      "disabled": true,
       "settings": {
         "display_on_card": false,
         "title": "Brite vs the other dyes",
@@ -445,102 +604,6 @@
         "button_text": "Check out more on",
         "button_link": "",
         "button_icon": "shopify:\/\/shop_images\/tiktok_icon_8917efd8-2745-43ef-971f-4d84d32e8ef2.png"
-      }
-    },
-    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
-      "type": "faq",
-      "blocks": {
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0": {
-          "type": "question",
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q1.value }}",
-            "answer": "{{ product.metafields.custom.faq_a1 | metafield_tag }}"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-1": {
-          "type": "question",
-          "settings": {
-            "question": "Frequently asked question",
-            "answer": "<p>Use this text to share the answer to the question with your customers.<\/p>"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2": {
-          "type": "question",
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q3.value }}",
-            "answer": "{{ product.metafields.custom.faq_a3 | metafield_tag }}"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3": {
-          "type": "question",
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q4.value }}",
-            "answer": "{{ product.metafields.custom.faq_a4 | metafield_tag }}"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4": {
-          "type": "question",
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q5.value }}",
-            "answer": "{{ product.metafields.custom.faq_a5 | metafield_tag }}"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "question": "Frequently asked question",
-            "answer": "<p>Use this text to share the answer to the question with your customers.<\/p>"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-6": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "question": "Frequently asked question",
-            "answer": "<p>Use this text to share the answer to the question with your customers.<\/p>"
-          }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "question": "Frequently asked question",
-            "answer": "<p>Use this text to share the answer to the question with your customers.<\/p>"
-          }
-        },
-        "ab246adc-2d98-4f23-830e-061980e5c974": {
-          "type": "shape_divider",
-          "settings": {
-            "target_section": "above",
-            "target_section_color_scheme": "primary",
-            "style": "medium-waves_1200x43",
-            "flip_horizontal": false,
-            "enable_animation": false,
-            "animation_direction": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-1",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-6",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
-        "ab246adc-2d98-4f23-830e-061980e5c974"
-      ],
-      "disabled": true,
-      "settings": {
-        "display_on_card": true,
-        "heading_text_style": "heading",
-        "two_columns_desktop": false,
-        "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
-        "color_scheme": "secondary",
-        "use_gradient_background": false
       }
     },
     "1bb3293b-4166-4127-acbf-4378e30cbe81": {
@@ -604,7 +667,7 @@
             "image": "shopify:\/\/shop_images\/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
-            "vertical_position": 95,
+            "vertical_position": 90,
             "rotate": 20,
             "show_sticker_on_mobile": true,
             "show_sticker_on_desktop": true,
@@ -677,9 +740,10 @@
   "order": [
     "main",
     "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
+    "cc2a2e2b-79a1-488a-9004-0db944388dd6",
+    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "941029c2-e1a4-4694-9ce9-e9c63efed86e",
-    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "1bb3293b-4166-4127-acbf-4378e30cbe81",
     "product-recommendations",
     "loox-product-reviews-app-section",

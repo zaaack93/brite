@@ -1089,10 +1089,13 @@ span.rdc-cp-price {margin: 5px 0}
 }
 @media only screen and (min-width: 990px) {
 #sidebar{
-  top:20;
+  top:10px;
   height: fit-content;
   position: sticky;
 }
+  .template-product{
+      overflow-x:hidden;
+  }
 }
 
 .rdc-product-media-inner{
