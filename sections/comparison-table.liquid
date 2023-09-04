@@ -57,7 +57,7 @@
               {%- assign rows = section.blocks | where: "type", "row" -%}
               {%- for row in rows -%}
                 <tr>
-                  <th class="table-row-heading break-words font-normal">{{ row.settings.title }}</th>
+                  <th class="table-row-heading break-words font-heading heading-secondary">{{ row.settings.title }}</th>
                   <td>
                     {%- if row.settings.column_1_icon != '' -%}
                     <span class="mx-auto block w-10 text-scheme-text mb-2.5">{% render 'theme-icon', icon: row.settings.column_1_icon, stroke: 2 %}</span>

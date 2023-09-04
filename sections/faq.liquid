@@ -1,8 +1,15 @@
 {%- liquid
   assign block_heading_level = 'h2'
 -%}
+{% assign isEmpty =true %}
+{%- for block in section.blocks -%}
+  {% if block.type == 'question' and block.settings.question != blank and block.settings.answer != blank %}
+    {% assign isEmpty =false %}
+  {% endif %}
+{% endfor %}
 
-<section class="relative text-scheme-text bg-scheme-background overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
+{% unless isEmpty %}
+<section class="relative text-scheme-text bg-scheme-background overflow-hidden faq-section-main {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
   
   <div class="section-content max-w-site mx-auto px-section relative z-10 py-section-vertical-spacing">
     {% if section.settings.title != blank %}
@@ -20,7 +27,7 @@
 
     <div class="{% if section.settings.title != '' or section.settings.richtext != blank %}section-content-top-margin{% endif %} {% unless section.settings.display_on_card %}border-scheme-text border-b-2{% endunless %} mx-auto grid grid-cols-1 gap-theme {% if section.settings.two_columns_desktop %}lg:grid-cols-2 max-w-7xl{% else %}max-w-2xl{% endif %}">
     {%- for block in section.blocks -%}
-      {% if block.type == 'question' %}
+      {% if block.type == 'question' and block.settings.question != blank and block.settings.answer != blank %}
         <div class="{% if section.settings.display_on_card %}card-container{% else %}{% endif %}" {{ block.shopify_attributes }}>
           <div class="{% if section.settings.display_on_card %}card p-4{% else %}border-scheme-text border-t-2 py-4{% endif %}" x-data="{ open: false }" x-cloak>
             <{{ block_heading_level }} class="">
@@ -63,7 +70,7 @@
     endfor
   -%}
 </section>
-
+{%endunless%}
 
 {%- liquid
   assign stickers = section.blocks | where: "type", "sticker" 

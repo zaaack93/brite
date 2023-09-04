@@ -83,6 +83,13 @@
         }
     }
 }
+.faq-section-main{
+    .card-container{
+        p{
+            min-height: 20px;
+        }
+    }
+}
 .tolstoy-carousel-title {
   font-family: var(--heading-font-stack);
 }
