@@ -339,7 +339,6 @@
         "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1",
         "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2"
       ],
-      "disabled": true,
       "settings": {
         "display_on_card": false,
         "image_size": "half",
@@ -438,7 +437,6 @@
         "ab246adc-2d98-4f23-830e-061980e5c974",
         "ec8370ab-b71f-4870-89fa-28dce2889d27"
       ],
-      "disabled": true,
       "settings": {
         "display_on_card": true,
         "heading_text_style": "heading",
