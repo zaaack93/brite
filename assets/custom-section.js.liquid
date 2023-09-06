@@ -1,0 +1,34 @@
+// JavaScript
+class BeforeAfterSlider extends HTMLElement {
+  constructor() {
+    super();
+    // Find elements within the shadow DOM
+    this.slider = this.querySelector('.slider');
+    this.foregroundImg = this.querySelector('.foreground-img');
+    this.sliderButton = this.querySelector('.slider-button');
+
+    // Attach event listeners
+    this.slider.addEventListener('input', this.handleSliderInput.bind(this));
+    this.slider.addEventListener('change', this.handleSliderChange.bind(this));
+    window.addEventListener('resize', this.handleSliderChange.bind(this));
+  }
+
+  handleSliderInput(e) {
+    const sliderPos = e.target.value;
+    // Update the width of the foreground image
+    this.foregroundImg.style.width = `${sliderPos}%`;
+    // Update the position of the slider button
+    if(document.body.clientWidth<=600){
+      this.sliderButton.style.left = `calc(${sliderPos}% - 16px)`;
+    }
+    else{
+      this.sliderButton.style.left = `calc(${sliderPos}% - 31px)`;
+    }
+  }
+
+  handleSliderChange(e) {
+    // Handle slider change (if needed)
+  }
+}
+
+customElements.define('before-after-slider', BeforeAfterSlider);

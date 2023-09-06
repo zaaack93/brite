@@ -1,0 +1,13 @@
+<before-after-slider>
+        <div class='container-images {{ media_class }}'>
+            <div class='img background-img' style="background-image:url({{ media | img_url: '1500x' }})">
+            </div>
+            <div class='img foreground-img' style="background-image:url({{ media_after | img_url: '1500x' }})">
+
+            <span class="font-heading heading-secondary tag-status">Before</span>
+            </div>
+            <span class="font-heading heading-secondary tag-status after-status">After</span>
+            <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
+            <div class='slider-button'>{% render 'arrow-button-bfaf' %}</div>
+        </div>
+</before-after-slider>

@@ -339,6 +339,38 @@
         "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1",
         "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2"
       ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-base",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd": {
+      "type": "before-after-with-text-slideshow",
+      "blocks": {
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
+            "image_after": "shopify:\/\/shop_images\/Brite_-_Clean_Color_Copper_2.jpg",
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Before & Brite-er!",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1"
+      ],
       "settings": {
         "display_on_card": false,
         "image_size": "half",
@@ -739,6 +771,7 @@
     "main",
     "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
     "cc2a2e2b-79a1-488a-9004-0db944388dd6",
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "941029c2-e1a4-4694-9ce9-e9c63efed86e",
