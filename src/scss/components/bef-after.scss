@@ -113,3 +113,6 @@ before-after-slider {
         }
     }
 }
+before-after-slider:not([is-active-slide]){
+    display: none;
+}

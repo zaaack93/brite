@@ -32,3 +32,35 @@ class BeforeAfterSlider extends HTMLElement {
 }
 
 customElements.define('before-after-slider', BeforeAfterSlider);
+
+
+
+class BeforeAfterSliderContainer extends HTMLElement {
+  constructor() {
+    super();
+    this.items=this.querySelectorAll('before-after-slider')
+    const loadSlides = (event) => {
+      let izSelected = false
+      this.items.forEach(item => {
+        item.removeAttribute('is-active-slide');
+        if(item.getAttribute('data-id') == String(event.detail.variant.id)){
+          izSelected=true
+          item.setAttribute('is-active-slide',true)
+        }
+        else if (item.getAttribute('data-id')=='default' && !izSelected ){
+          item.setAttribute('is-active-slide',true)
+        }
+      });
+    }
+
+    document.addEventListener('shapes:product:variantchange', loadSlides);
+  }
+
+  
+
+  handleSliderChange(e) {
+    // Handle slider change (if needed)
+  }
+}
+
+customElements.define('before-after-slider-container', BeforeAfterSliderContainer);

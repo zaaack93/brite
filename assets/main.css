@@ -206,6 +206,9 @@ before-after-slider {
         }
     }
 }
+before-after-slider:not([is-active-slide]){
+    display: none;
+}
 .tolstoy-carousel-title {
   font-family: var(--heading-font-stack);
 }

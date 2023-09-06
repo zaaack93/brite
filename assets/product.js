@@ -306,6 +306,16 @@ window.addEventListener('resize', checkScreenSize);
             div.classList.add('hide')
           }
         });
+        //dispatch change Before after 
+        window.dispatchEvent(
+          new CustomEvent('slides:before-after-change', {
+            bubbles: true,
+            detail: {
+              variant: this.current_variant
+            },
+          })
+        );
+        
       }
     },
     getOptions() {
