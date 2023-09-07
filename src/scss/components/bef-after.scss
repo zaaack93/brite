@@ -116,3 +116,32 @@ before-after-slider {
 before-after-slider:not([is-active-slide]){
     display: none;
 }
+
+image-with-text-options{
+    .options-main-inner{
+        margin-top: 1.25rem;
+        .chosen-option{
+            text-transform: capitalize;
+            .text-theme-basic{
+                font-weight: normal;
+                margin-left: 5px;
+            }
+        }
+        
+        .color-options-values{
+            display: flex;
+            column-gap: 15px;
+            margin-top: 0.625rem;
+            .color-options{
+                .swatched--default-option{
+                    border-width: var(--input-border-width);
+                    border-color: transparent;
+                    box-shadow: inset 0 0 0 var(--button-border-width) rgba(var(--color-button-border),0)
+                }
+                .swatched--default-option[checked-option=true]{
+                    box-shadow: inset 0 0 0 var(--button-border-width) rgb(var(--color-button-border));
+                }
+            }
+        }
+    }
+}

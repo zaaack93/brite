@@ -45,6 +45,22 @@
       cart_type: {{ settings.cart_type | json }},
       open_modal_on_add_to_cart: {{ settings.open_modal_on_add_to_cart | json }}
     },
+    {% if template.name == 'product' %}
+      {% assign values = product.options_with_values | downcase%}
+        {% if values contains 'color' %}
+          product_options:[
+            {% for variant in product.variants %}
+              {% if variant.metafields.custom.image_after != blank and variant.metafields.custom.image_before != blank %}
+                {
+                  id: {{variant.id}},
+                  options : {{variant.options | json}},
+                  title : "{{ variant.title }}"
+                },
+              {%endif%}
+            {%endfor%}
+          ],
+        {%endif%}
+    {% endif %}
     info: {
       name: 'Shapes',
     }

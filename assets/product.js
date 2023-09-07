@@ -300,12 +300,40 @@ window.addEventListener('resize', checkScreenSize);
           const existValue = productFilterdWithOption.filter(product => {
             return product.options.includes(optionValue) && product.options.includes(value);
           });
+          
           if (existValue.length != 0) {
             div.classList.remove('hide')
           } else {
             div.classList.add('hide')
           }
+
+          // dispatch event for before after slider
+          const optionName = div.getAttribute('data-option-name');
+          // if(optionName != "Color" && optionName != 'color'){
+          //   window.dispatchEvent(
+          //     new CustomEvent('shapes:product:variantavailibility', {
+          //       bubbles: true,
+          //       detail: {
+          //         option: optionName
+          //       },
+          //     })
+          //   );
+          // }
+
         });
+
+
+        //set the active option for variant before and after
+
+        window.dispatchEvent(
+          new CustomEvent('shapes:product:variantactive', {
+            bubbles: true,
+            detail: {
+              variant: this.current_variant.title
+            },
+          })
+        );
+
         //dispatch change Before after 
         window.dispatchEvent(
           new CustomEvent('slides:before-after-change', {

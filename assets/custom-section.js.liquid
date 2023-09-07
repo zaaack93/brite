@@ -64,3 +64,60 @@ class BeforeAfterSliderContainer extends HTMLElement {
 }
 
 customElements.define('before-after-slider-container', BeforeAfterSliderContainer);
+
+class ImageWithTextOptions extends HTMLElement {
+  constructor() {
+    super();
+    this.items=this.querySelectorAll('.btn-option-item')
+    const checkAvailibility = (event) => {
+      debugger
+      this.items.forEach(color_option => {
+        debugger
+        const filtred_items = theme.product_options.filter(item => {
+          return item.options.includes(event.detail.option)  
+        })
+        if(filtred_items){
+          const colors = filtred_items.filter(item => {
+            return item.options.includes(color_option.getAttribute('title'))  
+          })
+          console.log(colors)
+          if(colors){
+            color_option.setAttribute('available-option',true)
+          }
+          else{
+            color_option.setAttribute('available-option',false)
+          }
+        }
+      });
+    }
+
+    const setActiveOption = (event) => {
+      this.querySelector('.current-option-name').innerHTML="Default"
+      this.items.forEach(color_option => {
+        color_option.setAttribute('checked-option',false)
+        debugger
+        const filtred_items = theme.product_options.filter(item => {
+          return item.title == event.detail.variant 
+        })
+        if(filtred_items){
+          const colors = filtred_items.filter(item => {
+            return item.options.some(item => item === color_option.getAttribute('title'))  
+          })
+          if(colors.length){
+            color_option.setAttribute('checked-option',true)
+            
+            //set option title
+            this.querySelector('.current-option-name').innerHTML=color_option.getAttribute('title')
+          }
+        }
+      });
+    }
+
+    window.addEventListener('shapes:product:variantactive', setActiveOption);
+    window.addEventListener('shapes:product:variantavailibility', checkAvailibility);
+  }
+
+}
+
+
+customElements.define('image-with-text-options', ImageWithTextOptions);

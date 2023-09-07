@@ -1,0 +1,29 @@
+<image-with-text-options>
+    <div class="options-main-inner">
+        <legend class="font-heading heading-secondary chosen-option">
+            Choose Color:<span class="text-theme-basic current-option-name">Pastel Purple</span>
+        </legend>
+
+        <div class="color-options-values">
+            {% for option in product.options_with_values %}
+                {% if option.name == 'Color' or option.name == 'color' %}
+                  <span class="color-options">
+                    {% for value in option.values %}
+                      
+                       {% assign color_image = value | handle | append: '.' | append: 'png' | file_img_url: '120x' | prepend: 'https:' %}
+                       {% assign color_swatch_fallback = value | split: ' ' | last | handle %}
+
+
+                    <label class="btn after:hidden p-1 bg-scheme-secondary-background cursor-pointer cursor-pointer swatched--default-option btn-option-item" for="Section-template--20802334425379__main-Option{{ option.position }}-{{ value | escape }}" title="{{ value }}">  
+                        <span class="btn after:none block w-8 h-8 bg-cover" style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"></span>
+                    </label>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              {% endfor %}
+        
+        </div>
+    </div>
+</image-with-text-options>
+
+{% comment %} <div></div> {% endcomment %}

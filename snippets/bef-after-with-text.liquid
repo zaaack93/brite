@@ -109,6 +109,9 @@
 
             <div class="rte  mt-5  max-w-2xl {% if text_alignment contains 'center' %}mx-auto{% elsif text_alignment contains 'right' %}ml-auto{% endif %}">
               {{ richtext }}
+              
+               {% render 'color-picker-options-slides' %}
+              
             </div>
 
             {%- if button_link != blank and button_label != '' -%}
