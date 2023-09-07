@@ -69,23 +69,32 @@ class ImageWithTextOptions extends HTMLElement {
   constructor() {
     super();
     this.items=this.querySelectorAll('.btn-option-item')
+
+
+    const handleClick = (event) => {
+      // Your click event handling code goes here
+      const scrollPosition = window.scrollY;
+      console.log("Scroll position from the top: " + scrollPosition + " pixels");
+      setTimeout(()=>{
+        window.scrollTo(0, scrollPosition);
+      },1)
+    }
+
+
     const checkAvailibility = (event) => {
-      debugger
+      
       this.items.forEach(color_option => {
-        debugger
+        color_option.setAttribute('available-option',false)
+        
         const filtred_items = theme.product_options.filter(item => {
-          return item.options.includes(event.detail.option)  
+          return item.options.some(item => item === event.detail.option)   
         })
-        if(filtred_items){
+        if(filtred_items.length!=0){
           const colors = filtred_items.filter(item => {
-            return item.options.includes(color_option.getAttribute('title'))  
+            return item.options.some(item => item === color_option.getAttribute('title'))   
           })
-          console.log(colors)
-          if(colors){
+          if(colors.length!=0){
             color_option.setAttribute('available-option',true)
-          }
-          else{
-            color_option.setAttribute('available-option',false)
           }
         }
       });
@@ -95,7 +104,6 @@ class ImageWithTextOptions extends HTMLElement {
       this.querySelector('.current-option-name').innerHTML="Default"
       this.items.forEach(color_option => {
         color_option.setAttribute('checked-option',false)
-        debugger
         const filtred_items = theme.product_options.filter(item => {
           return item.title == event.detail.variant 
         })
@@ -113,8 +121,19 @@ class ImageWithTextOptions extends HTMLElement {
       });
     }
 
+    const clearAllChecks = (event) => {
+      this.items.forEach(color_option => {
+        color_option.setAttribute('available-option',false)
+      })
+    }
+
+    this.items.forEach(function(element) {
+      element.addEventListener('click', handleClick);
+    });
+
     window.addEventListener('shapes:product:variantactive', setActiveOption);
     window.addEventListener('shapes:product:variantavailibility', checkAvailibility);
+    window.addEventListener('shapes:product:clearAllchecks', clearAllChecks);
   }
 
 }

@@ -235,6 +235,12 @@ image-with-text-options{
                 .swatched--default-option[checked-option=true]{
                     box-shadow: inset 0 0 0 var(--button-border-width) rgb(var(--color-button-border));
                 }
+
+                .swatched--default-option[available-option=false]{
+                    pointer-events: none;
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                }
             }
         }
     }

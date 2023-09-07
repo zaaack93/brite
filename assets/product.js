@@ -289,9 +289,28 @@ window.addEventListener('resize', checkScreenSize);
         // Define the value you want to filter out
         const excludedValue = name;
 
-        // Filter the div elements based on the data-option-name attribute
+        // Filter the div elements based on the data-option-name attribute and uncheck all the before after options
+
+        window.dispatchEvent(
+          new CustomEvent('shapes:product:clearAllchecks', {
+            bubbles: true,
+          })
+        );
+        
         const filteredDivs = Array.from(variantDivs).filter(div => {
           const optionName = div.getAttribute('data-option-name');
+          const optionValue = div.getAttribute('data-option-value');
+            
+            if(optionName != "Color" && optionName != 'color' && div.querySelector('input:checked')){
+              window.dispatchEvent(
+                new CustomEvent('shapes:product:variantavailibility', {
+                  bubbles: true,
+                  detail: {
+                    option: optionValue
+                  },
+                })
+              );
+            }
           return optionName !== excludedValue;
         });
 
@@ -306,19 +325,6 @@ window.addEventListener('resize', checkScreenSize);
           } else {
             div.classList.add('hide')
           }
-
-          // dispatch event for before after slider
-          const optionName = div.getAttribute('data-option-name');
-          // if(optionName != "Color" && optionName != 'color'){
-          //   window.dispatchEvent(
-          //     new CustomEvent('shapes:product:variantavailibility', {
-          //       bubbles: true,
-          //       detail: {
-          //         option: optionName
-          //       },
-          //     })
-          //   );
-          // }
 
         });
 
@@ -343,7 +349,7 @@ window.addEventListener('resize', checkScreenSize);
             },
           })
         );
-        
+
       }
     },
     getOptions() {
