@@ -71,13 +71,13 @@ class ImageWithTextOptions extends HTMLElement {
     this.items=this.querySelectorAll('.btn-option-item')
 
 
-    const handleClick = (event) => {
-      // Your click event handling code goes here
-      const scrollPosition = window.scrollY;
-      console.log("Scroll position from the top: " + scrollPosition + " pixels");
-      setTimeout(()=>{
-        window.scrollTo(0, scrollPosition);
-      },1)
+    const handleClick = (e) => {
+      const elements = document.querySelector(`.variant-input input[name*="__main-options[Color]"][value="${e.target.closest('.btn-option-item').getAttribute('title')}"]`);
+      if(elements){
+        const event = new Event("change");
+        elements.checked = true
+        elements.dispatchEvent(event);
+      }      
     }
 
 

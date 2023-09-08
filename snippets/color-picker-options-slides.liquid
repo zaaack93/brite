@@ -14,7 +14,7 @@
                        {% assign color_swatch_fallback = value | split: ' ' | last | handle %}
 
 
-                    <label class="btn after:hidden p-1 bg-scheme-secondary-background cursor-pointer cursor-pointer swatched--default-option btn-option-item" for="Section-template--20802334425379__main-Option{{ option.position }}-{{ value | escape }}" title="{{ value }}">  
+                    <label class="btn after:hidden p-1 bg-scheme-secondary-background cursor-pointer cursor-pointer swatched--default-option btn-option-item" data-for="Section-template--20802334425379__main-Option{{ option.position }}-{{ value | escape }}" title="{{ value }}">  
                         <span class="btn after:none block w-8 h-8 bg-cover" style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"></span>
                     </label>
                     {% endfor %}
