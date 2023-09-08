@@ -7,7 +7,7 @@
   assign max_width = 'max-w-4xl'
   endif
 -%}
-<section class="relative text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" >
+<section id="section-comparison-{{ section.id }}" class="relative text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" >
   <div class="section-content py-section-vertical-spacing {% if section.settings.display_on_card %}px-section{% endif %} relative z-10 ">
     <div class=" {{ max_width }} {% if section.settings.display_on_card %}card-container{% endif %} mx-auto">
       <div class="{% if section.settings.display_on_card %}card p-5 lg:p-10{% endif %} section-content text-center mx-auto relative z-10">
@@ -121,7 +121,16 @@
 -%}
 
 {{ 'section-comparison-table.css' | asset_url | stylesheet_tag }}
-
+<style>
+  #section-comparison-{{ section.id }} .py-section-vertical-spacing{
+    padding-bottom:{{ section.settings.padding_bottom}}px
+  }
+  @media only screen and (max-width: 768px) {
+    #section-comparison-{{ section.id }} .py-section-vertical-spacing{
+      padding-bottom:{{ section.settings.padding_bottom_mobile}}px
+    }
+  }
+</style>
 {% schema %}
 {
   "name": "Comparison table",
@@ -272,7 +281,31 @@
       "type": "checkbox",
       "id": "use_gradient_background",
       "label": "Use gradient for background"
-    }
+    },
+    {
+        "type": "header",
+        "content": "Section padding"
+    },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom mobile",
+        "default": 35
+      }
   ],
   "blocks": [
     {
