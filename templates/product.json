@@ -355,13 +355,14 @@
         "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
             "image_after": "shopify:\/\/shop_images\/Brite_-_Clean_Color_Copper_2.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
             "image_shape": "default",
             "rotate_image": 0,
             "image_position": "right",
             "title": "Before & Brite-er!",
             "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
+            "enable_color_option": true,
             "text_alignment": "text-left",
             "button_link": "",
             "button_label": "Shop Now"
