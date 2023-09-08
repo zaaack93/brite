@@ -25,6 +25,7 @@
                   rotate_image: block.settings.rotate_image,
                   title: block.settings.title,
                   richtext: block.settings.richtext,
+                  enable_color_option: block.settings.enable_color_option,
                   button_link: block.settings.button_link,
                   button_label: block.settings.button_label,
                   heading_size: section.settings.heading_size,
@@ -480,6 +481,13 @@
           "type": "richtext",
           "id": "richtext",
           "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_color_option",
+          "label": "Enable color option",
+          "default": false,
+          "info": "To utilize this feature, it is necessary to access the Product Detail Page (PDP) and ensure that the product includes a color option. Additionally, you must provide default before/after images within the section parameters."
         },
         {
           "type": "select",

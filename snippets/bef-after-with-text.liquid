@@ -58,6 +58,7 @@
               is_card: display_on_card,
               container_id: container_id,
               disable_media_style: disable_media_style
+              enable_color_option: enable_color_option
             -%}
 
 
@@ -109,8 +110,12 @@
 
             <div class="rte  mt-5  max-w-2xl {% if text_alignment contains 'center' %}mx-auto{% elsif text_alignment contains 'right' %}ml-auto{% endif %}">
               {{ richtext }}
-              
+              {% if product.options contains 'color' or product.options contains 'Color' %}
+                {% assign isContain = true %}
+              {% endif %}
+              {% if template.name == 'product' and enable_color_option and isContain %}
                {% render 'color-picker-options-slides' %}
+              {%endif%}
               
             </div>
 
