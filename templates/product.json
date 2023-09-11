@@ -477,7 +477,9 @@
         "title": "FAQ",
         "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
         "color_scheme": "quaternary",
-        "use_gradient_background": false
+        "use_gradient_background": false,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 67
       }
     },
     "25c2413a-a407-4a10-9700-034f0b659b31": {
@@ -563,7 +565,7 @@
             "image": "shopify:\/\/shop_images\/Loveit.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 14,
-            "vertical_position": 53,
+            "vertical_position": 49,
             "rotate": 0,
             "show_sticker_on_mobile": true,
             "show_sticker_on_desktop": true,
@@ -595,7 +597,9 @@
         "enable_column_4": false,
         "column_4_title": "Column 4",
         "color_scheme": "quaternary",
-        "use_gradient_background": true
+        "use_gradient_background": true,
+        "padding_bottom": 72,
+        "padding_bottom_mobile": 42
       }
     },
     "941029c2-e1a4-4694-9ce9-e9c63efed86e": {
