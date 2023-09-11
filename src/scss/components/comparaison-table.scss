@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .comparison-table tr th,.comparison-table tr td{
+        width: 30vw;
+    }
+    .comparison-table tr th:first-child,
+    .comparison-table tr td:first-child {
+        width: 61vw;
+    }
+    .comparison-table .heading-secondary{
+        font-size: 14px;
+    }
+}

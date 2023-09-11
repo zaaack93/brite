@@ -83,6 +83,7 @@
         }
     }
 }
+
 .faq-section-main{
     .card-container{
         p{
@@ -93,6 +94,12 @@
 .before-after-image-section {
     .splide__track {
         overflow: visible;
+    }
+
+    .font-heading{
+        @media only screen and (max-width: 600px) {
+            font-size: calc(var(--base-heading-size) * .8);
+        }
     }
 }
 
@@ -139,12 +146,15 @@ before-after-slider {
         .background-img{
             width: 100%;
             background-size:100% ;
+            border-radius: inherit;
         }
         .foreground-img {
             width: 50%;
             background-size: cover;
             z-index: 3;
             overflow: hidden;
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
         }
 
         .slider {
@@ -212,9 +222,12 @@ before-after-slider:not([is-active-slide]){
 
 image-with-text-options{
     .options-main-inner{
-        margin-top: 1.25rem;
+        margin-top: 2.25rem;
         .chosen-option{
             text-transform: capitalize;
+            @media only screen and (max-width: 600px) {
+                font-size: calc(var(--base-heading-size) * .6);
+            }
             .text-theme-basic{
                 font-weight: normal;
                 margin-left: 5px;
@@ -240,9 +253,27 @@ image-with-text-options{
                     pointer-events: none;
                     cursor: not-allowed;
                     opacity: 0.5;
+                    display: none;
+                    .btn{
+                        &::after{
+                            display: none;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+@media (max-width: 768px) {
+    .comparison-table tr th,.comparison-table tr td{
+        width: 30vw;
+    }
+    .comparison-table tr th:first-child,
+    .comparison-table tr td:first-child {
+        width: 61vw;
+    }
+    .comparison-table .heading-secondary{
+        font-size: 14px;
     }
 }
 .tolstoy-carousel-title {

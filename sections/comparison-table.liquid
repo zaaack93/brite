@@ -1,7 +1,7 @@
 {%- liquid
   assign max_width = 'max-w-xl'
   if section.settings.enable_column_3
-    assign max_width = 'max-w-2xl'
+    assign max_width = 'max-w-3xl'
   endif
   if section.settings.enable_column_3 and  section.settings.enable_column_4
   assign max_width = 'max-w-4xl'
@@ -19,15 +19,15 @@
           <div class="px-section table lg:mx-auto">
             <table class="comparison-table table-fixed w-full mx-auto {{ max_width }} {% if section.settings.highlighted_column != '' %}highlight-column-{{ section.settings.highlighted_column }}{% endif %} {% if section.settings.title != '' or section.settings.richtext != blank %}section-content-top-margin{% endif %}">
               <tr>
-                <th class="top-left-cell"></th>
-                <th class="font-heading heading-secondary break-words">
+                <th class="top-left-cell" colspan="2"></th>
+                <th class="font-heading heading-secondary">
                   {% if section.settings.column_1_image != blank %}
                     {{ section.settings.column_1_image | image_url: width: 500 | image_tag }}
                   {% else %}
                     {{ section.settings.column_1_title }}
                   {% endif %}
                 </th>
-                <th class="font-heading heading-secondary break-words">
+                <th class="font-heading heading-secondary">
                   {% if section.settings.column_2_image != blank %}
                     {{ section.settings.column_2_image | image_url: width: 500 | image_tag }}
                   {% else %}
@@ -35,7 +35,7 @@
                   {% endif %}
                 </th>
                 {%- if section.settings.enable_column_3 -%}
-                <th class="font-heading heading-secondary break-words">
+                <th class="font-heading heading-secondary">
                   {% if section.settings.column_3_image != blank %}
                     {{ section.settings.column_3_image | image_url: width: 500 | image_tag }}
                   {% else %}
@@ -44,7 +44,7 @@
                 </th>
                 {%- endif -%}
                 {%- if section.settings.enable_column_4 -%}
-                <th class="font-heading heading-secondary break-words">
+                <th class="font-heading heading-secondary">
                   {% if section.settings.column_4_image != blank %}
                     {{ section.settings.column_4_image | image_url: width: 500 | image_tag }}
                   {% else %}
@@ -57,7 +57,7 @@
               {%- assign rows = section.blocks | where: "type", "row" -%}
               {%- for row in rows -%}
                 <tr>
-                  <th class="table-row-heading break-words font-heading heading-secondary">{{ row.settings.title }}</th>
+                  <th class="table-row-heading font-heading heading-secondary" colspan="2">{{ row.settings.title }}</th>
                   <td>
                     {%- if row.settings.column_1_icon != '' -%}
                     <span class="mx-auto block w-10 text-scheme-text mb-2.5">{% render 'theme-icon', icon: row.settings.column_1_icon, stroke: 2 %}</span>
