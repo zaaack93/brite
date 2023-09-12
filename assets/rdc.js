@@ -495,7 +495,7 @@ let imageSrc = pmThumbnailsActive[pmDotActiveIndex].children[0].src;
 // imageSrc = imageSrc.join("_")
 
 let pmImageDisplayed = document.querySelector(".rdc-product-media-main.rdc-active").children[0].children[0].children[0]
-  pmImageDisplayed.src=`${imageSrc}`
+  pmImageDisplayed.querySelector('img').src=`${imageSrc}`
 
 }
 
