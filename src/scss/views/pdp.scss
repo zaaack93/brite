@@ -14,6 +14,7 @@
 
 @media only screen and (max-width: 989px) {
     .template-product {
+        overflow-x: hidden;
         #MainContent {
             overflow: hidden;
         }

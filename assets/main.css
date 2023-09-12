@@ -15,6 +15,7 @@
 
 @media only screen and (max-width: 989px) {
     .template-product {
+        overflow-x: hidden;
         #MainContent {
             overflow: hidden;
         }
@@ -172,7 +173,14 @@ before-after-slider {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 5;
+            z-index: 11;
+            @media only screen and (max-width: 600px) {
+                display: initial;
+                display: initial;
+                justify-content: initial;
+                align-items: initial;
+            
+            }
             cursor: ew-resize;
             &:hover {
                 background: rgba(242, 242, 242, .1);
