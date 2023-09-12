@@ -1,0 +1,792 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "display_on_card": false,
+            "text_align": "text-left"
+          }
+        },
+        "loox-rating": {
+          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/span>\n<\/div>\n{% endfor %}"
+          }
+        },
+        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "show_on_sale_sticker": true,
+            "text_align": "text-left"
+          }
+        },
+        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.product_benefits | metafield_text }}",
+            "icon": "check-mark"
+          }
+        },
+        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.product_benefit_2.value }}",
+            "icon": "check-mark"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "display_on_card": false,
+            "option_style": "drop_down",
+            "hide_option_labels": false,
+            "enable_color_swatches": true
+          }
+        },
+        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.product_benefit_3.value }}",
+            "icon": "check-mark"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "display_on_card": false,
+            "show_label": true
+          }
+        },
+        "baf3083e-d14d-435d-bca3-100d6ac490ce": {
+          "type": "buy_buttons",
+          "settings": {
+            "display_on_card": false,
+            "show_price": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": false
+          }
+        },
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "",
+            "icon": "none"
+          }
+        },
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "w1p0r7yavqugq"
+          }
+        },
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
+          "type": "description",
+          "settings": {
+            "display_on_card": false,
+            "truncate_description": false,
+            "text_align": "text-left"
+          }
+        },
+        "49d45fcd-5029-4c3e-bd72-ade2cd850a23": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "heading": "Description",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n<\/div>\n{% endfor %}",
+            "page": ""
+          }
+        },
+        "682edc47-bae9-48f5-b971-93b9a703fec5": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "heading": "How to Use",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n<\/div>\n{% endfor %}",
+            "page": ""
+          }
+        },
+        "f39a86bd-241c-47c0-90bd-3018ee04e3c6": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "heading": "Ingredients",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-ingredient rdc-ingredient-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_ingredients}}\n<\/div>\n{% endfor %}",
+            "page": ""
+          }
+        },
+        "47038e2f-b337-41bd-920d-c5c616182ccf": {
+          "type": "shape_divider",
+          "disabled": true,
+          "settings": {
+            "target_section": "below",
+            "target_section_color_scheme": "tertiary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": false,
+            "enable_animation": true,
+            "animation_direction": ""
+          }
+        },
+        "f78e4d5f-feea-42db-a79f-6e04087ef15b": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "text": "Click to watch our Bleach Application Process",
+            "page": ""
+          }
+        },
+        "9a87895d-c01d-4b6b-af9e-c51c4737669c": {
+          "type": "background_pattern",
+          "disabled": true,
+          "settings": {
+            "type": "checkerboard",
+            "color": "gradient",
+            "size": 600,
+            "opacity": 15,
+            "enable_parallax": false,
+            "parallax_speed": 4
+          }
+        },
+        "58f7cbf7-dfb8-4548-86c2-1d2dc3a63560": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% render 'complementary-products' product:product %}"
+          }
+        },
+        "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 190,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/Rainbow.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 59,
+            "vertical_position": 100,
+            "rotate": 14,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "loox-rating",
+        "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
+        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
+        "price",
+        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
+        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
+        "variant_picker",
+        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
+        "quantity_selector",
+        "baf3083e-d14d-435d-bca3-100d6ac490ce",
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
+        "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
+        "682edc47-bae9-48f5-b971-93b9a703fec5",
+        "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
+        "47038e2f-b337-41bd-920d-c5c616182ccf",
+        "f78e4d5f-feea-42db-a79f-6e04087ef15b",
+        "9a87895d-c01d-4b6b-af9e-c51c4737669c",
+        "58f7cbf7-dfb8-4548-86c2-1d2dc3a63560",
+        "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea"
+      ],
+      "settings": {
+        "crop": "aspect-w-1 aspect-h-1",
+        "image_shape": "default",
+        "desktop_media_width": "lg:col-span-7_lg:col-span-5",
+        "show_slideshow_arrows_on_desktop": true,
+        "enable_image_zoom": false,
+        "enable_video_looping": true,
+        "autoplay_videos_on_desktop": true,
+        "media_mobile_width": "w-full",
+        "thumbnails_position": "left",
+        "thumbnail_crop": "aspect-w-1 aspect-h-1",
+        "thumbnail_shape": "default",
+        "hide_media_shadow": false,
+        "thumbnail_size": "standard",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f": {
+      "type": "image-with-text-slideshow",
+      "blocks": {
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLACK_1.gif",
+            "image_shape": "scalloped_square",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "",
+            "richtext": "<h5><strong>Vegan & Cruelty Free<\/strong><\/h5><ul><li>Committed to kindness – all our products are 100% vegan and never tested on animals.<\/li><\/ul><h5><strong>Nourishing Formula<\/strong><\/h5><ul><li>Pamper your hair while you color. Our products are infused with nourishing ingredients that leave your hair feeling soft and healthy, not dry or damaged.<\/li><\/ul><h5><strong>Easy & Safe Application<\/strong><\/h5><ul><li>Achieve salon-quality results from the comfort of your home. Our user-friendly products are made to be simple to apply and gentle on your hair and scalp.<\/li><\/ul><h5><strong>Eco-Friendly & Sustainable<\/strong><\/h5><ul><li>We care for the planet as much as you do. Our packaging is designed to minimize waste and our ingredients are sustainably sourced.<\/li><\/ul>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        },
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Image with text slideshow",
+            "richtext": "",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1",
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-template",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "cc2a2e2b-79a1-488a-9004-0db944388dd6": {
+      "type": "image-with-text-slideshow",
+      "blocks": {
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Before & Brite-er!",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        },
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Image with text slideshow",
+            "richtext": "",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-1",
+        "template--20370914869539__cc2a2e2b-79a1-488a-9004-0db944388dd6-slide-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-base",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd": {
+      "type": "before-after-with-text-slideshow",
+      "blocks": {
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_after": "shopify:\/\/shop_images\/Brite_-_Clean_Color_Copper_2.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "Before & Brite-er!",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
+            "enable_color_option": true,
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1"
+      ],
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-base",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
+      "type": "faq",
+      "blocks": {
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q1.value }}",
+            "answer": "{{ product.metafields.custom.faq_a1 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q2.value }}",
+            "answer": "{{ product.metafields.custom.faq_a2 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q3.value }}",
+            "answer": "{{ product.metafields.custom.faq_a3 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q4.value }}",
+            "answer": "{{ product.metafields.custom.faq_a4 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4": {
+          "type": "question",
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q5.value }}",
+            "answer": "{{ product.metafields.custom.faq_a5 | metafield_tag }}"
+          }
+        },
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "question": "{{ product.metafields.custom.faq_q6.value }}",
+            "answer": "{{ product.metafields.custom.faq_a6 | metafield_tag }}"
+          }
+        },
+        "ab246adc-2d98-4f23-830e-061980e5c974": {
+          "type": "shape_divider",
+          "settings": {
+            "target_section": "above",
+            "target_section_color_scheme": "primary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": false,
+            "enable_animation": false,
+            "animation_direction": ""
+          }
+        },
+        "ec8370ab-b71f-4870-89fa-28dce2889d27": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 190,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/S-26.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 89,
+            "vertical_position": 80,
+            "rotate": 20,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
+        "ab246adc-2d98-4f23-830e-061980e5c974",
+        "ec8370ab-b71f-4870-89fa-28dce2889d27"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "heading_text_style": "heading",
+        "two_columns_desktop": false,
+        "title": "FAQ",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 67
+      }
+    },
+    "25c2413a-a407-4a10-9700-034f0b659b31": {
+      "type": "comparison-table",
+      "blocks": {
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0": {
+          "type": "row",
+          "settings": {
+            "title": "Cruelty Free & Vegan",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc": {
+          "type": "row",
+          "settings": {
+            "title": "Easy to apply",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check-mark",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "",
+            "column_4_text": ""
+          }
+        },
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2": {
+          "type": "row",
+          "settings": {
+            "title": "Stocked in leading retailers",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1": {
+          "type": "row",
+          "settings": {
+            "title": "Coloring lives for 12+ years",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check-mark",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "142db635-746a-4827-88ff-c90c1c20c2e7": {
+          "type": "row",
+          "settings": {
+            "title": "Used by 10million+ dye-hards",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "",
+            "column_4_text": ""
+          }
+        },
+        "11dd58ec-5393-459a-be54-0c6da5c9d8e3": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 230,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/Loveit.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 14,
+            "vertical_position": 49,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-0",
+        "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc",
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
+        "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
+        "142db635-746a-4827-88ff-c90c1c20c2e7",
+        "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
+      ],
+      "settings": {
+        "display_on_card": false,
+        "title": "Brite vs the other dyes",
+        "highlighted_column": "1",
+        "column_1_title": "",
+        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_2_title": "Other Brands",
+        "enable_column_3": true,
+        "column_3_title": "Salons",
+        "enable_column_4": false,
+        "column_4_title": "Column 4",
+        "color_scheme": "quaternary",
+        "use_gradient_background": true,
+        "padding_bottom": 72,
+        "padding_bottom_mobile": 42
+      }
+    },
+    "941029c2-e1a4-4694-9ce9-e9c63efed86e": {
+      "type": "scrolling-videos",
+      "blocks": {
+        "96b43c76-0c55-40b0-bf76-95f5a06e1671": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "video_img": "shopify:\/\/shop_images\/Screen_Shot_2022-10-10_at_12.23.28_pm.png"
+          }
+        },
+        "acde03d4-3d03-406f-b3eb-c7830fcae14f": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "video_img": "shopify:\/\/shop_images\/Bleach_Hero_Large_64375afb-db44-4b3f-8672-48eabadd88b5.jpg"
+          }
+        },
+        "babc364d-b24a-412f-b768-b254cafab45c": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "video_img": "shopify:\/\/shop_images\/brite_tiktok_img_1-2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "96b43c76-0c55-40b0-bf76-95f5a06e1671",
+        "acde03d4-3d03-406f-b3eb-c7830fcae14f",
+        "babc364d-b24a-412f-b768-b254cafab45c"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_header": "GET BLEACHED",
+        "short_text": "Watch our community get expressive with our signature Bleach Kits.",
+        "button_text": "Check out more on",
+        "button_link": "",
+        "button_icon": "shopify:\/\/shop_images\/tiktok_icon_8917efd8-2745-43ef-971f-4d84d32e8ef2.png"
+      }
+    },
+    "1bb3293b-4166-4127-acbf-4378e30cbe81": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "style": "full",
+        "cover_image": "shopify:\/\/shop_images\/Shop_All_Hero_Large_d2f3fa6f-4029-4f93-ba28-808430be2869.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "aspect_ratio": "16:9",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "display_on_card": false,
+        "enable_quick_buy": false,
+        "product_recommendations_heading": "You may also like",
+        "max_products": "6",
+        "product_tiles_aspect_ratio": "",
+        "image_shape": "default_archway",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "loox-product-reviews-app-section": {
+      "type": "apps",
+      "blocks": {
+        "loox-product-reviews": {
+          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 920
+          }
+        }
+      },
+      "block_order": [
+        "loox-product-reviews"
+      ],
+      "settings": {
+      }
+    },
+    "b9840557-6047-445f-8e23-ec62568e83c0": {
+      "type": "featured-collection",
+      "blocks": {
+        "d0403f89-bceb-45aa-8c7d-bb587dcf8d34": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 200,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/Sparkle.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 80,
+            "vertical_position": 90,
+            "rotate": 20,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        }
+      },
+      "block_order": [
+        "d0403f89-bceb-45aa-8c7d-bb587dcf8d34"
+      ],
+      "settings": {
+        "title": "Tell me what's your flavour",
+        "subheading": "",
+        "collection": "all",
+        "no_products": 6,
+        "show_view_all": false,
+        "enable_quick_buy": false,
+        "display_on_card": false,
+        "layout": "grid",
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "slideshow_focus": "center",
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 40,
+        "autoscroll_mode": "1",
+        "product_tiles_aspect_ratio": "aspect-w-1 aspect-h-1",
+        "image_shape": "default_archway",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "1691702316a265b1ef": {
+      "type": "apps",
+      "blocks": {
+        "e06db6e3-1830-4cb7-83f2-13d9a4369101": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "publishId"
+          }
+        }
+      },
+      "block_order": [
+        "e06db6e3-1830-4cb7-83f2-13d9a4369101"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1691705782b1a68713": {
+      "type": "apps",
+      "blocks": {
+        "92abd682-2549-4eb6-a685-db2df1513cf0": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "92abd682-2549-4eb6-a685-db2df1513cf0"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
+    "cc2a2e2b-79a1-488a-9004-0db944388dd6",
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
+    "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
+    "25c2413a-a407-4a10-9700-034f0b659b31",
+    "941029c2-e1a4-4694-9ce9-e9c63efed86e",
+    "1bb3293b-4166-4127-acbf-4378e30cbe81",
+    "product-recommendations",
+    "loox-product-reviews-app-section",
+    "b9840557-6047-445f-8e23-ec62568e83c0",
+    "1691702316a265b1ef",
+    "1691705782b1a68713"
+  ]
+}
