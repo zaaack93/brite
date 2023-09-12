@@ -12,7 +12,7 @@
     <div class=" {{ max_width }} {% if section.settings.display_on_card %}card-container{% endif %} mx-auto">
       <div class="{% if section.settings.display_on_card %}card p-5 lg:p-10{% endif %} section-content text-center mx-auto relative z-10">
         {% if section.settings.title != '' %}
-          <h2 class="text-center font-heading heading-effects heading-base heading-style break-words {{ settings.heading_drop_shadow_style }}">{{ section.settings.title }}</h2>
+          <h2 class="text-center font-heading heading-effects heading-base heading-style px-section {{ settings.heading_drop_shadow_style }}">{{ section.settings.title }}</h2>
         {% endif %}
 
         <div class="overflow-x-scroll lg:overflow-hidden custom-scroll {% if section.settings.display_on_card %}-mx-5 lg:mx-auto{% endif %}">

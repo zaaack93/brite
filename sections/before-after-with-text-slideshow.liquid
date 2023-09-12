@@ -1,3 +1,19 @@
+
+{%- assign slides = section.blocks | where: "type", "slide" -%}
+{% for block in slides %}
+  {%if block.settings.enable_color_option == true %}
+    {% assign allowRenderSection=false %}
+    {%for variant in product.variants %}
+      {% if variant.metafields.custom.image_after !=blank and variant.metafields.custom.image_before != blank %}
+        {% assign allowRenderSection=true %}
+      {%endif%}
+    {%endfor%}
+  {% else %}
+    {%assign allowRenderSection=true%}
+  {%endif%}
+{%endfor%}
+
+{%if allowRenderSection  %}
 <section class="text-scheme-text bg-scheme-background overflow-hidden before-after-image-section {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}">
   <div class="section-content py-section-vertical-spacing">
     <div
@@ -58,6 +74,7 @@
     endfor
   -%}
 </section>
+{%endif%}
 
 {%- liquid
   assign stickers = section.blocks | where: "type", "sticker" 
