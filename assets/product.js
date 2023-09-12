@@ -165,14 +165,17 @@ window['ThemeSection_Product'] = ({
               const secondDiv = divElement.querySelector('.rdc-product-media-thumbnails');
 
               // Set the height of the second div equal to the height of the first div
-              secondDiv.style.height = `${firstDiv.offsetHeight+45}px`;
+              secondDiv.style.height = `${firstDiv.offsetWidth+45}px`;
 
               secondDiv.addEventListener('scroll', function() {
-                if (secondDiv.scrollTop + secondDiv.clientHeight + 40 >= secondDiv.scrollHeight) {
+                if (secondDiv.querySelectorAll('.rdc-pm-thumbnail').length >1 ){
+                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=0
+                }
+                else if (secondDiv.scrollTop + secondDiv.clientHeight + 40 >= secondDiv.scrollHeight) {
                   // Perform your action here when scrolling to the bottom
                   divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=0
                   // You can replace the console.log statement with your desired action
-                }
+                } 
                 else{
                   divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=1
                 }
