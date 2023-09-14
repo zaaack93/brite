@@ -29,7 +29,7 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/span>\n<\/div>\n{% endfor %}"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<s class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/s>\n{%endif%}\n<\/div>\n{% endfor %}"
           }
         },
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {

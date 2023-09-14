@@ -25,11 +25,20 @@
             "emptyRatingWidget": false
           }
         },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "show_on_sale_sticker": false,
+            "text_align": "text-left"
+          }
+        },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/span>\n<\/div>\n{% endfor %}"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<s class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | remove: '.00 AUD' | replace: ' AUD','' }}<\/s>\n{%endif%}\n<\/div>\n{% endfor %}"
           }
         },
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
@@ -37,15 +46,6 @@
           "settings": {
             "display_on_card": false,
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "show_on_sale_sticker": true,
-            "text_align": "text-left"
           }
         },
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
@@ -219,9 +219,9 @@
       "block_order": [
         "title",
         "loox-rating",
+        "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
-        "price",
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
         "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
         "variant_picker",

@@ -84,6 +84,15 @@
             }
         }
     }
+    .onSlateProduct {
+        color: #ECB3FF;
+    }
+    .comparePricePdp{
+        .money{
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
 }
 
 .faq-section-main{
