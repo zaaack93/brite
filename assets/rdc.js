@@ -127,7 +127,6 @@ const showVariantDesc = function () {
   // variantId = variantId.split('?');
   // variantId = variantId[1].split('=');
   // variantId = variantId[1];
-
     const variantDescClass = `rdc-variant-desc-${variantId}`
     const variantLongDescClass = `rdc-variant-long-desc-${variantId}`
     const variantHowClass = `rdc-variant-how-${variantId}`
@@ -155,7 +154,13 @@ for(let i=0; i<variantDescs.length; i++) {
       if(variantIngredients[i].classList.contains(variantIngredientClass)) {
     variantIngredients[i].classList.remove('rdc-d-none')
   }
+  if(variantPrices[i].classList.contains(variantPriceClass)) {
+    variantPrices[i].classList.remove('rdc-d-none')
+  }
+}
 
+//for price
+for(let i=0; i<variantPrices.length; i++) {
   if(variantPrices[i].classList.contains(variantPriceClass)) {
     variantPrices[i].classList.remove('rdc-d-none')
   }
