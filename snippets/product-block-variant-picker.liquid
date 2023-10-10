@@ -112,9 +112,9 @@
                     
                         <span class="absolute left-0 bottom-0 z-10 h-[var(--input-border-width)] w-full bg-scheme-text top-1/2 -translate-y-1/2 -rotate-45"></span>
                       {%- endunless -%}
-
                {% assign forloopIndex = forloop.index0 %}
-                       {%- if product.tags contains 'image-swatch' -%}
+               {% assign tagForCurrentOption = "swatch-image-for-option-" | append : option.name | replace : ' ','-' | downcase %}
+                       {%- if product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption -%}
               {% for variant in product.variants %}
                 {% if forloop.index0 == forloopIndex %}
                     <span class="rdc-imgvariant-picker {% if variant.available == false %}rdc-o-5{% endif %}"><img src="{{ variant.image | img_url: "100x" }}"></span>

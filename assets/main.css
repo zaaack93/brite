@@ -85,13 +85,11 @@
         }
     }
     .onSlateProduct {
-        color: #ECB3FF;
+        color: #F05096;
     }
     .comparePricePdp{
-        .money{
-            font-size: inherit;
-            line-height: inherit;
-        }
+        text-decoration: line-through;
+        margin-left: 12px;
     }
 }
 
