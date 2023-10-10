@@ -134,22 +134,6 @@
         "use_gradient_background": false
       }
     },
-    "1691058444d1e54179": {
-      "type": "apps",
-      "blocks": {
-        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "xs4fw5jmdxndf"
-          }
-        }
-      },
-      "block_order": [
-        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e"
-      ],
-      "settings": {
-      }
-    },
     "16648046768565ca3d": {
       "type": "scrolling-videos",
       "blocks": {
@@ -247,10 +231,11 @@
         },
         "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29": {
           "type": "sticker",
+          "disabled": true,
           "settings": {
             "text": "Sticker",
             "shape": "star_1",
-            "width": 250,
+            "width": 200,
             "sticker_font_size": "1.563rem",
             "image": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
             "half_image_width_on_mobile": true,
@@ -290,6 +275,157 @@
         "image_shape": "",
         "color_scheme": "primary",
         "use_gradient_background": false
+      }
+    },
+    "2817ea07-97bc-4841-b262-c58c8db83450": {
+      "type": "image-with-text",
+      "blocks": {
+        "2b8c8fb3-25ab-487e-92ab-9e3e99e10ab0": {
+          "type": "background_shape",
+          "disabled": true,
+          "settings": {
+            "shape": "star_4",
+            "blob_type": 1,
+            "size": 130,
+            "opacity": 0,
+            "blur": 25,
+            "horizontal_position": 80,
+            "vertical_position": 58,
+            "rotate": -12,
+            "enable_parallax": true,
+            "parallax_speed": 3,
+            "color": "gradient",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "cf60cb0e-c576-4e82-87f0-46b7d2ff7148": {
+          "type": "shape_divider",
+          "disabled": true,
+          "settings": {
+            "target_section": "below",
+            "target_section_color_scheme": "secondary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": true,
+            "enable_animation": true,
+            "animation_direction": ""
+          }
+        },
+        "0770bb18-4fba-4558-b4bf-e74f08033f60": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 200,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 73,
+            "vertical_position": 77,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 6,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "ce2670ec-d518-437b-8613-ccce11518f1d": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 120,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 77,
+            "vertical_position": 21,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 8,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "2e5f47a0-a710-403e-8de2-7cce2ff89ed5": {
+          "type": "rotating_sticker",
+          "disabled": true,
+          "settings": {
+            "rotating_sticker_img": "shopify:\/\/shop_images\/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
+            "rotating_sticker_text": "10M+ <br>Heads <br>BRITEned"
+          }
+        },
+        "1383f783-911a-4f5b-b64d-67a77b167431": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "10M+ HEADS BRITENED",
+            "shape": "scalloped_circle_3",
+            "width": 140,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": false,
+            "horizontal_position": 87,
+            "vertical_position": 97,
+            "rotate": 12,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-gradient text-scheme-text",
+            "color_scheme": "tertiary"
+          }
+        }
+      },
+      "block_order": [
+        "2b8c8fb3-25ab-487e-92ab-9e3e99e10ab0",
+        "cf60cb0e-c576-4e82-87f0-46b7d2ff7148",
+        "0770bb18-4fba-4558-b4bf-e74f08033f60",
+        "ce2670ec-d518-437b-8613-ccce11518f1d",
+        "2e5f47a0-a710-403e-8de2-7cce2ff89ed5",
+        "1383f783-911a-4f5b-b64d-67a77b167431"
+      ],
+      "settings": {
+        "show_text_bg_mobile": true,
+        "display_on_card": false,
+        "image": "shopify:\/\/shop_images\/PAINT_ON._WASH_OFF_2.jpg",
+        "crop": "",
+        "image_shape": "scalloped_square",
+        "blob_type": 2,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": true,
+        "title": "HOT OFF THE PRESS!",
+        "title_mobile": "HOT OFF THE PRESS!",
+        "heading_size": "heading-base",
+        "richtext": "<p>Hands up 🙌 who's excited to try our new Hair Chalks? <br\/><br\/>Our temporary hair makeup is designed to paint on and wash off in the same day.<br\/><br\/>Stocked exclusively in Walmart,  Woolworths and now available online 💜💙💚💖<\/p>",
+        "text_alignment": "text-left",
+        "button_link": "shopify:\/\/products\/liquid-hair-chalk",
+        "button_label": "Shop Liquid Hair Chalks",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "1691058444d1e54179": {
+      "type": "apps",
+      "blocks": {
+        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "xs4fw5jmdxndf"
+          }
+        }
+      },
+      "block_order": [
+        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e"
+      ],
+      "settings": {
       }
     },
     "276ebf26-6bf7-475c-8b06-2bf6bf585819": {
@@ -364,7 +500,7 @@
       ],
       "settings": {
         "display_on_card": false,
-        "slideshow_on_mobile": false,
+        "slideshow_on_mobile": true,
         "title": "@Britehair in the Wild",
         "crop": "",
         "image_shape": "clipped_square",
@@ -583,7 +719,9 @@
         "enable_column_4": false,
         "column_4_title": "Column 4",
         "color_scheme": "tertiary",
-        "use_gradient_background": false
+        "use_gradient_background": false,
+        "padding_bottom": 70,
+        "padding_bottom_mobile": 35
       }
     },
     "a56ce090-a916-44c4-b8ce-dd907815e36e": {
@@ -947,9 +1085,10 @@
   },
   "order": [
     "1650891033bae15b05",
-    "1691058444d1e54179",
     "16648046768565ca3d",
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57",
+    "2817ea07-97bc-4841-b262-c58c8db83450",
+    "1691058444d1e54179",
     "276ebf26-6bf7-475c-8b06-2bf6bf585819",
     "f45e1af3-75cf-486d-ab0d-348e87bd55e9",
     "4d27f5ea-174a-4bd2-8dda-f89c065c473a",
