@@ -74,7 +74,10 @@
                   assign color_image = value | handle | append: '.' | append: 'png' | file_img_url: '120x' | prepend: 'https:'
                   assign color_swatch_fallback = value | split: ' ' | last | handle
                 -%}
-                <div class="inline-block relative variant-input" data-option-name="{{option.name}}" data-option-value="{{value}}">
+                {% assign forloopIndex = forloop.index0 %}
+                {% assign tagForCurrentOption = "swatch-image-for-option-" | append : option.name | replace : ' ','-' | downcase %}
+                        
+              <div class="{% if is_color and  product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption %}variant-input-with-image{% endif %} inline-block relative variant-input" data-option-name="{{option.name}}" data-option-value="{{value}}">
                   <input
                     class="{% if is_color %}color-swatch{% endif %} cursor-pointer rdc-variant-picker absolute top-0 left-0 w-full h-full opacity-0"
                     @change="optionChange('{{option.name}}','{{value}}')"
