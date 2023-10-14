@@ -153,7 +153,6 @@ window['ThemeSection_Product'] = ({
       // Function to check screen size and perform action
       function checkScreenSize() {
         // Check if the screen width is greater than 990 pixels
-        if (window.innerWidth > 990) {
           // Loop through each div element
           divElements.forEach(divElement => {
             // Check if the div element has the class "rdc-product-media-inner"
@@ -165,7 +164,7 @@ window['ThemeSection_Product'] = ({
               const secondDiv = divElement.querySelector('.rdc-product-media-thumbnails');
 
               // Set the height of the second div equal to the height of the first div
-              secondDiv.style.height = `${firstDiv.offsetWidth+45}px`;
+              secondDiv.style.height = `${firstDiv.offsetWidth}px`;
 
               secondDiv.addEventListener('scroll', function() {
                 if (secondDiv.querySelectorAll('.rdc-pm-thumbnail').length >1 ){
@@ -182,7 +181,6 @@ window['ThemeSection_Product'] = ({
               });
             }
           });
-        }
       }
 
 // Call the function initially

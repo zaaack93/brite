@@ -12,13 +12,25 @@
     #MainContent {
       overflow: hidden;
     }
+
+    .rdc-product-media-main-wrapper{
+        padding-top: var(--section-x-padding);
+        padding-left: var(--section-x-padding);
+        padding-right: var(--section-x-padding);
+    }
   }
 }
 
-@media only screen and (min-width: 990px) {
+
+
+
   .rdc-product-media-inner.displayleft-to-right {
     display: flex;
     column-gap: 15px;
+    @media only screen and (max-width: 989px) {
+        column-gap: 10px;
+        flex-direction: row-reverse;
+    }
 
     .rdc-product-media-viewer {
       flex-grow: 1;
@@ -37,6 +49,15 @@
       width: 25%;
       height: fit-content;
       position: relative;
+      
+      @media only screen and (max-width: 989px) {
+        width:6.875rem;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width:3.5rem;
+      }
+
       .thumbnails-overflow-indicator-bottom {
         transform: rotateX(180deg);
       }
@@ -44,9 +65,11 @@
     .rdc-product-media-thumbnails {
       width: 100%;
       padding: 0px;
-      overflow-y: scroll;
+      overflow-y: auto;
       display: block;
       min-height: fit-content;
+
+
       .rdc-pm-thumbnail {
         margin-right: 0px;
         max-width: initial;
@@ -55,13 +78,36 @@
         width: 100%;
         height: fit-content;
         aspect-ratio: 1;
+        @media only screen and (max-width: 989px) {
+            margin-bottom: 10px;
+        }
         &:last-child {
           margin-bottom: 0px;
         }
       }
     }
+
+
+    .rdc-product-media-thumbnails::-webkit-scrollbar {
+        height: 2px;
+        width: 0px;
+      }
+    
+      /* Track */
+      .rdc-product-media-thumbnails::-webkit-scrollbar-track {
+        background: #DFDFDF;
+      }
+    
+      .rdc-product-media-thumbnails::-webkit-scrollbar-button {
+        display: none; /* Hide the scrollbar buttons */
+      }
+    
+      .rdc-product-media-thumbnails::-webkit-scrollbar-thumb {
+        background:#000;
+      }
   }
-}
+
+
 
 .template-product {
   .product-block-title {
