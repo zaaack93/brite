@@ -131,6 +131,18 @@
         text-decoration: line-through;
         margin-left: 12px;
     }
+
+    .product-bloc-box-container{
+        border-radius: 10px;
+        border: 1.5px solid #000; 
+        padding: 14px 21px;
+        p{
+            margin-bottom: 0;
+            &:first-child{
+                margin-bottom: 5px;
+            }
+        }
+    }
 }
 
 .faq-section-main{

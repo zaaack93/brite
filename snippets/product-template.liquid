@@ -257,6 +257,12 @@
                     block: block,
                     block_base_classes: block_base_classes,
                   %}
+                  
+                {%- when 'announcement-box' -%}
+                    {% render 'product-announcement-box',
+                      block: block,
+                      block_base_classes: block_base_classes,
+                    %}
 
                 {%- when 'rich-text' -%}
                     {% render 'product-block-text-rich',

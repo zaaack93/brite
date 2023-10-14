@@ -135,6 +135,13 @@
             "show_pickup_availability": false
           }
         },
+        "75822277-d417-4ea9-8313-5fc4e2f57483": {
+          "type": "announcement-box",
+          "settings": {
+            "text": "Add any 3 for $30",
+            "sub_text": "Discount will be applied at checkout."
+          }
+        },
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
           "type": "text",
           "settings": {
@@ -267,6 +274,7 @@
         "variant_picker",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
+        "75822277-d417-4ea9-8313-5fc4e2f57483",
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
