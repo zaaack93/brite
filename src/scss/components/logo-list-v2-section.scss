@@ -1,0 +1,19 @@
+.logo-list-v2-section {
+  --max-site-width: 1300px;
+  border-top: none;
+  .logo-list-wrapper {
+    padding-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    .heading-section {
+      min-width: 13.25rem;
+      width: 13.25rem;
+      border-right: 1px solid #000;
+      vertical-align: middle;
+      line-height: 42px;
+      font-weight: bold;
+    }
+  }
+}
