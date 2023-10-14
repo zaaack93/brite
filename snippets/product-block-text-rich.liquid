@@ -1,0 +1,16 @@
+
+<div class="{{ block_base_classes }} text-sm {% if block.settings.icon != 'none' %}flex items-center justify-start{% endif %} block-with-rich-text" {{ block.shopify_attributes }}>
+    {% if block.settings.icon != 'none' %}
+      <span class="inline-block icon-container">
+        {% if block.settings.icon == 'circle-check' %}
+            {%render 'check-circle-icon' %}
+        {%else%}
+            {% render 'theme-icon',
+            icon: block.settings.icon,
+            %}
+        {%endif%}
+      </span>
+    {% endif %}
+    {{ block.settings.richtext }}
+  </div>
+  

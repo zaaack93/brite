@@ -86,6 +86,30 @@
             "icon": "check-mark"
           }
         },
+        "1641e05d-cefc-4d38-817f-54ef7d7e73b8": {
+          "type": "rich-text",
+          "settings": {
+            "display_on_card": false,
+            "richtext": "<p><strong>Semi-Permanent<\/strong> - Lasts 5-30 washes.<\/p>",
+            "icon": "circle-check"
+          }
+        },
+        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e": {
+          "type": "rich-text",
+          "settings": {
+            "display_on_card": false,
+            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "icon": "circle-check"
+          }
+        },
+        "2e91cd67-db6b-46b8-aa60-6fcab10113da": {
+          "type": "rich-text",
+          "settings": {
+            "display_on_card": false,
+            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "icon": "circle-check"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -237,6 +261,9 @@
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
         "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
         "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
+        "1641e05d-cefc-4d38-817f-54ef7d7e73b8",
+        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e",
+        "2e91cd67-db6b-46b8-aa60-6fcab10113da",
         "variant_picker",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",

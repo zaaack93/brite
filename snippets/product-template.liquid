@@ -257,6 +257,12 @@
                     block: block,
                     block_base_classes: block_base_classes,
                   %}
+
+                {%- when 'rich-text' -%}
+                    {% render 'product-block-text-rich',
+                      block: block,
+                      block_base_classes: block_base_classes,
+                    %}
                 {%- when 'description' -%}
                   {% render 'product-block-description',
                     product: product,

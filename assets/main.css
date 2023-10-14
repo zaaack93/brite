@@ -85,6 +85,17 @@
             }
         }
     }
+    .block-with-rich-text{
+        p{
+            margin-bottom: 0;
+            line-height: initial;
+        }
+        .icon-container{
+            height:-moz-fit-content;
+            height:fit-content;
+            margin-right: 13px;
+        }
+    }
     .rdc-variant-desc {
         text-transform: uppercase;
         margin-top: -0.7rem;
