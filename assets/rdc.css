@@ -664,22 +664,20 @@ span.rdc-media-dot.rdc-active {
     display: none;
 }
 .rdc-vp-more {
-    max-width: 40px;
-    right: 0;
-    position: absolute;
-    width: 100%;
-    top: 35px;
-   
-/*   display: flex; */
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    background-image: linear-gradient(to right,transparent,rgba(255,255,255,.9) 20%);
-    padding: 10px 0;
+  max-width: 40px;
+  right: -20px;
+  position: absolute;
+  width: 100%;
+  top: 52px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 0;
   z-index: 99;
 }
 .left-button{
-  left: 0px;
+  left: -20px;
   transform: rotate(180deg);
 }
 .rdc-vp-more svg {

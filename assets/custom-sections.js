@@ -33,11 +33,11 @@ class ScrollContainer extends HTMLElement {
       };
   
       leftButton.addEventListener('click', () => {
-        container.scrollLeft -= 100; // Adjust the scrolling speed as needed
+        container.scrollLeft -= 300; // Adjust the scrolling speed as needed
       });
   
       rightButton.addEventListener('click', () => {
-        container.scrollLeft += 100; // Adjust the scrolling speed as needed
+        container.scrollLeft += 300; // Adjust the scrolling speed as needed
       });
   
       container.addEventListener('scroll', scrollHandler);
