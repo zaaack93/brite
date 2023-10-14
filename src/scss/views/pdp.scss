@@ -72,6 +72,7 @@
 
 .template-product{
     .product-block-title{
+        margin-top: 0px;
         .heading-template{
             @media only screen and (min-width: 990px) {
                 font-size: calc(var(--template-heading-size) * 0.8);

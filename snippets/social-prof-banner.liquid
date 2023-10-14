@@ -1,0 +1,23 @@
+<div class="social-banner-container">
+    <div class="social-prof-wrapper">
+        <div class="images-container">
+            <div class="Wearing__Avatars">
+                {% for i in (1..6) %}
+                {% assign avatar_srs= 'avatar_' | append: i %}
+                {% if settings[avatar_srs] !=blank %}
+                <div class="Wearing__Avatar">
+                    <div class="image__cirlce">
+                        {{settings[avatar_srs] | image_url:width :small | image_tag }}
+                    </div>
+                </div>
+                {%endif%}
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <p class="text_wrapper">
+            {{settings.text}}
+        </p>
+    </div>
+</div>

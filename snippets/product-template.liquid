@@ -185,6 +185,10 @@
               {% case block.type %}
                 {% when '@app' %}
                   {% render block %}
+
+                {% when 'social-prof' %}
+                  {% render 'social-prof-banner',settings:block.settings  %}
+                  
                 {% when 'title' %}
                   <div class="{{ block_base_classes }} break-words" {{ block.shopify_attributes }}>
                     {% assign header_tag = 'h1' %}
