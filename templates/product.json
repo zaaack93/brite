@@ -56,7 +56,7 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
           }
         },
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
@@ -119,8 +119,18 @@
             "enable_color_swatches": true
           }
         },
+        "7f38a05d-280c-468b-b35a-56aeb98824f8": {
+          "type": "buy_buttons_quantity",
+          "settings": {
+            "display_on_card": false,
+            "show_price": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": false
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "show_label": true
@@ -128,6 +138,7 @@
         },
         "baf3083e-d14d-435d-bca3-100d6ac490ce": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "show_price": true,
@@ -272,6 +283,7 @@
         "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e",
         "2e91cd67-db6b-46b8-aa60-6fcab10113da",
         "variant_picker",
+        "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
         "75822277-d417-4ea9-8313-5fc4e2f57483",

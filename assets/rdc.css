@@ -535,7 +535,7 @@ span#sliding-col-prev {
   }
 }
 
-.product-block.product-block-quantity-selector .push-btn:after {
+.product-block.product-block-quantity-selector .push-btn:after,.buy-button-with-quantity-wrapper .product-block-buy-buttons-quantity .push-btn:after {
     z-index: -1;
 }
 

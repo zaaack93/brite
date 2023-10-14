@@ -80,7 +80,7 @@
   }
   .block-with-rich-text p {
     margin-bottom: 0;
-    line-height: initial;
+    line-height: 20px;
   }
   .block-with-rich-text .icon-container {
     height: -moz-fit-content;
@@ -160,8 +160,47 @@
       }
     }
   }
-}
 
+  .buy-button-with-quantity-wrapper{
+    display: flex;
+    -moz-column-gap: 26px;
+         column-gap: 26px;
+    align-items: center;
+    .product-block-buy-buttons-quantity{
+        margin-top: 0px;
+        &:first-child{
+            width: 75%;
+        }
+        &:nth-child(2){
+            transform: scale(0.8);
+            width: 25%;
+            padding-top: 4px;
+            padding-right: 10px;
+        }
+    }
+  }
+}
+.cursor-pointer{
+    --tw-bg-opacity: 0.5;
+}
+.price_with_rating{
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: 767px) {
+        justify-content: space-between;
+    }
+    .loox-rating {
+        @media only screen and (min-width: 768px) {
+            margin-left: 40%;
+        }
+        .loox-rating-label{
+            -moz-column-gap: 4px;
+                 column-gap: 4px;
+            align-items: center;
+            font-size: 15px;
+        }    
+    }
+}
 .faq-section-main{
     .card-container{
         p{

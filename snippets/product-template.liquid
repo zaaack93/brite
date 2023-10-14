@@ -236,6 +236,25 @@
                     block: block,
                     block_base_classes: block_base_classes,
                   %}
+                {% when 'buy_buttons_quantity' %}
+                <div class="buy-button-with-quantity-wrapper">
+                  
+                  {% render 'product-block-buy-buttons-quantity',
+                    product: product,
+                    product_form_id: product_form_id,
+                    label_class: label_class,
+                    current_variant: current_variant,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                  {% render 'product-block-quantity',
+                    product_form_id: product_form_id,
+                    label_class: label_class,
+                    block: block,
+                    block_base_classes: block_base_classes,
+                  %}
+                  </div>
+                  
                 {% if product.metafields.info.atc_benefit != blank %}
                 <div class="br-atc-benefit rdc-m-20 rdc-ta-c"><span>{{ product.metafields.info.atc_benefit }}</span></div>
                   {% endif %}

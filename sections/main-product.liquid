@@ -887,6 +887,43 @@
       ]
     },
     {
+      "type": "buy_buttons_quantity",
+      "name": "Buy buttons with quantity",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "display_on_card",
+          "label": "Display on card",
+          "default": false,
+          "info": "Adjacent product blocks set to display on card will merge into a single card. [Learn more](https://help.switchthemes.co/shapes/guides/display-product-blocks-on-cards.html)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show price in add to cart button",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_payment_button",
+          "label": "Show dynamic checkout button",
+          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Pickup Availability"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pickup_availability",
+          "label": "Show pickup availability [Learn more](https://help.shopify.com/en/manual/sell-in-person/pos-classic/shopify-pos-from-admin/buy-online-pickup-in-store#show-pickup-availability-to-your-customers)",
+          "default": true
+        }
+      ]
+    },
+    {
       "type": "buy_buttons",
       "name": "Buy buttons",
       "limit": 1,
