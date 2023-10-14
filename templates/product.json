@@ -10,6 +10,13 @@
             "text_align": "text-left"
           }
         },
+        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
+          }
+        },
         "loox-rating": {
           "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "disabled": true,
@@ -39,13 +46,6 @@
           "settings": {
             "display_on_card": false,
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
-          }
-        },
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
-          "type": "liquid",
-          "settings": {
-            "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
@@ -218,10 +218,10 @@
       },
       "block_order": [
         "title",
+        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "loox-rating",
         "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
         "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
         "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
