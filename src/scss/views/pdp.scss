@@ -210,11 +210,21 @@
             width: 75%;
         }
         &:nth-child(2){
-            transform: scale(0.8);
-            width: 25%;
-            padding-top: 4px;
-            padding-right: 10px;
+            transform: scale(0.9);
+            flex: auto;
         }
+    }
+    @media only screen and (max-width: 500px) {
+      justify-content: space-between;
+      column-gap: 0px;
+      .product-block-buy-buttons-quantity{
+        &:nth-child(2){
+            transform: scale(0.65);
+        }
+    }
+    .rdc-atc-btn{
+      font-size: 14px;
+    }
     }
   }
 }

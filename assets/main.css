@@ -219,11 +219,22 @@
             width: 75%;
         }
         &:nth-child(2){
-            transform: scale(0.8);
-            width: 25%;
-            padding-top: 4px;
-            padding-right: 10px;
+            transform: scale(0.9);
+            flex: auto;
         }
+    }
+    @media only screen and (max-width: 500px) {
+      justify-content: space-between;
+      -moz-column-gap: 0px;
+           column-gap: 0px;
+      .product-block-buy-buttons-quantity{
+        &:nth-child(2){
+            transform: scale(0.65);
+        }
+    }
+    .rdc-atc-btn{
+      font-size: 14px;
+    }
     }
   }
 }
@@ -529,7 +540,7 @@ image-with-text-options{
     }
 }
 .logo-list-v2-section {
-  --max-site-width: 1300px;
+  --max-site-width: 1450px;
   border-top: none;
   .logo-list-wrapper {
     padding-top: 0px;
@@ -539,12 +550,41 @@ image-with-text-options{
     -moz-column-gap: 40px;
          column-gap: 40px;
     .heading-section {
-      min-width: 13.25rem;
-      width: 13.25rem;
-      border-right: 1px solid #000;
-      vertical-align: middle;
-      line-height: 42px;
       font-weight: bold;
+      @media (min-width: 990px) {
+        min-width: 16.25rem;
+        width: 16.25rem;
+        border-right: 1px solid #000;
+        vertical-align: middle;
+        line-height: 42px;
+      } 
+    }
+    ul{
+      li{
+        img{
+          filter: opacity(50%) grayscale(100%);
+        }
+      }
+    }
+    @media (max-width: 989px) {
+      flex-direction: column;
+      -moz-column-gap: 20px;
+           column-gap: 20px;
+      align-items: start;
+      row-gap: 40px;
+      ul{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        row-gap: 25px;
+        li{
+          width: 30%;
+          margin: 0px;
+          padding: 2%;
+          img{
+            filter: opacity(50%) grayscale(100%);
+          }
+        }
+      }
     }
   }
 }

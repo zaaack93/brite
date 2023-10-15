@@ -1,5 +1,5 @@
 .logo-list-v2-section {
-  --max-site-width: 1300px;
+  --max-site-width: 1450px;
   border-top: none;
   .logo-list-wrapper {
     padding-top: 0px;
@@ -8,12 +8,40 @@
     align-items: center;
     column-gap: 40px;
     .heading-section {
-      min-width: 13.25rem;
-      width: 13.25rem;
-      border-right: 1px solid #000;
-      vertical-align: middle;
-      line-height: 42px;
       font-weight: bold;
+      @media (min-width: 990px) {
+        min-width: 16.25rem;
+        width: 16.25rem;
+        border-right: 1px solid #000;
+        vertical-align: middle;
+        line-height: 42px;
+      } 
+    }
+    ul{
+      li{
+        img{
+          filter: opacity(50%) grayscale(100%);
+        }
+      }
+    }
+    @media (max-width: 989px) {
+      flex-direction: column;
+      column-gap: 20px;
+      align-items: start;
+      row-gap: 40px;
+      ul{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        row-gap: 25px;
+        li{
+          width: 30%;
+          margin: 0px;
+          padding: 2%;
+          img{
+            filter: opacity(50%) grayscale(100%);
+          }
+        }
+      }
     }
   }
 }
