@@ -1,4 +1,4 @@
-window['ThemeSection_Product'] = ({
+window["ThemeSection_Product"] = ({
   product,
   variant,
   featuredMediaID,
@@ -12,7 +12,7 @@ window['ThemeSection_Product'] = ({
     featured_media_id: featuredMediaID,
     current_media_id: featuredMediaID,
     loading: false,
-    quantity: '1',
+    quantity: "1",
     options: [],
     optionHandles: [],
     storeAvailability: null,
@@ -26,7 +26,7 @@ window['ThemeSection_Product'] = ({
           return window.theme.strings.loading;
         }
         if (!this.loading && this.current_variant.available) {
-          if (this.template === 'product.preorder') {
+          if (this.template === "product.preorder") {
             return window.theme.strings.preOrder;
           } else {
             return window.theme.strings.addToCart;
@@ -48,10 +48,10 @@ window['ThemeSection_Product'] = ({
     },
     get currentVariantAvailabilityClosestLocation() {
       // this is on a lag to the actual current variant so that we can display an intermediary state while the fetch request is happening
-      if (!Alpine.store('availability')) return null;
+      if (!Alpine.store("availability")) return null;
 
       const id = this.currentVariantId;
-      const storeData = Alpine.store('availability').availability[id];
+      const storeData = Alpine.store("availability").availability[id];
       if (storeData) {
         return storeData.closest_location;
       } else {
@@ -67,17 +67,17 @@ window['ThemeSection_Product'] = ({
     },
     get currentVariantTitle() {
       if (this.current_variant && this.current_variant.title) {
-        if (!this.current_variant.title.includes('Default')) {
+        if (!this.current_variant.title.includes("Default")) {
           return this.current_variant.title;
         }
       }
-      return '';
+      return "";
     },
     get current_price() {
       return this.current_variant.price;
     },
     get isUsingSlideshowToDisplayMedia() {
-      const splideEl = this.productRoot.querySelector('.splide--product');
+      const splideEl = this.productRoot.querySelector(".splide--product");
 
       if (window.Splide && this.productRoot && splideEl) {
         if (
@@ -103,7 +103,7 @@ window['ThemeSection_Product'] = ({
 
       if (this.$refs.productForm) {
         this.$refs.productForm.addEventListener(
-          'submit',
+          "submit",
           this.submitForm.bind(this)
         );
       }
@@ -111,34 +111,42 @@ window['ThemeSection_Product'] = ({
       this.getOptions();
       this.getAddToCartButtonHeight();
 
-      this.$watch('current_media_id', (value, oldValue) => {
+      this.$watch("current_media_id", (value, oldValue) => {
         if (this.isUsingSlideshowToDisplayMedia) return;
-        if(this.$root.querySelector(`[data-product-single-media-wrapper="${oldValue}"]`))
+        if (
+          this.$root.querySelector(
+            `[data-product-single-media-wrapper="${oldValue}"]`
+          )
+        )
           this.$root
             .querySelector(`[data-product-single-media-wrapper="${oldValue}"]`)
-            .dispatchEvent(new CustomEvent('mediaHidden'));
+            .dispatchEvent(new CustomEvent("mediaHidden"));
 
-        if(this.$root.querySelector(`[data-product-single-media-wrapper="${value}"]`))
-        this.$root
-          .querySelector(`[data-product-single-media-wrapper="${value}"]`)
-          .dispatchEvent(new CustomEvent('mediaVisible'));
+        if (
+          this.$root.querySelector(
+            `[data-product-single-media-wrapper="${value}"]`
+          )
+        )
+          this.$root
+            .querySelector(`[data-product-single-media-wrapper="${value}"]`)
+            .dispatchEvent(new CustomEvent("mediaVisible"));
       });
 
       this.updateStoreAvailability(this.current_variant);
       setTimeout(() => {
         // Get all div elements with the class 'variant-input'
-        const variantDivs = document.querySelectorAll('.variant-input');
+        const variantDivs = document.querySelectorAll(".variant-input");
 
         // Iterate through the div elements
-        variantDivs.forEach(div => {
+        variantDivs.forEach((div) => {
           // Find the radio input inside the current div
           const radioInput = div.querySelector('input[type="radio"]');
 
           // Check if the radio input is checked
           if (radioInput && radioInput.checked) {
             // Create a new 'change' event
-            const changeEvent = new Event('change', {
-              bubbles: true
+            const changeEvent = new Event("change", {
+              bubbles: true,
             });
 
             // Dispatch the 'change' event on the radio input
@@ -148,52 +156,63 @@ window['ThemeSection_Product'] = ({
       }, 50);
       //working on scroll thumbnail
       // Get all the div elements with class "rdc-product-media-inner"
-      const divElements = document.querySelectorAll('.rdc-product-media-inner');
+      const divElements = document.querySelectorAll(".rdc-product-media-inner");
 
       // Function to check screen size and perform action
       function checkScreenSize() {
         // Check if the screen width is greater than 990 pixels
-          // Loop through each div element
-          divElements.forEach(divElement => {
-            // Check if the div element has the class "rdc-product-media-inner"
-            if (divElement.classList.contains('displayleft-to-right')) {
-              // Get the first div element with class "rdc-product-media-viewer"
-              const firstDiv = divElement.querySelector('.rdc-product-media-viewer');
+        // Loop through each div element
+        divElements.forEach((divElement) => {
+          // Check if the div element has the class "rdc-product-media-inner"
+          if (divElement.classList.contains("displayleft-to-right")) {
+            // Get the first div element with class "rdc-product-media-viewer"
+            const firstDiv = divElement.querySelector(
+              ".rdc-product-media-viewer"
+            );
 
-              // Get the second div element with class "rdc-product-media-thumbnails"
-              const secondDiv = divElement.querySelector('.rdc-product-media-thumbnails');
+            // Get the second div element with class "rdc-product-media-thumbnails"
+            const secondDiv = divElement.querySelector(
+              ".rdc-product-media-thumbnails"
+            );
 
-              // Set the height of the second div equal to the height of the first div
-              secondDiv.style.height = `${firstDiv.offsetWidth}px`;
+            // Set the height of the second div equal to the height of the first div
+            secondDiv.style.height = `${firstDiv.offsetWidth}px`;
 
-              secondDiv.addEventListener('scroll', function() {
-                if (secondDiv.querySelectorAll('.rdc-pm-thumbnail').length >1 ){
-                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=0
-                }
-                else if (secondDiv.scrollTop + secondDiv.clientHeight + 40 >= secondDiv.scrollHeight) {
-                  // Perform your action here when scrolling to the bottom
-                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=0
-                  // You can replace the console.log statement with your desired action
-                } 
-                else{
-                  divElement.querySelector('.thumbnails-overflow-indicator-bottom').style.opacity=1
-                }
-              });
-            }
-          });
+            secondDiv.addEventListener("scroll", function () {
+              if (secondDiv.querySelectorAll(".rdc-pm-thumbnail").length > 1) {
+                divElement.querySelector(
+                  ".thumbnails-overflow-indicator-bottom"
+                ).style.opacity = 0;
+              } else if (
+                secondDiv.scrollTop + secondDiv.clientHeight + 40 >=
+                secondDiv.scrollHeight
+              ) {
+                // Perform your action here when scrolling to the bottom
+                divElement.querySelector(
+                  ".thumbnails-overflow-indicator-bottom"
+                ).style.opacity = 0;
+                // You can replace the console.log statement with your desired action
+              } else {
+                divElement.querySelector(
+                  ".thumbnails-overflow-indicator-bottom"
+                ).style.opacity = 1;
+              }
+            });
+          }
+        });
       }
 
-// Call the function initially
-checkScreenSize();
+      // Call the function initially
+      checkScreenSize();
 
-// Add an event listener to check screen size on window resize
-window.addEventListener('resize', checkScreenSize);
+      // Add an event listener to check screen size on window resize
+      window.addEventListener("resize", checkScreenSize);
     },
     getAddToCartButtonHeight() {
       window.onload = function () {
-        const height = document.querySelector('.add-to-cart-btn').offsetHeight;
+        const height = document.querySelector(".add-to-cart-btn").offsetHeight;
         document.documentElement.style.setProperty(
-          '--payment-button-height',
+          "--payment-button-height",
           `${height}px`
         );
       };
@@ -208,36 +227,37 @@ window.addEventListener('resize', checkScreenSize);
         this.storeAvailability.fetchContent(variant);
       }
     },
-    
+
     changeMediaOp(ope) {
-      const thumbContainer = this.$root.querySelector('.rdc-product-media-main.rdc-active .container--thumbnail .rdc-product-media-thumbnails')
-      if(thumbContainer){
-        const ActivateContainer = thumbContainer.querySelector('.rdc-pm-thumbnail.current-thumb')
-        const thumbItems = thumbContainer.querySelectorAll('.rdc-pm-thumbnail')
+      const thumbContainer = this.$root.querySelector(
+        ".rdc-product-media-main.rdc-active .container--thumbnail .rdc-product-media-thumbnails"
+      );
+      if (thumbContainer) {
+        const ActivateContainer = thumbContainer.querySelector(
+          ".rdc-pm-thumbnail.current-thumb"
+        );
+        const thumbItems = thumbContainer.querySelectorAll(".rdc-pm-thumbnail");
 
-        if(!ActivateContainer)
-          thumbContainer.querySelector('.rdc-pm-thumbnail').classList.add('current-thumb')
-
+        if (!ActivateContainer)
+          thumbContainer
+            .querySelector(".rdc-pm-thumbnail")
+            .classList.add("current-thumb");
 
         const index = Array.from(thumbItems).indexOf(ActivateContainer);
-        if(ope=='next'){
-          if(thumbItems.length>index+1){
-            thumbItems[index+1].click()
-            thumbContainer.scrollTop = thumbItems[index+1].offsetTop;
-
+        if (ope == "next") {
+          if (thumbItems.length > index + 1) {
+            thumbItems[index + 1].click();
+            thumbContainer.scrollTop = thumbItems[index + 1].offsetTop;
+          }
+        } else if (ope == "prev") {
+          if (index > 0) {
+            thumbItems[index - 1].click();
+            thumbContainer.scrollTop = thumbItems[index - 1].offsetTop;
           }
         }
-        else if(ope=='prev'){
-          if(index>0){
-            thumbItems[index-1].click()
-            thumbContainer.scrollTop = thumbItems[index-1].offsetTop;
-          }
-        }
-
       }
     },
     optionChange(name, value) {
-      
       this.getOptions();
 
       const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
@@ -258,34 +278,40 @@ window.addEventListener('resize', checkScreenSize);
           this.current_variant.id
         );
 
-        window.history.replaceState({
-          path: url
-        }, '', url);
+        window.history.replaceState(
+          {
+            path: url,
+          },
+          "",
+          url
+        );
 
         this.$refs.singleVariantSelector.dispatchEvent(
-          new Event('change', {
-            bubbles: true
+          new Event("change", {
+            bubbles: true,
           })
         );
         this.$root.dispatchEvent(
-          new CustomEvent('shapes:product:variantchange', {
+          new CustomEvent("shapes:product:variantchange", {
             bubbles: true,
             detail: {
-              variant: this.current_variant
+              variant: this.current_variant,
             },
           })
         );
 
-
         //update price
-        if (document.querySelector('.currentPrice .money')) {
-          document.querySelector('.currentPrice .money').innerHTML = formatMoney(this.current_variant.price)
+        if (document.querySelector(".currentPrice .money")) {
+          document.querySelector(".currentPrice .money").innerHTML =
+            formatMoney(this.current_variant.price);
         }
         //filter options
-        const productFilterdWithOption = this.product.variants.filter((variant) => variant.options.includes(value))
+        const productFilterdWithOption = this.product.variants.filter(
+          (variant) => variant.options.includes(value)
+        );
 
         // Get all div elements with the class 'variant-input'
-        const variantDivs = document.querySelectorAll('.variant-input');
+        const variantDivs = document.querySelectorAll(".variant-input");
 
         // Define the value you want to filter out
         const excludedValue = name;
@@ -293,76 +319,136 @@ window.addEventListener('resize', checkScreenSize);
         // Filter the div elements based on the data-option-name attribute and uncheck all the before after options
 
         window.dispatchEvent(
-          new CustomEvent('shapes:product:clearAllchecks', {
+          new CustomEvent("shapes:product:clearAllchecks", {
             bubbles: true,
           })
         );
-        
-        const filteredDivs = Array.from(variantDivs).filter(div => {
-          const optionName = div.getAttribute('data-option-name');
-          const optionValue = div.getAttribute('data-option-value');
-            
-            if(optionName != "Color" && optionName != 'color' && div.querySelector('input:checked')){
-              window.dispatchEvent(
-                new CustomEvent('shapes:product:variantavailibility', {
-                  bubbles: true,
-                  detail: {
-                    option: optionValue
-                  },
-                })
-              );
-            }
+
+        const filteredDivs = Array.from(variantDivs).filter((div) => {
+          const optionName = div.getAttribute("data-option-name");
+          const optionValue = div.getAttribute("data-option-value");
+
+          if (
+            optionName != "Color" &&
+            optionName != "color" &&
+            div.querySelector("input:checked")
+          ) {
+            window.dispatchEvent(
+              new CustomEvent("shapes:product:variantavailibility", {
+                bubbles: true,
+                detail: {
+                  option: optionValue,
+                },
+              })
+            );
+          }
           return optionName !== excludedValue;
         });
 
-        filteredDivs.filter(div => {
-          const optionValue = div.getAttribute('data-option-value');
-          const existValue = productFilterdWithOption.filter(product => {
-            return product.options.includes(optionValue) && product.options.includes(value);
+        filteredDivs.filter((div) => {
+          const optionValue = div.getAttribute("data-option-value");
+          const existValue = productFilterdWithOption.filter((product) => {
+            return (
+              product.options.includes(optionValue) &&
+              product.options.includes(value)
+            );
           });
-          
+
           if (existValue.length != 0) {
-            div.classList.remove('hide')
+            div.classList.remove("hide");
           } else {
-            div.classList.add('hide')
+            div.classList.add("hide");
           }
-
         });
-
 
         //set the active option for variant before and after
 
         window.dispatchEvent(
-          new CustomEvent('shapes:product:variantactive', {
+          new CustomEvent("shapes:product:variantactive", {
             bubbles: true,
             detail: {
-              variant: this.current_variant.title
+              variant: this.current_variant.title,
             },
           })
         );
 
-        //dispatch change Before after 
+        //dispatch change Before after
         window.dispatchEvent(
-          new CustomEvent('slides:before-after-change', {
+          new CustomEvent("slides:before-after-change", {
             bubbles: true,
             detail: {
-              variant: this.current_variant
+              variant: this.current_variant,
             },
           })
         );
-
       }
+      console.log(name, value);
+      const product_container = document.querySelector(
+        '.product-content[sync-color="true"]'
+      );
+      if ((product_container && name == "Color") || name == "color") {
+        //working on lox icons
+        const loox__icons = product_container.querySelectorAll(".loox-icon");
+        loox__icons.forEach((icon) => {
+          icon.style.color = value;
+        });
+
+        //wokrin on icon ticks
+        const icon_ticks =
+          product_container.querySelectorAll(".icon-container");
+        icon_ticks.forEach((icon) => {
+          if (icon.querySelector("svg"))
+            icon.querySelector("svg").style.fill = value;
+          if (icon.querySelector("svg path"))
+            icon.querySelector("svg path").style.fill = value;
+        });
+
+        //working on add to cart button
+        const add_to_cart_btn = product_container.querySelector(".rdc-atc-btn");
+        if (add_to_cart_btn) {
+          add_to_cart_btn.style.color = "white";
+          add_to_cart_btn.style.background = value;
+        }
+
+        //reset style for all
+        const allbuttons = product_container.querySelectorAll(
+          ".variant-input .input-autre-option"
+        );
+        allbuttons.forEach((input) => {
+          input.style.background = "transparent";
+        });
+        //set now the style
+        const inputOptions = product_container.querySelectorAll(
+          ".variant-input .rdc-variant-picker:checked + .input-autre-option"
+        );
+        inputOptions.forEach((input) => {
+          input.style.background = value;
+        });
+      }
+    },
+    hexToRGBA(hex, alpha) {
+      hex = hex.replace(/^#/, "");
+
+      // Parse the red, green, and blue components
+      const red = parseInt(hex.slice(0, 2), 16);
+      const green = parseInt(hex.slice(2, 4), 16);
+      const blue = parseInt(hex.slice(4, 6), 16);
+
+      // Ensure the alpha value is within the range [0, 1]
+      alpha = Math.min(1, Math.max(0, alpha));
+
+      return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
     },
     getOptions() {
       this.options = [];
       this.optionHandles = [];
 
       let selectors = this.$root.querySelectorAll(
-        '[data-single-option-selector]'
+        "[data-single-option-selector]"
       );
 
       selectors.forEach((selector) => {
-        if (selector.nodeName === 'SELECT') {
+        if (selector.nodeName === "SELECT") {
           const value = selector.value;
           this.options.push(value);
           this.optionHandles.push(
@@ -380,23 +466,23 @@ window.addEventListener('resize', checkScreenSize);
     },
     changeMedia(direction) {
       this.$root.dispatchEvent(
-        new CustomEvent('shapes:product:arrow-change', {
+        new CustomEvent("shapes:product:arrow-change", {
           bubbles: true,
           detail: {
-            direction: direction
+            direction: direction,
           },
         })
       );
-      if (this.thumbnailsPosition == 'under') {
+      if (this.thumbnailsPosition == "under") {
         const currentThumbnail = this.$root.querySelector(
-          '.product-thumbnail-list-item--active'
+          ".product-thumbnail-list-item--active"
         );
         const nextElement =
-          direction == 'prev' ?
-          currentThumbnail.previousElementSibling :
-          currentThumbnail.nextElementSibling;
+          direction == "prev"
+            ? currentThumbnail.previousElementSibling
+            : currentThumbnail.nextElementSibling;
         if (nextElement !== null) {
-          nextElement.querySelector('.media-thumbnail').click();
+          nextElement.querySelector(".media-thumbnail").click();
         }
       }
     },
@@ -408,19 +494,19 @@ window.addEventListener('resize', checkScreenSize);
 
       const formData = new FormData(this.$refs.productForm);
 
-      let modalCart = theme.settings.cart_type === 'modal';
+      let modalCart = theme.settings.cart_type === "modal";
 
-      const config = fetchConfigDefaults('javascript');
+      const config = fetchConfigDefaults("javascript");
 
       if (modalCart) {
-        formData.append('sections', 'cart-items,cart-footer,cart-item-count');
-        formData.append('sections_url', window.location.pathname);
+        formData.append("sections", "cart-items,cart-footer,cart-item-count");
+        formData.append("sections_url", window.location.pathname);
       }
 
       config.body = formData;
 
-      config.headers['X-Requested-With'] = 'XMLHttpRequest';
-      delete config.headers['Content-Type'];
+      config.headers["X-Requested-With"] = "XMLHttpRequest";
+      delete config.headers["Content-Type"];
       fetch(`${theme.routes.cart_add_url}`, config)
         .then((res) => res.json())
         .then((data) => {
@@ -433,10 +519,10 @@ window.addEventListener('resize', checkScreenSize);
 
           if (modalCart) {
             document.body.dispatchEvent(
-              new CustomEvent('shapes:modalcart:afteradditem', {
+              new CustomEvent("shapes:modalcart:afteradditem", {
                 bubbles: true,
                 detail: {
-                  response: data
+                  response: data,
                 },
               })
             );
@@ -448,7 +534,7 @@ window.addEventListener('resize', checkScreenSize);
           }
         })
         .catch((error) => {
-          if (typeof error === 'string') {
+          if (typeof error === "string") {
             alert(error);
           } else {
             error.json().then((a) => {
@@ -460,7 +546,7 @@ window.addEventListener('resize', checkScreenSize);
     },
     openZoom(index) {
       this.$refs.photoSwipeComponent.dispatchEvent(
-        new CustomEvent('shapes:photoswipe:open', {
+        new CustomEvent("shapes:photoswipe:open", {
           detail: {
             index: index,
           },
@@ -470,7 +556,7 @@ window.addEventListener('resize', checkScreenSize);
   };
 };
 
-window['productThumbnails'] = () => {
+window["productThumbnails"] = () => {
   return {
     firstVisible: true,
     lastVisible: false,
@@ -478,8 +564,8 @@ window['productThumbnails'] = () => {
       const firstThumbnail = this.$refs.firstThumbnail;
       const lastThumbnail = this.$refs.lastThumbnail;
       const options = {
-        root: this.$root.querySelector('.splide__track'),
-        rootMargin: '0px',
+        root: this.$root.querySelector(".splide__track"),
+        rootMargin: "0px",
         threshold: 1.0,
       };
       const firstThumbnailObserver = new window.IntersectionObserver(

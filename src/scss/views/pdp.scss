@@ -274,8 +274,10 @@
     }
 }
 .input-autre-option{
-  background-color: rgb(var(--color-button-background));
+  background-color: transparent;
 }
-.input-autre-option.selected-option {
-    background-color: transparent;
+.variant-input{
+  .rdc-variant-picker:checked + .input-autre-option {
+    background-color: rgb(var(--color-button-background));
+   }
 }

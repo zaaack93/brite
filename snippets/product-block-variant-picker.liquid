@@ -93,13 +93,17 @@
                         {% if is_color %}
                           'shadow-none' : optionHandles[{{ option_array_index }}] !== '{{ value | handleize }}'
                         {% else %}
-                        'selected-option bg-scheme-secondary-background text-scheme-text shadow-secondary' : optionHandles[{{ option_array_index }}] !== '{{ value | handleize }}',
+                        'bg-scheme-secondary-background text-scheme-text shadow-secondary' : optionHandles[{{ option_array_index }}] !== '{{ value | handleize }}',
                           'bg-scheme-text ' : optionHandles[{{ option_array_index }}] === '{{ value | handleize }}'
                         {% endif %}
                       }
                     "
-                    class="btn after:hidden input-autre-option
-                      {% if is_color %}p-1 bg-scheme-secondary-background{% endif %}
+                    class="btn after:hidden
+                      {% if is_color %}p-1 bg-scheme-secondary-background
+              
+                        {%else%}
+                        input-autre-option 
+                      {% endif %}
                       cursor-pointer
                       {% unless variant_label_state %}
                         line-through
