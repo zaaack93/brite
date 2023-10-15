@@ -653,7 +653,7 @@ span.rdc-imgvariant-picker {
     border-radius: 10px;
 }
 span.rdc-imgvariant-picker img {
-    transform: scale(1.2);
+    /*/transform: scale(1.2);*/
 }
 .rdc-media-dots {display:none}
 
@@ -1046,7 +1046,7 @@ span.rdc-cp-price {margin: 5px 0}
 
 
   .rdc-scroll-vid-vids {transform: translateX(60px)} 
-  span.rdc-imgvariant-picker {max-width: 55px}
+ /* span.rdc-imgvariant-picker {max-width: 55px}*/
 }
 
 

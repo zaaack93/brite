@@ -1,6 +1,10 @@
 .rdc-vp-inner {
   -moz-column-gap: 15px;
        column-gap: 15px;
+  @media only screen and (max-width: 768px) {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
 }
 
 .rdc-vp-fieldset-wrapper {
@@ -134,6 +138,9 @@
     height: fit-content;
     margin-right: 13px;
   }
+  .icon-container svg{
+    height: 22px;
+  }
   .rdc-variant-desc {
     text-transform: uppercase;
     margin-top: -0.7rem;
@@ -144,6 +151,27 @@
     scroll-behavior: smooth;
     .rdc-vp-inner {
       flex-wrap: nowrap;
+      .variant-input-without-image {
+        .cursor-pointer.btn {
+          padding: 4px;
+          border-radius: 10px;
+         /* border: 1px solid #000;
+          box-shadow: none;*/
+          .btn{
+            /*box-shadow: none;*/
+            &::after{
+              display: none;
+            }
+          }
+        }
+        .color-swatch:checked + .cursor-pointer {
+         /* border-width: 2px;*/
+        }
+        .rdc-imgvariant-picker {
+          /*border: none;*/
+        }
+      }
+
       .variant-input-with-image {
         width: 70px;
         height: 70px;
@@ -233,14 +261,12 @@
         }
     }
     .rdc-atc-btn{
-      font-size: 14px;
+      font-size: 16px;
     }
     }
   }
 }
-.cursor-pointer{
-    --tw-bg-opacity: 0.5;
-}
+
 .price_with_rating{
     display: flex;
     align-items: center;
@@ -258,6 +284,12 @@
             font-size: 15px;
         }    
     }
+}
+.input-autre-option{
+  background-color: rgb(var(--color-button-background));
+}
+.input-autre-option.selected-option {
+    background-color: transparent;
 }
 .faq-section-main{
     .card-container{
