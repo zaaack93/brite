@@ -98,7 +98,7 @@
           "type": "rich-text",
           "settings": {
             "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "richtext": "<p><strong>Vegan & Cruelty Free <\/strong>- DUH!<\/p>",
             "icon": "circle-check"
           }
         },
@@ -106,7 +106,7 @@
           "type": "rich-text",
           "settings": {
             "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "richtext": "<p><strong>Hydrating <\/strong>- Doesn't dry out your noggin<\/p>",
             "icon": "circle-check"
           }
         },
@@ -301,6 +301,7 @@
         "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea"
       ],
       "settings": {
+        "sync_color": true,
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "default",
         "desktop_media_width": "lg:col-span-7_lg:col-span-5",

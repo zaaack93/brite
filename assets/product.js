@@ -257,7 +257,7 @@ window["ThemeSection_Product"] = ({
         }
       }
     },
-    optionChange(name, value) {
+    optionChange(name, value,color) {
       this.getOptions();
 
       const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
@@ -382,15 +382,16 @@ window["ThemeSection_Product"] = ({
           })
         );
       }
-      console.log(name, value);
       const product_container = document.querySelector(
         '.product-content[sync-color="true"]'
       );
-      if ((product_container && name == "Color") || name == "color") {
+      if (product_container && color && (name == "Color" || name == "color")) {
+        const rgbaColor = this.hexToRGBA(color, 1);
+
         //working on lox icons
         const loox__icons = product_container.querySelectorAll(".loox-icon");
         loox__icons.forEach((icon) => {
-          icon.style.color = value;
+          icon.style.color = rgbaColor;
         });
 
         //wokrin on icon ticks
@@ -398,16 +399,16 @@ window["ThemeSection_Product"] = ({
           product_container.querySelectorAll(".icon-container");
         icon_ticks.forEach((icon) => {
           if (icon.querySelector("svg"))
-            icon.querySelector("svg").style.fill = value;
+            icon.querySelector("svg").style.fill = rgbaColor;
           if (icon.querySelector("svg path"))
-            icon.querySelector("svg path").style.fill = value;
+            icon.querySelector("svg path").style.fill = rgbaColor;
         });
 
         //working on add to cart button
         const add_to_cart_btn = product_container.querySelector(".rdc-atc-btn");
         if (add_to_cart_btn) {
           add_to_cart_btn.style.color = "white";
-          add_to_cart_btn.style.background = value;
+          add_to_cart_btn.style.background = rgbaColor;
         }
 
         //reset style for all
@@ -422,7 +423,7 @@ window["ThemeSection_Product"] = ({
           ".variant-input .rdc-variant-picker:checked + .input-autre-option"
         );
         inputOptions.forEach((input) => {
-          input.style.background = value;
+          input.style.background =this.hexToRGBA(color, 0.5);
         });
       }
     },

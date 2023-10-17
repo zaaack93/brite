@@ -576,6 +576,30 @@ image-with-text-options{
 .logo-list-v2-section {
   --max-site-width: 1450px;
   border-top: none;
+
+  .icon_content_container_wrapper{
+    @media (min-width: 990px) {
+      width: calc(100% - 16.25rem);
+      position: relative;
+      .rdc-vp-more{
+        top: 0px;
+      }
+      .rdc-vp-more svg{
+        width: 16px;
+      }
+      .content_icon_container{
+        width: 100%;
+        overflow-x: auto;
+        position: relative;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+          height: 0px;
+          width: 0px;
+        }
+      }
+    } 
+  }
   .logo-list-wrapper {
     padding-top: 0px;
     display: flex;
@@ -583,6 +607,9 @@ image-with-text-options{
     align-items: center;
     -moz-column-gap: 40px;
          column-gap: 40px;
+    @media (min-width: 990px) {
+      padding-right: 5rem;
+    } 
     .heading-section {
       font-weight: bold;
       @media (min-width: 990px) {
@@ -593,10 +620,22 @@ image-with-text-options{
         line-height: 42px;
       } 
     }
-    ul{
-      li{
-        img{
-          filter: opacity(50%) grayscale(100%);
+    .icons-list-ul{
+      @media (min-width: 990px) {
+        -moz-column-gap: 2.5rem;
+             column-gap: 2.5rem;
+        justify-content: start;
+      }
+      .icons-list-item{
+        @media (min-width: 990px) {
+          margin: 0px;
+        }
+      }
+      .icons-list-item img{
+        filter: opacity(50%) grayscale(100%);
+        @media (min-width: 990px) {
+          width: 100%;
+          min-width: 125px;
         }
       }
     }
@@ -606,17 +645,14 @@ image-with-text-options{
            column-gap: 20px;
       align-items: start;
       row-gap: 40px;
-      ul{
+      .icons-list-ul{
         flex-wrap: wrap;
         justify-content: space-evenly;
         row-gap: 25px;
-        li{
+        .icons-list-item{
           width: 30%;
           margin: 0px;
           padding: 2%;
-          img{
-            filter: opacity(50%) grayscale(100%);
-          }
         }
       }
     }

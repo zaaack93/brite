@@ -8,16 +8,16 @@
       <h2 class="heading-section font-heading heading-secondary {{ settings.heading_drop_shadow_style }}">{{ section.settings.title }}</h2>
       {% endif %}
       
-      <icon-links-slider >
+      <icon-links-slider class="icon_content_container_wrapper" >
         <div class="content_icon_container" >
-            <ul id="icon-row-{{ section.id }}" class="flex flex-wrap lg:flex-nowrap items-center justify-center -mt-5 lg:mt-0 lg:-mx-5">
+            <ul id="icon-row-{{ section.id }}" class="icons-list-ul flex flex-wrap lg:flex-nowrap items-center justify-center -mt-5 lg:mt-0">
             {% for block in logos %}
                 {% if block.settings.image != blank %}
-                <li class="relative block mt-4 lg:mt-0 mx-5" data-fade-in style="max-width: {{ section.settings.max_width }}px">
+                <li class="icons-list-item relative block mt-4 lg:mt-0 mx-5" data-fade-in style="max-width: {{ section.settings.max_width }}px">
                     {%- if block.settings.link != blank -%}
                     <a href="{{ block.settings.link }}" class="block" target="_blank">
                     {%- endif -%} 
-                    {{ block.settings.image | image_url: width: 500 | image_tag }}
+                    {{ block.settings.image | image_url: width: 500 | image_tag | classes :"icon-list-image" }}
                     {%- if block.settings.link != blank -%}
                     </a>
                     {%- endif -%}
@@ -30,6 +30,9 @@
             {% endfor %}
             </ul>
         </div>
+
+        <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
+        <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
         </icon-links-slider >
     </div>  
   

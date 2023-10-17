@@ -98,7 +98,7 @@
           "type": "rich-text",
           "settings": {
             "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "richtext": "<p><strong>Vegan & Cruelty Free <\/strong>- DUH!<\/p>",
             "icon": "circle-check"
           }
         },
@@ -106,7 +106,7 @@
           "type": "rich-text",
           "settings": {
             "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent <\/strong>- Lasts 5-30 washes.<\/p>",
+            "richtext": "<p><strong>Hydrating <\/strong>- Doesn't dry out your noggin<\/p>",
             "icon": "circle-check"
           }
         },

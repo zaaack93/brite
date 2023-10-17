@@ -78,9 +78,18 @@
                 {% assign tagForCurrentOption = "swatch-image-for-option-" | append : option.name | replace : ' ','-' | downcase %}
                         
               <div class="{% if is_color and  product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption %}variant-input-with-image {% elsif is_color %}variant-input-without-image {% endif %} inline-block relative variant-input" data-option-name="{{option.name}}" data-option-value="{{value}}">
-                  <input
+                {%for field in product.metafields.custom.color_options.value%}
+                    {% assign filed_value = field.color_name | downcase %}
+                    {% assign compare_value = value | downcase %}
+                    {% if filed_value == compare_value%}
+                      {% assign selected_color_image= field.color_preview_image %}
+                      {% assign selected_color= field.color %}
+                    {%endif%}
+                  {%endfor%}  
+                
+                <input
                     class="{% if is_color %}color-swatch{% endif %} cursor-pointer rdc-variant-picker absolute top-0 left-0 w-full h-full opacity-0"
-                    @change="optionChange('{{option.name}}','{{value}}')"
+                    @change="optionChange('{{option.name}}','{{value}}','{{selected_color}}')"
                     type="radio"
                     id="Section-{{ section.id }}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
                     value="{{ value | escape }}"
@@ -124,7 +133,7 @@
                        {%- if product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption -%}
               {% for variant in product.variants %}
                 {% if forloop.index0 == forloopIndex %}
-                    <span class="rdc-imgvariant-picker {% if variant.available == false %}rdc-o-5{% endif %}"><img src="{{ variant.image | img_url: "100x" }}"></span>
+                    <span class="rdc-imgvariant-picker {% if variant.available == false %}rdc-o-5{% endif %}"><img src="{{ selected_color_image | img_url: "100x" }}"></span>
                     {% endif %}
                       {% endfor %}
                 {% else %}
