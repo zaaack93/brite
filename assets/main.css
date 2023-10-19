@@ -13,6 +13,9 @@
 
 @media only screen and (max-width: 989px) {
   .template-product {
+    .rdc-product-page-details{
+      row-gap: 1.25rem;
+    }
     overflow-x: hidden;
     #MainContent {
       overflow: hidden;
@@ -290,6 +293,9 @@
   .intialButtonStyle{
     background-color: rgb(var(--color-button-background));
   }
+}
+.product-block-variant-picker{
+  margin-top: 1.45rem;
 }
 .faq-section-main{
     .card-container{
@@ -569,6 +575,11 @@ image-with-text-options{
                 }
             }
         }
+        .text_wrapper{
+            @media only screen and (max-width: 380px) {
+                font-size: 16px;
+            }
+        }
     }
 }
 .logo-list-v2-section {
@@ -630,7 +641,7 @@ image-with-text-options{
         }
       }
       .icons-list-item img{
-        filter: opacity(50%) grayscale(100%);
+        filter: grayscale(100%);
         @media (min-width: 990px) {
           width: 100%;
           min-width: 125px;

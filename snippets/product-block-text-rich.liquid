@@ -1,5 +1,5 @@
 
-<div class="{{ block_base_classes }} text-sm {% if block.settings.icon != 'none' %}flex items-center justify-start{% endif %} block-with-rich-text" {{ block.shopify_attributes }}>
+<div class="{{ block_base_classes }} {% if block.settings.icon != 'none' %}flex items-center justify-start{% endif %} block-with-rich-text" {{ block.shopify_attributes }}>
     {% if block.settings.icon != 'none' %}
       <span class="inline-block icon-container">
         {% if block.settings.icon == 'circle-check' %}
@@ -12,5 +12,4 @@
       </span>
     {% endif %}
   {{ block.settings.richtext }}
-  </div>
-  
+</div>

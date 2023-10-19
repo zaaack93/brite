@@ -7,11 +7,11 @@
           "type": "social-prof",
           "settings": {
             "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
-            "avatar_3": "shopify://shop_images/7.jpg",
-            "avatar_4": "shopify://shop_images/23.jpg",
-            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
+            "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
+            "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
+            "avatar_3": "shopify:\/\/shop_images\/7.jpg",
+            "avatar_4": "shopify:\/\/shop_images\/23.jpg",
+            "avatar_5": "shopify:\/\/shop_images\/PASTEL_PURPLE_3.png"
           }
         },
         "title": {
@@ -25,11 +25,11 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n</div>\n{% endfor %}"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
         "loox-rating": {
-          "type": "shopify://apps/loox-product-reviews-photos/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "disabled": true,
           "settings": {
             "contentSize": 16,
@@ -56,7 +56,7 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}</span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}</span>\n{%endif%}\n</div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"></div>\n</div>"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
           }
         },
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
@@ -86,28 +86,11 @@
             "icon": "check-mark"
           }
         },
-        "1641e05d-cefc-4d38-817f-54ef7d7e73b8": {
-          "type": "rich-text",
+        "77814407-81ac-45cc-bec9-3c912089591b": {
+          "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent</strong> - Lasts 5-30 washes.</p>",
-            "icon": "circle-check"
-          }
-        },
-        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e": {
-          "type": "rich-text",
-          "settings": {
-            "display_on_card": false,
-            "richtext": "<p><strong>Vegan & Cruelty Free </strong>- DUH!</p>",
-            "icon": "circle-check"
-          }
-        },
-        "2e91cd67-db6b-46b8-aa60-6fcab10113da": {
-          "type": "rich-text",
-          "settings": {
-            "display_on_card": false,
-            "richtext": "<p><strong>Hydrating </strong>- Doesn't dry out your noggin</p>",
-            "icon": "circle-check"
+            "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
           }
         },
         "variant_picker": {
@@ -162,7 +145,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -182,7 +165,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Description",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n</div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
@@ -192,7 +175,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "How to Use",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n</div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
@@ -202,7 +185,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Ingredients",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-ingredient rdc-ingredient-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_ingredients}}\n</div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-ingredient rdc-ingredient-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_ingredients}}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
@@ -255,7 +238,7 @@
             "shape": "star_1",
             "width": 190,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Rainbow.png",
+            "image": "shopify:\/\/shop_images\/Rainbow.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 59,
             "vertical_position": 100,
@@ -280,9 +263,7 @@
         "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
         "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
         "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
-        "1641e05d-cefc-4d38-817f-54ef7d7e73b8",
-        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e",
-        "2e91cd67-db6b-46b8-aa60-6fcab10113da",
+        "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
@@ -325,42 +306,42 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-1": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/cf87c161595988db432f89f649467879.png",
+            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-2": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/35a6dd533158a76d3706c34b2e69bcb7.png",
+            "image": "shopify:\/\/shop_images\/35a6dd533158a76d3706c34b2e69bcb7.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-3": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Australian_Kmart_Logo_1.png",
+            "image": "shopify:\/\/shop_images\/Australian_Kmart_Logo_1.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/cf87c161595988db432f89f649467879.png",
+            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
             "link": ""
           }
         },
@@ -371,7 +352,7 @@
             "shape": "star_1",
             "width": 190,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Rainbow_cb5de0da-ed0e-428e-a7e3-3ba41f94a01c.png",
+            "image": "shopify:\/\/shop_images\/Rainbow_cb5de0da-ed0e-428e-a7e3-3ba41f94a01c.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 59,
             "vertical_position": 100,
@@ -408,12 +389,12 @@
         "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BLACK_1.gif",
+            "image": "shopify:\/\/shop_images\/BLACK_1.gif",
             "image_shape": "scalloped_square",
             "rotate_image": 0,
             "image_position": "right",
             "title": "",
-            "richtext": "<h5><strong>Vegan & Cruelty Free</strong></h5><ul><li>Committed to kindness – all our products are 100% vegan and never tested on animals.</li></ul><h5><strong>Nourishing Formula</strong></h5><ul><li>Pamper your hair while you color. Our products are infused with nourishing ingredients that leave your hair feeling soft and healthy, not dry or damaged.</li></ul><h5><strong>Easy & Safe Application</strong></h5><ul><li>Achieve salon-quality results from the comfort of your home. Our user-friendly products are made to be simple to apply and gentle on your hair and scalp.</li></ul><h5><strong>Eco-Friendly & Sustainable</strong></h5><ul><li>We care for the planet as much as you do. Our packaging is designed to minimize waste and our ingredients are sustainably sourced.</li></ul>",
+            "richtext": "<h5><strong>Vegan & Cruelty Free<\/strong><\/h5><ul><li>Committed to kindness – all our products are 100% vegan and never tested on animals.<\/li><\/ul><h5><strong>Nourishing Formula<\/strong><\/h5><ul><li>Pamper your hair while you color. Our products are infused with nourishing ingredients that leave your hair feeling soft and healthy, not dry or damaged.<\/li><\/ul><h5><strong>Easy & Safe Application<\/strong><\/h5><ul><li>Achieve salon-quality results from the comfort of your home. Our user-friendly products are made to be simple to apply and gentle on your hair and scalp.<\/li><\/ul><h5><strong>Eco-Friendly & Sustainable<\/strong><\/h5><ul><li>We care for the planet as much as you do. Our packaging is designed to minimize waste and our ingredients are sustainably sourced.<\/li><\/ul>",
             "text_alignment": "text-left",
             "button_link": "",
             "button_label": "Shop Now"
@@ -458,7 +439,7 @@
             "rotate_image": 0,
             "image_position": "right",
             "title": "Before & Brite-er!",
-            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! </p><p>Slide to reveal the before and after transformation.</p>",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
             "text_alignment": "text-left",
             "button_link": "",
             "button_label": "Shop Now"
@@ -499,13 +480,13 @@
         "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
           "type": "slide",
           "settings": {
-            "image_after": "shopify://shop_images/Brite_-_Clean_Color_Copper_2.jpg",
-            "image": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
+            "image_after": "shopify:\/\/shop_images\/Brite_-_Clean_Color_Copper_2.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
             "image_shape": "default",
             "rotate_image": 0,
             "image_position": "right",
             "title": "Before & Brite-er!",
-            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! </p><p>Slide to reveal the before and after transformation.</p>",
+            "richtext": "<p>See the difference a touch of Brite can make. From muted to turnt up! <\/p><p>Slide to reveal the before and after transformation.<\/p>",
             "enable_color_option": true,
             "text_alignment": "text-left",
             "button_link": "",
@@ -591,7 +572,7 @@
             "shape": "star_1",
             "width": 190,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/S-26.png",
+            "image": "shopify:\/\/shop_images\/S-26.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 89,
             "vertical_position": 10,
@@ -621,7 +602,7 @@
         "heading_text_style": "heading",
         "two_columns_desktop": false,
         "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
         "color_scheme": "quaternary",
         "use_gradient_background": false,
         "padding_bottom": 100,
@@ -709,7 +690,7 @@
             "shape": "star_1",
             "width": 230,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Loveit.png",
+            "image": "shopify:\/\/shop_images\/Loveit.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 14,
             "vertical_position": 49,
@@ -737,7 +718,7 @@
         "title": "Brite vs the other dyes",
         "highlighted_column": "1",
         "column_1_title": "",
-        "column_1_image": "shopify://shop_images/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
         "column_2_title": "Other Brands",
         "enable_column_3": true,
         "column_3_title": "Salons",
@@ -756,21 +737,21 @@
           "type": "video",
           "settings": {
             "video_url": "",
-            "video_img": "shopify://shop_images/Screen_Shot_2022-10-10_at_12.23.28_pm.png"
+            "video_img": "shopify:\/\/shop_images\/Screen_Shot_2022-10-10_at_12.23.28_pm.png"
           }
         },
         "acde03d4-3d03-406f-b3eb-c7830fcae14f": {
           "type": "video",
           "settings": {
             "video_url": "",
-            "video_img": "shopify://shop_images/Bleach_Hero_Large_64375afb-db44-4b3f-8672-48eabadd88b5.jpg"
+            "video_img": "shopify:\/\/shop_images\/Bleach_Hero_Large_64375afb-db44-4b3f-8672-48eabadd88b5.jpg"
           }
         },
         "babc364d-b24a-412f-b768-b254cafab45c": {
           "type": "video",
           "settings": {
             "video_url": "",
-            "video_img": "shopify://shop_images/brite_tiktok_img_1-2.jpg"
+            "video_img": "shopify:\/\/shop_images\/brite_tiktok_img_1-2.jpg"
           }
         }
       },
@@ -785,7 +766,7 @@
         "short_text": "Watch our community get expressive with our signature Bleach Kits.",
         "button_text": "Check out more on",
         "button_link": "",
-        "button_icon": "shopify://shop_images/tiktok_icon_8917efd8-2745-43ef-971f-4d84d32e8ef2.png"
+        "button_icon": "shopify:\/\/shop_images\/tiktok_icon_8917efd8-2745-43ef-971f-4d84d32e8ef2.png"
       }
     },
     "1bb3293b-4166-4127-acbf-4378e30cbe81": {
@@ -794,8 +775,8 @@
       "settings": {
         "title": "",
         "style": "full",
-        "cover_image": "shopify://shop_images/Shop_All_Hero_Large_d2f3fa6f-4029-4f93-ba28-808430be2869.jpg",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/Shop_All_Hero_Large_d2f3fa6f-4029-4f93-ba28-808430be2869.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "aspect_ratio": "16:9",
         "color_scheme": "primary",
         "use_gradient_background": false
@@ -820,7 +801,7 @@
       "type": "apps",
       "blocks": {
         "loox-product-reviews": {
-          "type": "shopify://apps/loox-product-reviews-photos/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
             "only_photos": false,
             "aggregated": false,
@@ -830,8 +811,11 @@
           }
         }
       },
-      "block_order": ["loox-product-reviews"],
-      "settings": {}
+      "block_order": [
+        "loox-product-reviews"
+      ],
+      "settings": {
+      }
     },
     "b9840557-6047-445f-8e23-ec62568e83c0": {
       "type": "featured-collection",
@@ -843,7 +827,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Sparkle.png",
+            "image": "shopify:\/\/shop_images\/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
             "vertical_position": 90,
@@ -858,7 +842,9 @@
           }
         }
       },
-      "block_order": ["d0403f89-bceb-45aa-8c7d-bb587dcf8d34"],
+      "block_order": [
+        "d0403f89-bceb-45aa-8c7d-bb587dcf8d34"
+      ],
       "settings": {
         "title": "Tell me what's your flavour",
         "subheading": "",
@@ -884,27 +870,34 @@
       "type": "apps",
       "blocks": {
         "e06db6e3-1830-4cb7-83f2-13d9a4369101": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/hero-video-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "publishId"
           }
         }
       },
-      "block_order": ["e06db6e3-1830-4cb7-83f2-13d9a4369101"],
+      "block_order": [
+        "e06db6e3-1830-4cb7-83f2-13d9a4369101"
+      ],
       "disabled": true,
-      "settings": {}
+      "settings": {
+      }
     },
     "1691705782b1a68713": {
       "type": "apps",
       "blocks": {
         "92abd682-2549-4eb6-a685-db2df1513cf0": {
-          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {}
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
         }
       },
-      "block_order": ["92abd682-2549-4eb6-a685-db2df1513cf0"],
+      "block_order": [
+        "92abd682-2549-4eb6-a685-db2df1513cf0"
+      ],
       "disabled": true,
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [

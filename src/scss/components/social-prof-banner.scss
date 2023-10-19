@@ -62,5 +62,10 @@
                 }
             }
         }
+        .text_wrapper{
+            @media only screen and (max-width: 380px) {
+                font-size: 16px;
+            }
+        }
     }
 }

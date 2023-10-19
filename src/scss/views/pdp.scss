@@ -11,6 +11,9 @@
 
 @media only screen and (max-width: 989px) {
   .template-product {
+    .rdc-product-page-details{
+      row-gap: 1.25rem;
+    }
     overflow-x: hidden;
     #MainContent {
       overflow: hidden;
@@ -278,4 +281,7 @@
   .intialButtonStyle{
     background-color: rgb(var(--color-button-background));
   }
+}
+.product-block-variant-picker{
+  margin-top: 1.45rem;
 }
