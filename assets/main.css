@@ -286,7 +286,10 @@
 .variant-input{
   .rdc-variant-picker:checked + .input-autre-option {
     background-color: rgb(var(--color-button-background));
-   }
+  }
+  .intialButtonStyle{
+    background-color: rgb(var(--color-button-background));
+  }
 }
 .faq-section-main{
     .card-container{

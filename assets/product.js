@@ -16,6 +16,7 @@ window["ThemeSection_Product"] = ({
     options: [],
     optionHandles: [],
     storeAvailability: null,
+    currentColor:null,
     addedToCart: false,
     stickyAddToCartShown: false,
     template: template,
@@ -386,6 +387,7 @@ window["ThemeSection_Product"] = ({
         '.product-content[sync-color="true"]'
       );
       if (product_container && color && (name == "Color" || name == "color")) {
+        this.currentColor=color
         const rgbaColor = this.hexToRGBA(color, 1);
 
         //working on lox icons
@@ -424,6 +426,22 @@ window["ThemeSection_Product"] = ({
         );
         inputOptions.forEach((input) => {
           input.style.background =this.hexToRGBA(color, 0.5);
+        });
+      }
+      else if (product_container){
+        //reset style for all
+        const allbuttons = product_container.querySelectorAll(
+          ".variant-input .input-autre-option"
+        );
+        allbuttons.forEach((input) => {
+          input.style.background = "transparent";
+        });
+        //set now the style
+        const inputOptions = product_container.querySelectorAll(
+          ".variant-input .rdc-variant-picker:checked + .input-autre-option"
+        );
+        inputOptions.forEach((input) => {
+          input.style.background =this.hexToRGBA(this.currentColor, 0.5);
         });
       }
     },
