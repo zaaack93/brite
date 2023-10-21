@@ -21,8 +21,17 @@
             "text_align": "text-left"
           }
         },
+        "5716c804-fde9-4d48-a456-78010b655570": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.short_description.value }}",
+            "icon": "none"
+          }
+        },
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
@@ -57,33 +66,6 @@
           "settings": {
             "display_on_card": false,
             "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
-          }
-        },
-        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefits | metafield_text }}",
-            "icon": "check-mark"
-          }
-        },
-        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefit_2.value }}",
-            "icon": "check-mark"
-          }
-        },
-        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefit_3.value }}",
-            "icon": "check-mark"
           }
         },
         "77814407-81ac-45cc-bec9-3c912089591b": {
@@ -131,9 +113,10 @@
         },
         "75822277-d417-4ea9-8313-5fc4e2f57483": {
           "type": "announcement-box",
+          "disabled": true,
           "settings": {
-            "text": "Add any 3 for $30",
-            "sub_text": "Discount will be applied at checkout."
+            "text": "{{ product.metafields.custom.promo_heading.value }}",
+            "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
           }
         },
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
@@ -256,13 +239,11 @@
       "block_order": [
         "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
         "title",
+        "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "loox-rating",
         "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
-        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
-        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
-        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
         "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
