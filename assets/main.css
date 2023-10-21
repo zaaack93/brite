@@ -145,8 +145,8 @@
     height: 22px;
   }
   .rdc-variant-desc {
-    /*text-transform: uppercase;*/
-    margin-top: -0.7rem;
+    /*text-transform: uppercase;
+    margin-top: -0.7rem;*/
   }
   .rdc-vp-fieldset-wrapper {
     overflow-x: auto;
@@ -296,6 +296,10 @@
 }
 .product-block-variant-picker{
   margin-top: 1.45rem;
+}
+
+.product-block-compolimnetary{
+  padding-top: 1rem;
 }
 .faq-section-main{
     .card-container{
