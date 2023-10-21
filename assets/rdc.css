@@ -579,9 +579,13 @@ a.rdc-collection-card-inner>span,
 
 .product-tile .price__container {font-size: 16px}
 
+.rdc-variant-price{
+  line-height: 0.8;
+}
 .rdc-variant-price span {
     font-size: 25px;
     font-weight: 600;
+    line-height: 0.8;
 }
 .br-atc-benefit {font-size: 16px}
 span.br-img-benefit {
@@ -637,8 +641,9 @@ font-style: italic;
 
 
 .product-content legend {
-    min-width: 100%;
+  min-width: 100%;
   width: 100%;
+  line-height: 0.75;
 }
 
 .product-block-text svg {
@@ -668,7 +673,7 @@ span.rdc-media-dot.rdc-active {
   right: -20px;
   position: absolute;
   width: 100%;
-  top: 52px;
+  top: 46px;
   display: flex;
   justify-content: center;
   cursor: pointer;

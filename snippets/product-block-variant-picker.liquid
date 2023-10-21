@@ -31,7 +31,7 @@
       <div class="rdc-vp-fieldset-wrapper content_icon_container  {% unless forloop.first %} product-block {%endunless%}">
       <fieldset class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
         {%- unless is_color or option_style == 'buttons' -%}
-          <div class="my-1 lg:flex lg:items-center lg:justify-start">
+          <div class="lg:flex lg:items-center lg:justify-start">
            
             <label class="{{ label_class }}  lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5" for="Option{{ option.position }}-{{ section.id }}">
               {{ option.name }}
@@ -58,7 +58,7 @@
           <div class="my-1 lg:flex lg:items-center lg:justify-start rdc-ff-c rdc-ai-fs">
              {% unless is_color %}    
             <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5 rdc-d-flex rdc-ai-c">
-              {{ option.name }}:<br/><span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>
+              {{ option.name }}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>
             </legend>
             {% endunless %}
           <div class="rdc-vp-outer">

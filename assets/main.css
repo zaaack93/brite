@@ -124,17 +124,25 @@
 
 
 .template-product {
+  .product-block{
+    margin-top: 1.55rem;
+  }
   .product-block-title {
     margin-top: 0px;
+    margin-bottom: -5px;
     .heading-template {
       @media only screen and (min-width: 990px) {
         font-size: calc(var(--template-heading-size) * 0.8);
+        line-height: 0.75;
       }
     }
   }
   .block-with-rich-text p {
     margin-bottom: 0;
     line-height: 20px;
+    @media only screen and (max-width: 998px) {
+      font-size: 17px;
+    }
   }
   .block-with-rich-text .icon-container {
     height: -moz-fit-content;
@@ -194,7 +202,8 @@
     }
   }
   .rdc-vp-fieldset-wrapper {
-    padding-bottom: 10px;
+    
+    /* padding-bottom: 10px; */
     
   }
 
@@ -295,12 +304,21 @@
   }
 }
 .product-block-variant-picker{
-  margin-top: 1.45rem;
+  margin-top: 1.9rem !important;
+  .product-block {
+    margin-top: 1.75rem !important;
+  }
 }
 
 .product-block-compolimnetary{
   padding-top: 1rem;
 }
+
+.product-block-text.text-sm{
+    @media only screen and (max-width: 998px) {
+      font-size: 17px;
+    }
+  }
 .faq-section-main{
     .card-container{
         p{
