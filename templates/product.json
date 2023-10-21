@@ -37,30 +37,6 @@
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
-        "loox-rating": {
-          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "disabled": true,
-          "settings": {
-            "contentSize": 16,
-            "pattern": "",
-            "hideText": false,
-            "alignment": "",
-            "textColor": "",
-            "starColor": "",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": false
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "show_on_sale_sticker": false,
-            "text_align": "text-left"
-          }
-        },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
           "type": "liquid",
           "settings": {
@@ -148,7 +124,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Description",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.description }}",
             "page": ""
           }
         },
@@ -158,7 +134,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "How to Use",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.metafields.custom.products_how_to_use | metafield_tag }}",
             "page": ""
           }
         },
@@ -168,7 +144,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Ingredients",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-ingredient rdc-ingredient-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_ingredients}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.metafields.custom.product_ingredients | metafield_tag }}",
             "page": ""
           }
         },
@@ -241,8 +217,6 @@
         "title",
         "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
-        "loox-rating",
-        "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",

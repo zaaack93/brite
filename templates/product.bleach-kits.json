@@ -6,7 +6,7 @@
         "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa": {
           "type": "social-prof",
           "settings": {
-            "text": "100,000+ Happy customer",
+            "text": "100,000+ Happy Customers",
             "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
             "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
             "avatar_3": "shopify:\/\/shop_images\/7.jpg",
@@ -19,6 +19,15 @@
           "settings": {
             "display_on_card": false,
             "text_align": "text-left"
+          }
+        },
+        "5716c804-fde9-4d48-a456-78010b655570": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.short_description.value }}",
+            "icon": "none"
           }
         },
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
@@ -56,58 +65,14 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
           }
         },
-        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e": {
-          "type": "text",
-          "disabled": true,
+        "77814407-81ac-45cc-bec9-3c912089591b": {
+          "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefits | metafield_text }}",
-            "icon": "check-mark"
-          }
-        },
-        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefit_2.value }}",
-            "icon": "check-mark"
-          }
-        },
-        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.product_benefit_3.value }}",
-            "icon": "check-mark"
-          }
-        },
-        "1641e05d-cefc-4d38-817f-54ef7d7e73b8": {
-          "type": "rich-text",
-          "settings": {
-            "display_on_card": false,
-            "richtext": "<p><strong>Semi-Permanent<\/strong> - Lasts 5-30 washes.<\/p>",
-            "icon": "circle-check"
-          }
-        },
-        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e": {
-          "type": "rich-text",
-          "settings": {
-            "display_on_card": false,
-            "richtext": "<p><strong>Vegan & Cruelty Free <\/strong>- DUH!<\/p>",
-            "icon": "circle-check"
-          }
-        },
-        "2e91cd67-db6b-46b8-aa60-6fcab10113da": {
-          "type": "rich-text",
-          "settings": {
-            "display_on_card": false,
-            "richtext": "<p><strong>Hydrating <\/strong>- Doesn't dry out your noggin<\/p>",
-            "icon": "circle-check"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc-{{variant.id}} rdc-variant-desc \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{% for benefit in variant.metafields.custom.variant_benefit.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}\n<\/div>\n{% endfor %}"
           }
         },
         "variant_picker": {
@@ -148,9 +113,10 @@
         },
         "75822277-d417-4ea9-8313-5fc4e2f57483": {
           "type": "announcement-box",
+          "disabled": true,
           "settings": {
-            "text": "Add any 3 for $30",
-            "sub_text": "Discount will be applied at checkout."
+            "text": "{{ product.metafields.custom.promo_heading.value }}",
+            "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
           }
         },
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
@@ -273,16 +239,12 @@
       "block_order": [
         "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
         "title",
+        "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "loox-rating",
         "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
-        "9a0bd26f-af3f-4569-bc42-73e7506ebf6e",
-        "a7cee603-cf47-4780-9e7d-9a4f175a5c1f",
-        "1c4a0933-8d1b-4ff2-8a71-82c83bfc66b2",
-        "1641e05d-cefc-4d38-817f-54ef7d7e73b8",
-        "6828b87f-e9a2-4f14-9b21-3ee6eabb9d7e",
-        "2e91cd67-db6b-46b8-aa60-6fcab10113da",
+        "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
@@ -301,6 +263,7 @@
         "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea"
       ],
       "settings": {
+        "sync_color": true,
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "default",
         "desktop_media_width": "lg:col-span-7_lg:col-span-5",
@@ -352,14 +315,14 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879.png",
+            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
             "link": ""
           }
         },
@@ -383,6 +346,27 @@
             "color": "bg-scheme-accent text-scheme-accent-overlay",
             "color_scheme": "same_as_section"
           }
+        },
+        "9f10e8fe-ceb3-4251-a3a2-5593ce4801c1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
+            "link": ""
+          }
+        },
+        "13d091a7-fcf9-4b0c-b5b7-bfd78a332363": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
+            "link": ""
+          }
+        },
+        "21e7b1b1-951a-411a-a619-ef84bebf9870": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -392,7 +376,10 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
-        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8"
+        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8",
+        "9f10e8fe-ceb3-4251-a3a2-5593ce4801c1",
+        "13d091a7-fcf9-4b0c-b5b7-bfd78a332363",
+        "21e7b1b1-951a-411a-a619-ef84bebf9870"
       ],
       "settings": {
         "title": "Find us AT YOUR FAVE",
