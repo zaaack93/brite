@@ -1,6 +1,10 @@
-
+{% if block.settings.text!= blank or block.settings.sub_text!=blank%}
 <div class="{{ block_base_classes }} text-sm product-bloc-box-container" {{ block.shopify_attributes }}>
+    {%if block.settings.text !=blank%}
     <p class="text-item-block font-heading heading-secondary">{{block.settings.text}}</p>
+    {%endif%}
+    {%if block.settings.sub_text%}
     <p class="text-item-block font-secondary text-scheme-text">{{block.settings.sub_text}}</p>
+    {%endif%}
 </div>
-  
+  {%endif%}
