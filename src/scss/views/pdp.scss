@@ -71,9 +71,8 @@
     .rdc-product-media-thumbnails {
       width: 100%;
       padding: 0px;
-      overflow-y: auto;
+      overflow-y: scroll;
       display: block;
-      min-height: fit-content;
 
 
       .rdc-pm-thumbnail {
@@ -118,6 +117,9 @@
 .template-product {
   .product-block{
     margin-top: 1.55rem;
+  }
+  .product-block-collapsible-tab+.product-block-collapsible-tab{
+    margin-top: 0px;
   }
   .product-block-title {
     margin-top: 0px;
@@ -307,3 +309,8 @@
       font-size: 17px;
     }
   }
+  .template-product{
+  .block-with-rich-text:not(:first-child) {
+    margin-top: 1.3rem !important;
+  }
+} 

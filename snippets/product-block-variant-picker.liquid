@@ -23,7 +23,7 @@
  
  <icon-links-slider class="{% unless forloop.first %} product-block {%endunless%}">
             <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5 rdc-d-flex rdc-ai-c">
-              <span>{{ option.name }}</span>{% if is_color %}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
+              <span>{{ option.name | replace :"(color)","" }}</span>{% if is_color %}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
             </legend> 
             <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
             <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
