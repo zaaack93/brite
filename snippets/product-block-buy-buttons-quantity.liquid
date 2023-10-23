@@ -69,12 +69,12 @@
                 <template  x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price">
                   <span x-show="currentVariantAvailable" class="{{ price_text_size }}">
                     <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
-                    <s data-compare-price
+                    {% comment %} <s data-compare-price
                       x-html="formatMoney(current_variant.compare_at_price)">
                       {% if current_variant.compare_at_price > current_variant.price %}
                         {{ current_variant.compare_at_price | money | remove: 'AUD' }}
                       {% endif %}
-                    </s>
+                    </s> {% endcomment %}
                   </span>
                 </template>
               {% endif %}
