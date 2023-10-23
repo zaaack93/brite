@@ -113,7 +113,6 @@
         },
         "75822277-d417-4ea9-8313-5fc4e2f57483": {
           "type": "announcement-box",
-          "disabled": false,
           "settings": {
             "text": "{{ product.metafields.custom.promo_heading.value }}",
             "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"

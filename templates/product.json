@@ -89,7 +89,6 @@
         },
         "75822277-d417-4ea9-8313-5fc4e2f57483": {
           "type": "announcement-box",
-          "disabled": false,
           "settings": {
             "text": "{{ product.metafields.custom.promo_heading.value }}",
             "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
@@ -289,14 +288,21 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879.png",
+            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
+            "link": ""
+          }
+        },
+        "cc0c895c-7064-4746-bcb2-7512d63663e7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
             "link": ""
           }
         },
@@ -320,6 +326,20 @@
             "color": "bg-scheme-accent text-scheme-accent-overlay",
             "color_scheme": "same_as_section"
           }
+        },
+        "a731c5f4-1eea-4ee7-8460-e5a3956abbc6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
+            "link": ""
+          }
+        },
+        "300648ea-85d6-4e44-a9d3-6494fb16bc93": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -329,7 +349,10 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
-        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8"
+        "cc0c895c-7064-4746-bcb2-7512d63663e7",
+        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8",
+        "a731c5f4-1eea-4ee7-8460-e5a3956abbc6",
+        "300648ea-85d6-4e44-a9d3-6494fb16bc93"
       ],
       "settings": {
         "title": "Find us AT YOUR FAVE",
