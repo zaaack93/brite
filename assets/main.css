@@ -619,7 +619,7 @@ image-with-text-options{
       width: calc(100% - 16.25rem);
       position: relative;
       .rdc-vp-more{
-        top: 0px;
+        top: 23px;
       }
       .rdc-vp-more svg{
         width: 16px;
