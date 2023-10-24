@@ -643,6 +643,13 @@ font-style: italic;
 .product-content legend {
   min-width: 100%;
   width: 100%;
+  column-gap: 5px;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.product-content legend span{
+  min-width: fit-content;
 }
 
 .product-block-text svg {

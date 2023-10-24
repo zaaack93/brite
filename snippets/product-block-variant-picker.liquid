@@ -22,8 +22,8 @@
  {% if is_color %} 
  
  <icon-links-slider class="{% unless forloop.first %} product-block {%endunless%}">
-            <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5 rdc-d-flex rdc-ai-c">
-              <span>{{ option.name | replace :"(color)","" | replace :"(Color)","" }}</span>{% if is_color %}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
+            <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 rdc-d-flex rdc-ai-c">
+              <span>{{ option.name | replace :" (color)","" | replace :" (Color)","" }}:</span>{% if is_color %}<span class="mt-1 inline-block  rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
             </legend> 
             <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
             <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
@@ -57,8 +57,8 @@
            
           <div class="my-1 lg:flex lg:items-center lg:justify-start rdc-ff-c rdc-ai-fs">
              {% unless is_color %}    
-            <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5 rdc-d-flex rdc-ai-c">
-              {{ option.name }}:<span class="mt-1 inline-block rdc-ml-5 rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>
+            <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 rdc-d-flex rdc-ai-c">
+              <span>{{ option.name }}:</span><span class="mt-1 inline-block  rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>
             </legend>
             {% endunless %}
           <div class="rdc-vp-outer">
