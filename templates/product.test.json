@@ -23,7 +23,6 @@
         },
         "5716c804-fde9-4d48-a456-78010b655570": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "display_on_card": false,
             "text": "{{ product.metafields.custom.short_description.value }}",
@@ -32,33 +31,10 @@
         },
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
-          }
-        },
-        "loox-rating": {
-          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "disabled": true,
-          "settings": {
-            "contentSize": 16,
-            "pattern": "",
-            "hideText": false,
-            "alignment": "",
-            "textColor": "",
-            "starColor": "",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": false
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "show_on_sale_sticker": false,
-            "text_align": "text-left"
           }
         },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
@@ -72,7 +48,7 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc-{{variant.id}} rdc-variant-desc \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{% for benefit in variant.metafields.custom.variant_benefit.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}\n<\/div>\n{% endfor %}"
+            "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
           }
         },
         "variant_picker": {
@@ -147,7 +123,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Description",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.description }}",
             "page": ""
           }
         },
@@ -157,7 +133,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "How to Use",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.metafields.custom.products_how_to_use | metafield_tag }}",
             "page": ""
           }
         },
@@ -167,7 +143,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Ingredients",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-ingredient rdc-ingredient-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_ingredients}}\n<\/div>\n{% endfor %}",
+            "content": "{{ product.metafields.custom.product_ingredients | metafield_tag }}",
             "page": ""
           }
         },
@@ -240,8 +216,6 @@
         "title",
         "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
-        "loox-rating",
-        "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
@@ -314,14 +288,21 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
+            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
+            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
+            "link": ""
+          }
+        },
+        "cc0c895c-7064-4746-bcb2-7512d63663e7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
             "link": ""
           }
         },
@@ -346,31 +327,17 @@
             "color_scheme": "same_as_section"
           }
         },
-        "9f10e8fe-ceb3-4251-a3a2-5593ce4801c1": {
+        "a731c5f4-1eea-4ee7-8460-e5a3956abbc6": {
           "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
             "link": ""
           }
         },
-        "13d091a7-fcf9-4b0c-b5b7-bfd78a332363": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
-            "link": ""
-          }
-        },
-        "21e7b1b1-951a-411a-a619-ef84bebf9870": {
+        "300648ea-85d6-4e44-a9d3-6494fb16bc93": {
           "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
-            "link": ""
-          }
-        },
-        "46b6f866-9928-4d60-bf78-868e45f36d3b": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
             "link": ""
           }
         }
@@ -382,11 +349,10 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
+        "cc0c895c-7064-4746-bcb2-7512d63663e7",
         "0371cc6f-3f67-43e2-86c9-7dc87399d8b8",
-        "9f10e8fe-ceb3-4251-a3a2-5593ce4801c1",
-        "13d091a7-fcf9-4b0c-b5b7-bfd78a332363",
-        "21e7b1b1-951a-411a-a619-ef84bebf9870",
-        "46b6f866-9928-4d60-bf78-868e45f36d3b"
+        "a731c5f4-1eea-4ee7-8460-e5a3956abbc6",
+        "300648ea-85d6-4e44-a9d3-6494fb16bc93"
       ],
       "settings": {
         "title": "Find us AT YOUR FAVE",

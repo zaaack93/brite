@@ -50,6 +50,7 @@
     "button_border_width": 2,
     "button_drop_shadow_size": 4,
     "button_shadow_color": "color-scheme-card",
+    "button_shadow_direction": "bottom_right",
     "button_show_border_on_shadow": true,
     "sticker_border_radius": "0.5rem",
     "sticker_border_width": 2,
@@ -174,7 +175,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement_bar": true,
+          "show_announcement_bar": false,
           "home_page_only": true,
           "display": "marquee",
           "text": "SHOP THE HALLOWEEN SPECIAL",
@@ -321,7 +322,7 @@
             "type": "stockist_australia",
             "settings": {
               "logo": "shopify:\/\/shop_images\/image_280.png",
-              "link": "https:\/\/www.priceline.com.au\/search\/?q=brite"
+              "link": "https:\/\/www.priceline.com.au\/brand\/brite-organix"
             }
           },
           "01428e42-fa5e-4755-84f5-004ace3d0e59": {

@@ -115,7 +115,7 @@
         "text_box_bg": "shopify:\/\/shop_images\/hero_left_bg.jpg",
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/3D874891-9F0E-4C27-AA6B-0575891BFA51.png",
+        "image": "shopify:\/\/shop_images\/2_2077b7b7-2bfa-45f9-b74c-95408c7b71df.jpg",
         "crop": "",
         "image_shape": "default",
         "blob_type": 2,
@@ -123,13 +123,13 @@
         "image_position": "right",
         "image_size": "half",
         "disable_media_style": true,
-        "title": "Here's a Special<br> Halloween Treat",
-        "title_mobile": "A HALLOWEEN TREAT AWAITS",
+        "title": "Make your world<br>a little briter",
+        "title_mobile": "Make your world a little briter",
         "heading_size": "heading-template",
-        "richtext": "<p>Grab <strong>any 2 Liquid Hair Chalks<\/strong> for 20% off!<\/p>",
+        "richtext": "<p>Proudly: Ethical, Vegan, Cruelty Free. <em>Duh<\/em>!<\/p>",
         "text_alignment": "text-left",
-        "button_link": "shopify:\/\/products\/halloween-special-liquid-hair-chalks",
-        "button_label": "Pick Your Potion",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_label": "Shop All Products",
         "color_scheme": "secondary",
         "use_gradient_background": false
       }
@@ -277,6 +277,38 @@
         "use_gradient_background": false
       }
     },
+    "3220b078-22e1-4aef-ac2f-dd15d5b30399": {
+      "type": "text-marquee",
+      "settings": {
+        "text": "HAIR COLOR WITH A CONSCIENCE",
+        "repeat_text": true,
+        "shape_between_text": "flower",
+        "animate_shape_between_text": true,
+        "link": "",
+        "font": "font-heading heading-secondary",
+        "text_size": "text-xl",
+        "speed": 60,
+        "direction": "",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false
+      }
+    },
+    "1691058444d1e54179": {
+      "type": "apps",
+      "blocks": {
+        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "xs4fw5jmdxndf"
+          }
+        }
+      },
+      "block_order": [
+        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e"
+      ],
+      "settings": {
+      }
+    },
     "2817ea07-97bc-4841-b262-c58c8db83450": {
       "type": "image-with-text",
       "blocks": {
@@ -410,22 +442,6 @@
         "button_label": "Shop Liquid Hair Chalks",
         "color_scheme": "primary",
         "use_gradient_background": false
-      }
-    },
-    "1691058444d1e54179": {
-      "type": "apps",
-      "blocks": {
-        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "xs4fw5jmdxndf"
-          }
-        }
-      },
-      "block_order": [
-        "d646b995-400e-4ef3-9cfd-cbf5622c0b8e"
-      ],
-      "settings": {
       }
     },
     "276ebf26-6bf7-475c-8b06-2bf6bf585819": {
@@ -1087,8 +1103,9 @@
     "1650891033bae15b05",
     "16648046768565ca3d",
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57",
-    "2817ea07-97bc-4841-b262-c58c8db83450",
+    "3220b078-22e1-4aef-ac2f-dd15d5b30399",
     "1691058444d1e54179",
+    "2817ea07-97bc-4841-b262-c58c8db83450",
     "276ebf26-6bf7-475c-8b06-2bf6bf585819",
     "f45e1af3-75cf-486d-ab0d-348e87bd55e9",
     "4d27f5ea-174a-4bd2-8dda-f89c065c473a",

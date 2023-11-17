@@ -288,14 +288,21 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879.png",
+            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
             "link": ""
           }
         },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
+            "link": ""
+          }
+        },
+        "78210dc1-c238-49dc-a34b-4cd4e6d0e751": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
             "link": ""
           }
         },
@@ -319,6 +326,20 @@
             "color": "bg-scheme-accent text-scheme-accent-overlay",
             "color_scheme": "same_as_section"
           }
+        },
+        "4a172a5d-6a10-4934-8059-5463bb9e63ee": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_282_c75e7c0b-f7c2-4e0b-b829-8d3c68272ff2.png",
+            "link": ""
+          }
+        },
+        "e9fcf124-f101-4a33-a1aa-d810da01942b": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -328,7 +349,10 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
-        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8"
+        "78210dc1-c238-49dc-a34b-4cd4e6d0e751",
+        "0371cc6f-3f67-43e2-86c9-7dc87399d8b8",
+        "4a172a5d-6a10-4934-8059-5463bb9e63ee",
+        "e9fcf124-f101-4a33-a1aa-d810da01942b"
       ],
       "settings": {
         "title": "Find us AT YOUR FAVE",
