@@ -143,3 +143,71 @@ class ImageWithTextOptions extends HTMLElement {
 
 
 customElements.define('image-with-text-options', ImageWithTextOptions);
+
+class ScrollContainer extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    const container = this.querySelector(".inner_container_items");
+    const leftButton = this.querySelector(".left-button");
+    const rightButton = this.querySelector(".right-button");
+
+    // Add a 'slide-directly-edge' attribute and check its value
+    const slideDirectlyEdge = this.hasAttribute("slide-directly-edge");
+
+    const updateButtonVisibility = () => {
+      // Show/hide the left button based on scroll position
+      if (container.scrollLeft > 0 && leftButton) {
+        leftButton.style.visibility = "visible";
+      } else if (leftButton) {
+        leftButton.style.visibility = "hidden";
+      }
+      // Show/hide the right button based on scroll position
+      if (
+        container.scrollLeft <
+          container.scrollWidth - container.clientWidth - 10 &&
+        rightButton
+      ) {
+        rightButton.style.visibility = "visible";
+      } else if (rightButton) {
+        rightButton.style.visibility = "hidden";
+      }
+    };
+
+    const scrollHandler = () => {
+      updateButtonVisibility();
+    };
+
+    const resizeHandler = () => {
+      updateButtonVisibility();
+    };
+
+    leftButton?.addEventListener("click", () => {
+      if (slideDirectlyEdge) {
+        container.scrollLeft = 0; // Scroll to the left edge
+      } else {
+        container.scrollLeft -= 300; // Normal scrolling
+      }
+    });
+
+    rightButton?.addEventListener("click", () => {
+      if (slideDirectlyEdge) {
+        container.scrollLeft = container.scrollWidth - container.clientWidth; // Scroll to the right edge
+      } else {
+        container.scrollLeft += 300; // Normal scrolling
+      }
+    });
+
+    container?.addEventListener("scroll", scrollHandler);
+    window.addEventListener("resize", resizeHandler);
+
+    updateButtonVisibility(); // Trigger initial visibility check
+
+    // Add an event listener for the refresh scroll
+    this.addEventListener("slider-scroll:refresh", updateButtonVisibility);
+  }
+}
+
+customElements.define("scroll-wrapper-slider", ScrollContainer);

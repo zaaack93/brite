@@ -54,7 +54,6 @@ window['ThemeSection_ProductQuickBuy'] = ({
         this.updateVariant(matchedVariant);
       },
       optionChange() {
-        debugger
         this.getOptions();
         const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
           this.product,

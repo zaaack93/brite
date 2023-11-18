@@ -54,7 +54,7 @@
         featuredMediaID: {{ featured_media.id | json }}
       })"
       {% endif %}
-      class="{% if display_on_card %}bg-scheme-card card {% if products_per_row_mobile == '2' %}p-2.5 lg:p-5{% else %}p-5{% endif %} h-full{% endif %}">
+      class="{% if display_on_card %}bg-scheme-card card {% if products_per_row_mobile == '2' %}p-2.5 lg:p-5{% else %}p-5{% endif %} h-full{% endif %} relative pb-media-shadow">
       {%- if product.featured_media -%}
         <div class="relative {% unless display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
           {%- render 'product-tile-media-image',
@@ -71,7 +71,7 @@
           -%}
         </div>
       {%- endif -%}
-      <div class="product-tile mt-5 break-words">
+      <div class="product-tile mt-5 break-words relative">
         <a href="{{ product.url | within: collection }}" class="absolute top-0 left-0 w-full h-full z-10 block">
           <span class="visually-hidden">{{ product.title }}</span>
         </a>
@@ -81,30 +81,38 @@
         {%- endif -%}
   
         {%- if enable_quick_buy -%}
-        <span class="inline-block mt-1.5"
-          x-html="formatMoney(current_price)"
-          :class="
-            {
-              'invisible': !current_variant
-            }"
-          data-product-price
-        >
-          {{ current_variant.price | money }}
-        </span>
-        {% if product.compare_at_price_max > product.price %}
-          <template x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price">
-            <span class="{{ price_text_size }}">
-              <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
-              <s data-compare-price
-                class="text-scheme-text"
-                x-html="formatMoney(current_variant.compare_at_price)">
-                {% if current_variant.compare_at_price > current_variant.price %}
-                  {{ current_variant.compare_at_price | money }}
-                {% endif %}
-              </s>
+        <div class="mt-1.5 price-with-rating-container">
+          <div class="price-part-inner">
+            <span class="inline-block custom-font-price"
+              x-html="formatMoney(current_price)"
+              :class="
+                {
+                  'invisible': !current_variant
+                }"
+              data-product-price
+            >
+              {{ current_variant.price | money }}
             </span>
-          </template>
-        {% endif %}
+            {% if product.compare_at_price_max > product.price %}
+              <template x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price">
+                <span class="{{ price_text_size }}">
+                  <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
+                  <s data-compare-price
+                    class="text-scheme-text"
+                    x-html="formatMoney(current_variant.compare_at_price)">
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      {{ current_variant.compare_at_price | money }}
+                    {% endif %}
+                  </s>
+                </span>
+              </template>
+            {% endif %}
+        </div>
+
+        <div class="loox-rating rating-part-inner" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+      </div>
+
+
         {%- else -%}
         {%- render 'price',
           product: product,
@@ -131,18 +139,11 @@
       {%- if on_sale -%}
         {%- liquid
           assign text = 'products.product.on_sale' | t
-          assign id = 'on-sale-sticker-' | append: product.id
+          assign id = 'on-sale-sticker--' | append: product.id
           assign shape = settings.on_sale_badge_shape
-          assign vertical_position = 15
-          assign horizontal_position = 90
-          if rotate > 0
-            assign rotate = -5
-          else
-            assign rotate = 5
-          endif
-          if display_on_card
-            assign vertical_position = 5
-          endif
+          assign vertical_position = 10
+          assign horizontal_position = 95
+          assign rotate = 5
         -%}
         {%- render 'static-sticker',
           static_id: 'on-sale',
@@ -160,17 +161,10 @@
       {%- unless available -%}
         {%- liquid
           assign text = 'products.product.sold_out' | t
-          assign id = 'sold-out-sticker-' | append: product.id
-          assign vertical_position = 15
-          assign horizontal_position = 10
-          if rotate > 0
-            assign rotate = -5
-          else
-            assign rotate = 5
-          endif
-          if display_on_card
-            assign vertical_position = 5
-          endif
+          assign id = 'sold-out-sticker--' | append: product.id
+          assign vertical_position = 10
+          assign horizontal_position = 95
+          assign rotate = 5
         -%}
         {%- render 'static-sticker',
           static_id: 'sold-out',
@@ -188,29 +182,11 @@
       {% if product.metafields.shapes_theme[metafield_badge] != blank %}
         {%- liquid
           assign text = product.metafields.shapes_theme[metafield_badge].value
-          assign id = 'metafield-sticker-' | append: product.id
+          assign id = 'metafield-sticker--' | append: product.id
           assign shape = settings.metafield_badge_shape
-          assign vertical_position = 15
-          if display_on_card
-            assign vertical_position = 5
-          endif
-          if on_sale and available
-            assign horizontal_position = 10
-          else
-            assign horizontal_position = 90
-          endif 
-          if on_sale and sold_out
-            if display_on_card
-              assign vertical_position = 30
-            else
-              assign vertical_position = 40
-            endif
-          endif
-          if rotate > 0
-            assign rotate = -5
-          else
-            assign rotate = 5
-          endif
+          assign vertical_position = 8
+          assign horizontal_position = 95
+          assign rotate = 5
         -%}
         {%- render 'static-sticker',
           static_id: 'metafield-badge',

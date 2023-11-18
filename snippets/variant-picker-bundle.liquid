@@ -1,6 +1,6 @@
 {% unless product.has_only_default_variant %}
     <div
-      class="{{ block_base_classes }} space-y-2.5"
+      class="{{ block_base_classes }} product-container-options"
       {{ block.shopify_attributes }}
     >
       {% assign option_style = "buttons" %}
@@ -21,7 +21,7 @@
   
         <fieldset class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
           {%- unless is_color or option_style == 'buttons' -%}
-            <div class="my-1 lg:flex lg:items-center lg:justify-start">
+            <div class=" lg:flex lg:items-center lg:justify-start element-container">
               <label class="{{ label_class }}  lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5" for="Option{{ option.position }}-{{product.id}}-{{ section.id }}">
                 {{ option.name }}
               </label>
@@ -29,7 +29,7 @@
                 id="Option{{ option.position }}-{{product.id}}-{{ section.id }}"
                 name="options[{{ option.name | escape }}]"
                 @change="optionChange()"
-                class="mt-2.5 lg:mt-0 single-option-selector font-body text-base text-scheme-text appearance-none input w-full "
+                class="lg:mt-0 single-option-selector font-body text-base text-scheme-text appearance-none input w-full "
                 data-single-option-selector-bundle
               >
                 {% for value in option.values %}
@@ -42,11 +42,18 @@
               </select>
             </div>
           {%- else -%}
-            <div class="my-1 lg:flex lg:items-center lg:justify-start">
-              <legend class="{{ label_class }} lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5">
-                {{ option.name }}:<br/><span class="mt-1 inline-block" x-text="options[{{ forloop.index0 }}]"></span>
+            <div class="lg:flex lg:items-center lg:justify-start element-container">
+              <legend class="option-container">
+                <span class="option-text-part">{% if is_color %}Select Colour{%else%}{{ option.name }}{%endif%}:</span><span class="inline-block option-value-part" x-text="options[{{ forloop.index0 }}]"></span>
               </legend>
-              <div class="mt-2.5 flex flex-wrap lg:flex-1  gap-2.5">
+              {% if is_color %}
+              <scroll-wrapper-slider class="without-scroll">
+              <div class="arrow-slider left-button">{% render 'icon-chevron-down' %}</div>
+              <div class="arrow-slider right-button">{% render 'icon-chevron-down' %}</div>
+              <div class="inner_container_items">
+              {% endif %}
+              
+              <div class="flex flex-wrap lg:flex-1  gap-2.5 option-values-container">
                 {% for value in option.values %}
                   {%- liquid
                     assign variant_label_state = true
@@ -58,9 +65,9 @@
                     assign color_image = value | handle | append: '.' | append: 'png' | file_img_url: '120x' | prepend: 'https:'
                     assign color_swatch_fallback = value | split: ' ' | last | handle
                   -%}
-                  <div class="inline-block relative variant-input">
+                  <div class="inline-block relative variant-input {% if is_color %} variant-input-swatch {% endif %}">
                     <input
-                      class="{% if is_color %}color-swatch{% endif %} cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
+                      class="{% if is_color %}color-swatch {%else%} button-swatch {% endif %} cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
                       @change="optionChange()"
                       type="radio"
                       id="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
@@ -80,7 +87,7 @@
                         }
                       "
                       class="btn after:hidden
-                        {% if is_color %}p-1 bg-scheme-secondary-background{% endif %}
+                        {% if is_color %}color-swatch-option {% else %} label-swatch-button {% endif %}
                         cursor-pointer
                         {% unless variant_label_state %}
                           line-through
@@ -93,13 +100,17 @@
                         {%- unless variant_label_state -%}
                           <span class="absolute left-0 bottom-0 z-10 h-[var(--input-border-width)] w-full bg-scheme-text top-1/2 -translate-y-1/2 -rotate-45"></span>
                         {%- endunless -%}
-                        <span class="btn after:none block w-8 h-8 bg-cover" style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"></span>
+                        <span class="{% if is_color %}button-hundler-option {%else%} button-handle-option-default {% endif %} btn after:none block bg-cover" style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"></span>
                       {%- endif -%}
                       <span {% if is_color %}class="sr-only"{% endif %}>{{ value }}</span>
                     </label>
                   </div>
                 {% endfor %}
               </div>
+              {% if is_color %}
+              </div>
+              </scroll-wrapper-slider>
+              {% endif %}
             </div>
           {%- endunless -%}
         </fieldset>

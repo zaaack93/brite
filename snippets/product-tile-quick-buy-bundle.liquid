@@ -1,6 +1,6 @@
 
 <div
-    class="mt-2.5 relative z-20 {% unless section.settings.display_on_card %}max-w-xs mx-auto{% endunless %}">
+    class="product-bundle-quick-buy-container relative">
     
     {% assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id %}
 
@@ -122,12 +122,12 @@
   
     <div class="relative z-10  {% unless product.available %}cursor-not-allowed{% endunless %} {% if settings.button_shadow_direction contains 'top' %}pt-button-shadow{% else %}pb-button-shadow{% endif %}">
       <button
-        class="{% if product.available %}push-btn theme-button{% else %}btn text-sm lg:text-base after:hidden bg-scheme-secondary-background text-scheme-text shadow-secondary{% endif %} {% if is_card %}w-full{% endif %}"
+        class="w-full btn-add-to-set {% if product.available %}push-btn theme-button{% else %}btn text-sm lg:text-base after:hidden bg-scheme-secondary-background text-scheme-text shadow-secondary{% endif %} {% if is_card %}w-full{% endif %}"
         type="submit"
         {% unless product.available %}disabled="disabled"{% endunless %}
       >
-        <span class="{% if product.available %}push-btn-surface{% endif %} {% if is_card %}w-full{% endif %}">
-          {% if current_variant.available %} {{ 'products.product.add_to_cart' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}
+        <span class="w-full {% if product.available %}push-btn-surface{% endif %} {% if is_card %}w-full{% endif %}">
+          {% if current_variant.available %} {{ 'products.product.add_to_bundle' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}
          </span>
          <span class="visually-hidden">, {{ product.title }}</>
       </button>
