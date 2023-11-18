@@ -1241,6 +1241,11 @@ image-with-text-options{
 
   .main-section-container{
     width: 100%;
+
+    //working on product tile items
+    .product-tile-bundle{
+      
+    }
   }
 }
 

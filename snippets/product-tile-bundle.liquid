@@ -39,9 +39,11 @@
       assign rotate = -5
     endif
   -%}
+
+
   {%- if product and product != empty -%}
   <div
-    class="product-tile relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false"
+    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false"
   >
     <div
       {% if enable_quick_buy %}
@@ -69,7 +71,7 @@
           -%}
         </div>
       {%- endif -%}
-      <div class="product-tile mt-5 text-center break-words">
+      <div class="product-tile mt-5 break-words">
         <a href="{{ product.url | within: collection }}" class="absolute top-0 left-0 w-full h-full z-10 block">
           <span class="visually-hidden">{{ product.title }}</span>
         </a>
@@ -117,7 +119,7 @@
       </div>
       {%- if enable_quick_buy -%}
         <div>
-        {%- render 'product-tile-quick-buy'
+        {%- render 'product-tile-quick-buy-bundle'
           section: section,
           product: product,
           product_form_id: product_form_id,
@@ -231,7 +233,7 @@
       <div class="relative {% unless display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
         {%- render 'media-image-placeholder', shape_id: shape_id, container_id: section.id, index: index, shape: shape, crop: crop, is_card: section.settings.display_on_card -%}
       </div>
-      <div class="product-tile mt-5 text-center">
+      <div class="product-tile mt-5">
         <h3 class="font-body text-base">{{ 'sections.onboarding.product_title' | t }}</h3>
         {% render 'price', price_class: "mt-2" %}
       </div>
@@ -239,6 +241,3 @@
     {% if section.settings.display_on_card and settings.card_show_border_on_shadow %}<div class="card-border"></div>{% endif %}
   </div>
   {%- endif -%}
-  
-  
-  
