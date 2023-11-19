@@ -23,10 +23,14 @@
       
       <div class="main-section-container {% if section.settings.title != '' or section.settings.richtext != blank %}section-content-top-margin{% endif %} ">
         <product-bundler class=" opened " data-limit-bundles="" data-minimum="3">
+          
+          {% render 'bundle-tabs-header' %}
 
           <div class="grid grid--layout grid-4 grid-portable-3 grid-lap-1">
             <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container">
               {% render 'products-list-viewer' collection: collection,image_shape: image_shape,item: section %}
+              
+              {% render 'bundle-tabs-action' %}
             </div>
 
             <div class="grid grid--layout grid-1 bundler-container element--is-sticky">

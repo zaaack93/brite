@@ -74,6 +74,8 @@
         <div class="relative {% unless display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
           <button class="arrow-slider left-button-arrow" @click="previousSlide()">{% render 'arrow-slider-media' %}</button>
           <button class="arrow-slider right-button-arrow" @click="nextSlide()">{% render 'arrow-slider-media' %}</button>
+
+          <span class="badge-product-tile">Save $0.00</span>
           {%- render 'product-tile-media-image-bundle',
               media: product.featured_media,
               shape_id: shape_id,

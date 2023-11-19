@@ -61,6 +61,12 @@ window['ThemeSection_ProductQuickBuy'] = ({
           );
         }
         this.getOptions();
+        //for update selected price
+        const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
+          this.product,
+          this.options
+        );
+        this.updateVariant(matchedVariant);
       },
       mainSelectorChange() {
         const matchedVariant = ShopifyProduct.getVariantFromId(
@@ -84,6 +90,15 @@ window['ThemeSection_ProductQuickBuy'] = ({
             this.current_media_id = this.current_variant.featured_media.id;
             this.current_index = this.product.variants.findIndex(item => item.id == this.current_variant.id);
           }
+        }
+        //update current badge
+        if (this.current_variant.compare_at_price > this.current_variant.price) {
+          let salePrice = formatMoney(this.current_variant.compare_at_price-this.current_variant.price, theme.moneyFormat);
+          this.productRoot.querySelector('.badge-product-tile').innerHTML=`SAVE ${salePrice}`
+          this.productRoot.querySelector('.badge-product-tile').style.display='initial'
+        }
+        else{
+          this.productRoot.querySelector('.badge-product-tile').style.display='none' 
         }
       },
       getOptions() {
