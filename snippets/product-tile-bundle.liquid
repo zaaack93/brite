@@ -55,6 +55,21 @@
       })"
       {% endif %}
       class="{% if display_on_card %}bg-scheme-card card {% if products_per_row_mobile == '2' %}p-2.5 lg:p-5{% else %}p-5{% endif %} h-full{% endif %} relative pb-media-shadow">
+      
+      {% if product.compare_at_price_max > product.price %}
+        <template x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price badge-price-callout">
+          <span class="{{ price_text_size }}">
+            <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
+            <span data-compare-price
+              class="text-scheme-text"
+              x-html="formatMoney(current_variant.compare_at_price)">
+              {% if current_variant.compare_at_price > current_variant.price %}
+                {{ current_variant.compare_at_price | minus: current_variant.price | money }}
+              {% endif %}
+            </span>
+          </span>
+        </template>
+      {% endif %}
       {%- if product.featured_media -%}
         <div class="relative {% unless display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
           {%- render 'product-tile-media-image',
@@ -136,7 +151,7 @@
         -%}
         </div>
       {%- endif -%}
-      {%- if on_sale -%}
+      {% comment %} {%- if on_sale -%}
         {%- liquid
           assign text = 'products.product.on_sale' | t
           assign id = 'on-sale-sticker--' | append: product.id
@@ -157,7 +172,7 @@
           font_size: '1.563rem',
           color: 'bg-scheme-accent text-scheme-accent-overlay'
         %}
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
       {%- unless available -%}
         {%- liquid
           assign text = 'products.product.sold_out' | t

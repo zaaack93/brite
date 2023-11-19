@@ -19,7 +19,7 @@
         %}
         {% assign option_array_index = forloop.index0 %}
   
-        <fieldset class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
+        <div class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
           {%- unless is_color or option_style == 'buttons' -%}
             <div class=" lg:flex lg:items-center lg:justify-start element-container">
               <label class="{{ label_class }}  lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5" for="Option{{ option.position }}-{{product.id}}-{{ section.id }}">
@@ -48,12 +48,12 @@
               </legend>
               {% if is_color %}
               <scroll-wrapper-slider class="without-scroll">
-              <div class="arrow-slider left-button">{% render 'icon-chevron-down' %}</div>
-              <div class="arrow-slider right-button">{% render 'icon-chevron-down' %}</div>
+              <div class="arrow-slider left-button">{% render 'arrow-left-small' %}</div>
+              <div class="arrow-slider right-button">{% render 'arrow-left-small' %}</div>
               <div class="inner_container_items">
               {% endif %}
               
-              <div class="flex flex-wrap lg:flex-1  gap-2.5 option-values-container">
+              <div class="flex {% unless is_color %}flex-wrap lg:flex-1{%endunless %}  gap-2.5 option-values-container">
                 {% for value in option.values %}
                   {%- liquid
                     assign variant_label_state = true
@@ -113,7 +113,7 @@
               {% endif %}
             </div>
           {%- endunless -%}
-        </fieldset>
+        </div>
       {% endfor %}
     </div>
   {% endunless %}

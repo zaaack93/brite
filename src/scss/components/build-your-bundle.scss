@@ -546,6 +546,12 @@
       .custom-font-price{
         font-size: 16px;
       }
+      s[data-compare-price]{
+        color: rgba(28, 28, 28, 0.51);
+        font-size: 16px;
+        top: -0.5px;
+        position: relative;
+      }
       .price-with-rating-container{
         display: flex;
         align-items: center;
@@ -555,6 +561,7 @@
           align-items: center;
           column-gap: 10px;
         }
+        
         .rating-part-inner{
           .loox-rating-content{
             .loox-icon{
