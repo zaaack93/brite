@@ -11,6 +11,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
       current_media_id: featuredMediaID,
       loading: false,
       quantity: '1',
+      current_index:0,
       options: [],
       optionHandles: [],
       addedToCart: false,
@@ -31,6 +32,21 @@ window['ThemeSection_ProductQuickBuy'] = ({
       get current_price() {
         return this.current_variant.price;
       },
+
+      previousSlide(){
+        if (this.current_index > 0) {
+          this.current_index--;
+          this.current_media_id = this.product.variants[this.current_index].featured_media.id;
+        }
+      },
+
+      nextSlide(){
+        if (this.current_index != product.variants.length - 1) {
+          this.current_index++;
+          this.current_media_id = this.product.variants[this.current_index].featured_media.id;
+        }
+      },
+
       formatMoney(price) {
         return formatMoney(price, theme.moneyFormat);
       },
@@ -66,6 +82,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
         if (this.current_variant) {
           if (this.current_variant.featured_media) {
             this.current_media_id = this.current_variant.featured_media.id;
+            this.current_index = this.product.variants.findIndex(item => item.id == this.current_variant.id);
           }
         }
       },

@@ -537,6 +537,23 @@
     width: 100%;
 
     .product-tile-bundle{
+      //arrow slider 
+      .arrow-slider{
+        position: absolute;
+        z-index: 11;
+        cursor: pointer;
+        top: 50%; /* Position the span at the vertical center */
+        transform: translateY(-50%);
+      }
+      
+      .left-button-arrow{
+        left: 10px;
+        transform: translateY(-50%) rotate(180deg);
+      }
+      .right-button-arrow{
+        right: 10px;
+      }
+
       div[class^="sticker-metafield-sticker--"], div[class^="sticker-sold-out-sticker--"]{
         top: 50px !important;
         left: 95% !important;

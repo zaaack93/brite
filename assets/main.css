@@ -1224,6 +1224,20 @@ image-with-text-options{
 .section-build-your-bundle-main .main-section-container {
   width: 100%;
 }
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .arrow-slider {
+  position: absolute;
+  z-index: 11;
+  cursor: pointer;
+  top: 50%; /* Position the span at the vertical center */
+  transform: translateY(-50%);
+}
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .left-button-arrow {
+  left: 10px;
+  transform: translateY(-50%) rotate(180deg);
+}
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .right-button-arrow {
+  right: 10px;
+}
 .section-build-your-bundle-main .main-section-container .product-tile-bundle div[class^=sticker-metafield-sticker--], .section-build-your-bundle-main .main-section-container .product-tile-bundle div[class^=sticker-sold-out-sticker--] {
   top: 50px !important;
   left: 95% !important;
@@ -1231,6 +1245,12 @@ image-with-text-options{
 }
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .custom-font-price {
   font-size: 16px;
+}
+.section-build-your-bundle-main .main-section-container .product-tile-bundle s[data-compare-price] {
+  color: rgba(28, 28, 28, 0.51);
+  font-size: 16px;
+  top: -0.5px;
+  position: relative;
 }
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .price-with-rating-container {
   display: flex;
@@ -1356,6 +1376,8 @@ image-with-text-options{
 scroll-wrapper-slider {
   display: block;
   position: relative;
+  width: 100%;
+  overflow-x: auto;
 }
 scroll-wrapper-slider .inner_container_items {
   width: 100%;
@@ -1367,17 +1389,26 @@ scroll-wrapper-slider .inner_container_items {
 }
 scroll-wrapper-slider .arrow-slider {
   position: absolute;
-  z-index: 9;
-  top: calc(50% - 19px);
+  z-index: 11;
   cursor: pointer;
   visibility: hidden;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 20px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+scroll-wrapper-slider .left-button {
+  left: 0px;
+  justify-content: flex-start;
+  transform: rotate(0deg);
 }
 scroll-wrapper-slider .left-button svg {
   transform: rotate(180deg);
 }
 scroll-wrapper-slider .right-button {
   right: 0px;
+  justify-content: flex-end;
 }
 scroll-wrapper-slider.without-arrows .arrow-slider {
   display: none !important;
