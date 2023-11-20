@@ -587,7 +587,7 @@
         border: 2px solid #ECB3FF;
     }
     .tab-item.disabled {
-      opacity: .5;
+      opacity: 1;
       pointer-events: none;
   }
     }
@@ -808,6 +808,140 @@
           font-size: 20px;
           @media screen and (max-width: 1023px) {
             padding-block: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  //right side
+
+  @media screen and (min-width: 768px){
+    .sticky-position{
+      position: sticky;
+      top: 20px;
+    }
+  }
+  .bundle-cart-container{
+    padding: 31px 27px 28px 23px;
+    border-radius: 11px;
+    border: 2px solid #000;
+    background: #F7DEFF;
+    .bundler__header{
+      .bundler__header__inner{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+      .bundler__header-title{
+        color: #000;
+        font-family: Zurich Extended;
+        font-size: 19.299px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .bundler__header-subtitle{
+        color: #000;
+        font-family: Avenir Next;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+    .starter-selection{
+      border-block: 1px solid #000;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      .set-item{
+
+
+      }
+      .set-item.selected{
+        .placeholder-item{
+          display: none;
+        }
+      }
+      .set-item:not(.selected){
+        div[js-selected-product]{
+          display: none;
+        }
+      }
+
+      .set-item {
+        .product-line-item{
+          display: flex;
+          column-gap: 14px;
+          .product-media{
+            border-radius: 3px;
+            border: 1.5px solid #000;
+            width: 96px;
+            aspect-ratio: 1;
+            .product-image{
+              width: 100%;
+              height: 100%;
+            }
+            .product-image img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .product-details{
+            display: flex;
+            row-gap: 5px;
+            flex-direction: column;
+            padding-top: 2px;
+            .set-title{
+              color: #000;
+              font-family: Avenir Next;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+            .set-options{
+              color: #000;
+              font-family: Avenir Next;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+            .set-price{
+              color: #000;
+              font-family: Avenir Next;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            .set-action{
+              color: rgba(0, 0, 0, 0.50);
+              font-family: Avenir Next;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              cursor: pointer;
+              margin-top: 4px;
+            }
+          }
+        }
+
+        .placeholder-item {
+
+          .product-details{
+            .set-title{
+              color: #7C6F80;
+            }
           }
         }
       }

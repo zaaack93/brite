@@ -1,0 +1,167 @@
+<div class="media-style-container default sticky-position">
+    <div class="bundle-cart-container media-content">
+        <div class="bundler__header" data-js-bundler-toggle="">
+            <div class="bundler__header__inner">
+                <span class="bundler__header-title">Your Bundle</span>
+                <span class="bundler__header-subtitle">Add 3+ products to make your bundle and receive a free gift.</span>
+            </div>
+            {% comment %} <div class="bundler__header-toggle element--hide-on-desk">
+                <span class="bundler__header-toggle__plus"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.05664 0.5H7.05664V13.5H6.05664V0.5Z" fill="black"></path>
+                        <path d="M13.0566 6.5V7.5H0.0566406L0.0566407 6.5L13.0566 6.5Z" fill="black"></path>
+                    </svg></span>
+                <span class="bundler__header-toggle__minus"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.0566 6.5V7.5H0.0566406L0.0566407 6.5L13.0566 6.5Z" fill="black"></path>
+                    </svg></span>
+            </div> {% endcomment %}
+        </div>
+
+    <div class="starter-selection" js-starter-selection-block="">
+            
+        <div class="set-item " js-starter-set-item="" data-set-index="0">
+            <div class="placeholder-item product-line-item">
+                <div class="placeholder-media product-media">
+                </div>
+                <div class="product-details">
+                        <div class="set-title">Item 1</div>
+                    
+                </div>
+            </div>
+
+            <div js-selected-product="" class="product-line-item">
+                  <div class="product-media">
+                    <div class="product-image">
+                        <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452" alt="">
+                    </div>
+                  </div>
+                  
+                <div class="product-details">
+                    <div class="set-title">deodorant</div>
+                    <div class="set-options">Pastel Purple / 100ML</div>
+                    <div class="set-price">$00.00</div>
+                    <div class="set-action">remove</div>
+                </div>
+            </div>
+    </div>
+    <div class="set-item " js-starter-set-item="" data-set-index="0">
+        <div class="placeholder-item product-line-item">
+            <div class="placeholder-media product-media">
+            </div>
+            <div class="product-details">
+                    <div class="set-title">Item 1</div>
+                
+            </div>
+        </div>
+
+        <div js-selected-product="" class="product-line-item">
+              <div class="product-media">
+                <div class="product-image">
+                    <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452" alt="">
+                </div>
+              </div>
+              
+            <div class="product-details">
+                <div class="set-title">deodorant</div>
+                <div class="set-options">Pastel Purple / 100ML</div>
+                <div class="set-price">$00.00</div>
+                <div class="set-action">remove</div>
+            </div>
+        </div>
+</div>
+
+<div class="set-item " js-starter-set-item="" data-set-index="0">
+    <div class="placeholder-item product-line-item">
+        <div class="placeholder-media product-media">
+        </div>
+        <div class="product-details">
+                <div class="set-title">Item 1</div>
+            
+        </div>
+    </div>
+
+    <div js-selected-product="" class="product-line-item">
+          <div class="product-media">
+            <div class="product-image">
+                <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452" alt="">
+            </div>
+          </div>
+          
+        <div class="product-details">
+            <div class="set-title">deodorant</div>
+            <div class="set-options">Pastel Purple / 100ML</div>
+            <div class="set-price">$00.00</div>
+            <div class="set-action">remove</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="set-item selected" js-starter-set-item="" data-set-index="0">
+    <div class="placeholder-item product-line-item">
+        <div class="placeholder-media product-media relative">
+            {%- liquid
+                assign text = "FREE"
+                assign id = 'on-sale-sticker--' | append: 0
+                assign shape = "badge"
+                assign vertical_position = 17
+                assign horizontal_position = 15
+                assign rotate = -16
+                -%}
+                {%- render 'static-sticker',
+                static_id: 'metafield-badge',
+                shape: shape,
+                id: id,
+                text: text,
+                vertical_position: vertical_position,
+                horizontal_position: horizontal_position,
+                rotate: rotate,
+                width: 56,
+                font_size: '2.5rem',
+                color: 'bg-scheme-accent text-scheme-accent-overlay'
+            %}
+        </div>
+        <div class="product-details">
+                <div class="set-title">Free gift</div>
+            
+        </div>
+    </div>
+
+    <div js-selected-product="" class="product-line-item gift-product-item" >
+          <div class="product-media relative">
+            <div class="product-image">
+                {%- liquid
+                assign text = "FREE"
+                assign id = 'on-sale-sticker--' | append: 0
+                assign shape = "badge"
+                assign vertical_position = 17
+                assign horizontal_position = 15
+                assign rotate = -16
+                -%}
+                {%- render 'static-sticker',
+                static_id: 'metafield-badge',
+                shape: shape,
+                id: id,
+                text: text,
+                vertical_position: vertical_position,
+                horizontal_position: horizontal_position,
+                rotate: rotate,
+                width: 56,
+                font_size: '2.5rem',
+                color: 'bg-scheme-accent text-scheme-accent-overlay'
+            %}
+                <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452" alt="">
+            </div>
+          </div>
+          
+        <div class="product-details">
+            <div class="set-title">deodorant</div>
+            <div class="set-options">Pastel Purple / 100ML</div>
+            <div class="set-price"><s>$00.00</s></div>
+            <div class="set-action">remove</div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
