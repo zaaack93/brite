@@ -176,7 +176,7 @@
         section 'announcement-bar'
         section 'header'
       %}
-      <main id="MainContent" {%unless template.name == 'product' %}class="overflow-hidden"{%endunless%}>
+      <main id="MainContent" {%unless template.name == 'product' or template.name == 'index' %}class="overflow-hidden" {%else%} class="max-lg:overflow-hidden" {%endunless%}>
         {{ content_for_layout }}
       </main>
       {% section 'footer' %}

@@ -75,13 +75,71 @@ window['ThemeSection_ProductQuickBuy'] = ({
         );
         this.updateVariant(matchedVariant);
       },
-      optionChange() {
+      optionChange(name, value) {
         this.getOptions();
         const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
           this.product,
           this.options
         );
         this.updateVariant(matchedVariant);
+
+        
+
+      //filter options
+      const productFilterdWithOption = this.product.variants.filter(
+        (variant) => variant.options.includes(value)
+      );
+
+      // Get all div elements with the class 'variant-input'
+      const variantDivs =  this.productRoot.querySelectorAll(".variant-input");
+
+      // Define the value you want to filter out
+      const excludedValue = name;
+
+      // Filter the div elements based on the data-option-name attribute and uncheck all the before after options
+
+      window.dispatchEvent(
+        new CustomEvent("shapes:product:clearAllchecks", {
+          bubbles: true,
+        })
+      );
+
+      const filteredDivs = Array.from(variantDivs).filter((div) => {
+        const optionName = div.getAttribute("data-option-name");
+        const optionValue = div.getAttribute("data-option-value");
+
+        if (
+          optionName != "Color" &&
+          optionName != "color" &&
+          div.querySelector("input:checked")
+        ) {
+          window.dispatchEvent(
+            new CustomEvent("shapes:product:variantavailibility", {
+              bubbles: true,
+              detail: {
+                option: optionValue,
+              },
+            })
+          );
+        }
+        return optionName !== excludedValue;
+      });
+
+      filteredDivs.filter((div) => {
+        const optionValue = div.getAttribute("data-option-value");
+        const existValue = productFilterdWithOption.filter((product) => {
+          return (
+            product.options.includes(optionValue) &&
+            product.options.includes(value)
+          );
+        });
+
+        if (existValue.length != 0) {
+          div.classList.remove("hide");
+        } else {
+          div.classList.add("hide");
+        }
+      });
       },
       updateVariant(variant) {
         this.current_variant = variant;

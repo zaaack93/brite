@@ -605,12 +605,12 @@
       --color-button-background: 192, 153, 255;
       .btn-action{
         .push-btn-surface{
-          min-width: 300px;
+          min-width: 230px;
           color: white;
           padding-block: 17px;
           @media screen and (max-width: 1023px) {
             min-width: initial;
-            padding-block: 10px;
+            padding-block: 14px;
           }
         }
       }
@@ -626,6 +626,13 @@
 
   .main-section-container{
     width: 100%;
+    @media screen and (min-width: 768px){
+      .bundler-container{
+        position: sticky;
+        top: 20px;;
+      }
+    }
+
 
     .product-tile-bundle{
       //product badge
@@ -807,7 +814,7 @@
           color: #FFF;
           font-size: 20px;
           @media screen and (max-width: 1023px) {
-            padding-block: 10px;
+            padding-block: 14px;
           }
         }
       }
@@ -832,6 +839,9 @@
         display: flex;
         flex-direction: column;
         row-gap: 10px;
+        @media screen and (max-width: 767px){
+          row-gap: 2px;
+        }
       }
       .bundler__header-title{
         color: #000;
@@ -841,6 +851,9 @@
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
+        @media screen and (max-width: 767px){
+          font-size: 16px;
+        }
       }
       .bundler__header-subtitle{
         color: #000;
@@ -849,6 +862,30 @@
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
+        @media screen and (max-width: 767px){
+          font-size: 14px;
+        }
+      }
+    }
+    .bundler__footer{
+      .bundle__footer-note{
+        color: #000;
+        font-family: Avenir Next;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 12px;
+        text-align: left;
+        @media screen and (max-width: 767px){
+          display: none;
+        }
+      }
+      .btn-action{
+        width: 100%;
+        .push-btn-surface{
+          min-width: 100%;
+        }
       }
     }
     .starter-selection{
@@ -860,9 +897,22 @@
       display: flex;
       flex-direction: column;
       row-gap: 20px;
+      
+      @media screen and (max-width: 767px){
+        border-bottom: none;
+        padding-bottom: 0px;
+        flex-direction: initial;
+        column-gap: 15px;
+        flex-wrap: nowrap;
+      }
       .set-item{
-
-
+        @media screen and (max-width: 767px){
+          min-width: 60%;
+          .sticker-on-sale-sticker--0{
+            top: 72%;
+            left: -6%;
+          }
+        }
       }
       .set-item.selected{
         .placeholder-item{
@@ -876,13 +926,24 @@
       }
 
       .set-item {
+        .gift-product-item{
+          .product-media{
+            background-color: #C099FF;
+          }
+        }
         .product-line-item{
           display: flex;
           column-gap: 14px;
+          @media screen and (max-width: 767px){
+            column-gap: 11px;
+          }
           .product-media{
             border-radius: 3px;
             border: 1.5px solid #000;
             width: 96px;
+            @media screen and (max-width: 767px){
+              width: 77px;
+            }
             aspect-ratio: 1;
             .product-image{
               width: 100%;
@@ -898,6 +959,9 @@
             row-gap: 5px;
             flex-direction: column;
             padding-top: 2px;
+            @media screen and (max-width: 767px){
+              row-gap: 2px;
+            }
             .set-title{
               color: #000;
               font-family: Avenir Next;
@@ -905,6 +969,10 @@
               font-style: normal;
               font-weight: 700;
               line-height: normal;
+              
+              @media screen and (max-width: 767px){
+                font-size: 15px;
+              }
             }
             .set-options{
               color: #000;
@@ -913,6 +981,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media screen and (max-width: 767px){
+                font-size: 13px;
+              }
             }
             .set-price{
               color: #000;
@@ -921,6 +992,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media screen and (max-width: 767px){
+                font-size: 13px;
+              }
             }
 
             .set-action{
@@ -932,6 +1006,9 @@
               line-height: normal;
               cursor: pointer;
               margin-top: 4px;
+              @media screen and (max-width: 767px){
+                margin-top: 2px;
+              }
             }
           }
         }
@@ -946,5 +1023,21 @@
         }
       }
     }
+
+    @media screen and (max-width: 767px){
+      
+
+    }
+    @media screen and (min-width: 768px){
+      scroll-wrapper-slider{
+        overflow: visible !important;
+        .inner_container_items{
+          overflow: visible !important;
+        }
+      }      
+
+    }
+
+    
   }
 }

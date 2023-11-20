@@ -1,4 +1,4 @@
-<section class="text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme }}">
+<section class="text-scheme-text bg-scheme-background overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}" data-color-scheme="{{ section.settings.color_scheme }}">
   {%- render 'text-marquee', section: section, class: 'py-2.5' %}
 </section>
 {{ 'section-marquee.css' | asset_url | stylesheet_tag }}

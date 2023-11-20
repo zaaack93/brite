@@ -3,9 +3,9 @@
   assign image_shape = settings.product_tile_media_shape
 -%}
 
-<section class="relative text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} overflow-hidden" data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" >
+<section class="relative text-scheme-text bg-scheme-background {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} " data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}" >
   
-    <div class="section-content relative z-10 py-section-vertical-spacing px-section flex items-center flex-col justify-center relative overflow-hidden">
+    <div class="section-content relative z-10 py-section-vertical-spacing px-section flex items-center flex-col justify-center relative ">
       <div class="mx-auto {{ section.settings.content_width_desktop }}">
         <div class="section-content text-center mx-auto relative z-10">
           {%- if section.settings.title != blank -%}

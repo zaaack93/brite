@@ -65,10 +65,10 @@
                     assign color_image = value | handle | append: '.' | append: 'png' | file_img_url: '120x' | prepend: 'https:'
                     assign color_swatch_fallback = value | split: ' ' | last | handle
                   -%}
-                  <div class="inline-block relative variant-input {% if is_color %} variant-input-swatch {% endif %}">
+                  <div class="inline-block relative variant-input {% if is_color %} variant-input-swatch {% endif %}" data-option-name="{{option.name}}" data-option-value="{{value}}">
                     <input
                       class="{% if is_color %}color-swatch {%else%} button-swatch {% endif %} cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
-                      @change="optionChange()"
+                      @change="optionChange('{{option.name}}','{{value}}')"
                       type="radio"
                       id="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
                       value="{{ value | escape }}"
