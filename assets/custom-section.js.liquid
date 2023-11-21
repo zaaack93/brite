@@ -247,6 +247,10 @@ class ProductBundler extends HTMLElement {
       });
     });
 
+    this.dataAddToBundle.addEventListener('click', (e)=>{
+      this.addProductToTheCart()
+    })
+
     this.init();
   }
 
@@ -259,6 +263,74 @@ class ProductBundler extends HTMLElement {
 
   formatMoney(price) {
     return formatMoney(price, theme.moneyFormat);
+  }
+
+  addProductToTheCart(){
+        liveRegion(window.theme.strings.loading);
+        const formData = new FormData();
+        const formDataGift = new FormData();
+        let modalCart = theme.settings.cart_type === 'modal';
+        const config = fetchConfigDefaults('javascript');
+        const configGift = fetchConfigDefaults('javascript');
+  
+        if (modalCart) {
+          formData.append('sections', 'cart-items,cart-footer,cart-item-count');
+          formData.append('sections_url', window.location.pathname);
+          formDataGift.append('sections', 'cart-items,cart-footer,cart-item-count');
+          formDataGift.append('sections_url', window.location.pathname);
+        }
+
+        this.starterSetItems.forEach((item, index) => {
+          if(item.getAttribute('data-set-index')!="-1"){
+            formData.append(`items[${index}][id]`, parseInt(item.getAttribute('js-starter-set-item')));
+            formData.append(`items[${index}][quantity]`, 1);
+          }
+          else{
+            formDataGift.append(`items[${index}][id]`, parseInt(item.getAttribute('js-starter-set-item')));
+            formDataGift.append(`items[${index}][quantity]`, 1);
+          }
+        });
+  
+        config.body = formData;
+        config.headers['X-Requested-With'] = 'XMLHttpRequest';
+        delete config.headers['Content-Type'];
+
+        configGift.body = formDataGift;
+        configGift.headers['X-Requested-With'] = 'XMLHttpRequest';
+        delete configGift.headers['Content-Type'];
+        
+  
+        fetch(`${theme.routes.cart_add_url}`, config)
+          .then(data => {
+            // Process the data from the first fetch
+            console.log('Data from the first fetch:', data);
+        
+            // Second fetch request
+            return fetch(`${theme.routes.cart_add_url}`, configGift);
+          })
+          .then((res) => res.json())
+          .then((data) => {
+            if (modalCart) {
+              document.body.dispatchEvent(
+                new CustomEvent('shapes:modalcart:afteradditem', {
+                  bubbles: true,
+                  detail: { response: data },
+                })
+              );
+            }
+            this.tabItem[2].classList.remove('disabled')
+            this.tabItem[2].classList.add('active')
+  
+            if (!document.querySelector('[data-show-on-add="true"]')) {
+              if (this.$refs.added)
+                this.$nextTick(() => this.$refs.added.focus());
+            }
+          })
+          .catch((error) => {
+            error.json().then((a) => {
+              alert(a.description);
+            });
+          });
   }
 
   updateLineItem(lineItem,variant,isGift){

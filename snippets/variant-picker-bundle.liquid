@@ -1,3 +1,4 @@
+{% assign random_id = now | sha256 | slice: 0, 8 %}
 {% unless product.has_only_default_variant %}
     <div
       class="{{ block_base_classes }} product-container-options"
@@ -70,7 +71,7 @@
                       class="{% if is_color %}color-swatch {%else%} button-swatch {% endif %} cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
                       @change="optionChange('{{option.name}}','{{value}}')"
                       type="radio"
-                      id="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
+                      id="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{random_id}}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
                       value="{{ value | escape }}"
                       data-handle="{{ value | handleize }}"
                       {% if option.selected_value == value %} checked{% endif %} data-single-option-selector-bundle
@@ -93,7 +94,7 @@
                           line-through
                         {% endunless %}
                         cursor-pointer"
-                      for="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}"
+                      for="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{random_id}}-{{ value | escape }}"
                       title="{{ option.value }}"
                       >
                       {%- if is_color %}
