@@ -48,9 +48,9 @@
                             </div>
                         </div>
 
-                        <div class="product-details">
-                            <div class="set-title">deodorant</div>
-                            <div class="set-options">Pastel Purple / 100ML</div>
+                        <div class="product-details current-details">
+                            <div class="set-title"></div>
+                            <div class="set-options"></div>
                             <div class="set-price">$00.00</div>
                             <div class="set-action">remove</div>
                         </div>
@@ -60,7 +60,7 @@
 
 
             {% comment %} free give produc position {% endcomment %}
-                <div class="set-item" js-starter-set-item="" data-set-index="0">
+                <div class="set-item" js-starter-set-item="" data-set-index="-1">
                     <div class="placeholder-item product-line-item gift-product-item">
                         <div class="placeholder-media product-media relative">
                             {%- liquid
@@ -134,10 +134,10 @@
                             </div>
                         </div>
 
-                        <div class="product-details">
-                            <div class="set-title">deodorant</div>
-                            <div class="set-options">Pastel Purple / 100ML</div>
-                            <div class="set-price"><s>$00.00</s></div>
+                        <div class="product-details current-details">
+                            <div class="set-title"></div>
+                            <div class="set-options"></div>
+                            <div class="set-price"><s></s></div>
                             <div class="set-action">remove</div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
 
     <div class="text-center button-actions-wrapper bundler__footer">
         <p class="bundle__footer-note"><b>Pro Tip:</b> Add as many products to your bundle as you like!</p>
-        <button href="{{ collection.url }}" class="inline-block push-btn btn-action" data-add-to-bundle disabled>
+        <button type="button" class="inline-block push-btn btn-action" data-add-to-bundle disabled>
             <span class="push-btn-surface" data-add-to-bundle-text>ADD TO CART - $00.00</span>
         </button>
     </div>

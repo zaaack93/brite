@@ -68,6 +68,23 @@ window['ThemeSection_ProductQuickBuy'] = ({
         );
         this.updateVariant(matchedVariant);
       },
+
+
+      addToBundle(){
+        debugger
+        const addToSetEvent = new CustomEvent('bundle:addToSet', {
+          detail: {
+            variant: this.current_variant,
+            isGift: this.productRoot.closest('.product-tile-bundle').getAttribute('data-is-gift')
+            // Add more parameters as needed
+          },
+          bubbles: true, // Whether the event bubbles up through the DOM or not
+          cancelable: true // Whether the event is cancelable or not
+        });
+        const product_bundler= this.productRoot.closest('product-bundler ')
+        product_bundler.dispatchEvent(addToSetEvent);
+      },
+
       mainSelectorChange() {
         const matchedVariant = ShopifyProduct.getVariantFromId(
           this.product,
@@ -83,6 +100,13 @@ window['ThemeSection_ProductQuickBuy'] = ({
         );
         this.updateVariant(matchedVariant);
 
+        //
+        if(matchedVariant && this.current_variant.available){
+          this.productRoot.querySelector('.btn-add-to-set').removeAttribute('disabled')
+        }
+        else{
+          this.productRoot.querySelector('.btn-add-to-set').setAttribute('disabled',true)
+        }
         
 
       //filter options

@@ -211,3 +211,123 @@ class ScrollContainer extends HTMLElement {
 }
 
 customElements.define("scroll-wrapper-slider", ScrollContainer);
+
+
+class ProductBundler extends HTMLElement {
+  constructor() {
+    super();
+
+    this.tabItem = this.querySelectorAll("[js-tab-item]");
+    this.tabPanels = this.querySelectorAll("[js-tab-panel]");
+    this.starterSetItems = this.querySelectorAll("[js-starter-set-item]");
+    this.starterSetSize = this.getAttribute('data-starter-set-size');
+    this.starterSetAmount = this.getAttribute('data-starter-set-off-price');
+    this.dataAddToBundle = this.querySelector('[data-add-to-bundle]');
+    this.dataAddToBundleText = this.querySelector('[data-add-to-bundle-text]');
+    this.productSelected=0
+    this.lineItems = {
+      items: []
+    };
+    this.cartAmount=0;
+    this.currentStep=1;
+
+
+
+    this.init();
+  }
+
+  connectedCallback() {
+  }
+  
+  init(){
+    console.log(this.tabItem,this.tabPanels,this.starterSetItems,this.starterSetSize,this.starterSetAmount)
+    this.addEventListener('bundle:addToSet', this.addToSet);
+  }
+
+  formatMoney(price) {
+    return formatMoney(price, theme.moneyFormat);
+  }
+
+  updateLineItem(lineItem,variant,isGift){
+    //update image
+    lineItem.querySelector('.product-image img').src= variant.featured_image.src
+    //update details
+    lineItem.querySelector('.current-details .set-title').textContent= variant.name.replace(` - ${variant.title}`,'')
+    lineItem.querySelector('.current-details .set-options').textContent= variant.title
+    if(!isGift){
+      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price)
+    }
+    else{
+      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price/this.starterSetAmount))
+    }
+  }
+
+  updateCartValues(variant,isGift){
+    if(!isGift){
+      this.cartAmount+=variant.price
+    }
+    else if(isGift){
+      this.cartAmount+=variant.price-(variant.price/this.starterSetAmount)
+    }
+    console.log(this.dataAddToBundleText)
+    this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
+  }
+
+  updateStateOfTabs(){
+
+    if (this.productSelected == this.starterSetSize ) {
+      //so go to the next step  
+      this.currentStep=2
+      for(let i=0 ; i<2 ; i++){
+        this.tabItem[i].classList.remove('disabled')
+        this.tabItem[i].classList.add('active')
+      }
+      //update the visibilite of tabs
+      this.tabPanels.forEach(tab=>{
+        if(tab.getAttribute('js-tab-panel')==='list-products'){
+          tab.classList.remove('active-panel')
+        }
+        else if(tab.getAttribute('js-tab-panel')==='list-gifts'){
+          tab.classList.add('active-panel')
+        }
+      })
+    }
+  }
+
+  addToSet(e){
+    //add product to the line items
+    const variant=e.detail.variant
+    const isGift=e.detail.isGift.toLowerCase() === "true"
+    debugger
+    this.lineItems.items.push(variant)
+    //add product to the data set
+    for (let lineItem of this.starterSetItems) {
+      if(lineItem.getAttribute('js-starter-set-item') === "" &&  parseInt(lineItem.getAttribute('data-set-index')) != -1 && !isGift){
+        //add product to the budnle
+        lineItem.classList.add('selected')
+        lineItem.setAttribute('js-starter-set-item',variant.id)
+        this.productSelected++;
+        this.updateLineItem(lineItem,variant,isGift)
+
+        //update cart price
+        this.updateCartValues(variant,isGift)
+        //update state of tabs
+        this.updateStateOfTabs()
+        break;
+      }
+      else if(lineItem.getAttribute('js-starter-set-item') === "" &&  parseInt(lineItem.getAttribute('data-set-index')) == -1 && isGift){
+        //add product to the budnle
+        lineItem.classList.add('selected')
+        lineItem.setAttribute('js-starter-set-item',variant.id)
+        this.productSelected++;
+        this.updateLineItem(lineItem,variant,isGift)
+        //update cart price
+        this.updateCartValues(variant,isGift)
+        break;
+      }
+    }
+    console.log(e.detail.variant,isGift)
+  }
+}
+
+customElements.define("product-bundler", ProductBundler);

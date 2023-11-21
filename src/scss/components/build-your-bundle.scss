@@ -764,7 +764,7 @@
               height: 38px;
               border-radius: 50%;
               overflow: hidden;
-              border: 1.5px solid #DFDFDF;
+              border: 2px solid #DFDFDF;
 
               .button-hundler-option {
                 padding: 0px;
@@ -813,9 +813,16 @@
           padding-block: 15px;
           color: #FFF;
           font-size: 20px;
+          cursor: pointer;
           @media screen and (max-width: 1023px) {
             padding-block: 14px;
           }
+        }
+      }
+      .btn-add-to-set[disabled=true]{
+        --color-button-background: 222, 222, 222;
+        .push-btn-surface{
+          color: #9F9F9F;
         }
       }
     }

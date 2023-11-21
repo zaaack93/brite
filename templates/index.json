@@ -1103,6 +1103,13 @@
       "settings": {
         "title": "Bundle 3 items and save",
         "richtext": "<p>Choose ANY 3 or more products to create your bundle with XX% off. Once you have have bundled 3+<br\/>items, you can then select a free gift on us! Simply follow the 3 easy steps below.<\/p>",
+        "first_step_title": "Choose Products",
+        "second_step_title": "Choose Free Gift",
+        "third_step_title": "Add to Cart",
+        "collection": "product-bundle-list-items",
+        "gift_collection": "gift-products-list",
+        "numbre_of_products": 3,
+        "discount_amount": 10,
         "color_scheme": "primary",
         "use_gradient_background": false
       }

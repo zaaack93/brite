@@ -1450,7 +1450,7 @@ image-with-text-options{
   height: 38px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid #DFDFDF;
+  border: 2px solid #DFDFDF;
 }
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .product-bundle-quick-buy-container .element-container .option-values-container .color-swatch-option .button-hundler-option {
   padding: 0px;
@@ -1494,11 +1494,18 @@ image-with-text-options{
   padding-block: 15px;
   color: #FFF;
   font-size: 20px;
+  cursor: pointer;
 }
 @media screen and (max-width: 1023px) {
   .section-build-your-bundle-main .main-section-container .product-tile-bundle .btn-add-to-set .push-btn-surface {
     padding-block: 14px;
   }
+}
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .btn-add-to-set[disabled=true] {
+  --color-button-background: 222, 222, 222;
+}
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .btn-add-to-set[disabled=true] .push-btn-surface {
+  color: #9F9F9F;
 }
 @media screen and (min-width: 768px) {
   .section-build-your-bundle-main .sticky-position {

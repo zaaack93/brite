@@ -123,8 +123,9 @@
     <div class="relative z-10  {% unless product.available %}cursor-not-allowed{% endunless %} {% if settings.button_shadow_direction contains 'top' %}pt-button-shadow{% else %}pb-button-shadow{% endif %}">
       <button
         class="w-full btn-add-to-set {% if product.available %}push-btn theme-button{% else %}btn text-sm lg:text-base after:hidden bg-scheme-secondary-background text-scheme-text shadow-secondary{% endif %} {% if is_card %}w-full{% endif %}"
-        type="submit"
+        type="button"
         {% unless product.available %}disabled="disabled"{% endunless %}
+        @click="addToBundle"
       >
         <span class="w-full {% if product.available %}push-btn-surface{% endif %} {% if is_card %}w-full{% endif %}">
           {% if current_variant.available %} {{ 'products.product.add_to_bundle' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}
