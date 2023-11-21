@@ -29,17 +29,18 @@
             <span class="arrow-slider right-button"></span>
             <div class="starter-selection inner_container_items" js-starter-selection-block="">
 
-                <div class="set-item " js-starter-set-item="" data-set-index="0">
+            {% for i in (1..section.settings.numbre_of_products) %}
+                <div class="set-item " js-starter-set-item="" data-set-index="{{i}}">
                     <div class="placeholder-item product-line-item">
                         <div class="placeholder-media product-media">
                         </div>
                         <div class="product-details">
-                            <div class="set-title">Item 1</div>
+                            <div class="set-title">Item {{ i }}</div>
 
                         </div>
                     </div>
 
-                    <div js-selected-product="" class="product-line-item">
+                    <div js-selected-product class="product-line-item">
                         <div class="product-media">
                             <div class="product-image">
                                 <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452"
@@ -55,71 +56,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="set-item " js-starter-set-item="" data-set-index="0">
-                    <div class="placeholder-item product-line-item">
-                        <div class="placeholder-media product-media">
-                        </div>
-                        <div class="product-details">
-                            <div class="set-title">Item 1</div>
-
-                        </div>
-                    </div>
-
-                    <div js-selected-product="" class="product-line-item">
-                        <div class="product-media">
-                            <div class="product-image">
-                                <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452"
-                                    alt="">
-                            </div>
-                        </div>
-
-                        <div class="product-details">
-                            <div class="set-title">deodorant</div>
-                            <div class="set-options">Pastel Purple / 100ML</div>
-                            <div class="set-price">$00.00</div>
-                            <div class="set-action">remove</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="set-item " js-starter-set-item="" data-set-index="0">
-                    <div class="placeholder-item product-line-item">
-                        <div class="placeholder-media product-media">
-                        </div>
-                        <div class="product-details">
-                            <div class="set-title">Item 1</div>
-
-                        </div>
-                    </div>
-
-                    <div js-selected-product="" class="product-line-item">
-                        <div class="product-media">
-                            <div class="product-image">
-                                <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452"
-                                    alt="">
-                            </div>
-                        </div>
-
-                        <div class="product-details">
-                            <div class="set-title">deodorant</div>
-                            <div class="set-options">Pastel Purple / 100ML</div>
-                            <div class="set-price">$00.00</div>
-                            <div class="set-action">remove</div>
-                        </div>
-                    </div>
-                </div>
+            {%endfor%}
 
 
-                <div class="set-item selected" js-starter-set-item="" data-set-index="0">
+            {% comment %} free give produc position {% endcomment %}
+                <div class="set-item" js-starter-set-item="" data-set-index="0">
                     <div class="placeholder-item product-line-item gift-product-item">
                         <div class="placeholder-media product-media relative">
                             {%- liquid
-                            assign text = "FREE"
                             assign id = 'on-sale-sticker--' | append: 0
                             assign shape = "badge"
                             assign vertical_position = 17
                             assign horizontal_position = 15
                             assign rotate = -16
+
+                            if section.settings.discount_amount == 100
+                                assign text = "FREE"
+                                assign font_size = "2.5rem"
+                            else 
+                                assign text = section.settings.discount_amount | append: '% OFF'
+                                assign font_size = "2rem"
+                            endif
                             -%}
                             {%- render 'static-sticker',
                             static_id: 'metafield-badge',
@@ -130,7 +87,7 @@
                             horizontal_position: horizontal_position,
                             rotate: rotate,
                             width: 56,
-                            font_size: '2.5rem',
+                            font_size: font_size,
                             color: 'bg-scheme-accent text-scheme-accent-overlay'
                             %}
                         </div>
@@ -144,12 +101,21 @@
                         <div class="product-media relative">
                             <div class="product-image">
                                 {%- liquid
-                                assign text = "FREE"
+                                
                                 assign id = 'on-sale-sticker--' | append: 0
                                 assign shape = "badge"
                                 assign vertical_position = 17
                                 assign horizontal_position = 15
                                 assign rotate = -16
+
+                                if section.settings.discount_amount == 100
+                                    assign text = "FREE"
+                                    assign font_size = "2.5rem"
+                                else 
+                                    assign text = section.settings.discount_amount | append: '% OFF'
+                                    assign font_size = "2rem"
+                                endif
+
                                 -%}
                                 {%- render 'static-sticker',
                                 static_id: 'metafield-badge',
@@ -160,7 +126,7 @@
                                 horizontal_position: horizontal_position,
                                 rotate: rotate,
                                 width: 56,
-                                font_size: '2.5rem',
+                                font_size: font_size,
                                 color: 'bg-scheme-accent text-scheme-accent-overlay'
                                 %}
                                 <img src="//longwknd.com/cdn/shop/files/product-image-deo-unscented.jpg?v=1695066452"
@@ -186,8 +152,8 @@
 
     <div class="text-center button-actions-wrapper bundler__footer">
         <p class="bundle__footer-note"><b>Pro Tip:</b> Add as many products to your bundle as you like!</p>
-        <button href="{{ collection.url }}" class="inline-block push-btn btn-action">
-            <span class="push-btn-surface">ADD TO CART - $00.00</span>
+        <button href="{{ collection.url }}" class="inline-block push-btn btn-action" data-add-to-bundle disabled>
+            <span class="push-btn-surface" data-add-to-bundle-text>ADD TO CART - $00.00</span>
         </button>
     </div>
 </div>

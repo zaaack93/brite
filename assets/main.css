@@ -1714,6 +1714,12 @@ image-with-text-options{
     overflow: visible !important;
   }
 }
+.section-build-your-bundle-main .tab-panel {
+  display: none;
+}
+.section-build-your-bundle-main .tab-panel.active-panel {
+  display: grid;
+}
 
 scroll-wrapper-slider {
   display: block;

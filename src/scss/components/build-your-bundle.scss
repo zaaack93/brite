@@ -1040,4 +1040,12 @@
 
     
   }
+
+  //working on tab panel
+  .tab-panel{
+    display: none;
+  }
+  .tab-panel.active-panel{
+    display: grid;
+  }
 }

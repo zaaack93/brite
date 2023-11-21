@@ -43,7 +43,7 @@
 
   {%- if product and product != empty -%}
   <div
-    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false"
+    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false" data-is-gift="{{isGift}}"
   >
     <div
       {% if enable_quick_buy %}

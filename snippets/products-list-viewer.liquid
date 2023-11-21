@@ -1,6 +1,6 @@
 
 
-{%- for product in collections.all.products -%}
+{%- for product in items -%}
   {%- liquid
     capture odd_even
       cycle 'odd', 'even'
@@ -13,6 +13,7 @@
   -%}
   {%- render 'product-tile-bundle'
     product: product,
+    isGift: isGift,
     shape: image_shape,
     shape_id: shape_id,
     odd_even: odd_even,

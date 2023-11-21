@@ -22,19 +22,25 @@
       </div>
       
       <div class="main-section-container {% if section.settings.title != '' or section.settings.richtext != blank %}section-content-top-margin{% endif %} ">
-        <product-bundler class=" opened " data-limit-bundles="" data-minimum="3">
-          
-          {% render 'bundle-tabs-header' %}
+        <product-bundler class=" opened " data-starter-set-size="{{ section.settings.numbre_of_products }}" data-starter-set-off-price="{{ section.settings.discount_amount }}">
+          {% render 'bundle-tabs-header' section:section %}
 
-          <div class="grid grid--layout grid-4 grid-portable-3 grid-lap-1">
-            <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container">
-              {% render 'products-list-viewer' collection: collection,image_shape: image_shape,item: section %}
-              
-              {% render 'bundle-tabs-action' %}
+          <div class="grid grid--layout grid-4 grid-portable-3 grid-lap-1 tab-panels">
+            <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container tab-panel active-panel" js-tab-panel="list-products">
+              {% render 'products-list-viewer' items:section.settings.collection,isGift:false,image_shape: image_shape,item: section %}
+              {%if section.settings.collection != blank %}
+                {% render 'bundle-tabs-action'  %}
+              {%endif%}
+            </div>
+            <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container tab-panel" js-tab-panel="list-gifts">
+              {% render 'products-list-viewer' items:section.settings.gift_collection,isGift:true,image_shape: image_shape,item: section %}
+              {%if section.settings.gift_collection != blank %}
+                {% render 'bundle-tabs-action' %}
+              {%endif%}
             </div>
 
             <div class="grid grid--layout grid-1 bundler-container element--is-sticky">
-              {% render 'bundle-cart-items' %}
+              {% render 'bundle-cart-items' section:section %}
             </div>
           </div>
         </product-bundler>
@@ -83,15 +89,56 @@
         "default": "<p>Choose ANY 3 or more products to create your bundle with XX% off. Once you have have bundled 3+ items, you can then select a free gift on us! Simply follow the 3 easy steps below.</p>"
       },
       {
+        "type": "text",
+        "id": "first_step_title",
+        "label": "First step title",
+        "default": "Choose Products"
+      },
+      {
+        "type": "text",
+        "id": "second_step_title",
+        "label": "Second step title",
+        "default": "Choose Free Gift"
+      },
+      {
+        "type": "text",
+        "id": "third_step_title",
+        "label": "Third step title",
+        "default": "Add to Cart"
+      },
+      {
         "type": "header",
         "content": "Grid settings"
       },
       {
         "id": "collection",
         "type": "collection",
-        "label": "Collection"
+        "label": "Main selection"
       },
-
+      {
+        "id": "gift_collection",
+        "type": "collection",
+        "label": "COllection to offer as a gift"
+      },
+      {
+        "type": "range",
+        "id": "numbre_of_products",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "label": "Maximum of products",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "discount_amount",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "label": "Discount amount (%)",
+        "info": "100% which means you offer the product as a free gift",
+        "default": 10
+      },
       {
         "type": "header",
         "content": "Color"
