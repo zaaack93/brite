@@ -146,13 +146,14 @@
       </div>
       {%- if enable_quick_buy -%}
         <div>
-        {%- render 'product-tile-quick-buy-bundle'
-          section: section,
-          product: product,
-          product_form_id: product_form_id,
-          current_variant: current_variant,
-          is_card: display_on_card
-        -%}
+            {%- render 'product-tile-quick-buy-bundle'
+              section: section,
+              product: product,
+              product_form_id: product_form_id,
+              current_variant: current_variant,
+              is_card: display_on_card,
+              isGift: isGift
+            -%}
         </div>
       {%- endif -%}
       {% comment %} {%- if on_sale -%}

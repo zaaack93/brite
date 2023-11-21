@@ -20,8 +20,11 @@
         else
           assign label_class = 'block font-secondary text-scheme-text text-sm'
         endif
-        
-        render 'variant-picker-bundle', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
+        unless isGift 
+          render 'variant-picker-bundle', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
+        else
+          render 'variant-picker-bundle-gift', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
+        endunless
       -%}
 
   

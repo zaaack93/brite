@@ -22,11 +22,11 @@
         <div class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
           {%- unless is_color or option_style == 'buttons' -%}
             <div class=" lg:flex lg:items-center lg:justify-start element-container">
-              <label class="{{ label_class }}  lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5" for="Option{{ option.position }}-{{product.id}}-{{ section.id }}">
+              <label class="{{ label_class }}  lg:w-1/4 xl:w-1/5 lg:shrink-0 pr-2.5" for="Option{{ option.position }}-{{product.id}}">
                 {{ option.name }}
               </label>
               <select
-                id="Option{{ option.position }}-{{product.id}}-{{ section.id }}"
+                id="Option{{ option.position }}-{{product.id}}"
                 name="options[{{ option.name | escape }}]"
                 @change="optionChange()"
                 class="lg:mt-0 single-option-selector font-body text-base text-scheme-text appearance-none input w-full "
@@ -70,7 +70,7 @@
                       class="{% if is_color %}color-swatch {%else%} button-swatch {% endif %} cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
                       @change="optionChange('{{option.name}}','{{value}}')"
                       type="radio"
-                      id="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
+                      id="Section-{{product.id}}-Option{{ option.position }}-{{ value | escape }}" name="Section-options[{{ option.name }}]"
                       value="{{ value | escape }}"
                       data-handle="{{ value | handleize }}"
                       {% if option.selected_value == value %} checked{% endif %} data-single-option-selector-bundle
@@ -93,7 +93,7 @@
                           line-through
                         {% endunless %}
                         cursor-pointer"
-                      for="Section-{{ section.id }}-{{product.id}}-Option{{ option.position }}-{{ value | escape }}"
+                      for="Section-{{product.id}}-Option{{ option.position }}-{{ value | escape }}"
                       title="{{ option.value }}"
                       >
                       {%- if is_color %}
