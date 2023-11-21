@@ -1327,6 +1327,13 @@ image-with-text-options{
     top: 20px;
   }
 }
+@media screen and (max-width: 767px) {
+  .section-build-your-bundle-main .main-section-container .bundler-container {
+    position: sticky;
+    bottom: 20px;
+    z-index: 20;
+  }
+}
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .badge-product-tile {
   min-width: 78px;
   padding-top: 6px;
@@ -1599,7 +1606,7 @@ image-with-text-options{
 }
 @media screen and (max-width: 767px) {
   .section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item {
-    min-width: 60%;
+    min-width: 70%;
   }
   .section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item .sticker-on-sale-sticker--0 {
     top: 72%;
@@ -1778,4 +1785,8 @@ scroll-wrapper-slider.without-scroll .inner_container_items::-webkit-scrollbar {
 
 .hide {
   display: none !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
