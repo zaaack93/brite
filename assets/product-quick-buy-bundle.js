@@ -55,7 +55,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
         // to use instead of $root (which refers to their root)
         this.productRoot = this.$root;
         
-        debugger
+        
         if (this.$refs.productForm) {
           this.$refs.productForm.addEventListener(
             'submit',
@@ -73,7 +73,6 @@ window['ThemeSection_ProductQuickBuy'] = ({
 
 
       addToBundle(){
-        debugger
         const addToSetEvent = new CustomEvent('bundle:addToSet', {
           detail: {
             variant: this.current_variant,

@@ -224,6 +224,7 @@ class ProductBundler extends HTMLElement {
     this.starterSetAmount = this.getAttribute('data-starter-set-off-price');
     this.dataAddToBundle = this.querySelector('[data-add-to-bundle]');
     this.dataAddToBundleText = this.querySelector('[data-add-to-bundle-text]');
+    this.selectedGift = null
     this.productSelected=0
     this.lineItems = {
       items: []
@@ -231,7 +232,20 @@ class ProductBundler extends HTMLElement {
     this.cartAmount=0;
     this.currentStep=1;
 
-
+    this.starterSetItems.forEach((element)=> {
+      element.querySelector('.current-details .set-action').addEventListener('click', (e)=>{
+        const index = e.target.closest('.set-item').getAttribute('data-set-index')
+        const product_id = e.target.closest('.set-item').getAttribute('js-starter-set-item')
+        this.starterSetItems.forEach((lineItem)=> {
+          if(lineItem.getAttribute('js-starter-set-item') === product_id && lineItem.getAttribute('data-set-index') == index){
+            //remove product class
+            lineItem.classList.remove('selected')
+            lineItem.setAttribute('js-starter-set-item',"")
+            this.minusFromCartValuesAndRedirect(product_id,parseInt(index)==-1,index)
+          }
+        });
+      });
+    });
 
     this.init();
   }
@@ -240,7 +254,6 @@ class ProductBundler extends HTMLElement {
   }
   
   init(){
-    console.log(this.tabItem,this.tabPanels,this.starterSetItems,this.starterSetSize,this.starterSetAmount)
     this.addEventListener('bundle:addToSet', this.addToSet);
   }
 
@@ -258,7 +271,7 @@ class ProductBundler extends HTMLElement {
       lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price)
     }
     else{
-      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price/this.starterSetAmount))
+      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price/parseInt(this.starterSetAmount)))
     }
   }
 
@@ -279,6 +292,46 @@ class ProductBundler extends HTMLElement {
     else{
       this.dataAddToBundle.setAttribute('disabled',true)
     }
+  }
+
+
+  minusFromCartValuesAndRedirect(variant,isGift,index){
+    const currentProduct = this.lineItems.items.find(item => item.id === parseInt(variant));
+    const indexToDelete = this.lineItems.items.findIndex(item => item.id === parseInt(variant));
+
+    if (indexToDelete !== -1) {
+      this.lineItems.items.splice(indexToDelete, 1);
+    }
+    if(!isGift){
+      this.cartAmount=this.cartAmount-currentProduct.price
+      //remove current products
+      this.productSelected--;
+      //redirect now to the first tab
+      this.tabPanels.forEach(tab=>{
+        if(tab.getAttribute('js-tab-panel')==='list-products'){
+          tab.classList.add('active-panel')
+        }
+        else if(tab.getAttribute('js-tab-panel')==='list-gifts'){
+          tab.classList.remove('active-panel')
+        }
+      })
+      //remove active from the second tab
+      this.tabItem[1].classList.add('disabled')
+      this.tabItem[1].classList.remove('active')
+
+      this.tabItem[2].classList.add('disabled')
+      this.tabItem[2].classList.remove('active')
+    }
+    else if(isGift){
+      //remove current products
+      this.tabItem[2].classList.add('disabled')
+      this.tabItem[2].classList.remove('active')
+      this.cartAmount=this.cartAmount-currentProduct.price+(currentProduct.price/parseInt(this.starterSetAmount))
+    }
+    this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
+
+    //change the state of add to cart button
+    this.dataAddToBundle.setAttribute('disabled',true)
   }
 
   cartReadyToSet(){
@@ -336,14 +389,13 @@ class ProductBundler extends HTMLElement {
         //add product to the budnle
         lineItem.classList.add('selected')
         lineItem.setAttribute('js-starter-set-item',variant.id)
-        this.productSelected++;
         this.updateLineItem(lineItem,variant,isGift)
         //update cart price
         this.updateCartValues(variant,isGift)
+        this.selectedGift=variant;
         break;
       }
     }
-    console.log(e.detail.variant,isGift)
   }
 }
 
