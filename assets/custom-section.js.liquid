@@ -269,8 +269,26 @@ class ProductBundler extends HTMLElement {
     else if(isGift){
       this.cartAmount+=variant.price-(variant.price/this.starterSetAmount)
     }
-    console.log(this.dataAddToBundleText)
+
     this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
+
+    //change the state of add to cart button
+    if(this.cartReadyToSet()){
+      this.dataAddToBundle.removeAttribute('disabled')
+    }
+    else{
+      this.dataAddToBundle.setAttribute('disabled',true)
+    }
+  }
+
+  cartReadyToSet(){
+    let status=true
+    for (let lineItem of this.starterSetItems) {
+      if(lineItem.getAttribute('js-starter-set-item') === "" ){
+        status=false
+      }
+    }
+    return status
   }
 
   updateStateOfTabs(){
@@ -298,7 +316,6 @@ class ProductBundler extends HTMLElement {
     //add product to the line items
     const variant=e.detail.variant
     const isGift=e.detail.isGift.toLowerCase() === "true"
-    debugger
     this.lineItems.items.push(variant)
     //add product to the data set
     for (let lineItem of this.starterSetItems) {

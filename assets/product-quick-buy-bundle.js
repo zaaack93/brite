@@ -54,6 +54,8 @@ window['ThemeSection_ProductQuickBuy'] = ({
         // Set a product root for nested components
         // to use instead of $root (which refers to their root)
         this.productRoot = this.$root;
+        
+        debugger
         if (this.$refs.productForm) {
           this.$refs.productForm.addEventListener(
             'submit',
