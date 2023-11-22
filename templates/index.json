@@ -1109,7 +1109,7 @@
         "collection": "product-bundle-list-items",
         "gift_collection": "gift-products-list",
         "numbre_of_products": 3,
-        "discount_amount": 10,
+        "discount_amount": 25,
         "color_scheme": "primary",
         "use_gradient_background": false
       }

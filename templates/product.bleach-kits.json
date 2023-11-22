@@ -147,7 +147,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "Description",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_product_description}}\n<\/div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-long-desc rdc-variant-long-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.rich_variant_product_description | metafield_tag}}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
@@ -157,7 +157,7 @@
             "display_on_card": false,
             "icon": "none",
             "heading": "How to Use",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_how_to_use}}\n<\/div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-variant-how rdc-variant-how-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.rich_variant_how_to_use  | metafield_tag}}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
