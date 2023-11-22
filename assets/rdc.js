@@ -142,26 +142,26 @@ variantPrices.forEach(variantPrice => {variantPrice.classList.add('rdc-d-none')}
     
 for(let i=0; i<variantDescs.length; i++) {
     
-  if(variantDescs[i].classList.contains(variantDescClass)) {
+  if(variantDescs[i] && variantDescs[i].classList.contains(variantDescClass)) {
     variantDescs[i].classList.remove('rdc-d-none')
   }
-  if(variantLongDescs[i].classList.contains(variantLongDescClass)) {
+  if(variantLongDescs[i] && variantLongDescs[i].classList.contains(variantLongDescClass)) {
     variantLongDescs[i].classList.remove('rdc-d-none')
   }
-    if(variantHows[i].classList.contains(variantHowClass)) {
+    if(variantHows[i] && variantHows[i].classList.contains(variantHowClass)) {
     variantHows[i].classList.remove('rdc-d-none')
   }
-      if(variantIngredients[i].classList.contains(variantIngredientClass)) {
+  if(variantIngredients[i] && variantIngredients[i].classList.contains(variantIngredientClass)) {
     variantIngredients[i].classList.remove('rdc-d-none')
   }
-  if(variantPrices[i].classList.contains(variantPriceClass)) {
+  if(variantPrices[i] && variantPrices[i].classList.contains(variantPriceClass)) {
     variantPrices[i].classList.remove('rdc-d-none')
   }
 }
 
 //for price
 for(let i=0; i<variantPrices.length; i++) {
-  if(variantPrices[i].classList.contains(variantPriceClass)) {
+  if(variantPrices[i] && variantPrices[i].classList.contains(variantPriceClass)) {
     variantPrices[i].classList.remove('rdc-d-none')
   }
 }
