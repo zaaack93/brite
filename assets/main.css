@@ -1607,6 +1607,8 @@ image-with-text-options{
     -moz-column-gap: 15px;
          column-gap: 15px;
     flex-wrap: nowrap;
+    margin-top: 15px;
+    padding-top: 15px;
   }
 }
 @media screen and (max-width: 767px) {
