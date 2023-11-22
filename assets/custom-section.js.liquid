@@ -267,6 +267,7 @@ class ProductBundler extends HTMLElement {
 
   addProductToTheCart(){
         liveRegion(window.theme.strings.loading);
+        this.dataAddToBundleText.textContent=this.dataAddToBundleText.textContent.replace('ADD TO CART','LOADING')
         const formData = new FormData();
         const formDataGift = new FormData();
         let modalCart = theme.settings.cart_type === 'modal';
@@ -330,6 +331,8 @@ class ProductBundler extends HTMLElement {
             error.json().then((a) => {
               alert(a.description);
             });
+          }).finally(()=>{
+            this.dataAddToBundleText.textContent=this.dataAddToBundleText.textContent.replace('LOADING','ADD TO CART')
           });
   }
 
@@ -360,6 +363,11 @@ class ProductBundler extends HTMLElement {
     //change the state of add to cart button
     if(this.cartReadyToSet()){
       this.dataAddToBundle.removeAttribute('disabled')
+
+      //check the third part
+      this.tabItem[2].classList.remove('disabled')
+      this.tabItem[2].classList.add('active')
+      
     }
     else{
       this.dataAddToBundle.setAttribute('disabled',true)
@@ -393,6 +401,7 @@ class ProductBundler extends HTMLElement {
 
       this.tabItem[2].classList.add('disabled')
       this.tabItem[2].classList.remove('active')
+      this.scrollIntoView({ behavior: 'smooth' });
     }
     else if(isGift){
       //remove current products
@@ -434,6 +443,7 @@ class ProductBundler extends HTMLElement {
           tab.classList.add('active-panel')
         }
       })
+      this.scrollIntoView({ behavior: 'smooth' });
     }
   }
 

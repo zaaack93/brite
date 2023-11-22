@@ -1,0 +1,58 @@
+Arguments: 
+  /usr/local/bin/node /snap/node/7823/bin/yarn.js global dir --json
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.3.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, write
+      at writeSync (node:fs:942:3)
+      at SyncWriteStream._write (node:internal/fs/sync_write_stream:26:3)
+      at writeOrBuffer (node:internal/streams/writable:399:12)
+      at _write (node:internal/streams/writable:340:10)
+      at Writable.write (node:internal/streams/writable:344:10)
+      at JSONReporter._dump (/snap/node/7823/lib/cli.js:49577:12)
+      at JSONReporter.log (/snap/node/7823/lib/cli.js:49605:10)
+      at dir (/snap/node/7823/lib/cli.js:36307:14)
+      at Object.<anonymous> (/snap/node/7823/lib/cli.js:25987:25)
+      at Generator.next (<anonymous>)
+
+npm manifest: 
+  {
+    "name": "handee",
+    "version": "1.0.0",
+    "description": "# https://handee.com",
+    "main": "webpack.mix.js",
+    "scripts": {
+      "dev": "shopify theme serve",
+      "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "watch": "npm run development -- --watch",
+      "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "prod": "npm run production",
+      "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "cross-env": "^7.0.3",
+      "laravel-mix": "^6.0.49",
+      "resolve-url-loader": "^5.0.0",
+      "sass": "^1.60.0",
+      "sass-loader": "^12.6.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
