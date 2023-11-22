@@ -336,6 +336,19 @@ class ProductBundler extends HTMLElement {
           });
   }
 
+ convertToDecimal(percentage) {
+  // Check if the input is a valid number
+  if (typeof percentage === 'number' && !isNaN(percentage)) {
+    // Convert the percentage to its decimal form
+    const decimal = percentage / 100;
+    return decimal;
+  } else {
+    // Return an error or handle invalid input as needed
+    console.error('Invalid input. Please provide a valid number.');
+    return null;
+  }
+}
+
   updateLineItem(lineItem,variant,isGift){
     //update image
     lineItem.querySelector('.product-image img').src= variant.featured_image.src
@@ -346,7 +359,7 @@ class ProductBundler extends HTMLElement {
       lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price)
     }
     else{
-      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price/parseInt(this.starterSetAmount)))
+      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price*this.convertToDecimal(parseInt(this.starterSetAmount))))
     }
   }
 
@@ -355,7 +368,7 @@ class ProductBundler extends HTMLElement {
       this.cartAmount+=variant.price
     }
     else if(isGift){
-      this.cartAmount+=variant.price-(variant.price/this.starterSetAmount)
+      this.cartAmount+=variant.price-(variant.price*this.convertToDecimal(parseInt(this.starterSetAmount)))
     }
 
     this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
@@ -407,7 +420,7 @@ class ProductBundler extends HTMLElement {
       //remove current products
       this.tabItem[2].classList.add('disabled')
       this.tabItem[2].classList.remove('active')
-      this.cartAmount=this.cartAmount-currentProduct.price+(currentProduct.price/parseInt(this.starterSetAmount))
+      this.cartAmount=this.cartAmount-currentProduct.price+(currentProduct.price*this.convertToDecimal(parseInt(this.starterSetAmount)))
     }
     this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
 
