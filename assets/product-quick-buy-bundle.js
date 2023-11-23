@@ -36,19 +36,44 @@ window['ThemeSection_ProductQuickBuy'] = ({
       previousSlide(){
         if (this.current_index > 0) {
           this.current_index--;
-          this.current_media_id = this.product.variants[this.current_index].featured_media.id;
+          this.goToFollowingVariant()
         }
       },
 
       nextSlide(){
         if (this.current_index != product.variants.length - 1) {
           this.current_index++;
-          this.current_media_id = this.product.variants[this.current_index].featured_media.id;
+          //this.updateVariant(this.product.variants[this.current_index])
+          this.goToFollowingVariant()
         }
       },
 
       formatMoney(price) {
         return formatMoney(price, theme.moneyFormat);
+      },
+
+      goToFollowingVariant(){
+        this.product.options.forEach((option,index)=>{
+          const targetInput = this.productRoot.querySelector(`.variant-input[data-option-name="${option}"][data-option-value="${this.ordonnedVariants[this.current_index].options[index]}"]`);
+
+          // Trigger a click event on the found input element
+          if (targetInput && targetInput.querySelector('input')) {
+              targetInput.querySelector('input').click();
+          } else {
+              console.error('Input not found');
+          }
+        })
+      },
+
+      sortAndGroup(arr) {
+        // Sort the array first by "option2" and then by "option1"
+        const sortedArray = arr.sort((a, b) => {
+          if (a.option2 !== b.option2) {
+            return a.option2.localeCompare(b.option2);
+          }
+        });
+
+        return sortedArray;
       },
       init() {
         // Set a product root for nested components
@@ -63,6 +88,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
           );
         }
         this.getOptions();
+        this.ordonnedVariants=this.sortAndGroup(this.product.variants)
         //for update selected price
         const matchedVariant = ShopifyProduct.getVariantFromOptionArray(
           this.product,
