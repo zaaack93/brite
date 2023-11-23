@@ -614,6 +614,9 @@
           }
         }
       }
+      .btn-action.not-able{
+        display: none;
+      }
 
       .btn-action[disabled]{
         --color-button-background: 222, 222, 222;

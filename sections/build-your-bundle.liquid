@@ -28,9 +28,9 @@
           <div class="grid grid--layout grid-4 grid-portable-3 grid-lap-1 tab-panels">
             <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container tab-panel active-panel" js-tab-panel="list-products">
               {% render 'products-list-viewer' items:section.settings.collection,isGift:false,image_shape: image_shape,item: section %}
-              {% comment %} {%if section.settings.collection != blank %}
+              {%if section.settings.collection != blank %}
                 {% render 'bundle-tabs-action'  %}
-              {%endif%} {% endcomment %}
+              {%endif%}
             </div>
             <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container tab-panel" js-tab-panel="list-gifts">
               {% render 'products-list-viewer' items:section.settings.gift_collection,isGift:true,image_shape: image_shape,item: section %}

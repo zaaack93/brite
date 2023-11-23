@@ -224,6 +224,7 @@ class ProductBundler extends HTMLElement {
     this.starterSetAmount = this.getAttribute('data-starter-set-off-price');
     this.dataAddToBundle = this.querySelector('[data-add-to-bundle]');
     this.dataAddToBundleText = this.querySelector('[data-add-to-bundle-text]');
+    this.dataProcedToGift = this.querySelector('[data-proced-to-gift]');
     this.selectedGift = null
     this.productSelected=0
     this.lineItems = {
@@ -249,6 +250,10 @@ class ProductBundler extends HTMLElement {
 
     this.dataAddToBundle.addEventListener('click', (e)=>{
       this.addProductToTheCart()
+    })
+
+    this.dataProcedToGift.addEventListener('click', (e)=>{
+      this.confirmeGoToOther()
     })
 
     this.init();
@@ -442,7 +447,13 @@ class ProductBundler extends HTMLElement {
 
     if (this.productSelected == this.starterSetSize ) {
       //so go to the next step  
-      this.currentStep=2
+      this.dataProcedToGift.classList.remove('not-able')
+    }
+  }
+
+
+  confirmeGoToOther(){
+    this.currentStep=2
       for(let i=0 ; i<2 ; i++){
         this.tabItem[i].classList.remove('disabled')
         this.tabItem[i].classList.add('active')
@@ -456,8 +467,7 @@ class ProductBundler extends HTMLElement {
           tab.classList.add('active-panel')
         }
       })
-      this.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.scrollIntoView({ behavior: 'smooth' });
   }
 
   addToSet(e){
