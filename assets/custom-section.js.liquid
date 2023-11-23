@@ -225,6 +225,7 @@ class ProductBundler extends HTMLElement {
     this.dataAddToBundle = this.querySelector('[data-add-to-bundle]');
     this.dataAddToBundleText = this.querySelector('[data-add-to-bundle-text]');
     this.dataProcedToGift = this.querySelector('[data-proced-to-gift]');
+    this.dataProcedToGiftList = this.querySelector('[data-proced-to-product-list]');
     this.selectedGift = null
     this.productSelected=0
     this.lineItems = {
@@ -239,10 +240,7 @@ class ProductBundler extends HTMLElement {
         const product_id = e.target.closest('.set-item').getAttribute('js-starter-set-item')
         this.starterSetItems.forEach((lineItem)=> {
           if(lineItem.getAttribute('js-starter-set-item') === product_id && lineItem.getAttribute('data-set-index') == index){
-            //remove product class
-            lineItem.classList.remove('selected')
-            lineItem.setAttribute('js-starter-set-item',"")
-            this.minusFromCartValuesAndRedirect(product_id,parseInt(index)==-1,index)
+            this.minusFromCartValuesAndRedirect(product_id,parseInt(index)==-1,index,lineItem)
           }
         });
       });
@@ -255,6 +253,12 @@ class ProductBundler extends HTMLElement {
     this.dataProcedToGift.addEventListener('click', (e)=>{
       this.confirmeGoToOther()
     })
+
+    this.dataProcedToGiftList.addEventListener('click', (e)=>{
+      this.redirecToPrevious()
+    })
+
+    
 
     this.init();
   }
@@ -286,13 +290,13 @@ class ProductBundler extends HTMLElement {
           formDataGift.append('sections_url', window.location.pathname);
         }
 
-        this.starterSetItems.forEach((item, index) => {
-          if(item.getAttribute('data-set-index')!="-1"){
-            formData.append(`items[${index}][id]`, parseInt(item.getAttribute('js-starter-set-item')));
+        this.starterSetItems.forEach((lineItem, index) => {
+          if(lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')!="-1"){
+            formData.append(`items[${index}][id]`, parseInt(lineItem.getAttribute('js-starter-set-item')));
             formData.append(`items[${index}][quantity]`, 1);
           }
-          else{
-            formDataGift.append(`items[${index}][id]`, parseInt(item.getAttribute('js-starter-set-item')));
+          else if (lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')=="-1"){
+            formDataGift.append(`items[${index}][id]`, parseInt(lineItem.getAttribute('js-starter-set-item')));
             formDataGift.append(`items[${index}][quantity]`, 1);
           }
         });
@@ -388,12 +392,12 @@ class ProductBundler extends HTMLElement {
       
     }
     else{
-      this.dataAddToBundle.setAttribute('disabled',true)
+      this.dataAddToBundle.setAttribute('disabled',!this.cartReadyToSet())
     }
   }
 
 
-  minusFromCartValuesAndRedirect(variant,isGift,index){
+  minusFromCartValuesAndRedirect(variant,isGift,index,lineItem){
     const currentProduct = this.lineItems.items.find(item => item.id === parseInt(variant));
     const indexToDelete = this.lineItems.items.findIndex(item => item.id === parseInt(variant));
 
@@ -404,8 +408,36 @@ class ProductBundler extends HTMLElement {
       this.cartAmount=this.cartAmount-currentProduct.price
       //remove current products
       this.productSelected--;
-      //redirect now to the first tab
-      this.tabPanels.forEach(tab=>{
+
+      //this.redirecToPrevious()
+
+      //remove product class
+      lineItem.remove()
+      
+    }
+    else if(isGift){
+      //remove current products
+      this.tabItem[2].classList.add('disabled')
+      this.tabItem[2].classList.remove('active')
+      this.cartAmount=this.cartAmount-currentProduct.price+(currentProduct.price*this.convertToDecimal(parseInt(this.starterSetAmount)))
+
+      //remove product class
+      lineItem.classList.remove('selected')
+      lineItem.setAttribute('js-starter-set-item',"")
+    }
+    this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
+
+    //change the state of add to cart button
+    debugger
+    if (!this.cartReadyToSet())
+    this.dataAddToBundle.setAttribute('disabled',!this.cartReadyToSet())
+    else
+    this.dataAddToBundle.removeAttribute('disabled')
+  }
+
+  redirecToPrevious(){
+    //redirect now to the first tab
+    this.tabPanels.forEach(tab=>{
         if(tab.getAttribute('js-tab-panel')==='list-products'){
           tab.classList.add('active-panel')
         }
@@ -420,32 +452,31 @@ class ProductBundler extends HTMLElement {
       this.tabItem[2].classList.add('disabled')
       this.tabItem[2].classList.remove('active')
       this.scrollIntoView({ behavior: 'smooth' });
-    }
-    else if(isGift){
-      //remove current products
-      this.tabItem[2].classList.add('disabled')
-      this.tabItem[2].classList.remove('active')
-      this.cartAmount=this.cartAmount-currentProduct.price+(currentProduct.price*this.convertToDecimal(parseInt(this.starterSetAmount)))
-    }
-    this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
-
-    //change the state of add to cart button
-    this.dataAddToBundle.setAttribute('disabled',true)
   }
 
   cartReadyToSet(){
-    let status=true
+    let number_of_active = 0
+    let isGiftSelected =false
+    // update the line items DOM
+    this.starterSetItems = this.querySelectorAll("[js-starter-set-item]");
+
+
     for (let lineItem of this.starterSetItems) {
-      if(lineItem.getAttribute('js-starter-set-item') === "" ){
-        status=false
+      if(lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')!="-1" ){
+        number_of_active++;
+      }
+      else if(lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')=="-1" ){
+        isGiftSelected=true
       }
     }
-    return status
+    console.log(number_of_active , parseInt(this.starterSetSize) ,isGiftSelected )
+    console.log(number_of_active >= parseInt(this.starterSetSize) && isGiftSelected )
+    return number_of_active >= parseInt(this.starterSetSize) && isGiftSelected;
   }
 
   updateStateOfTabs(){
 
-    if (this.productSelected == this.starterSetSize ) {
+    if (this.productSelected >= parseInt(this.starterSetSize) ) {
       //so go to the next step  
       this.dataProcedToGift.classList.remove('not-able')
     }
@@ -471,12 +502,6 @@ class ProductBundler extends HTMLElement {
   }
 
   addToSet(e){
-    //change text of the button text
-    e.detail.handleButton.querySelector('.push-btn-surface').textContent="ADDED ✓"
-    setTimeout(() => {
-      e.detail.handleButton.querySelector('.push-btn-surface').textContent="add to bundle"
-    }, 1500);
-
     
     //add product to the line items
     const variant=e.detail.variant
@@ -495,6 +520,16 @@ class ProductBundler extends HTMLElement {
         this.updateCartValues(variant,isGift)
         //update state of tabs
         this.updateStateOfTabs()
+
+        //show the lineItem
+        lineItem.style.display = 'initial'
+        
+        //change text of the button text
+        e.detail.handleButton.querySelector('.push-btn-surface').textContent="ADDED ✓"
+        setTimeout(() => {
+          e.detail.handleButton.querySelector('.push-btn-surface').textContent="add to bundle"
+        }, 1500);
+
         break;
       }
       else if(lineItem.getAttribute('js-starter-set-item') === "" &&  parseInt(lineItem.getAttribute('data-set-index')) == -1 && isGift){

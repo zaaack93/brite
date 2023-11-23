@@ -34,9 +34,9 @@
             </div>
             <div class="grid grid--layout grid-3 grid-portable-2 grid-lap-2 grid-tiny-1 grid-offset-3 grid-offset-portable-2 grid-offset-lap-1 products-container tab-panel" js-tab-panel="list-gifts">
               {% render 'products-list-viewer' items:section.settings.gift_collection,isGift:true,image_shape: image_shape,item: section %}
-              {% comment %} {%if section.settings.gift_collection != blank %}
-                {% render 'bundle-tabs-action' %}
-              {%endif%} {% endcomment %}
+              {%if section.settings.gift_collection != blank %}
+                {% render 'bundle-tabs-action-second' %}
+              {%endif%}
             </div>
 
             <div class="grid grid--layout grid-1 bundler-container js-sticky-widget">
@@ -70,6 +70,13 @@
       render 'block-shape-divider' with block: shape_divider, section: section
     endfor
   -%}
+
+  <style>
+
+    #shopify-section-{{ section.id }} .starter-selection .set-item:not([data-set-index="-1"]):nth-child(-n+{{section.settings.numbre_of_products}}) {
+      display: initial;
+    }
+  </style>
   
   {% schema %}
   {

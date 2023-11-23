@@ -935,6 +935,9 @@
           }
         }
       }
+      .set-item:not([data-set-index="-1"]){
+        display: none;
+      }
       .set-item.selected{
         .placeholder-item{
           display: none;

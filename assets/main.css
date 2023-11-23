@@ -1623,6 +1623,9 @@ image-with-text-options{
     left: -6%;
   }
 }
+.section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item:not([data-set-index="-1"]) {
+  display: none;
+}
 .section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item.selected .placeholder-item {
   display: none;
 }
