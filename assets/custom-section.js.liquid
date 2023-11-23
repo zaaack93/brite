@@ -461,6 +461,13 @@ class ProductBundler extends HTMLElement {
   }
 
   addToSet(e){
+    //change text of the button text
+    e.detail.handleButton.querySelector('.push-btn-surface').textContent="ADDED ✓"
+    setTimeout(() => {
+      e.detail.handleButton.querySelector('.push-btn-surface').textContent="add to bundle"
+    }, 1500);
+
+    
     //add product to the line items
     const variant=e.detail.variant
     const isGift=e.detail.isGift.toLowerCase() === "true"

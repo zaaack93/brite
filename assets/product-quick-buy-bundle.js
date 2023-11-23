@@ -102,7 +102,8 @@ window['ThemeSection_ProductQuickBuy'] = ({
         const addToSetEvent = new CustomEvent('bundle:addToSet', {
           detail: {
             variant: this.current_variant,
-            isGift: this.productRoot.closest('.product-tile-bundle').getAttribute('data-is-gift')
+            isGift: this.productRoot.closest('.product-tile-bundle').getAttribute('data-is-gift'),
+            handleButton: this.productRoot.querySelector('.btn-add-to-set')
             // Add more parameters as needed
           },
           bubbles: true, // Whether the event bubbles up through the DOM or not
