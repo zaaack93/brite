@@ -387,6 +387,8 @@ class ProductBundler extends HTMLElement {
       this.dataAddToBundle.removeAttribute('disabled')
 
       //check the third part
+      this.tabItem[1].classList.remove('disabled')
+      this.tabItem[1].classList.add('active')
       this.tabItem[2].classList.remove('disabled')
       this.tabItem[2].classList.add('active')
       
