@@ -1097,22 +1097,6 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
-    },
-    "73d67e18-1f53-4c62-8e12-cafa5100a141": {
-      "type": "build-your-bundle",
-      "settings": {
-        "title": "Bundle 3 items and save",
-        "richtext": "<p>Choose ANY 3 or more products to create your bundle with XX% off. Once you have have bundled 3+<br\/>items, you can then select a free gift on us! Simply follow the 3 easy steps below.<\/p>",
-        "first_step_title": "Choose Products",
-        "second_step_title": "Choose Free Gift",
-        "third_step_title": "Add to Cart",
-        "collection": "product-bundle-list-items",
-        "gift_collection": "gift-products-list",
-        "numbre_of_products": 3,
-        "discount_amount": 25,
-        "color_scheme": "primary",
-        "use_gradient_background": false
-      }
     }
   },
   "order": [
@@ -1133,7 +1117,6 @@
     "1650891804363a2769",
     "9117f9a3-6549-430b-a166-f051d2130969",
     "4135f8b3-d782-4fa5-81a9-705185187051",
-    "752e2726-c3ed-4a1e-b7d1-4f03f4d48074",
-    "73d67e18-1f53-4c62-8e12-cafa5100a141"
+    "752e2726-c3ed-4a1e-b7d1-4f03f4d48074"
   ]
 }
