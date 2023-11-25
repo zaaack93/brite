@@ -987,6 +987,22 @@
               height: 100%;
             }
           }
+          .placeholder-media.product-media{
+            position: relative;
+            .plus-icon {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: #868686;
+              text-align: center;
+              font-family: Avenir Next;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+          }
           .product-details{
             display: flex;
             row-gap: 5px;

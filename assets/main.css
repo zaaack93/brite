@@ -1674,6 +1674,22 @@ image-with-text-options{
   width: 100%;
   height: 100%;
 }
+.section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item .product-line-item .placeholder-media.product-media {
+  position: relative;
+}
+.section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item .product-line-item .placeholder-media.product-media .plus-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #868686;
+  text-align: center;
+  font-family: Avenir Next;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .section-build-your-bundle-main .bundle-cart-container .starter-selection .set-item .product-line-item .product-details {
   display: flex;
   row-gap: 5px;

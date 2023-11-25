@@ -33,9 +33,10 @@
                 <div class="set-item " js-starter-set-item="" data-set-index="{{i}}">
                     <div class="placeholder-item product-line-item">
                         <div class="placeholder-media product-media">
+                            <div class="plus-icon">+</div>
                         </div>
                         <div class="product-details">
-                            <div class="set-title">Item</div>
+                            <div class="set-title">Add another item</div>
 
                         </div>
                     </div>
@@ -152,7 +153,10 @@
 
     <div class="text-center button-actions-wrapper bundler__footer">
         <p class="bundle__footer-note"><b>Pro Tip:</b> Add as many products to your bundle as you like!</p>
-        <button type="button" class="inline-block push-btn btn-action" data-add-to-bundle disabled>
+        <button data-proced-to-gift class="inline-block push-btn btn-action btn-bg-secondary" disabled>
+            <span class="push-btn-surface">CHOOSE FREE GIFT</span>
+        </button>
+        <button type="button" class="inline-block push-btn btn-action not-able" data-add-to-bundle>
             <span class="push-btn-surface" data-add-to-bundle-text>ADD TO CART - $00.00</span>
         </button>
     </div>

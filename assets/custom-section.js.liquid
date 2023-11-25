@@ -225,7 +225,7 @@ class ProductBundler extends HTMLElement {
     this.dataAddToBundle = this.querySelector('[data-add-to-bundle]');
     this.dataAddToBundleText = this.querySelector('[data-add-to-bundle-text]');
     this.dataProcedToGift = this.querySelector('[data-proced-to-gift]');
-    this.dataProcedToGiftList = this.querySelector('[data-proced-to-product-list]');
+    // this.dataProcedToGiftList = this.querySelector('[data-proced-to-product-list]');
     this.selectedGift = null
     this.productSelected=0
     this.lineItems = {
@@ -254,9 +254,9 @@ class ProductBundler extends HTMLElement {
       this.confirmeGoToOther()
     })
 
-    this.dataProcedToGiftList.addEventListener('click', (e)=>{
-      this.redirecToPrevious()
-    })
+    // this.dataProcedToGiftList.addEventListener('click', (e)=>{
+    //   this.redirecToPrevious()
+    // })
 
     
 
@@ -384,7 +384,8 @@ class ProductBundler extends HTMLElement {
 
     //change the state of add to cart button
     if(this.cartReadyToSet()){
-      this.dataAddToBundle.removeAttribute('disabled')
+      this.dataAddToBundle.classList.remove('not-able')
+      this.dataProcedToGift.classList.add('not-able')
 
       //check the third part
       this.tabItem[1].classList.remove('disabled')
@@ -394,7 +395,8 @@ class ProductBundler extends HTMLElement {
       
     }
     else{
-      this.dataAddToBundle.setAttribute('disabled',!this.cartReadyToSet())
+      this.dataAddToBundle.classList.add('not-able')
+      this.dataProcedToGift.classList.remove('not-able')
     }
   }
 
@@ -412,9 +414,10 @@ class ProductBundler extends HTMLElement {
       this.productSelected--;
 
       //this.redirecToPrevious()
-
+      
       //remove product class
       lineItem.remove()
+      //remove add to cart button and show th
       
     }
     else if(isGift){
@@ -428,13 +431,32 @@ class ProductBundler extends HTMLElement {
       lineItem.setAttribute('js-starter-set-item',"")
     }
     this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
+    debugger
+    //first case should return to the first step because doens't have all the products to construct the bundle
+    if(this.productSelected < parseInt(this.starterSetSize) && !this.isGiftSelected()){
+      this.dataAddToBundle.classList.add('not-able')
+      this.dataProcedToGift.classList.remove('not-able')
+      this.dataProcedToGift.setAttribute('disabled',true)
+      this.redirecToPrevious()
+    }
+    else if(this.productSelected < parseInt(this.starterSetSize) && this.isGiftSelected()){
+      this.dataAddToBundle.setAttribute('disabled',true)
+      this.redirecToPrevious()
+    }
+    else if(this.productSelected >= parseInt(this.starterSetSize) && !this.isGiftSelected()){
+      this.dataAddToBundle.classList.add('not-able')
+      this.dataProcedToGift.classList.remove('not-able')
+      this.dataProcedToGift.removeAttribute('disabled')
+    }
 
     //change the state of add to cart button
-    debugger
-    if (!this.cartReadyToSet())
-    this.dataAddToBundle.setAttribute('disabled',!this.cartReadyToSet())
-    else
-    this.dataAddToBundle.removeAttribute('disabled')
+    // if (!this.cartReadyToSet()){
+    //   this.dataAddToBundle.setAttribute('disabled',!this.cartReadyToSet())
+    // }
+    // else{
+    //   this.dataAddToBundle.removeAttribute('disabled')
+    // }
+   
   }
 
   redirecToPrevious(){
@@ -471,16 +493,27 @@ class ProductBundler extends HTMLElement {
         isGiftSelected=true
       }
     }
-    console.log(number_of_active , parseInt(this.starterSetSize) ,isGiftSelected )
-    console.log(number_of_active >= parseInt(this.starterSetSize) && isGiftSelected )
+
     return number_of_active >= parseInt(this.starterSetSize) && isGiftSelected;
+  }
+
+  isGiftSelected(){
+    let isGiftSelected =false
+    for (let lineItem of this.starterSetItems) {
+      if(lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')=="-1" ){
+        isGiftSelected=true
+      }
+    }
+
+    return isGiftSelected;
   }
 
   updateStateOfTabs(){
 
     if (this.productSelected >= parseInt(this.starterSetSize) ) {
       //so go to the next step  
-      this.dataProcedToGift.classList.remove('not-able')
+      this.dataProcedToGift.removeAttribute('disabled')
+      this.dataAddToBundle.removeAttribute('disabled')
     }
   }
 
