@@ -22,11 +22,11 @@
         "rotate_image": 0,
         "image_position": "right",
         "image_size": "half",
-        "disable_media_style": false,
-        "title": "Bundle any 3+ <br>products for <br>30% off!",
+        "disable_media_style": true,
+        "title": "Bundle any 3+ <br> products for 30% <br> off!",
         "title_mobile": "Bundle any 3+ products for 30% off!",
         "heading_size": "heading-template",
-        "richtext": "<p>Each and every bundle also receives<br\/>a free gift on us!<\/p>",
+        "richtext": "<p>Each and every bundle also receives a free gift on us!<\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -53,7 +53,7 @@
     "fe96b71a-faea-4d8a-a32a-70ecce3da9e7": {
       "type": "build-your-bundle",
       "settings": {
-        "title": "Bundle 3 items and save",
+        "title": "Add 3+ items, then add your free gift",
         "richtext": "<p>Simply follow the 3 easy steps below.<\/p>",
         "first_step_title": "Choose Products",
         "second_step_title": "Choose Free Gift",
