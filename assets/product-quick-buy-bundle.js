@@ -76,6 +76,14 @@ window['ThemeSection_ProductQuickBuy'] = ({
         return sortedArray;
       },
       init() {
+        this.product.variants.map(variant=>{
+          variant.compare_at_price= variant.price;
+          variant.price= variant.price*0.7;
+          return variant
+        })
+        console.log(this.product)
+
+
         // Set a product root for nested components
         // to use instead of $root (which refers to their root)
         this.productRoot = this.$root;

@@ -112,8 +112,7 @@
             >
               {{ current_variant.price | money }}
             </span>
-            {% if product.compare_at_price_max > product.price %}
-              <template x-if="current_variant && product.compare_at_price_max && current_variant.compare_at_price > current_variant.price">
+              <template x-if="current_variant && current_variant.compare_at_price > current_variant.price">
                 <span class="{{ price_text_size }}">
                   <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
                   <s data-compare-price
@@ -125,7 +124,6 @@
                   </s>
                 </span>
               </template>
-            {% endif %}
         </div>
 
         <div class="loox-rating rating-part-inner" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>

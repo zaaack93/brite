@@ -617,6 +617,12 @@
       .btn-action.not-able{
         display: none;
       }
+      .btn-bg-secondary{
+        --color-button-background: 153, 215, 231;
+        .push-btn-surface{
+          color: black;
+        }
+      }
 
       .btn-action[disabled]{
         --color-button-background: 222, 222, 222;
@@ -965,8 +971,10 @@
             border-radius: 3px;
             border: 1.5px solid #000;
             width: 96px;
+            height: 96px;
             @media screen and (max-width: 767px){
               width: 77px;
+              height: 77px;
             }
             aspect-ratio: 1;
             .product-image{
@@ -994,7 +1002,9 @@
               font-style: normal;
               font-weight: 700;
               line-height: normal;
-              
+              // @media screen and (min-width: 768px) and (max-width: 1320px){
+              //   font-size: 15px;
+              // }
               @media screen and (max-width: 767px){
                 font-size: 15px;
               }
