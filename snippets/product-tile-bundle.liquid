@@ -51,7 +51,8 @@
       ThemeSection_ProductQuickBuy({
         product: {{ product | json | escape }},
         variant: {{ current_variant | json | escape }},
-        featuredMediaID: {{ featured_media.id | json }}
+        featuredMediaID: {{ featured_media.id | json }},
+        isGift: {{isGift}}
       })"
       {% endif %}
       class="{% if display_on_card %}bg-scheme-card card {% if products_per_row_mobile == '2' %}p-2.5 lg:p-5{% else %}p-5{% endif %} h-full{% endif %} relative pb-media-shadow">

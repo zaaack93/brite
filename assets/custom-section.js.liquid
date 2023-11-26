@@ -430,8 +430,11 @@ class ProductBundler extends HTMLElement {
       lineItem.classList.remove('selected')
       lineItem.setAttribute('js-starter-set-item',"")
     }
+    if (this.cartAmount < 0) {
+      // If true, set it to 0
+      this.cartAmount = 0;
+    }
     this.dataAddToBundleText.textContent=`ADD TO CART - ${formatMoney(this.cartAmount)}`
-    debugger
     //first case should return to the first step because doens't have all the products to construct the bundle
     if(this.productSelected < parseInt(this.starterSetSize) && !this.isGiftSelected()){
       this.dataAddToBundle.classList.add('not-able')

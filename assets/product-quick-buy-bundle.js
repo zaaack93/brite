@@ -2,6 +2,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
     product,
     variant,
     featuredMediaID,
+    isGift
   }) => {
     return {
       productRoot: null,
@@ -15,6 +16,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
       options: [],
       optionHandles: [],
       addedToCart: false,
+      isGift: isGift,
       get currentVariantId() {
         if (this.current_variant) {
           return this.current_variant.id;
@@ -76,12 +78,13 @@ window['ThemeSection_ProductQuickBuy'] = ({
         return sortedArray;
       },
       init() {
-        this.product.variants.map(variant=>{
-          variant.compare_at_price= variant.price;
-          variant.price= variant.price*0.7;
-          return variant
-        })
-        console.log(this.product)
+        if(this.isGift==false){
+          this.product.variants.map(variant=>{
+            variant.compare_at_price= variant.price;
+            variant.price= variant.price*0.7;
+            return variant
+          })
+        }
 
 
         // Set a product root for nested components
