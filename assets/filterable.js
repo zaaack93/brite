@@ -39,7 +39,7 @@ document.addEventListener('alpine:init', () => {
       },
       renderPage(searchParams, event, updateURLHash = true) {
         document.getElementById('facets-results').classList.add('opacity-50');
-        const url = `${window.location.pathname}?section_id=${section_id}&${searchParams}`;
+        const url = `${window.location.pathname}?section_id=${section_id}&${searchParams}&product.tags!=free-gift-product`;
         const filterDataUrl = (element) => element.url === url;
         this.filterData.some(filterDataUrl)
           ? this.renderFromCache(filterDataUrl, event)

@@ -36,6 +36,7 @@
   <div class="{% if layout == 'carousel' %}splide__track {% if settings.product_tiles_scatter %}splide__track--overflow-visible{% endif %} {% if item.settings.display_on_card %}{% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}{% endif %}{% endif %}">
     <ul class="{% if layout == 'carousel' %}splide__list{% endif %} {% if layout == 'grid' %}grid gap-theme {% if mobile_grid_cols == '2' %}grid-cols-2{% else %}grid-cols-1{% endif %} {{ desktop_grid_cols }}{% endif %} {% if settings.product_tiles_scatter %}py-4{% endif %}">
     {%- for product in collection.products limit: item.settings.no_products -%}
+      {% unless product.tags contains "free-gift-product" %}
       <li class="{% if layout == 'carousel' %}splide__slide {{ mobile_slide_width }}{% endif %}">
         {%- liquid
           if settings.product_tiles_scatter
@@ -82,9 +83,10 @@
           enable_quick_buy: section.settings.enable_quick_buy
         -%}
       </li>
+      {%endunless %}
     {%- else -%}
       {% for i in (1..item.settings.no_products) %}
-
+        
         <li class="{% if layout == 'carousel' %}splide__slide {{ mobile_slide_width }}{% endif %}">
           {%- liquid
             if settings.product_tiles_scatter

@@ -46,40 +46,42 @@
                     assign shape_id = section.id | append: '-' | append: forloop.index0
                   endif
                 -%}
-                <li class="">
-                  {%- liquid
-                    if settings.product_tiles_scatter
-                      capture class
-                        case section.settings.products_per_row_mobile
-                          when '2'
-                          cycle 'max-lg:-translate-y-4 ', 'max-lg:translate-y-4 '
-                        endcase
-                        case section.settings.products_per_row_desktop
-                          when 3
-                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                          when 2 or 4
-                            cycle 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                          when 5
-                            cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
-                        endcase
+                {% unless product.tags contains "free-gift-product" %}
+                  <li class="">
+                    {%- liquid
+                      if settings.product_tiles_scatter
+                        capture class
+                          case section.settings.products_per_row_mobile
+                            when '2'
+                            cycle 'max-lg:-translate-y-4 ', 'max-lg:translate-y-4 '
+                          endcase
+                          case section.settings.products_per_row_desktop
+                            when 3
+                              cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                            when 2 or 4
+                              cycle 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                            when 5
+                              cycle 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 ', 'lg:-translate-y-4 ', 'lg:translate-y-4 '
+                          endcase
+                        endcapture
+                      endif
+                      capture odd_even
+                        cycle 'odd', 'even'
                       endcapture
-                    endif
-                    capture odd_even
-                      cycle 'odd', 'even'
-                    endcapture
-                  -%}
-                  {%- render 'product-tile'
-                    product: product,
-                    crop: section.settings.product_tiles_aspect_ratio,
-                    shape_id: shape_id,
-                    shape: image_shape,
-                    display_on_card: section.settings.display_on_card,
-                    class: class,
-                    odd_even: odd_even, 
-                    index: forloop.index0,
-                    enable_quick_buy: section.settings.enable_quick_buy
-                  -%}
-                </li>
+                    -%}
+                    {%- render 'product-tile'
+                      product: product,
+                      crop: section.settings.product_tiles_aspect_ratio,
+                      shape_id: shape_id,
+                      shape: image_shape,
+                      display_on_card: section.settings.display_on_card,
+                      class: class,
+                      odd_even: odd_even, 
+                      index: forloop.index0,
+                      enable_quick_buy: section.settings.enable_quick_buy
+                    -%}
+                  </li>
+              {% endunless %}
               {%- endfor -%}
             </ul>
           </div>
