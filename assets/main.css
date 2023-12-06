@@ -1402,6 +1402,9 @@ image-with-text-options{
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
+.section-build-your-bundle-main .main-section-container .product-tile-bundle .price-with-rating-container .rating-part-inner {
+  display: none;
+}
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .price-with-rating-container .rating-part-inner .loox-rating-content .loox-icon {
   width: 14px;
   height: 14px;
