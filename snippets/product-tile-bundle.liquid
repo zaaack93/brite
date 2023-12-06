@@ -103,28 +103,35 @@
         {%- if enable_quick_buy -%}
         <div class="mt-1.5 price-with-rating-container">
           <div class="price-part-inner">
-            <span class="inline-block custom-font-price"
-              x-html="formatMoney(current_price)"
-              :class="
-                {
-                  'invisible': !current_variant
-                }"
-              data-product-price
-            >
-              {{ current_variant.price | money }}
-            </span>
-              <template x-if="current_variant && current_variant.compare_at_price > current_variant.price">
-                <span class="{{ price_text_size }}">
-                  <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
-                  <s data-compare-price
-                    class="text-scheme-text"
-                    x-html="formatMoney(current_variant.compare_at_price)">
-                    {% if current_variant.compare_at_price > current_variant.price %}
-                      {{ current_variant.compare_at_price | money }}
-                    {% endif %}
-                  </s>
-                </span>
-              </template>
+            {% if isGift %}
+              <s data-compare-price="" class="text-scheme-text">{{ current_variant.price | money }}</s>
+              <span class="inline-block custom-font-price">
+                Free
+              </span>
+            {% else %}
+              <span class="inline-block custom-font-price"
+                x-html="formatMoney(current_price)"
+                :class="
+                  {
+                    'invisible': !current_variant
+                  }"
+                data-product-price
+              >
+                {{ current_variant.price | money }}
+              </span>
+                <template x-if="current_variant && current_variant.compare_at_price > current_variant.price">
+                  <span class="{{ price_text_size }}">
+                    <span class="sr-only">{{ 'products.general.sale_price' | t }}</span>
+                    <s data-compare-price
+                      class="text-scheme-text"
+                      x-html="formatMoney(current_variant.compare_at_price)">
+                      {% if current_variant.compare_at_price > current_variant.price %}
+                        {{ current_variant.compare_at_price | money }}
+                      {% endif %}
+                    </s>
+                  </span>
+                </template>
+            {% endif %}
         </div>
 
         <div class="loox-rating rating-part-inner" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>

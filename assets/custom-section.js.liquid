@@ -368,7 +368,7 @@ class ProductBundler extends HTMLElement {
       lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price)
     }
     else{
-      lineItem.querySelector('.current-details .set-price').textContent= formatMoney(variant.price-(variant.price*this.convertToDecimal(parseInt(this.starterSetAmount))))
+      lineItem.querySelector('.current-details .set-price').textContent= "Free"
     }
   }
 
