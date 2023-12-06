@@ -346,13 +346,6 @@
               "link": "https:\/\/shop.coles.com.au\/a\/national\/everything\/search\/brite?pageNumber=1"
             }
           },
-          "53cd60b9-28a7-4332-9520-0c8ac502c22f": {
-            "type": "stockist_australia",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/Australian_Kmart_Logo_feb46cd4-5281-488d-af6b-fae552c6d955.png",
-              "link": ""
-            }
-          },
           "bde877bf-b4db-4ca1-b8f7-7ddda3629610": {
             "type": "stockist_usa",
             "disabled": true,
@@ -374,7 +367,6 @@
           "01428e42-fa5e-4755-84f5-004ace3d0e59",
           "6fead04c-472d-4629-a431-cc7811a10b09",
           "5bd2fecb-932b-46f1-bcf4-2080dd7d0ada",
-          "53cd60b9-28a7-4332-9520-0c8ac502c22f",
           "bde877bf-b4db-4ca1-b8f7-7ddda3629610"
         ],
         "settings": {

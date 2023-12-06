@@ -173,5 +173,5 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	{{ shop.metafields.loox["global_html_head"] }}
 </head>
   
-    <body data-color-scheme="primary" class="template-{{ template.name }}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+    <body data-color-scheme="primary" class="template-{{ template.name }} {% if template.name == 'index' or template.name == 'page' %} overflow-x-hidden {%endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
   </html>

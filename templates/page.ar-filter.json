@@ -50,11 +50,55 @@
             "color": "bg-scheme-accent text-scheme-accent-overlay",
             "color_scheme": "same_as_section"
           }
+        },
+        "dcb81155-2317-42db-b493-df54aa2ac7af": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 150,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/Instagram_logo_2016_svg.webp",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 62,
+            "vertical_position": 68,
+            "rotate": -46,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "df8bc4f1-a5dc-4406-9f33-2a963a61648b": {
+          "type": "sticker",
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 230,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify:\/\/shop_images\/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.webp",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 75,
+            "vertical_position": 100,
+            "rotate": 18,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
         }
       },
       "block_order": [
         "02a17bc2-8805-440a-9923-1b9a6190d865",
-        "66ae0a28-e726-4c63-93cb-9edd36bd7d07"
+        "66ae0a28-e726-4c63-93cb-9edd36bd7d07",
+        "dcb81155-2317-42db-b493-df54aa2ac7af",
+        "df8bc4f1-a5dc-4406-9f33-2a963a61648b"
       ],
       "settings": {
         "show_text_bg_mobile": true,
@@ -67,13 +111,93 @@
         "image_position": "right",
         "image_size": "half",
         "disable_media_style": false,
-        "title": "Try it on!",
-        "title_mobile": "Try it on!",
+        "title": "Virtual Try On!",
+        "title_mobile": "Virtual Try On!",
         "heading_size": "heading-template",
-        "richtext": "<p>Show off your new style with our Snapchat AR Hair filter.<\/p>",
+        "richtext": "<p>Choose your favourite platform below and test out your new color palette!<\/p>",
         "text_alignment": "text-left",
         "button_link": "https:\/\/www.snapchat.com\/unlock\/?type=SNAPCODE&uuid=5aa754c5dd164ee081233287a0402c83&metadata=01",
-        "button_label": "Try On Snapchat",
+        "button_label": "",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "ad6401dc-0369-4428-8be7-c60fa4abe530": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "template--21538910109987__ad6401dc-0369-4428-8be7-c60fa4abe530-column-1": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "title": "",
+            "text": "",
+            "cta_link": "https:\/\/www.snapchat.com\/unlock\/?type=SNAPCODE&uuid=d8ad90f924754d0d8b889d65784fb8f1&metadata=01",
+            "cta_text": "Try on Snapchat",
+            "color_scheme": "secondary"
+          }
+        },
+        "25dc8c42-3dfc-42b9-9fd1-dd2c38dcba64": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "title": "",
+            "text": "",
+            "cta_link": "https:\/\/www.instagram.com\/ar\/895939718916611\/?ch=YTM3MjVlNTRmOWJlOWU3YzQ0NWEzM2YxMGQ4ZmY1YjU%3D",
+            "cta_text": "Try on Instagram",
+            "color_scheme": "secondary"
+          }
+        },
+        "725f09dd-312a-4e65-8dc6-0a131351174e": {
+          "type": "column",
+          "settings": {
+            "show_image": true,
+            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "title": "",
+            "text": "",
+            "cta_link": "https:\/\/vm.tiktok.com\/ZM6d5PDpA\/",
+            "cta_text": "Try on TikTok",
+            "color_scheme": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "template--21538910109987__ad6401dc-0369-4428-8be7-c60fa4abe530-column-1",
+        "25dc8c42-3dfc-42b9-9fd1-dd2c38dcba64",
+        "725f09dd-312a-4e65-8dc6-0a131351174e"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "slideshow_on_mobile": false,
+        "title": "",
+        "crop": "",
+        "image_shape": "default",
+        "show_index_on_blocks": false,
+        "index_shape": "star_1",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "bdee1032-91c5-41e0-8bd6-8ad6d38697e8": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop Best Sellers",
+        "subheading": "",
+        "collection": "all",
+        "no_products": 4,
+        "show_view_all": true,
+        "enable_quick_buy": false,
+        "display_on_card": true,
+        "layout": "grid",
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "slideshow_focus": "center",
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 40,
+        "autoscroll_mode": "1",
+        "product_tiles_aspect_ratio": "",
+        "image_shape": "",
         "color_scheme": "tertiary",
         "use_gradient_background": false
       }
@@ -81,6 +205,8 @@
   },
   "order": [
     "main",
-    "be679dc6-7a19-4099-af13-fb94cae164c0"
+    "be679dc6-7a19-4099-af13-fb94cae164c0",
+    "ad6401dc-0369-4428-8be7-c60fa4abe530",
+    "bdee1032-91c5-41e0-8bd6-8ad6d38697e8"
   ]
 }

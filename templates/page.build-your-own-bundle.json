@@ -15,7 +15,7 @@
         "text_box_bg": "shopify:\/\/shop_images\/hero_left_bg_bd3ff1a1-a6b4-4067-9aad-82120bf5f5d8.jpg",
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/2_54d6fdb5-5ef5-4986-a65f-bef589119d4b.jpg",
+        "image": "shopify:\/\/shop_images\/BYOB.jpg",
         "crop": "",
         "image_shape": "default",
         "blob_type": 1,
@@ -23,7 +23,7 @@
         "image_position": "right",
         "image_size": "half",
         "disable_media_style": true,
-        "title": "Bundle any 3+ <br> products for 30% <br> off!",
+        "title": "Bundle any 3+ <br> products for <br> 30% off!",
         "title_mobile": "Bundle any 3+ products for 30% off!",
         "heading_size": "heading-template",
         "richtext": "<p>Each and every bundle also receives a free gift on us!<\/p>",
@@ -53,8 +53,8 @@
     "fe96b71a-faea-4d8a-a32a-70ecce3da9e7": {
       "type": "build-your-bundle",
       "settings": {
-        "title": "Add 3+ items, then add your free gift",
-        "richtext": "<p>Simply follow the 3 easy steps below.<\/p>",
+        "title": "Start by choosing 3 or more products",
+        "richtext": "<p>It's easy as 1-2-3 (simply follow the 3 easy steps below). <\/p>",
         "first_step_title": "Choose Products",
         "second_step_title": "Choose Free Gift",
         "third_step_title": "Add to Cart",
