@@ -294,10 +294,12 @@ class ProductBundler extends HTMLElement {
           if(lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')!="-1"){
             formData.append(`items[${index}][id]`, parseInt(lineItem.getAttribute('js-starter-set-item')));
             formData.append(`items[${index}][quantity]`, 1);
+            formData.append(`items[${index}][properties][_bundle-type]`, 'item-product');
           }
           else if (lineItem.getAttribute('js-starter-set-item') !== "" && lineItem.getAttribute('data-set-index')=="-1"){
             formDataGift.append(`items[${index}][id]`, parseInt(lineItem.getAttribute('js-starter-set-item')));
             formDataGift.append(`items[${index}][quantity]`, 1);
+            formDataGift.append(`items[${index}][properties][_bundle-type]`, 'gift-product');
           }
         });
   
