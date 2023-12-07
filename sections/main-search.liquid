@@ -29,13 +29,11 @@
 
 {% assign excludedTag = 'free-gift-product' %}
 {% assign result_search = search.results_count %}
-{{result_search}}
 {% for item in search.results %}
   {% if item.tags contains excludedTag %}
     {% assign result_search = result_search | minus :1 %}
   {%endif%}
 {% endfor %}
-{{result_search}}
 
 <section class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} " data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
 x-data="ThemeSection_filterable('{{ section.id }}')">
