@@ -332,16 +332,17 @@ class ProductBundler extends HTMLElement {
             }
             this.tabItem[2].classList.remove('disabled')
             this.tabItem[2].classList.add('active')
-  
-            if (!document.querySelector('[data-show-on-add="true"]')) {
-              if (this.$refs.added)
-                this.$nextTick(() => this.$refs.added.focus());
-            }
+            document.querySelector('.rdc-cart-icon').click()
+            document.querySelector('.rdc-atc-btn').click()
+            // if (!document.querySelector('[data-show-on-add="true"]')) {
+            //   if (this.$refs.added){
+            //     this.$nextTick(() => this.$refs.added.focus());
+
+            //   }
+            // }
           })
           .catch((error) => {
-            error.json().then((a) => {
-              alert(a.description);
-            });
+            console.log(error)
           }).finally(()=>{
             this.dataAddToBundleText.textContent=this.dataAddToBundleText.textContent.replace('LOADING','ADD TO CART')
           });

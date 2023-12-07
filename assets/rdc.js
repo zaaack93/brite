@@ -679,6 +679,8 @@ let cartAgreement = document.querySelector('input.br-agreement-co-cb')
 const updateCheckoutBtn = function () {
 
 setTimeout(function () {
+  try{
+
 const cartBtns = document.querySelectorAll('.rdc-other-cb')
   
   cartCheckoutBtn = document.querySelector('.rdc-brite-co-btn')
@@ -710,6 +712,10 @@ cartAgreement.addEventListener('click', function (e) {
   }
 
 })
+  }
+  catch(e){
+    console.log("chockout error",e)
+  }
 },1000)
 }
 

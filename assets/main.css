@@ -1350,6 +1350,9 @@ image-with-text-options{
     z-index: 20;
   }
 }
+.section-build-your-bundle-main .main-section-container .product-gift-tile a {
+  pointer-events: none;
+}
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .badge-product-tile {
   min-width: 78px;
   padding-top: 6px;

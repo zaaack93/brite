@@ -649,6 +649,12 @@
         z-index: 20;
       }
     }
+    .product-gift-tile{
+      a{
+        pointer-events: none;
+      }
+    }
+
     .product-tile-bundle{
       //product badge
       .badge-product-tile{

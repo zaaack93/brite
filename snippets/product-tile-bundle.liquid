@@ -43,7 +43,7 @@
 
   {%- if product and product != empty -%}
   <div
-    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false" data-is-gift="{{isGift}}"
+    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %} {% if isGift %} product-gift-tile {%endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false" data-is-gift="{{isGift}}"
   >
     <div
       {% if enable_quick_buy %}
@@ -104,7 +104,7 @@
         <div class="mt-1.5 price-with-rating-container">
           <div class="price-part-inner">
             {% if isGift %}
-              <s data-compare-price="" class="text-scheme-text">{{ current_variant.price | money }}</s>
+              <s data-compare-price="" class="text-scheme-text">{{ current_variant.compare_at_price | money }}</s>
               <span class="inline-block custom-font-price">
                 Free
               </span>
