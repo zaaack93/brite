@@ -7,7 +7,32 @@
   \************************/
 /***/ (() => {
 
+//
+window.addEventListener('shapes:modalcart:cartqtychange', function (e) {
+  console.log(e);
+  var items = e.detail.response.items;
+  // Initialize counters
+  var giftProductCount = 0;
+  var itemProductCount = 0;
 
+  // Iterate through the array
+  items.forEach(function (item) {
+    var bundleType = item.properties["_bundle-type"];
+
+    // Check the bundle type and increment the respective counter
+    if (bundleType === "gift-product") {
+      giftProductCount += item.quantity;
+    } else if (bundleType === "item-product") {
+      itemProductCount += item.quantity;
+    }
+  });
+  if (giftProductCount > 0 && itemProductCount < 3) {
+    //in this cas we need to delete the product fropm the cart
+    setTimeout(function () {
+      document.querySelector('.line-item-product-gift a.rdc-other-cb').click();
+    }, 10);
+  }
+});
 
 /***/ }),
 

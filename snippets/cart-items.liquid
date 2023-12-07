@@ -28,7 +28,7 @@
             {%- capture quantity -%}
 
             <div class="max-w-min">
-              <div class="ml-[0.1rem] {% if template == 'cart' %} lg:flex lg:justify-start lg:ml-0 {% else %}mt-2.5 lg:mt-5{% endif %}">
+              <div class="ml-[0.1rem] quantity-selector-inputs {% if template == 'cart' %} lg:flex lg:justify-start lg:ml-0 {% else %}mt-2.5 lg:mt-5{% endif %}">
                 <label class="sr-only" for="updates_{{ item.key }}">{{ 'cart.label.quantity' | t }}:</label>
                 <div class="max-w-min flex flex-nowrap justify-center items-stretch input p-0 h-8 text-xs lg:text-base text-scheme-text">
                   <button
@@ -78,7 +78,7 @@
 
             <li
               key="{{ item.key }}"
-              class="grid {{ cart_item_grid_container }} py-2.5 lg:py-5"
+          class="grid {{ cart_item_grid_container }} py-2.5 lg:py-5 {% if item.product.tags contains 'free-gift-product' %} line-item-product-gift {%endif%}"
               :class="{ 'opacity-50': locked === $el }"
             >
               <div class="col-span-1 lg:col-span-2 {% if template == 'cart' %} lg:col-span-2 lg:max-w-[166px] {% endif %} row-span-2">

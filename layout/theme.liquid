@@ -216,7 +216,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
       
       {% endcomment %}
-      <script src="{{ 'rdc.js' | asset_url }}"></script>
+      <script src="{{ 'rdc.js' | asset_url }}" defer></script>
+      <script src="{{ 'main.js' | asset_url }}" defer></script>
     
 	{{ shop.metafields.loox["global_html_body"] }}
 </body>

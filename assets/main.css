@@ -704,6 +704,13 @@ image-with-text-options{
   }
 }
 
+.line-item-product-gift a:not(.rdc-other-cb) {
+  pointer-events: none;
+}
+.line-item-product-gift .quantity-selector-inputs {
+  display: none;
+}
+
 .section-build-your-bundle-main :root {
   --gutter-small: 15px;
   --gutter-regular: 25px;

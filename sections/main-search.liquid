@@ -26,6 +26,17 @@
       assign desktop_grid_cols = 'lg:grid-cols-5'
   endcase
 -%}
+
+{% assign excludedTag = 'free-gift-product' %}
+{% assign result_search = search.results_count %}
+{{result_search}}
+{% for item in search.results %}
+  {% if item.tags contains excludedTag %}
+    {% assign result_search = result_search | minus :1 %}
+  {%endif%}
+{% endfor %}
+{{result_search}}
+
 <section class="text-scheme-text bg-scheme-background relative overflow-hidden {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} " data-color-scheme="{{ section.settings.color_scheme | default: 'primary' }}"
 x-data="ThemeSection_filterable('{{ section.id }}')">
   {% if enable_filtering == false and enable_sorting == true %}
@@ -64,22 +75,22 @@ x-data="ThemeSection_filterable('{{ section.id }}')">
     <div id="facets-filterable">
       {% if show_filters or enable_sorting %}
         <div class="hidden" id="facets-results-count">
-          {%- if search.results_count -%}
-            {{ 'general.search.results_with_count' | t: terms: search.results.terms, count: search.results.results_count }}
+          {%- if result_search -%}
+            {{ 'general.search.results_with_count' | t: terms: search.results.terms, count: result_search }}
           {%- endif -%}
         </div>
       {%- endif -%}
       {%- if search.performed -%}
         <div class="text-center mt-10">
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
-          {%- if search.results_count > 0 -%}
-            <p role="status">{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}</p>
+          {%- if result_search > 0 -%}
+            <p role="status">{{ 'general.search.results_with_count' | t: terms: search.terms, count: result_search }}</p>
           {%- endif -%}
         {%- endunless -%}
         {%- if section.settings.enable_filtering and search.filters == empty -%}
-          <p role="status">{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}</p>
+          <p role="status">{{ 'general.search.results_with_count' | t: terms: search.terms, count: result_search }}</p>
         {%- endif -%}
-        {%- if search.results_count == 0 and search.filters == empty -%}
+        {%- if result_search == 0 and search.filters == empty -%}
           <p role="status">{{ 'general.search.no_results' | t: terms: search.terms }}</p>
         {%- endif -%}
         </div>
@@ -128,94 +139,96 @@ x-data="ThemeSection_filterable('{{ section.id }}')">
               <div class="mt-5 lg:mt-10" id="results-grid" data-id="{{ section.id }}">
                 <ul class="grid gap-theme {% if mobile_grid_cols == '2' %}grid-cols-2{% else %}grid-cols-1{% endif %} {{ desktop_grid_cols }}">
                   {%- for item in search.results -%}
-                    <li class="grid__item {% if section.settings.display_on_card %}text-scheme-text card-container{% endif %}">
-                      <div class="text-center {% if section.settings.display_on_card %}card p-5 h-full{% endif %}">
-                      {%- case item.object_type -%}
-                        {%- when 'product' -%}
-                            {%- if item.featured_media -%}
-                            <div class="relative {% unless section.settings.display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
-                              {%- render 'product-tile-media-image',
-                                  media: item.featured_media,
-                                  shape: '',
-                                  is_card: section.settings.display_on_card,
-                                  crop: crop,
-                                  hover_image: false,
-                                  container_id: section.id,
-                                  quick_buy: false,
-                                  product: product,
-                                  index: forloop.index
-                              -%}
-                            </div>
-                            {%- endif -%}
-                            <div class="mt-5 text-center">
-                              <a href="{{ item.url | within: collection }}" class="absolute top-0 left-0 w-full h-full z-10 block">
-                                <span class="visually-hidden">{{ item.title }}</span>
-                              </a>
-                              <h3 class="font-body text-base">{{ item.title | escape }}</h3>
-                              {%- if settings.product_tiles_show_vendor -%}
-                                <p class="mt-1">{{ item.vendor }}</p>
+                    {% unless item.tags contains 'free-gift-product'  %}
+                      <li class="grid__item {% if section.settings.display_on_card %}text-scheme-text card-container{% endif %}">
+                        <div class="text-center {% if section.settings.display_on_card %}card p-5 h-full{% endif %}">
+                        {%- case item.object_type -%}
+                          {%- when 'product' -%}
+                              {%- if item.featured_media -%}
+                              <div class="relative {% unless section.settings.display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
+                                {%- render 'product-tile-media-image',
+                                    media: item.featured_media,
+                                    shape: '',
+                                    is_card: section.settings.display_on_card,
+                                    crop: crop,
+                                    hover_image: false,
+                                    container_id: section.id,
+                                    quick_buy: false,
+                                    product: product,
+                                    index: forloop.index
+                                -%}
+                              </div>
                               {%- endif -%}
-                              {%- liquid
-                                assign target = item
-                                assign compare_at_price = target.compare_at_price
-                                assign price = target.price | default: 1999
-                                if compare_at_price > price
-                                  assign on_sale = true
-                                else
-                                  assign on_sale = false
-                                endif
+                              <div class="mt-5 text-center">
+                                <a href="{{ item.url | within: collection }}" class="absolute top-0 left-0 w-full h-full z-10 block">
+                                  <span class="visually-hidden">{{ item.title }}</span>
+                                </a>
+                                <h3 class="font-body text-base">{{ item.title | escape }}</h3>
+                                {%- if settings.product_tiles_show_vendor -%}
+                                  <p class="mt-1">{{ item.vendor }}</p>
+                                {%- endif -%}
+                                {%- liquid
+                                  assign target = item
+                                  assign compare_at_price = target.compare_at_price
+                                  assign price = target.price | default: 1999
+                                  if compare_at_price > price
+                                    assign on_sale = true
+                                  else
+                                    assign on_sale = false
+                                  endif
 
-                                assign money_price = price | money
-                                if settings.currency_code_enabled
-                                  assign money_price = price | money_with_currency
-                                endif
+                                  assign money_price = price | money
+                                  if settings.currency_code_enabled
+                                    assign money_price = price | money_with_currency
+                                  endif
 
-                                if target == product and product.price_varies
-                                  assign money_price = money_price | append: '+'
-                                endif
-                              -%}
-                              {%- render 'price',
-                                product: item,
-                                price_class: 'mt-1.5',
-                                compare_at_price: compare_at_price,
-                                price: price,
-                                money_price: money_price,
-                                on_sale: on_sale
-                              -%}
+                                  if target == product and product.price_varies
+                                    assign money_price = money_price | append: '+'
+                                  endif
+                                -%}
+                                {%- render 'price',
+                                  product: item,
+                                  price_class: 'mt-1.5',
+                                  compare_at_price: compare_at_price,
+                                  price: price,
+                                  money_price: money_price,
+                                  on_sale: on_sale
+                                -%}
+                              </div>
+                          {%- when 'article' -%}
+                            {%- if item.image -%}
+                              <div class="mb-5 {% unless section.settings.display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
+                                {%- render 'media-image',
+                                    media: item.image,
+                                    shape: '',
+                                    is_card: section.settings.display_on_card,
+                                    crop: crop,
+                                    container_id: section.id,
+                                    index: forloop.index0
+                                -%}
+                              </div>
+                              <h3 class="font-heading heading-secondary">
+                                <a href="{{ item.url }}">
+                                {{ item.title }}
+                                <span class="absolute top-0 left-0 w-full h-full z-10 block"></span>
+                                </a>
+                              </h3>
+                              <time class="font-body text-base mt-2.5 block" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+                            {%- endif -%}
+                          {%- when 'page' -%}
+                            <div class="aspect-w-1 aspect-h-1 flex items-center justify-center">
+                              <h3 class="font-heading text-lg">
+                                <a href="{{ item.url }}">
+                                {{ item.title }}
+                                <span class="absolute top-0 left-0 w-full h-full z-10 block"></span>
+                                </a>
+                              </h3>
                             </div>
-                        {%- when 'article' -%}
-                          {%- if item.image -%}
-                            <div class="mb-5 {% unless section.settings.display_on_card %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}">
-                              {%- render 'media-image',
-                                  media: item.image,
-                                  shape: '',
-                                  is_card: section.settings.display_on_card,
-                                  crop: crop,
-                                  container_id: section.id,
-                                  index: forloop.index0
-                              -%}
-                            </div>
-                            <h3 class="font-heading heading-secondary">
-                              <a href="{{ item.url }}">
-                              {{ item.title }}
-                              <span class="absolute top-0 left-0 w-full h-full z-10 block"></span>
-                              </a>
-                            </h3>
-                            <time class="font-body text-base mt-2.5 block" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
-                          {%- endif -%}
-                        {%- when 'page' -%}
-                          <div class="aspect-w-1 aspect-h-1 flex items-center justify-center">
-                            <h3 class="font-heading text-lg">
-                              <a href="{{ item.url }}">
-                              {{ item.title }}
-                              <span class="absolute top-0 left-0 w-full h-full z-10 block"></span>
-                              </a>
-                            </h3>
-                          </div>
-                      {%- endcase -%}
-                      </div>
-                      {% if section.settings.display_on_card and settings.card_show_border_on_shadow %}<div class="card-border"></div>{% endif %}
-                    </li>
+                        {%- endcase -%}
+                        </div>
+                        {% if section.settings.display_on_card and settings.card_show_border_on_shadow %}<div class="card-border"></div>{% endif %}
+                      </li>
+                    {%endunless%}
                   {%- endfor -%}
                 </ul>
                 {%- if paginate.pages > 1 -%}
