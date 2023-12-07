@@ -245,6 +245,35 @@ class ProductBundler extends HTMLElement {
         });
       });
     });
+    this.tabItem.forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        const tab=e.target.closest('.tab-item');
+        if(tab.classList.contains('active')){
+          if(tab.getAttribute('js-tab-item')==1){
+            this.tabPanels.forEach(tab=>{
+              if(tab.getAttribute('js-tab-panel')==='list-products'){
+                tab.classList.add('active-panel')
+              }
+              else if(tab.getAttribute('js-tab-panel')==='list-gifts'){
+                tab.classList.remove('active-panel')
+              }
+            })
+          }
+          else if(tab.getAttribute('js-tab-item')==2){
+            this.tabPanels.forEach(tab=>{
+              if(tab.getAttribute('js-tab-panel')==='list-products'){
+                tab.classList.remove('active-panel')
+              }
+              else if(tab.getAttribute('js-tab-panel')==='list-gifts'){
+                tab.classList.add('active-panel')
+              }
+            })
+          }
+          
+          this.scrollIntoView({ behavior: 'smooth' });
+        }
+      })
+    })
 
     this.dataAddToBundle.addEventListener('click', (e)=>{
       this.addProductToTheCart()
@@ -313,12 +342,14 @@ class ProductBundler extends HTMLElement {
         
   
         fetch(`${theme.routes.cart_add_url}`, config)
-          .then(data => {
+                  .then(data => {
             // Process the data from the first fetch
             console.log('Data from the first fetch:', data);
-        
             // Second fetch request
-            return fetch(`${theme.routes.cart_add_url}`, configGift);
+            if(!document.querySelector('.line-item-product-gift'))
+              return fetch(`${theme.routes.cart_add_url}`, configGift);
+            else
+              return data
           })
           .then((res) => res.json())
           .then((data) => {
