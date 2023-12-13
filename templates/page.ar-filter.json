@@ -39,7 +39,7 @@
             "sticker_font_size": "1.563rem",
             "image": "shopify:\/\/shop_images\/snapchat-logo-F20CDB1199-seeklogo.com.png",
             "half_image_width_on_mobile": true,
-            "horizontal_position": 86,
+            "horizontal_position": 78,
             "vertical_position": 59,
             "rotate": -18,
             "show_sticker_on_mobile": true,
@@ -60,7 +60,7 @@
             "sticker_font_size": "1.563rem",
             "image": "shopify:\/\/shop_images\/Instagram_logo_2016_svg.webp",
             "half_image_width_on_mobile": true,
-            "horizontal_position": 62,
+            "horizontal_position": 49,
             "vertical_position": 68,
             "rotate": -46,
             "show_sticker_on_mobile": true,
@@ -129,7 +129,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "image": "shopify:\/\/shop_images\/AR.png",
             "title": "",
             "text": "",
             "cta_link": "https:\/\/www.snapchat.com\/unlock\/?type=SNAPCODE&uuid=d8ad90f924754d0d8b889d65784fb8f1&metadata=01",
@@ -141,7 +141,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "image": "shopify:\/\/shop_images\/AR_3.png",
             "title": "",
             "text": "",
             "cta_link": "https:\/\/www.instagram.com\/ar\/895939718916611\/?ch=YTM3MjVlNTRmOWJlOWU3YzQ0NWEzM2YxMGQ4ZmY1YjU%3D",
@@ -153,7 +153,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Try_Now.jpg",
+            "image": "shopify:\/\/shop_images\/AR_2.png",
             "title": "",
             "text": "",
             "cta_link": "https:\/\/vm.tiktok.com\/ZM6d5PDpA\/",
@@ -168,7 +168,7 @@
         "725f09dd-312a-4e65-8dc6-0a131351174e"
       ],
       "settings": {
-        "display_on_card": true,
+        "display_on_card": false,
         "slideshow_on_mobile": false,
         "title": "",
         "crop": "",
@@ -188,7 +188,7 @@
         "no_products": 4,
         "show_view_all": true,
         "enable_quick_buy": false,
-        "display_on_card": true,
+        "display_on_card": false,
         "layout": "grid",
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,

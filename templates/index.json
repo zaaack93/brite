@@ -87,10 +87,10 @@
           "settings": {
             "text": "10M+ HEADS BRITENED",
             "shape": "scalloped_circle_3",
-            "width": 140,
+            "width": 120,
             "sticker_font_size": "1.563rem",
             "half_image_width_on_mobile": false,
-            "horizontal_position": 87,
+            "horizontal_position": 80,
             "vertical_position": 97,
             "rotate": 12,
             "show_sticker_on_mobile": true,
@@ -111,6 +111,7 @@
         "b5547f76-fe82-4752-92f3-41711dcb85fe",
         "9ea8129d-1c7e-4588-94fe-1e570daa7264"
       ],
+      "disabled": true,
       "settings": {
         "text_box_bg": "shopify:\/\/shop_images\/hero_left_bg.jpg",
         "show_text_bg_mobile": true,
@@ -130,6 +131,140 @@
         "text_alignment": "text-left",
         "button_link": "shopify:\/\/collections\/all",
         "button_label": "Shop All Products",
+        "color_scheme": "secondary",
+        "use_gradient_background": false
+      }
+    },
+    "e22dddce-3187-42a5-bc01-102c0d303878": {
+      "type": "image-with-text",
+      "blocks": {
+        "d0b0f9c0-264a-4f90-997b-248f8949f6ea": {
+          "type": "background_shape",
+          "settings": {
+            "shape": "star_4",
+            "blob_type": 1,
+            "size": 130,
+            "opacity": 44,
+            "blur": 25,
+            "horizontal_position": 80,
+            "vertical_position": 58,
+            "rotate": -12,
+            "enable_parallax": true,
+            "parallax_speed": 3,
+            "color": "gradient",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "fb058c14-ea1c-4bb6-9861-b810bdd62179": {
+          "type": "shape_divider",
+          "disabled": true,
+          "settings": {
+            "target_section": "below",
+            "target_section_color_scheme": "secondary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": true,
+            "enable_animation": true,
+            "animation_direction": ""
+          }
+        },
+        "aca74f95-3bd9-46b3-b0ab-7f47465f0536": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 200,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 73,
+            "vertical_position": 77,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 6,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "dd41e3b7-25fc-403c-a154-16a4610275d2": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 120,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 77,
+            "vertical_position": 21,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 8,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "45deef6b-2ec6-41ae-b01a-d8851bb9e853": {
+          "type": "rotating_sticker",
+          "disabled": true,
+          "settings": {
+            "rotating_sticker_img": "shopify:\/\/shop_images\/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
+            "rotating_sticker_text": "10M+ <br>Heads <br>BRITEned"
+          }
+        },
+        "432e83ef-7372-4ac3-ba26-73a1fedd7fea": {
+          "type": "sticker",
+          "settings": {
+            "text": "10M+ HEADS BRITENED",
+            "shape": "scalloped_circle_3",
+            "width": 120,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": false,
+            "horizontal_position": 80,
+            "vertical_position": 97,
+            "rotate": 12,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-gradient text-scheme-text",
+            "color_scheme": "tertiary"
+          }
+        }
+      },
+      "block_order": [
+        "d0b0f9c0-264a-4f90-997b-248f8949f6ea",
+        "fb058c14-ea1c-4bb6-9861-b810bdd62179",
+        "aca74f95-3bd9-46b3-b0ab-7f47465f0536",
+        "dd41e3b7-25fc-403c-a154-16a4610275d2",
+        "45deef6b-2ec6-41ae-b01a-d8851bb9e853",
+        "432e83ef-7372-4ac3-ba26-73a1fedd7fea"
+      ],
+      "settings": {
+        "text_box_bg": "shopify:\/\/shop_images\/hero_left_bg.jpg",
+        "show_text_bg_mobile": true,
+        "display_on_card": false,
+        "image": "shopify:\/\/shop_images\/CHRISTMAS_BUNDLE.jpg",
+        "crop": "",
+        "image_shape": "default",
+        "blob_type": 2,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": true,
+        "title": "Build yourself a <br> Brite bundle",
+        "title_mobile": "Build yourself a Brite bundle",
+        "heading_size": "heading-template",
+        "richtext": "<p>Have a BRITE Christmase with our DIY Bundle Builder. <\/p>",
+        "text_alignment": "text-left",
+        "button_link": "shopify:\/\/pages\/build-your-bundle",
+        "button_label": "Build your own Bundle",
         "color_scheme": "secondary",
         "use_gradient_background": false
       }
@@ -909,6 +1044,7 @@
   },
   "order": [
     "1650891033bae15b05",
+    "e22dddce-3187-42a5-bc01-102c0d303878",
     "1691058444d1e54179",
     "fe3bd225-479c-4281-9a75-bb19df843dc0",
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57",
