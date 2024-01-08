@@ -5,8 +5,9 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/***/ (() => {
+/***/ (function() {
 
+var _this = this;
 //
 window.addEventListener('shapes:modalcart:cartqtychange', function (e) {
   console.log(e);
@@ -20,9 +21,10 @@ window.addEventListener('shapes:modalcart:cartqtychange', function (e) {
     var bundleType = item.properties["_bundle-type"];
 
     // Check the bundle type and increment the respective counter
+    //here i removed the if (bundleType === "item-product")  statement
     if (bundleType === "gift-product") {
       giftProductCount += item.quantity;
-    } else if (bundleType === "item-product") {
+    } else {
       itemProductCount += item.quantity;
     }
   });
@@ -31,6 +33,39 @@ window.addEventListener('shapes:modalcart:cartqtychange', function (e) {
     setTimeout(function () {
       document.querySelector('.line-item-product-gift a.rdc-other-cb').click();
     }, 10);
+  } else if (giftProductCount == 0 && itemProductCount >= 3) {
+    debugger;
+    //in this cas we need to add the product gift to the cart
+
+    var formDataGift = new FormData();
+    var modalCart = theme.settings.cart_type === 'modal';
+    var configGift = fetchConfigDefaults('javascript');
+    if (modalCart) {
+      formDataGift.append('sections', 'cart-items,cart-footer,cart-item-count');
+      formDataGift.append('sections_url', window.location.pathname);
+    }
+    formDataGift.append("id", 47155638632739);
+    formDataGift.append("quantity", 1);
+    formDataGift.append("properties[_bundle-type]", 'gift-product');
+    configGift.body = formDataGift;
+    configGift.headers['X-Requested-With'] = 'XMLHttpRequest';
+    delete configGift.headers['Content-Type'];
+    fetch("".concat(theme.routes.cart_add_url), configGift).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      if (modalCart) {
+        document.body.dispatchEvent(new CustomEvent('shapes:modalcart:afteradditem', {
+          bubbles: true,
+          detail: {
+            response: data
+          }
+        }));
+      }
+    })["catch"](function (error) {
+      console.log(error);
+    })["finally"](function () {
+      _this.dataAddToBundleText.textContent = _this.dataAddToBundleText.textContent.replace('LOADING', 'ADD TO CART');
+    });
   }
 });
 
@@ -69,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
