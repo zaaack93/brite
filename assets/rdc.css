@@ -744,7 +744,9 @@ div#right-drawer-slot .push-btn input {z-index: 1}
   color: #3C86DB;
 text-decoration: underline;
 }
-
+.push-btn-surface.rdc-brite-co-btn{
+  z-index: 1;
+}
 .push-btn.rdc-disabled {cursor: not-allowed}
 .push-btn.rdc-disabled input.rdc-brite-co-btn {background-color: #e5e5e5}
 .push-btn.rdc-disabled:hover input.rdc-brite-co-btn {transform: unset}
