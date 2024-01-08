@@ -696,7 +696,9 @@ cartBtns.forEach(cartBtn => {
     this.classList.remove('rdc-active')
   })
 })
+
 cartAgreement.addEventListener('click', function (e) {
+
    if(!this.classList.contains('rdc-active') && this.checked) {
      console.log('rdc-active')
      this.classList.add('rdc-active')
