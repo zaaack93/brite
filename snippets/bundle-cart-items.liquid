@@ -73,10 +73,10 @@
 
                             if section.settings.discount_amount == 100
                                 assign text = "FREE"
-                                assign font_size = "2.5rem"
+                                assign font_size = "0.75rem"
                             else 
                                 assign text = section.settings.discount_amount | append: '% OFF'
-                                assign font_size = "2rem"
+                                assign font_size = "0.5rem"
                             endif
                             -%}
                             {%- render 'static-sticker',
@@ -111,10 +111,10 @@
 
                                 if section.settings.discount_amount == 100
                                     assign text = "FREE"
-                                    assign font_size = "2.5rem"
+                                    assign font_size = "0.75rem"
                                 else 
                                     assign text = section.settings.discount_amount | append: '% OFF'
-                                    assign font_size = "2rem"
+                                    assign font_size = "0.5rem"
                                 endif
 
                                 -%}

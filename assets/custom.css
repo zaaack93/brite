@@ -7,3 +7,7 @@ Make sure to uncomment out the line in theme.liquid so that this css file is loa
 For more information check out this help guide:
 https://help.switchthemes.co/shapes/advanced/custom-css.html
 */
+
+.tolstoy-stories video {
+  aspect-ratio: 1 !important;
+}

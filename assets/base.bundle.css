@@ -2725,10 +2725,6 @@ body {
   mask-size: 8px;
   z-index: -1;
 }
-.media-drop-shadow-border,
-.media-drop-shadow-stroke {
-  z-index: 0;
-}
 .media-drop-shadow-path {
   fill: var(--color-media-shadow-fill);
 }
@@ -2741,14 +2737,6 @@ body {
   border-radius: var(--media-border-radius);
   border-color: rgb(var(--color-media-border));
   border-width: var(--media-shadow-border-width);
-}
-.media-style-placeholder svg {
-  width: 200px;
-  height: 200px;
-}
-.media-style-placeholder--wide svg {
-  width: 200px;
-  height: 125px;
 }
 .media--small {
   --media-drop-shadow-size: var(--media-drop-shadow-size-half);

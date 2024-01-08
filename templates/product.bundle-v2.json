@@ -278,13 +278,6 @@
             "link": ""
           }
         },
-        "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Australian_Kmart_Logo_1.png",
-            "link": ""
-          }
-        },
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5": {
           "type": "logo",
           "settings": {
@@ -346,7 +339,6 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-1",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-2",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-3",
-        "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
         "78210dc1-c238-49dc-a34b-4cd4e6d0e751",
@@ -779,7 +771,7 @@
       "type": "apps",
       "blocks": {
         "loox-product-reviews": {
-          "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
             "only_photos": false,
             "aggregated": false,

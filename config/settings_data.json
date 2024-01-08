@@ -91,7 +91,10 @@
     "social_instagram_link": "https:\/\/www.instagram.com\/britehair\/",
     "social_tiktok_link": "https:\/\/www.tiktok.com\/@britehair",
     "social_email_link": "hello@briteorganix.com",
+    "cart_icon": "bag",
     "cart_notes_enable": false,
+    "cart_type": "modal",
+    "open_modal_on_add_to_cart": true,
     "favicon": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
     "checkout_logo_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
     "checkout_logo_size": "small",
@@ -379,12 +382,6 @@
     "blocks": {
       "4705145147225299685": {
         "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/widget-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "11532412952436166569": {
-        "type": "shopify:\/\/apps\/loox-product-reviews-photos\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {
         }

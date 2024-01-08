@@ -5,12 +5,15 @@
   </div>
   {%- else -%}
   <div class="sticker-container relative rotate-anim">
+    <div class="absolute sticker-text-container">
+      <div
+        style="clip-path:url(#clip-{{ static_id }})"
+        class="sticker-foreignObject-{{ id }} aspect-w-1 aspect-h-1 p-4 break-words sticker-text top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center text-center leading-none {{ color }}"
+      >
+        {{ text }}
+      </div>
+    </div>
     <svg class="sticker-svg relative max-w-none" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <foreignObject clip-path="url(#clip-{{ static_id }})" width="100%" height="100%">
-        <div class="sticker-foreignObject-{{ id }} aspect-w-1 aspect-h-1 p-4 break-words sticker-text top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center text-center leading-none {{ color }}">
-          {{ text }}
-        </div>
-      </foreignObject>
       <use style="fill: none;" href="#outline-{{ static_id }}" />
     </svg>
     {%- if settings.sticker_drop_shadow_size > 0 -%}
@@ -30,7 +33,8 @@
   }
 
   .sticker-{{ id }} img,
-  .sticker-{{ id }} svg {
+  .sticker-{{ id }} svg,
+  .sticker-{{ id }} .sticker-text-container {
     width: {{ width }}px;
   }
 

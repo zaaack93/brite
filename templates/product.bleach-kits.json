@@ -37,21 +37,6 @@
             "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
-        "loox-rating": {
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "disabled": true,
-          "settings": {
-            "contentSize": 16,
-            "pattern": "",
-            "hideText": false,
-            "alignment": "",
-            "textColor": "",
-            "starColor": "",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": false
-          }
-        },
         "price": {
           "type": "price",
           "disabled": true,
@@ -128,7 +113,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -241,7 +226,6 @@
         "title",
         "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
-        "loox-rating",
         "price",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
@@ -302,13 +286,6 @@
           "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
-            "link": ""
-          }
-        },
-        "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Australian_Kmart_Logo_1.png",
             "link": ""
           }
         },
@@ -373,7 +350,6 @@
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-1",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-2",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-3",
-        "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-4",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-5",
         "template--21313063125283__4feb5dc3-92d7-42d6-b8a6-e4363c192c83-logo-6",
         "0371cc6f-3f67-43e2-86c9-7dc87399d8b8",
@@ -479,6 +455,65 @@
         "use_gradient_background": false
       }
     },
+    "09b2b763-58ce-4795-911e-bf655ab0ce76": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maria.jpg",
+            "rating": "5_stars",
+            "quote": "<p>I did my own highlights on a coloured hair! No odour really effective<\/p>",
+            "source": "Maria I."
+          }
+        },
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BRITE_ECOMM_WEB-6_1000x_6098f4ba-03af-4b91-94cb-d7d7fa06e90a.webp",
+            "rating": "5_stars",
+            "quote": "<p>I love these products, discovered them first at woolies, now they're all I use for dying my hair, trying out this bleach kit for the first time and it didn't damage my hair.<\/p>",
+            "source": "TARAH"
+          }
+        },
+        "5698c551-051f-4055-9759-82a73a1b689f": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/n-YyeXiSr.jpg",
+            "rating": "5_stars",
+            "quote": "<p>i used this on dark brown box-dyed hair, and it lightened it to an orange colour. some pieces of hair (which the bleach was left on for forty-five minutes) lightened to a platinum blonde. i love the product and the brand ❤️.<\/p>",
+            "source": "LUCY"
+          }
+        },
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BRITE_ECOMM_WEB_1000x_2.webp",
+            "rating": "5_stars",
+            "quote": "<p>Luvvv it works wonder on my dark hair every other hair dye l buys never works on my dark hair been using this specific brand for 2 years<\/p>",
+            "source": "Jesus A."
+          }
+        }
+      },
+      "block_order": [
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-1",
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-3",
+        "5698c551-051f-4055-9759-82a73a1b689f",
+        "template--21722353402147__09b2b763-58ce-4795-911e-bf655ab0ce76-testimonial-2"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "title": "HEAR FROM OUR DYE-HARDS",
+        "max_width": 140,
+        "disable_media_style": false,
+        "crop": "aspect-w-1 aspect-h-1",
+        "image_shape": "default_archway",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd": {
       "type": "before-after-with-text-slideshow",
       "blocks": {
@@ -562,7 +597,7 @@
           "type": "shape_divider",
           "settings": {
             "target_section": "above",
-            "target_section_color_scheme": "primary",
+            "target_section_color_scheme": "tertiary",
             "style": "medium-waves_1200x43",
             "flip_horizontal": false,
             "enable_animation": false,
@@ -735,93 +770,6 @@
         "padding_bottom_mobile": 42
       }
     },
-    "941029c2-e1a4-4694-9ce9-e9c63efed86e": {
-      "type": "scrolling-videos",
-      "blocks": {
-        "96b43c76-0c55-40b0-bf76-95f5a06e1671": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "video_img": "shopify:\/\/shop_images\/Screen_Shot_2022-10-10_at_12.23.28_pm.png"
-          }
-        },
-        "acde03d4-3d03-406f-b3eb-c7830fcae14f": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "video_img": "shopify:\/\/shop_images\/Bleach_Hero_Large_64375afb-db44-4b3f-8672-48eabadd88b5.jpg"
-          }
-        },
-        "babc364d-b24a-412f-b768-b254cafab45c": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "video_img": "shopify:\/\/shop_images\/brite_tiktok_img_1-2.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "96b43c76-0c55-40b0-bf76-95f5a06e1671",
-        "acde03d4-3d03-406f-b3eb-c7830fcae14f",
-        "babc364d-b24a-412f-b768-b254cafab45c"
-      ],
-      "disabled": true,
-      "settings": {
-        "section_header": "GET BLEACHED",
-        "short_text": "Watch our community get expressive with our signature Bleach Kits.",
-        "button_text": "Check out more on",
-        "button_link": "",
-        "button_icon": "shopify:\/\/shop_images\/tiktok_icon_8917efd8-2745-43ef-971f-4d84d32e8ef2.png"
-      }
-    },
-    "1bb3293b-4166-4127-acbf-4378e30cbe81": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "title": "",
-        "style": "full",
-        "cover_image": "shopify:\/\/shop_images\/Shop_All_Hero_Large_d2f3fa6f-4029-4f93-ba28-808430be2869.jpg",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "aspect_ratio": "16:9",
-        "color_scheme": "primary",
-        "use_gradient_background": false
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true,
-        "display_on_card": false,
-        "enable_quick_buy": false,
-        "product_recommendations_heading": "You may also like",
-        "max_products": "6",
-        "product_tiles_aspect_ratio": "",
-        "image_shape": "default_archway",
-        "color_scheme": "tertiary",
-        "use_gradient_background": false
-      }
-    },
-    "loox-product-reviews-app-section": {
-      "type": "apps",
-      "blocks": {
-        "loox-product-reviews": {
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 920
-          }
-        }
-      },
-      "block_order": [
-        "loox-product-reviews"
-      ],
-      "settings": {
-      }
-    },
     "b9840557-6047-445f-8e23-ec62568e83c0": {
       "type": "featured-collection",
       "blocks": {
@@ -870,39 +818,6 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
-    },
-    "1691702316a265b1ef": {
-      "type": "apps",
-      "blocks": {
-        "e06db6e3-1830-4cb7-83f2-13d9a4369101": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "publishId"
-          }
-        }
-      },
-      "block_order": [
-        "e06db6e3-1830-4cb7-83f2-13d9a4369101"
-      ],
-      "disabled": true,
-      "settings": {
-      }
-    },
-    "1691705782b1a68713": {
-      "type": "apps",
-      "blocks": {
-        "92abd682-2549-4eb6-a685-db2df1513cf0": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "92abd682-2549-4eb6-a685-db2df1513cf0"
-      ],
-      "disabled": true,
-      "settings": {
-      }
     }
   },
   "order": [
@@ -910,15 +825,10 @@
     "4feb5dc3-92d7-42d6-b8a6-e4363c192c83",
     "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
     "cc2a2e2b-79a1-488a-9004-0db944388dd6",
+    "09b2b763-58ce-4795-911e-bf655ab0ce76",
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
-    "941029c2-e1a4-4694-9ce9-e9c63efed86e",
-    "1bb3293b-4166-4127-acbf-4378e30cbe81",
-    "product-recommendations",
-    "loox-product-reviews-app-section",
-    "b9840557-6047-445f-8e23-ec62568e83c0",
-    "1691702316a265b1ef",
-    "1691705782b1a68713"
+    "b9840557-6047-445f-8e23-ec62568e83c0"
   ]
 }

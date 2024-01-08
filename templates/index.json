@@ -222,8 +222,8 @@
           "settings": {
             "text": "10M+ HEADS BRITENED",
             "shape": "scalloped_circle_3",
-            "width": 120,
-            "sticker_font_size": "1.563rem",
+            "width": 130,
+            "sticker_font_size": "1rem",
             "half_image_width_on_mobile": false,
             "horizontal_position": 80,
             "vertical_position": 97,
@@ -261,7 +261,7 @@
         "title": "Build yourself a <br> Brite bundle",
         "title_mobile": "Build yourself a Brite bundle",
         "heading_size": "heading-template",
-        "richtext": "<p>Have a BRITE Christmase with our DIY Bundle Builder. <\/p>",
+        "richtext": "<p>Bundle & Save with our DIY Bundle Builder. <\/p>",
         "text_alignment": "text-left",
         "button_link": "shopify:\/\/pages\/build-your-bundle",
         "button_label": "Build your own Bundle",
@@ -273,7 +273,7 @@
       "type": "apps",
       "blocks": {
         "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "xs4fw5jmdxndf"
           }

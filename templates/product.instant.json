@@ -41,7 +41,7 @@
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}\n\n\n\n<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating=\"{{ product.metafields.loox.avg_rating }}\" data-raters=\"{{ product.metafields.loox.num_reviews }}\"><\/div>\n<\/div>"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
           }
         },
         "77814407-81ac-45cc-bec9-3c912089591b": {
@@ -104,7 +104,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -359,6 +359,56 @@
         "title": "Find us AT YOUR FAVE",
         "max_width": 190,
         "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "97b4d93d-db78-4dc7-bdcb-a855641caa56": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BRITE_ECOMM_WEB-20_5b6b09a8-9869-4a7d-9978-4d2ec01f163b.jpg",
+            "rating": "5_stars",
+            "quote": "<p>I love this colour, a vibrant jade\/ blue green, like a mermaid.<\/p>",
+            "source": "Tarah"
+          }
+        },
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-2": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "rating": "5_stars",
+            "quote": "<p>A quote from a customer or staff member can help show of your products' unique selling points.<\/p>",
+            "source": "Source"
+          }
+        },
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-3": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "rating": "5_stars",
+            "quote": "<p>A quote from a customer or staff member can help show of your products' unique selling points.<\/p>",
+            "source": "Source"
+          }
+        }
+      },
+      "block_order": [
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-1",
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-2",
+        "template--21722353565987__97b4d93d-db78-4dc7-bdcb-a855641caa56-testimonial-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": true,
+        "title": "Hear from our DYE-HARDS",
+        "max_width": 100,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "color_scheme": "tertiary",
         "use_gradient_background": false
       }
     },
@@ -804,6 +854,7 @@
       "block_order": [
         "loox-product-reviews"
       ],
+      "disabled": true,
       "settings": {
       }
     },
@@ -860,7 +911,7 @@
       "type": "apps",
       "blocks": {
         "e06db6e3-1830-4cb7-83f2-13d9a4369101": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/hero-video-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "publishId"
           }
@@ -893,6 +944,7 @@
   "order": [
     "main",
     "4feb5dc3-92d7-42d6-b8a6-e4363c192c83",
+    "97b4d93d-db78-4dc7-bdcb-a855641caa56",
     "d616a1f9-639f-4b23-bbbd-50365d969911",
     "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
