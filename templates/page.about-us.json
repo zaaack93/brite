@@ -6,14 +6,14 @@
         "template--21366353592611__9b3cdfd5-13ce-4099-b764-a3ed68aaf617-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/AboutUs.png",
+            "image": "shopify:\/\/shop_images\/Brite_-_Bleach_rose_toner_4721bae5-fe73-496d-8b74-69daad77c602.jpg",
             "title": "About Us",
             "richtext": "",
             "cta_url": "",
             "cta_text": "Shop Now",
             "place_content": "inherit",
             "text_align": "inherit",
-            "text_overlay_color": "same_as_section"
+            "text_overlay_color": "white"
           }
         }
       },
@@ -48,7 +48,7 @@
         "title": "Our Genesis: The Brite Spark",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>It all started in 2012 with Bex Gold's eureka moment – a world where vivacious hair didn't come at Mother Nature's expense. Imagine a hair dye that’s more 'eco-chic' than 'eco-bleak.' Brite splashed onto the scene, bringing a kaleidoscope of cruelty-free colors that turned heads and hearts towards a more responsible way of being bold and beautiful.<br\/><\/p>",
+        "richtext": "<p>It all started in 2012 with a eureka moment – a world where vivacious hair didn't come at Mother Nature's expense. Imagine a hair dye that’s more 'eco-chic' than 'eco-bleak.' Brite splashed onto the scene, bringing a kaleidoscope of cruelty-free colors that turned heads and hearts towards a more responsible way of being bold and beautiful.<\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -58,6 +58,7 @@
     },
     "19c55e4b-dc2d-44c1-ad78-8fa5ae0a83e9": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
@@ -193,10 +194,10 @@
         "image_position": "left",
         "image_size": "half",
         "disable_media_style": false,
-        "title": "Looking Ahead: The Future Is Brite",
+        "title": "Looking Ahead: The Brite Future",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>Under Bex Gold’s leadership, we're not just anticipating the future; we're creating it. Brite is on a mission to expand, innovate, and diversify. And as for what's in store in the future? Think AI, think community-led innovations, think your fav hair color and care with a paintbrush in one hand and a green manifesto in the other. So buckle up – Brite’s future isn't just bright, it's full-blown radiant. <\/p>",
+        "richtext": "<p>We're not just anticipating the future; we're creating it. Brite is on a mission to expand, innovate, and diversify. And as for what's in store in the future? Think AI, think community-led innovations, think your fav hair color and care with a paintbrush in one hand and a green manifesto in the other. So buckle up – Brite’s future isn't just bright, it's full-blown radiant. <\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
