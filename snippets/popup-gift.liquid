@@ -1,0 +1,31 @@
+<div class="box">
+	<a class="button" href="#popup1">Let me Pop up</a>
+</div>
+<!--popup1-->
+<div id="popup1" class="popup-container gift-popup-wrapper">
+    <div class="popup-content main-section-container">
+      <a href="#" class="close">&times;</a>
+      <h3>You're eligible to receive a free gift.</h3>
+      {% assign product_gift = all_products['liquid-hair-chalk-test'] %}
+      {%- liquid
+        capture odd_even
+          cycle 'odd', 'even'
+        endcapture
+    
+        assign shape_id = item.id
+        if image_shape == 'blob'
+          assign shape_id = item.id | append: '-' | append: forloop.index0
+        endif
+      -%}
+      {%- render 'product-tile-gift'
+        product: product_gift,
+        isGift: true,
+        shape: image_shape,
+        shape_id: shape_id,
+        odd_even: odd_even,
+        index: forloop.index0,
+        products_per_row_mobile: section.settings.products_per_row_mobile,
+        enable_quick_buy: true
+      -%}
+    </div>
+  </div>

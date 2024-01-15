@@ -1,4 +1,4 @@
-.section-build-your-bundle-main {
+.section-build-your-bundle-main,.gift-popup-wrapper {
   :root {
     --gutter-small: 15px;
     --gutter-regular: 25px;
@@ -695,9 +695,9 @@
       }
 
       div[class^="sticker-metafield-sticker--"], div[class^="sticker-sold-out-sticker--"]{
-        top: 50px !important;
-        left: 95% !important;
-        transform: rotate(5deg) translate(-50%, -50%) !important;
+        top: 43px !important;
+        left: 98% !important;
+        transform: rotate(5deg) translate(-100%, -50%) !important;
       }
       
       .custom-font-price{
