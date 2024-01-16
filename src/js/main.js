@@ -18,8 +18,7 @@ window.addEventListener('shapes:modalcart:cartqtychange', (e) => {
             itemProductCount+=item.quantity;
         }
     });
-
-    if(giftProductCount>0 && itemProductCount<3){
+    if(document.querySelector('.line-item-product-gift')!=null && itemProductCount<=3){
         //in this cas we need to delete the product fropm the cart
         setTimeout(()=>{
             document.querySelector('.line-item-product-gift a.rdc-other-cb').click()
