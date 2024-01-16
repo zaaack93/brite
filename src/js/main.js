@@ -25,44 +25,44 @@ window.addEventListener('shapes:modalcart:cartqtychange', (e) => {
             document.querySelector('.line-item-product-gift a.rdc-other-cb').click()
         },10)
     }
-    else if (giftProductCount==0 && itemProductCount>=3){
-        debugger
-        //in this cas we need to add the product gift to the cart
+    // else if (giftProductCount==0 && itemProductCount>=3){
+    //     debugger
+    //     //in this cas we need to add the product gift to the cart
 
-        const formDataGift = new FormData();
-        let modalCart = theme.settings.cart_type === 'modal';
-        const configGift = fetchConfigDefaults('javascript');
+    //     const formDataGift = new FormData();
+    //     let modalCart = theme.settings.cart_type === 'modal';
+    //     const configGift = fetchConfigDefaults('javascript');
   
-        if (modalCart) {
-          formDataGift.append('sections', 'cart-items,cart-footer,cart-item-count');
-          formDataGift.append('sections_url', window.location.pathname);
-        }
+    //     if (modalCart) {
+    //       formDataGift.append('sections', 'cart-items,cart-footer,cart-item-count');
+    //       formDataGift.append('sections_url', window.location.pathname);
+    //     }
 
-        formDataGift.append(`id`, 47155638632739);
-        formDataGift.append(`quantity`, 1);
-        formDataGift.append(`properties[_bundle-type]`, 'gift-product');
+    //     formDataGift.append(`id`, 47155638632739);
+    //     formDataGift.append(`quantity`, 1);
+    //     formDataGift.append(`properties[_bundle-type]`, 'gift-product');
 
-        configGift.body = formDataGift;
-        configGift.headers['X-Requested-With'] = 'XMLHttpRequest';
-        delete configGift.headers['Content-Type'];
+    //     configGift.body = formDataGift;
+    //     configGift.headers['X-Requested-With'] = 'XMLHttpRequest';
+    //     delete configGift.headers['Content-Type'];
         
   
-        fetch(`${theme.routes.cart_add_url}`, configGift)
-          .then((res) => res.json())
-          .then((data) => {
-            if (modalCart) {
-              document.body.dispatchEvent(
-                new CustomEvent('shapes:modalcart:afteradditem', {
-                  bubbles: true,
-                  detail: { response: data },
-                })
-              );
-            }
-          })
-          .catch((error) => {
-            console.log(error)
-          }).finally(()=>{
-            this.dataAddToBundleText.textContent=this.dataAddToBundleText.textContent.replace('LOADING','ADD TO CART')
-          });
-    }
+    //     fetch(`${theme.routes.cart_add_url}`, configGift)
+    //       .then((res) => res.json())
+    //       .then((data) => {
+    //         if (modalCart) {
+    //           document.body.dispatchEvent(
+    //             new CustomEvent('shapes:modalcart:afteradditem', {
+    //               bubbles: true,
+    //               detail: { response: data },
+    //             })
+    //           );
+    //         }
+    //       })
+    //       .catch((error) => {
+    //         console.log(error)
+    //       }).finally(()=>{
+    //         this.dataAddToBundleText.textContent=this.dataAddToBundleText.textContent.replace('LOADING','ADD TO CART')
+    //       });
+    // }
 });

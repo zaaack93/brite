@@ -11,7 +11,7 @@
               <span x-text="$store.cart_count.countWithText()"></span>
             </span>
           </h1>
-          <button @click.prevent="$store.modals.close('cart')" class="block top-0">
+          <button @click.prevent="$store.modals.close('cart')" class="block top-0 button-close-drawer" >
             <span class="sr-only">{{ 'general.accessibility.close_modal' | t }}</span>
             <span class="rdc-cart-close inline-block w-5 h-5">{% render 'icon-close' %}</span>
           </button>

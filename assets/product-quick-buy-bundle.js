@@ -81,7 +81,7 @@ window['ThemeSection_ProductQuickBuy'] = ({
         if(this.isGift==false){
           this.product.variants.map(variant=>{
             variant.compare_at_price= variant.price;
-            variant.price= variant.price*0.7;
+            variant.price= variant.price*0.8;
             return variant
           })
         }

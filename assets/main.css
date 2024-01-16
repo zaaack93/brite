@@ -1855,6 +1855,9 @@ scroll-wrapper-slider.without-scroll .inner_container_items::-webkit-scrollbar {
   max-width: 350px;
   min-width: 250px;
 }
+.popup-content .option-values-container .variant-input-swatch {
+  display: inline-block !important;
+}
 
 .popup-content p {
   font-size: 17px;
@@ -1886,7 +1889,7 @@ scroll-wrapper-slider.without-scroll .inner_container_items::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.popup-container:target {
+.visible-popup.popup-container:target {
   visibility: visible;
   opacity: 1;
   transform: scale(1);

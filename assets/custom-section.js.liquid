@@ -344,7 +344,6 @@ class ProductBundler extends HTMLElement {
         fetch(`${theme.routes.cart_add_url}`, config)
                   .then(data => {
             // Process the data from the first fetch
-            console.log('Data from the first fetch:', data);
             // Second fetch request
             if(!document.querySelector('.line-item-product-gift'))
               return fetch(`${theme.routes.cart_add_url}`, configGift);
@@ -619,3 +618,76 @@ class ProductBundler extends HTMLElement {
 }
 
 customElements.define("product-bundler", ProductBundler);
+
+// JavaScript
+class PopupGift extends HTMLElement {
+  constructor() {
+    super();
+    this.fromPopup=false;
+    this.addQteHandler()
+
+     // Add event listener to the submit button
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.addEventListener('click', this.onSubmitButtonClick.bind(this));
+  }
+
+  onSubmitButtonClick() {
+      // Handle submit button click
+      this.hidePopup()
+      this.fromPopup=true;
+      document.querySelector('#CartButton').click();
+    }
+
+  addQteHandler(e) {
+    window.addEventListener('shapes:modalcart:afteradditem', (e) => {
+      if(!this.fromPopup){
+        const cartItems = document.querySelector('.line-item-product-gift');
+        if(parseInt(document.querySelector('.cart-item-counts').textContent)>=3 && cartItems==null){
+          document.querySelector('.button-close-drawer').click();
+          this.showPopup()
+        }
+      }
+      this.fromPopup=false;
+    })
+    window.addEventListener('shapes:modalcart:cartqtychange', (e) => {
+      const originalTarget = e.detail.originalTarget
+      const {items} = e.detail.response
+
+      const cartItems = document.querySelector('.line-item-product-gift');
+      // Initialize counters
+      let giftProductCount = 0;
+      let itemProductCount = 0;
+
+    // Iterate through the array
+      items.forEach(item => {
+          const bundleType = item.properties["_bundle-type"];
+
+          // Check the bundle type and increment the respective counter
+          //here i removed the if (bundleType === "item-product")  statement
+          if (bundleType === "gift-product") {
+              giftProductCount+=item.quantity;
+          } else {
+              itemProductCount+=item.quantity;
+          }
+        });
+
+        if (giftProductCount==0 && itemProductCount>=3 && cartItems==null){
+          document.querySelector('.button-close-drawer').click();
+          this.showPopup()
+        }
+        this.fromPopup=false;
+      });
+  }
+
+  showPopup() {
+      this.classList.add('visible-popup')
+      window.location.hash = 'freeGift';
+    }
+
+    hidePopup() {
+      this.classList.add('remove')
+      window.location.hash = '';
+    }
+}
+
+customElements.define('popup-gift', PopupGift);

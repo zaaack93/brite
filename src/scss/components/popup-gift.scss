@@ -21,6 +21,11 @@
   width: 50%;
   max-width: 350px;
   min-width: 250px;
+  .option-values-container{
+    .variant-input-swatch{
+      display: inline-block !important;
+    }
+  }
 }
 .popup-content p{
   font-size: 17px;
@@ -51,7 +56,7 @@ color:#333;
   cursor: pointer;
 }
 
-.popup-container:target{
+.visible-popup.popup-container:target{
 visibility: visible;
 opacity: 1;
 transform: scale(1);
