@@ -640,9 +640,14 @@ class PopupGift extends HTMLElement {
 
   addQteHandler(e) {
     window.addEventListener('shapes:modalcart:afteradditem', (e) => {
+      //debugger
+      const sections = e.detail.response.sections
+      const item_count=parseInt(parseDOMFromString(sections['cart-item-count']).firstElementChild.innerText.trim())
+      const cart_items=parseDOMFromString(sections['cart-items'])
+
       if(!this.fromPopup){
-        const cartItems = document.querySelector('.line-item-product-gift');
-        if(parseInt(document.querySelector('.cart-item-counts').textContent)>=3 && cartItems==null){
+        const cartItems = cart_items.body.querySelector('.line-item-product-gift');
+        if(item_count>=3 && cartItems==null){
           document.querySelector('.button-close-drawer').click();
           this.showPopup()
         }
