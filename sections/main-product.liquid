@@ -893,6 +893,55 @@
       ]
     },
     {
+      "type": "variant_list_v2",
+      "name": "Variant list picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "display_on_card",
+          "label": "Display on card",
+          "default": false,
+          "info": "Adjacent product blocks set to display on card will merge into a single card. [Learn more](https://help.switchthemes.co/shapes/guides/display-product-blocks-on-cards.html)"
+        },
+        {
+          "type": "radio",
+          "id": "option_style",
+          "label": "Options style",
+          "options": [
+            {
+              "value": "drop_down",
+              "label": "Drop down"
+            },
+            {
+              "value": "buttons",
+              "label": "Button"
+            }
+          ],
+          "default": "drop_down"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_option_labels",
+          "label": "Hide option labels",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Color swatches"
+        },
+        {
+          "type": "paragraph",
+          "content": "[Learn how to set up swatches](https://help.switchthemes.co/)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_color_swatches",
+          "label": "Enable color swatches"
+        }
+      ]
+    },
+    {
       "type": "buy_buttons_quantity",
       "name": "Buy buttons with quantity",
       "limit": 1,

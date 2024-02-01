@@ -53,6 +53,16 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "option_style": "buttons",
+            "hide_option_labels": false,
+            "enable_color_swatches": true
+          }
+        },
+        "variant_list_v2_N69MNQ": {
+          "type": "variant_list_v2",
           "settings": {
             "display_on_card": false,
             "option_style": "buttons",
@@ -220,6 +230,7 @@
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
+        "variant_list_v2_N69MNQ",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",

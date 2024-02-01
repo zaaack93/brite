@@ -220,6 +220,17 @@
                     endif
                     render 'product-block-variant-picker', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
                   -%}
+
+                {% when 'variant_list_v2' %}
+                  {%- liquid
+                      if block.settings.hide_option_labels
+                        assign label_class = 'sr-only'
+                      else
+                        assign label_class = 'block font-secondary text-scheme-text text-sm'
+                      endif
+                      render 'product-block-variant-list', product: product, block: block, label_class: label_class, block_base_classes: block_base_classes
+                  -%}
+
                 {% when 'quantity_selector' %}
                   {% render 'product-block-quantity',
                     product_form_id: product_form_id,

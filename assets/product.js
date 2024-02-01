@@ -258,6 +258,56 @@ window["ThemeSection_Product"] = ({
         }
       }
     },
+    updateVariantById(variantId) {
+      const matchedVariant = this.product.variants.find(
+        (variant) => variant.id === variantId
+      );
+      this.current_variant = matchedVariant;
+
+      if (this.current_variant) {
+        variantLiveRegion(this.current_variant);
+        this.updateStoreAvailability(this.current_variant);
+
+        if (this.current_variant.featured_media) {
+          this.current_media_id = this.current_variant.featured_media.id;
+        }
+        const url = ShopifyProductForm.getUrlWithVariant(
+          window.location.href,
+          this.current_variant.id
+        );
+
+        window.history.replaceState(
+          {
+            path: url,
+          },
+          "",
+          url
+        );
+
+        this.$refs.singleVariantSelector.dispatchEvent(
+          new Event("change", {
+            bubbles: true,
+          })
+        );
+        this.$root.dispatchEvent(
+          new CustomEvent("shapes:product:variantchange", {
+            bubbles: true,
+            detail: {
+              variant: this.current_variant,
+            },
+          })
+        );
+
+        if (document.querySelector(".currentPrice .money")) {
+          document.querySelector(".currentPrice .money").innerHTML =
+            formatMoney(this.current_variant.price);
+        }
+
+        
+      }
+
+    },
+
     optionChange(name, value,color) {
       this.getOptions();
 

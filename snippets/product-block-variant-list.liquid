@@ -1,0 +1,103 @@
+{% unless product.has_only_default_variant %}
+    <div
+      class="rdc-p-relative {{ block_base_classes }}"
+      {{ block.shopify_attributes }}
+    >
+      {% assign option_style = block.settings.option_style %}
+      {% for option in product.options_with_values %}
+        {% liquid
+          if block.settings.enable_color_swatches
+            assign is_color = false
+            assign swatch_trigger = 'products.product.color_swatch_trigger' | t | downcase
+            assign option_downcase = option.name | downcase
+            if option_downcase contains swatch_trigger
+              assign is_color = true
+            elsif swatch_trigger == 'color' and option_downcase contains 'colour'
+              assign is_color = true
+            endif
+          endif
+        %}
+        {% assign option_array_index = forloop.index0 %}
+   {% if is_color %} 
+   
+   <icon-links-slider class="{% unless forloop.first %} product-block {%endunless%}">
+              <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 rdc-d-flex rdc-ai-c">
+                <span>{{ option.name | replace :" (color)","" | replace :" (Color)","" }}:</span>{% if is_color %}<span class="mt-1 inline-block  rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
+              </legend> 
+              <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
+              <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
+              {% endif %}
+        <div class="rdc-vp-fieldset-wrapper content_icon_container  {% unless forloop.first or is_color %} product-block {%endunless%}">
+        <fieldset class="product-variant-picker-block {% if is_color %}-mx-color-fieldset-offset {% endif %} js-enabled">
+          <div class="my-1 lg:flex lg:items-center lg:justify-start rdc-ff-c rdc-ai-fs">
+            {% unless is_color %}
+              <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 rdc-d-flex rdc-ai-c">
+                <span>{{ option.name }}:</span><span class="mt-1 inline-block  rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>
+              </legend>
+            {% endunless %}
+            <div class="rdc-vp-outer">
+              <div class="mt-2.5 flex flex-wrap lg:flex-1 rdc-vp-inner">
+                {% for variant in product.variants %}
+                  {% assign value = variant.title %}
+                  {% assign variant_label_state = variant.available %}
+                  {% assign color_image = 'https:' | append: value | handle | append: '.png' | file_img_url: '120x' %}
+                  {% assign color_swatch_fallback = value | split: ' ' | last | handle %}
+                  {% assign forloopIndex = forloop.index0 %}
+                  {% assign tagForCurrentOption = "swatch-image-for-option-" | append : option.name | replace : ' ','-' | downcase %}
+                  <div class="{% if is_color and  product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption %}variant-input-with-image {% elsif is_color %}variant-input-without-image {% endif %} inline-block relative variant-input" data-option-name="{{option.name}}" data-option-value="{{value}}">
+
+                    <input
+                      class="{% if is_color %}color-swatch{% endif %} cursor-pointer rdc-variant-picker absolute top-0 left-0 w-full h-full opacity-0"
+                      @change="updateVariantById({{ variant.id }})"
+                      type="radio"
+                      id="Section-{{ section.id }}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
+                      value="{{ value | escape }}"
+                      data-handle="{{ value | handleize }}"
+                      {% if variant.id == value or variant.id == product.selected_or_first_available_variant.id %} checked{% endif %} data-single-option-selector
+                    >
+                    <label
+                      :class="
+                        {
+                          {% if is_color %}
+                            'shadow-none' : optionHandles[{{ option_array_index }}] !== '{{ value | handleize }}'
+                          {% else %}
+                          'bg-scheme-secondary-background text-scheme-text shadow-secondary' : optionHandles[{{ option_array_index }}] !== '{{ value | handleize }}',
+                            'bg-scheme-text ' : optionHandles[{{ option_array_index }}] === '{{ value | handleize }}'
+                          {% endif %}
+                        }
+                      "
+                      class="btn after:hidden
+                        {% if is_color %}p-1 bg-scheme-secondary-background
+                          {%else%}
+                          input-autre-option 
+                        {% endif %}
+                        cursor-pointer
+                        {% unless variant_label_state %}
+                          line-through
+                        {% endunless %}
+                        cursor-pointer"
+                      for="Section-{{ section.id }}-Option{{ option.position }}-{{ value | escape }}"
+                      title="{{ option.value }}"
+                    >
+                      {% if product.tags contains 'image-swatch' or product.tags contains tagForCurrentOption %}
+                        <span class="rdc-imgvariant-picker {% if variant.available == false %}rdc-o-5{% endif %}"><img src="{{ variant.featured_image | img_url: "100x" }}"></span>
+                      {% else %}
+                        <span class="btn after:none block w-8 h-8 bg-cover" style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"></span>
+                      {% endif %}
+                      <span {% if is_color %}class="sr-only"{% endif %}>{{ value }}</span>
+                    </label>
+                    </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </fieldset>
+  
+          </div>
+          {% if is_color %} 
+      </icon-links-slider>
+      {%endif%}
+      {% endfor %}
+    </div>
+  {% endunless %}
+  
