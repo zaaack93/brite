@@ -179,7 +179,7 @@
         "type": "announcement-bar",
         "settings": {
           "show_announcement_bar": false,
-          "home_page_only": true,
+          "home_page_only": false,
           "display": "marquee",
           "text": "SHOP THE HALLOWEEN SPECIAL",
           "link": "shopify:\/\/products\/halloween-special-liquid-hair-chalks",
