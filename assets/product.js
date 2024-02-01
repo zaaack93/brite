@@ -258,7 +258,7 @@ window["ThemeSection_Product"] = ({
         }
       }
     },
-    updateVariantById(variantId) {
+    updateVariantById(variantId,color) {
       const matchedVariant = this.product.variants.find(
         (variant) => variant.id === variantId
       );
@@ -267,6 +267,12 @@ window["ThemeSection_Product"] = ({
       if (this.current_variant) {
         variantLiveRegion(this.current_variant);
         this.updateStoreAvailability(this.current_variant);
+
+        //update text
+        const colors_span= this.productRoot.querySelectorAll('.selected_color')
+        colors_span.forEach((span)=>{
+          span.innerHTML=this.current_variant.options[0]
+        })
 
         if (this.current_variant.featured_media) {
           this.current_media_id = this.current_variant.featured_media.id;
@@ -306,6 +312,53 @@ window["ThemeSection_Product"] = ({
         
       }
 
+
+      //update colors
+      const product_container = document.querySelector(
+        '.product-content[sync-color="true"]'
+      );
+      if(color && product_container){
+      this.currentColor=color
+        const rgbaColor = this.hexToRGBA(color, 1);
+
+        //working on lox icons
+        const loox__icons = product_container.querySelectorAll(".loox-icon");
+        loox__icons.forEach((icon) => {
+          icon.style.color = rgbaColor;
+        });
+
+        //wokrin on icon ticks
+        const icon_ticks =
+          product_container.querySelectorAll(".icon-container");
+        icon_ticks.forEach((icon) => {
+          if (icon.querySelector("svg"))
+            icon.querySelector("svg").style.fill = rgbaColor;
+          if (icon.querySelector("svg path"))
+            icon.querySelector("svg path").style.fill = rgbaColor;
+        });
+
+        //working on add to cart button
+        const add_to_cart_btn = product_container.querySelector(".rdc-atc-btn");
+        if (add_to_cart_btn) {
+          add_to_cart_btn.style.color = "white";
+          add_to_cart_btn.style.background = rgbaColor;
+        }
+
+        //reset style for all
+        const allbuttons = product_container.querySelectorAll(
+          ".variant-input .input-autre-option"
+        );
+        allbuttons.forEach((input) => {
+          input.style.background = "transparent";
+        });
+        //set now the style
+        const inputOptions = product_container.querySelectorAll(
+          ".variant-input .rdc-variant-picker:checked + .input-autre-option"
+        );
+        inputOptions.forEach((input) => {
+          input.style.background =this.hexToRGBA(color, 0.5);
+        });
+      }
     },
 
     optionChange(name, value,color) {

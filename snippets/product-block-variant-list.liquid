@@ -20,9 +20,9 @@
         {% assign option_array_index = forloop.index0 %}
    {% if is_color %} 
    
-   <icon-links-slider class="{% unless forloop.first %} product-block {%endunless%}">
+   <icon-links-slider class="{% unless forloop.first %} product-block hide {%endunless%}">
               <legend class="{{ label_class }} font-heading heading-secondary lg:w-1/4 xl:w-1/5 lg:shrink-0 rdc-d-flex rdc-ai-c">
-                <span>{{ option.name | replace :" (color)","" | replace :" (Color)","" }}:</span>{% if is_color %}<span class="mt-1 inline-block  rdc-mt-0" x-text="options[{{ forloop.index0 }}]"></span>{% endif %}
+                <span>Color :</span>{% if is_color %}<span class="mt-1 inline-block  rdc-mt-0 selected_color"></span>{% endif %}
               </legend> 
               <div class="rdc-vp-more left-button">{% render 'icon-chevron-down' %}</div>
               <div class="rdc-vp-more right-button">{% render 'icon-chevron-down' %}</div>
@@ -48,7 +48,7 @@
 
                     <input
                       class="{% if is_color %}color-swatch{% endif %} cursor-pointer rdc-variant-picker absolute top-0 left-0 w-full h-full opacity-0"
-                      @change="updateVariantById({{ variant.id }})"
+                      @change="updateVariantById({{ variant.id }},'{{variant.metafields.custom.color}}')"
                       type="radio"
                       id="Section-{{ section.id }}-Option{{ option.position }}-{{ value | escape }}" name="Section-{{ section.id }}-options[{{ option.name }}]"
                       value="{{ value | escape }}"
