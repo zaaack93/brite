@@ -22,7 +22,7 @@
 
 <div class="price
   {%- if price_class %} {{ price_class }}{% endif -%}
-  {%- if compare_at_price > price %} price--on-sale {% endif -%}
+  {%- if compare_at_price > price %} price--on-sale rdc-d-flex rdc-jc-sb rdc-ai-c{% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare {% endif -%}
   {% if colorsAvail %} rdc-d-flex rdc-jc-sb rdc-ai-c{% endif %}">
   <div class="price__container">
@@ -72,7 +72,6 @@
     </small>
   </div>
 
-  
      <div class="br-pc-color-count">
        {% if product.tags contains "no_colors" %}
         <span>{{ colorCount }} Types</span>
