@@ -71,14 +71,14 @@
       </span>
     </small>
   </div>
-
+    {% if colorCount != blank %}
      <div class="br-pc-color-count">
        {% if product.tags contains "no_colors" %}
         <span>{{ colorCount }} Types</span>
-        {% else %}
+        {% elsif colorCount != blank %}
          <span>{{ colorCount }} Colours</span>
           {% endif %}
          
       </div>
- 
+    {% endif %}
 </div>
