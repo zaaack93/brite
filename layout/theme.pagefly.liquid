@@ -4,7 +4,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% endcomment %}
 <!doctype html>
   <html class="no-js" lang="{{ request.locale.iso_code }}">
-    <head>{% render 'pagefly-head' %}
+    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -169,7 +169,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       </script>
     <script type="module" src="{{ 'custom-section.js' | asset_url }}"></script>
 	{{ shop.metafields.loox["global_html_head"] }}
-</head>
+
+{% include 'pagefly-app-header' %}</head>
   
-    <body data-color-scheme="primary" class="template-{{ template.name }} {% if template.name == 'index' or template.name == 'page' %} overflow-x-hidden {%endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+    <body data-color-scheme="primary" class="template-{{ template.name }} {% if template.name == 'index' or template.name == 'page' %} overflow-x-hidden {%endif %}"><div class="pagefly-container">
+              {{ content_for_layout }}
+            </div></body>
   </html>
