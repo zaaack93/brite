@@ -259,7 +259,7 @@
         "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32"
       ],
       "settings": {
-        "header": "SHOP THE RANGE",
+        "header": "SHOP BY RANGE",
         "short_text": "<p>Choose from our bestselling ranges below.<\/p>",
         "cta_text": "",
         "btn_link": "shopify:\/\/collections\/all",
@@ -706,6 +706,7 @@
     },
     "16644402366062ca99": {
       "type": "video",
+      "disabled": true,
       "settings": {
         "title": "But don't take our word for it",
         "style": "full",

@@ -228,8 +228,8 @@
           "show_payment_icons": true,
           "show_country_selector": true,
           "show_locale_selector": false,
-          "color_scheme": "tertiary",
-          "use_gradient_background": true
+          "color_scheme": "secondary",
+          "use_gradient_background": false
         }
       },
       "call-to-action": {

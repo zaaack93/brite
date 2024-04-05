@@ -108,15 +108,6 @@
             "publishId": "w1p0r7yavqugq"
           }
         },
-        "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
-          "type": "description",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "truncate_description": false,
-            "text_align": "text-left"
-          }
-        },
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23": {
           "type": "collapsible_tab",
           "settings": {
@@ -125,6 +116,15 @@
             "heading": "Description",
             "content": "{{ product.description }}",
             "page": ""
+          }
+        },
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "truncate_description": false,
+            "text_align": "text-left"
           }
         },
         "682edc47-bae9-48f5-b971-93b9a703fec5": {
@@ -225,8 +225,8 @@
         "75822277-d417-4ea9-8313-5fc4e2f57483",
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
-        "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
         "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
         "47038e2f-b337-41bd-920d-c5c616182ccf",
@@ -805,7 +805,7 @@
         "title": "Tell me what's your flavour",
         "subheading": "",
         "collection": "all",
-        "no_products": 6,
+        "no_products": 12,
         "show_view_all": false,
         "enable_quick_buy": false,
         "display_on_card": false,
