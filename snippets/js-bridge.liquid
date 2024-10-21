@@ -46,7 +46,7 @@
       open_modal_on_add_to_cart: {{ settings.open_modal_on_add_to_cart | json }}
     },
     {% if template.name == 'product' %}
-      {% assign values = product.options_with_values | downcase%}
+      {% assign values = product.options | downcase%}
         {% if values contains 'color' %}
           product_options:[
             {% for variant in product.variants %}

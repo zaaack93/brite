@@ -466,25 +466,25 @@ before-after-slider {
             border-radius: 10px;
             cursor: ew-resize;
           }
-        .slider-button {
-            pointer-events: none;
-            position: absolute;
-            width: 59px;
-            height: 59px;
-            border-radius: 50%;
-            background-color: white;
-            left: calc(50% - 31px);
-            top: calc(50% - 28px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 5;
-            @media only screen and (max-width: 600px) {
-                width: 31px;
-                height: 31px;
-                left: calc(50% - 16px);
-                top: calc(50% - 18px);
-            }
+    }
+    .slider-button {
+        pointer-events: none;
+        position: absolute;
+        width: 59px;
+        height: 59px;
+        border-radius: 50%;
+        background-color: white;
+        left: calc(50% - 31px);
+        top: calc(50% - 28px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        @media only screen and (max-width: 600px) {
+            width: 31px;
+            height: 31px;
+            left: calc(50% - 16px);
+            top: calc(50% - 18px);
         }
     }
 }

@@ -87,17 +87,16 @@ class ImageWithTextOptions extends HTMLElement {
     const checkAvailibility = (event) => {
       
       this.items.forEach(color_option => {
-        color_option.setAttribute('available-option',false)
-        
-        const filtred_items = theme.product_options.filter(item => {
+        //color_option.setAttribute('available-option',false)
+        const filtred_items = theme.product_options?.filter(item => {
           return item.options.some(item => item === event.detail.option)   
         })
-        if(filtred_items.length!=0){
+        if(filtred_items && filtred_items.length!=0){
           const colors = filtred_items.filter(item => {
             return item.options.some(item => item === color_option.getAttribute('title'))   
           })
           if(colors.length!=0){
-            color_option.setAttribute('available-option',true)
+            //color_option.setAttribute('available-option',true)
           }
         }
       });
@@ -107,9 +106,9 @@ class ImageWithTextOptions extends HTMLElement {
       this.querySelector('.current-option-name').innerHTML="Default"
       this.items.forEach(color_option => {
         color_option.setAttribute('checked-option',false)
-        const filtred_items = theme.product_options.filter(item => {
-          return item.title == event.detail.variant 
-        })
+          const filtred_items = theme.product_options?.filter(item => {
+            return item.title == event.detail.variant 
+          })
         if(filtred_items){
           const colors = filtred_items.filter(item => {
             return item.options.some(item => item === color_option.getAttribute('title'))  
@@ -126,7 +125,7 @@ class ImageWithTextOptions extends HTMLElement {
 
     const clearAllChecks = (event) => {
       this.items.forEach(color_option => {
-        color_option.setAttribute('available-option',false)
+        //color_option.setAttribute('available-option',false)
       })
     }
 
