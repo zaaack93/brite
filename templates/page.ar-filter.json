@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -37,7 +46,7 @@
             "shape": "star_1",
             "width": 150,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/snapchat-logo-F20CDB1199-seeklogo.com.png",
+            "image": "shopify://shop_images/snapchat-logo-F20CDB1199-seeklogo.com.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 78,
             "vertical_position": 59,
@@ -58,7 +67,7 @@
             "shape": "star_1",
             "width": 150,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/Instagram_logo_2016_svg.webp",
+            "image": "shopify://shop_images/Instagram_logo_2016_svg.webp",
             "half_image_width_on_mobile": true,
             "horizontal_position": 49,
             "vertical_position": 68,
@@ -79,7 +88,7 @@
             "shape": "star_1",
             "width": 230,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.webp",
+            "image": "shopify://shop_images/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.webp",
             "half_image_width_on_mobile": true,
             "horizontal_position": 75,
             "vertical_position": 100,
@@ -103,7 +112,7 @@
       "settings": {
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-08_at_11.07.11_pm_0c209a25-acd3-4f69-9f42-cb8b5ae51f54.png",
+        "image": "shopify://shop_images/Screen_Shot_2022-08-08_at_11.07.11_pm_0c209a25-acd3-4f69-9f42-cb8b5ae51f54.png",
         "crop": "",
         "image_shape": "star_1",
         "blob_type": 6,
@@ -114,9 +123,9 @@
         "title": "Virtual Try On!",
         "title_mobile": "Virtual Try On!",
         "heading_size": "heading-template",
-        "richtext": "<p>Choose your favourite platform below and test out your new color palette!<\/p>",
+        "richtext": "<p>Choose your favourite platform below and test out your new color palette!</p>",
         "text_alignment": "text-left",
-        "button_link": "https:\/\/www.snapchat.com\/unlock\/?type=SNAPCODE&uuid=5aa754c5dd164ee081233287a0402c83&metadata=01",
+        "button_link": "https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=5aa754c5dd164ee081233287a0402c83&metadata=01",
         "button_label": "",
         "color_scheme": "tertiary",
         "use_gradient_background": false
@@ -129,10 +138,10 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/AR.png",
+            "image": "shopify://shop_images/AR.png",
             "title": "",
             "text": "",
-            "cta_link": "https:\/\/www.snapchat.com\/unlock\/?type=SNAPCODE&uuid=d8ad90f924754d0d8b889d65784fb8f1&metadata=01",
+            "cta_link": "https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=d8ad90f924754d0d8b889d65784fb8f1&metadata=01",
             "cta_text": "Try on Snapchat",
             "color_scheme": "secondary"
           }
@@ -141,10 +150,10 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/AR_3.png",
+            "image": "shopify://shop_images/AR_3.png",
             "title": "",
             "text": "",
-            "cta_link": "https:\/\/www.instagram.com\/ar\/895939718916611\/?ch=YTM3MjVlNTRmOWJlOWU3YzQ0NWEzM2YxMGQ4ZmY1YjU%3D",
+            "cta_link": "https://www.instagram.com/ar/895939718916611/?ch=YTM3MjVlNTRmOWJlOWU3YzQ0NWEzM2YxMGQ4ZmY1YjU%3D",
             "cta_text": "Try on Instagram",
             "color_scheme": "secondary"
           }
@@ -153,10 +162,10 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/AR_2.png",
+            "image": "shopify://shop_images/AR_2.png",
             "title": "",
             "text": "",
-            "cta_link": "https:\/\/vm.tiktok.com\/ZM6d5PDpA\/",
+            "cta_link": "https://vm.tiktok.com/ZM6d5PDpA/",
             "cta_text": "Try on TikTok",
             "color_scheme": "secondary"
           }

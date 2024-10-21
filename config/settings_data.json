@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_primary_text": "#000000",
@@ -88,15 +97,15 @@
     "search_pages": false,
     "sharing_display": "icons",
     "social_style": "icons",
-    "social_instagram_link": "https:\/\/www.instagram.com\/britehair\/",
-    "social_tiktok_link": "https:\/\/www.tiktok.com\/@britehair",
+    "social_instagram_link": "https://www.instagram.com/britehair/",
+    "social_tiktok_link": "https://www.tiktok.com/@britehair",
     "social_email_link": "hello@briteorganix.com",
     "cart_icon": "bag",
     "cart_notes_enable": false,
     "cart_type": "modal",
     "open_modal_on_add_to_cart": true,
-    "favicon": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
+    "favicon": "shopify://shop_images/BRITE_CleanColor_pink_00-removebg-preview.png",
+    "checkout_logo_image": "shopify://shop_images/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
     "checkout_logo_size": "small",
     "checkout_accent_color": "#ecb3ff",
     "checkout_button_color": "#98d7e7",
@@ -140,7 +149,7 @@
           "f91fbdec-fc3d-458e-9911-ed02d5cf16ac": {
             "type": "feature_desktop_link",
             "settings": {
-              "button_link": "shopify:\/\/pages\/build-your-bundle",
+              "button_link": "shopify://pages/build-your-bundle",
               "button_label": "Build Your Bundle",
               "position": "right_of_cart",
               "hide_button_shadow": false
@@ -151,7 +160,7 @@
           "f91fbdec-fc3d-458e-9911-ed02d5cf16ac"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
+          "logo": "shopify://shop_images/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
           "logo_max_width": 130,
           "main_linklist": "new-site-main-menu",
           "show_all_navigation_links": false,
@@ -182,7 +191,7 @@
           "home_page_only": false,
           "display": "marquee",
           "text": "SHOP THE HALLOWEEN SPECIAL",
-          "link": "shopify:\/\/products\/halloween-special-liquid-hair-chalks",
+          "link": "shopify://products/halloween-special-liquid-hair-chalks",
           "color_scheme": "quaternary",
           "use_gradient_background": true,
           "repeat_text": true,
@@ -198,7 +207,7 @@
           "868215c4-8610-44ed-b7c5-06791186cf1f": {
             "type": "tagline_and_social_links",
             "settings": {
-              "tagline": "<p>BRITE is all about ethical hair care and colour. <\/p><p>We hope we make your world a little BRITER everyday.<\/p>",
+              "tagline": "<p>BRITE is all about ethical hair care and colour. </p><p>We hope we make your world a little BRITER everyday.</p>",
               "show_social_icons": true
             }
           },
@@ -223,13 +232,13 @@
           "88bf6a9f-e17c-4183-ac78-95eb3b52c80a"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
+          "logo": "shopify://shop_images/Brite_logo_2018_bw_b35c1034-0f8c-4ed2-b8ee-a2f36761db93.png",
           "logo_max_width": 130,
           "show_payment_icons": true,
           "show_country_selector": true,
           "show_locale_selector": false,
-          "color_scheme": "secondary",
-          "use_gradient_background": false
+          "color_scheme": "tertiary",
+          "use_gradient_background": true
         }
       },
       "call-to-action": {
@@ -238,7 +247,7 @@
           "enable": false,
           "animate_in": false,
           "text": "Shop\nAll",
-          "url": "shopify:\/\/collections\/all",
+          "url": "shopify://collections/all",
           "shape": "star_1",
           "width": 130,
           "sticker_font_size": "1.563rem",
@@ -255,7 +264,7 @@
           "enable": false,
           "logo_max_width": 100,
           "title": "Age verification",
-          "text": "<p>Are you over 21 years of age?<\/p>",
+          "text": "<p>Are you over 21 years of age?</p>",
           "display_on_card": true,
           "mode": "buttons",
           "yes_button_text": "Yes",
@@ -273,88 +282,88 @@
           "1b8304fa-fd92-463a-91ee-d2a8117a133b": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Walmart_logo_993637ad-2a72-4204-b472-f8e753cf1ff2.png",
-              "link": "https:\/\/www.walmart.com\/c\/brand\/brite"
+              "logo": "shopify://shop_images/Walmart_logo_993637ad-2a72-4204-b472-f8e753cf1ff2.png",
+              "link": "https://www.walmart.com/c/brand/brite"
             }
           },
           "6888b46f-93ba-4b2a-8ddb-174a698bf388": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/image_243.png",
-              "link": "https:\/\/www.target.com\/b\/brite\/-\/N-o3wia"
+              "logo": "shopify://shop_images/image_243.png",
+              "link": "https://www.target.com/b/brite/-/N-o3wia"
             }
           },
           "3bc45826-bc1f-4ef9-9221-b61d1c6d8ef0": {
             "type": "stockist_usa",
             "disabled": true,
             "settings": {
-              "logo": "shopify:\/\/shop_images\/sally-beauty-logo-freelogovectors_2b63eb64-ae75-4d83-a8e7-3a4ace07b327.png",
+              "logo": "shopify://shop_images/sally-beauty-logo-freelogovectors_2b63eb64-ae75-4d83-a8e7-3a4ace07b327.png",
               "link": ""
             }
           },
           "2a91f2b9-e3e5-417b-8d84-5099814a2f3f": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Meijer_logo_2039bb73-0db9-4408-b03b-26c7c2c49d91.png",
+              "logo": "shopify://shop_images/Meijer_logo_2039bb73-0db9-4408-b03b-26c7c2c49d91.png",
               "link": ""
             }
           },
           "c9d7a179-013b-41f9-9e9f-8e1273e7db8c": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/1200px-JCPenney_logo_5377aaf7-73d9-424a-a3e3-c1c6407a992d.png",
-              "link": "https:\/\/www.jcpenney.com\/s?searchTerm=brite+hair"
+              "logo": "shopify://shop_images/1200px-JCPenney_logo_5377aaf7-73d9-424a-a3e3-c1c6407a992d.png",
+              "link": "https://www.jcpenney.com/s?searchTerm=brite+hair"
             }
           },
           "ffc48fa1-838d-4179-bab6-309d0d49aee5": {
             "type": "stockist_usa",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/desktoplogo.png",
-              "link": "https:\/\/www.bedbathandbeyond.com\/store\/s\/brite-hair"
+              "logo": "shopify://shop_images/desktoplogo.png",
+              "link": "https://www.bedbathandbeyond.com/store/s/brite-hair"
             }
           },
           "f900adcb-7e56-454b-a249-deff0a990bc4": {
             "type": "stockist_uk",
             "disabled": true,
             "settings": {
-              "logo": "shopify:\/\/shop_images\/image_284.png",
-              "link": "https:\/\/www.superdrug.com\/brite\/b\/401177"
+              "logo": "shopify://shop_images/image_284.png",
+              "link": "https://www.superdrug.com/brite/b/401177"
             }
           },
           "2c12b3c0-9f53-47f5-a2df-054b1500420d": {
             "type": "stockist_australia",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/image_280.png",
-              "link": "https:\/\/www.priceline.com.au\/brand\/brite-organix"
+              "logo": "shopify://shop_images/image_280.png",
+              "link": "https://www.priceline.com.au/brand/brite-organix"
             }
           },
           "01428e42-fa5e-4755-84f5-004ace3d0e59": {
             "type": "stockist_australia",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Woolworths-logo-png-horizontal.png",
-              "link": "https:\/\/www.woolworths.com.au\/shop\/productgroup\/brite-hair-colors"
+              "logo": "shopify://shop_images/Woolworths-logo-png-horizontal.png",
+              "link": "https://www.woolworths.com.au/shop/productgroup/brite-hair-colors"
             }
           },
           "6fead04c-472d-4629-a431-cc7811a10b09": {
             "type": "stockist_australia",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/image_282.png",
-              "link": "https:\/\/www.chemistwarehouse.com.au\/shop-online\/5574\/brite-haircare"
+              "logo": "shopify://shop_images/image_282.png",
+              "link": "https://www.chemistwarehouse.com.au/shop-online/5574/brite-haircare"
             }
           },
           "5bd2fecb-932b-46f1-bcf4-2080dd7d0ada": {
             "type": "stockist_australia",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/image_281.png",
-              "link": "https:\/\/shop.coles.com.au\/a\/national\/everything\/search\/brite?pageNumber=1"
+              "logo": "shopify://shop_images/image_281.png",
+              "link": "https://shop.coles.com.au/a/national/everything/search/brite?pageNumber=1"
             }
           },
           "bde877bf-b4db-4ca1-b8f7-7ddda3629610": {
             "type": "stockist_usa",
             "disabled": true,
             "settings": {
-              "logo": "shopify:\/\/shop_images\/1200px-CVS_Logo_2016_8cf82077-f908-4664-9008-af62983de8e1.png",
-              "link": "https:\/\/www.cvs.com\/shop\/brite-cruelty-free-vegan-semi-permanent-instant-hair-color-3-38-oz-prodid-3080005"
+              "logo": "shopify://shop_images/1200px-CVS_Logo_2016_8cf82077-f908-4664-9008-af62983de8e1.png",
+              "link": "https://www.cvs.com/shop/brite-cruelty-free-vegan-semi-permanent-instant-hair-color-3-38-oz-prodid-3080005"
             }
           }
         },
@@ -381,20 +390,20 @@
     ],
     "blocks": {
       "4705145147225299685": {
-        "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/widget-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/widget-block/06fa8282-42ff-403e-b67c-1936776aed11",
         "disabled": false,
         "settings": {
         }
       },
       "pagefly-page-builder": {
-        "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": true,
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
         "settings": {
         }
       }
@@ -619,7 +628,7 @@
             "enable": false,
             "logo_max_width": 100,
             "title": "Age verification",
-            "text": "<p>Are you over 21 years of age?<\/p>",
+            "text": "<p>Are you over 21 years of age?</p>",
             "display_on_card": true,
             "mode": "buttons",
             "yes_button_text": "Yes",
@@ -850,7 +859,7 @@
             "enable": false,
             "logo_max_width": 100,
             "title": "Age verification",
-            "text": "<p>Are you over 21 years of age?<\/p>",
+            "text": "<p>Are you over 21 years of age?</p>",
             "display_on_card": true,
             "mode": "buttons",
             "yes_button_text": "Yes",
@@ -1095,7 +1104,7 @@
             "enable": false,
             "logo_max_width": 100,
             "title": "Age verification",
-            "text": "<p>Are you over 21 years of age?<\/p>",
+            "text": "<p>Are you over 21 years of age?</p>",
             "display_on_card": true,
             "mode": "buttons",
             "yes_button_text": "Yes",

@@ -1,8 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "parent": "index.json",
   "context": {
     "market": "us"
   },
   "sections": {
+    "1650891033bae15b05": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "9ea8129d-1c7e-4588-94fe-1e570daa7264": {
+          "settings": {
+            "text": "10M+ HEADS BRITENED"
+          }
+        }
+      }
+    }
   }
 }

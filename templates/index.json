@@ -1,5 +1,149 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "1650891033bae15b05": {
+      "type": "image-with-text",
+      "blocks": {
+        "fd63bf46-7b83-450b-9205-e98d3bb15657": {
+          "type": "background_shape",
+          "settings": {
+            "shape": "star_4",
+            "blob_type": 1,
+            "size": 130,
+            "opacity": 44,
+            "blur": 25,
+            "horizontal_position": 80,
+            "vertical_position": 58,
+            "rotate": -12,
+            "enable_parallax": true,
+            "parallax_speed": 3,
+            "color": "gradient",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "7de8f682-42c1-4705-b9ea-207f66e0c04e": {
+          "type": "shape_divider",
+          "disabled": true,
+          "settings": {
+            "target_section": "below",
+            "target_section_color_scheme": "secondary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": true,
+            "enable_animation": true,
+            "animation_direction": ""
+          }
+        },
+        "175e66d3-20ec-47c8-b628-6580300f4f5f": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 200,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 73,
+            "vertical_position": 77,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 6,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "140e7989-8375-45bf-b75f-61897a50b73a": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 120,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 77,
+            "vertical_position": 21,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": true,
+            "parallax_speed": 8,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
+        },
+        "b5547f76-fe82-4752-92f3-41711dcb85fe": {
+          "type": "rotating_sticker",
+          "disabled": true,
+          "settings": {
+            "rotating_sticker_img": "shopify://shop_images/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
+            "rotating_sticker_text": "10M+ <br>Heads <br>BRITEned"
+          }
+        },
+        "9ea8129d-1c7e-4588-94fe-1e570daa7264": {
+          "type": "sticker",
+          "settings": {
+            "text": "10M+ HEADS BRITENED",
+            "shape": "scalloped_circle_3",
+            "width": 120,
+            "sticker_font_size": "1.563rem",
+            "half_image_width_on_mobile": false,
+            "horizontal_position": 80,
+            "vertical_position": 97,
+            "rotate": 12,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-gradient text-scheme-text",
+            "color_scheme": "tertiary"
+          }
+        }
+      },
+      "block_order": [
+        "fd63bf46-7b83-450b-9205-e98d3bb15657",
+        "7de8f682-42c1-4705-b9ea-207f66e0c04e",
+        "175e66d3-20ec-47c8-b628-6580300f4f5f",
+        "140e7989-8375-45bf-b75f-61897a50b73a",
+        "b5547f76-fe82-4752-92f3-41711dcb85fe",
+        "9ea8129d-1c7e-4588-94fe-1e570daa7264"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_box_bg": "shopify://shop_images/hero_left_bg.jpg",
+        "show_text_bg_mobile": true,
+        "display_on_card": false,
+        "image": "shopify://shop_images/2_2077b7b7-2bfa-45f9-b74c-95408c7b71df.jpg",
+        "crop": "",
+        "image_shape": "default",
+        "blob_type": 2,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": true,
+        "title": "Make your world<br>a little briter",
+        "title_mobile": "Make your world a little briter",
+        "heading_size": "heading-template",
+        "richtext": "<p>Proudly: Ethical, Vegan, Cruelty Free. <em>Duh</em>!</p>",
+        "text_alignment": "text-left",
+        "button_link": "shopify://collections/all",
+        "button_label": "Shop All Products",
+        "color_scheme": "secondary",
+        "use_gradient_background": false
+      }
+    },
     "e22dddce-3187-42a5-bc01-102c0d303878": {
       "type": "image-with-text",
       "blocks": {
@@ -78,7 +222,7 @@
           "type": "rotating_sticker",
           "disabled": true,
           "settings": {
-            "rotating_sticker_img": "shopify:\/\/shop_images\/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
+            "rotating_sticker_img": "shopify://shop_images/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
             "rotating_sticker_text": "10M+ <br>Heads <br>BRITEned"
           }
         },
@@ -112,9 +256,10 @@
         "432e83ef-7372-4ac3-ba26-73a1fedd7fea"
       ],
       "settings": {
+        "text_box_bg": "shopify://shop_images/hero_left_bg.jpg",
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/Brite_Bonds_Hero_Banner.jpg",
+        "image": "shopify://shop_images/14_1.png",
         "crop": "",
         "image_shape": "default",
         "blob_type": 2,
@@ -122,14 +267,14 @@
         "image_position": "right",
         "image_size": "half",
         "disable_media_style": true,
-        "title": "The Ultimate <br> Hair Repair <br> Routine",
-        "title_mobile": "The Ultimate Hair Repair Routine",
+        "title": "Build yourself a <br> Brite bundle",
+        "title_mobile": "Build yourself a Brite bundle",
         "heading_size": "heading-template",
-        "richtext": "<p>Say goodbye to brittle and damaged hair with NEW Brite Bonds <\/p>",
+        "richtext": "<p>Bundle & Save with our DIY Bundle Builder. </p>",
         "text_alignment": "text-left",
-        "button_link": "shopify:\/\/collections\/brite-bonds",
-        "button_label": "SHOP BRITE BONDS",
-        "color_scheme": "tertiary",
+        "button_link": "shopify://pages/build-your-bundle",
+        "button_label": "Build your own Bundle",
+        "color_scheme": "secondary",
         "use_gradient_background": false
       }
     },
@@ -137,7 +282,7 @@
       "type": "apps",
       "blocks": {
         "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/carousel-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "xs4fw5jmdxndf"
           }
@@ -155,63 +300,63 @@
         "template--21538910011683__fe3bd225-479c-4281-9a75-bb19df843dc0-logo-1": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a25563bce4eada6578493490d7ff5c2d.png",
+            "image": "shopify://shop_images/a25563bce4eada6578493490d7ff5c2d.png",
             "link": ""
           }
         },
         "template--21538910011683__fe3bd225-479c-4281-9a75-bb19df843dc0-logo-2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cf87c161595988db432f89f649467879_ffee8d80-87ef-4719-95d9-20f428c978a7.png",
+            "image": "shopify://shop_images/cf87c161595988db432f89f649467879_ffee8d80-87ef-4719-95d9-20f428c978a7.png",
             "link": ""
           }
         },
         "template--21538910011683__fe3bd225-479c-4281-9a75-bb19df843dc0-logo-3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/35a6dd533158a76d3706c34b2e69bcb7.png",
+            "image": "shopify://shop_images/35a6dd533158a76d3706c34b2e69bcb7.png",
             "link": ""
           }
         },
         "template--21538910011683__fe3bd225-479c-4281-9a75-bb19df843dc0-logo-4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
+            "image": "shopify://shop_images/image_281_d2628e99-9c0e-4ec2-9094-12eb5827a9d5.png",
             "link": ""
           }
         },
         "9edb48e7-9401-46a7-af84-083df2f6f3bd": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
+            "image": "shopify://shop_images/image_280_5066037d-274b-4771-a3be-8906b4031a24.png",
             "link": ""
           }
         },
         "3ca0d7d7-d78a-43b3-96b5-d27277fedb9e": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Chemist_Warehouse_logo_svg_405949fa-d51a-491c-b9d8-524099015e5a.png",
+            "image": "shopify://shop_images/Chemist_Warehouse_logo_svg_405949fa-d51a-491c-b9d8-524099015e5a.png",
             "link": ""
           }
         },
         "69665c5a-3a90-4d4c-99b9-8f70687edae3": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
+            "image": "shopify://shop_images/Meijer_logo_bcdd7031-a862-4c66-87eb-965ff4616a22.png",
             "link": ""
           }
         },
         "6ff820ad-548c-4cac-8848-c29eab316788": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
+            "image": "shopify://shop_images/1200px-JCPenney_logo_323d7721-8d61-406b-b650-02f7ef5dbc18.png",
             "link": ""
           }
         },
         "828376cd-d0dc-4534-946e-828e8b17a8e4": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Dollar-General-Logo_77f8cd72-cc49-4e23-9171-fbc25b98dcde.png",
+            "image": "shopify://shop_images/Dollar-General-Logo_77f8cd72-cc49-4e23-9171-fbc25b98dcde.png",
             "link": ""
           }
         }
@@ -232,39 +377,6 @@
         "max_width": 390,
         "color_scheme": "primary",
         "use_gradient_background": false
-      }
-    },
-    "4d27f5ea-174a-4bd2-8dda-f89c065c473a": {
-      "type": "shop-by-collections",
-      "blocks": {
-        "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32": {
-          "type": "row",
-          "settings": {
-            "collection_1": "instant-color",
-            "card_image_1": "shopify:\/\/shop_images\/Group_5329.jpg",
-            "card_title_1": "INSTANT COLOR",
-            "collection_2": "brite-bonds",
-            "card_image_2": "shopify:\/\/shop_images\/Group_5330.jpg",
-            "card_title_2": "BRITE BONDS",
-            "collection_3": "liquid-hair-chalk",
-            "card_image_3": "shopify:\/\/shop_images\/Group_5331.jpg",
-            "card_title_3": "HAIR CHALKS",
-            "collection_4": "bleach",
-            "card_image_4": "shopify:\/\/shop_images\/Group_5332.jpg",
-            "card_title_4": "Bleach Kits"
-          }
-        }
-      },
-      "block_order": [
-        "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32"
-      ],
-      "settings": {
-        "header": "SHOP BY RANGE",
-        "short_text": "<p>Choose from our bestselling ranges below.<\/p>",
-        "cta_text": "",
-        "btn_link": "shopify:\/\/collections\/all",
-        "btn_text": "SHOP ALL PRODUCTS",
-        "bg": "shopify:\/\/shop_images\/hero_left_bg_bd3ff1a1-a6b4-4067-9aad-82120bf5f5d8.jpg"
       }
     },
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57": {
@@ -289,7 +401,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/BRITE_CleanColor_pink_00-removebg-preview.png",
+            "image": "shopify://shop_images/BRITE_CleanColor_pink_00-removebg-preview.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 9,
             "vertical_position": 100,
@@ -309,10 +421,10 @@
         "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29"
       ],
       "settings": {
-        "title": "Shop All Products",
-        "subheading": "",
+        "title": "Shop The Range",
+        "subheading": "Choose from our bestselling ranges below.",
         "collection": "all",
-        "no_products": 12,
+        "no_products": 4,
         "show_view_all": true,
         "enable_quick_buy": false,
         "display_on_card": false,
@@ -424,7 +536,7 @@
           "type": "rotating_sticker",
           "disabled": true,
           "settings": {
-            "rotating_sticker_img": "shopify:\/\/shop_images\/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
+            "rotating_sticker_img": "shopify://shop_images/orange-rotating-star-2_5dd4d843-5fea-44f4-96c3-d3038ba2aaeb.png",
             "rotating_sticker_text": "10M+ <br>Heads <br>BRITEned"
           }
         },
@@ -461,7 +573,7 @@
       "settings": {
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify:\/\/shop_images\/PAINT_ON._WASH_OFF_2.jpg",
+        "image": "shopify://shop_images/PAINT_ON._WASH_OFF_2.jpg",
         "crop": "",
         "image_shape": "scalloped_square",
         "blob_type": 2,
@@ -472,9 +584,9 @@
         "title": "HOT OFF THE PRESS!",
         "title_mobile": "HOT OFF THE PRESS!",
         "heading_size": "heading-base",
-        "richtext": "<p>Hands up 🙌 who's excited to try our new Hair Chalks? <br\/><br\/>Our temporary hair makeup is designed to paint on and wash off in the same day.<br\/><br\/>Stocked exclusively in Walmart,  Woolworths and now available online 💜💙💚💖<\/p>",
+        "richtext": "<p>Hands up 🙌 who's excited to try our new Hair Chalks? <br/><br/>Our temporary hair makeup is designed to paint on and wash off in the same day.<br/><br/>Stocked exclusively in Walmart,  Woolworths and now available online 💜💙💚💖</p>",
         "text_alignment": "text-left",
-        "button_link": "shopify:\/\/products\/liquid-hair-chalk",
+        "button_link": "shopify://products/liquid-hair-chalk",
         "button_label": "Shop Liquid Hair Chalks",
         "color_scheme": "primary",
         "use_gradient_background": false
@@ -487,7 +599,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-08-03_at_5.16.58_pm.png",
+            "image": "shopify://shop_images/Screen_Shot_2023-08-03_at_5.16.58_pm.png",
             "title": "@iamkristenrose",
             "text": "",
             "cta_link": "",
@@ -499,7 +611,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Wild.jpg",
+            "image": "shopify://shop_images/Wild.jpg",
             "title": "@desmondisamazing",
             "text": "",
             "cta_link": "",
@@ -511,7 +623,7 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-08-03_at_5.20.35_pm.png",
+            "image": "shopify://shop_images/Screen_Shot_2023-08-03_at_5.20.35_pm.png",
             "title": "@noyrhair",
             "text": "",
             "cta_link": "",
@@ -525,7 +637,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -562,55 +674,122 @@
         "use_gradient_background": false
       }
     },
-    "collage_qkdepx": {
-      "type": "collage",
+    "4d27f5ea-174a-4bd2-8dda-f89c065c473a": {
+      "type": "shop-by-collections",
       "blocks": {
-        "image_wYw87z": {
-          "type": "image",
+        "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32": {
+          "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink.jpg",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop All Products",
-            "url": "shopify:\/\/collections\/all"
+            "collection_1": "all",
+            "card_image_1": "shopify://shop_images/Shampoo_Conditioner.jpg",
+            "card_title_1": "SHOP ALL",
+            "collection_2": "instant-color",
+            "card_image_2": "shopify://shop_images/Instant_Color_42131ffa-d348-477c-a8cd-300c49a4ce9f.jpg",
+            "card_title_2": "Instant Color",
+            "collection_3": "clean-colour",
+            "card_image_3": "shopify://shop_images/CLEAN_Color.jpg",
+            "card_title_3": "CLEAN Color",
+            "collection_4": "bleach",
+            "card_image_4": "shopify://shop_images/Bleach_c5276a96-65c2-4192-98fb-69dbac95c5e1.jpg",
+            "card_title_4": "Bleach Kits"
           }
         },
-        "image_MeJibB": {
-          "type": "image",
+        "7ad109e0-1a5e-456a-94a2-27c9457b32d3": {
+          "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_11_1.png",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop Brite Bonds",
-            "url": "shopify:\/\/collections\/brite-bonds"
-          }
-        },
-        "image_TfUTV9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/2_79aa7794-21ea-4128-b8b3-d3b6a05afe28.jpg",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop Bundles",
-            "url": "shopify:\/\/collections\/bundles"
+            "collection_1": "toner",
+            "card_image_1": "shopify://shop_images/Toners.jpg",
+            "card_title_1": "Toners",
+            "collection_2": "shampoo-conditioner",
+            "card_image_2": "shopify://shop_images/SHAMPOO_Color.jpg",
+            "card_title_2": "Shampoo & Conditioner",
+            "collection_3": "",
+            "card_title_3": "",
+            "collection_4": "",
+            "card_title_4": ""
           }
         }
       },
       "block_order": [
-        "image_wYw87z",
-        "image_MeJibB",
-        "image_TfUTV9"
+        "21f8f1fa-93d2-47c1-a311-8a4a3b1cde32",
+        "7ad109e0-1a5e-456a-94a2-27c9457b32d3"
       ],
       "disabled": true,
       "settings": {
-        "title": "Shop By Collection",
-        "first_large_image_position": "top_right",
-        "crop": "aspect-w-1 aspect-h-1",
-        "button_style": "push-btn-surface",
-        "show_buttons_on_mobile": true,
-        "only_show_button_on_hover": false,
-        "color_scheme": "primary",
-        "use_gradient_background": false
+        "header": "SHOP THE RANGE",
+        "short_text": "<p>Choose from our bestselling ranges below.</p>",
+        "cta_text": "",
+        "btn_link": "shopify://collections/all",
+        "btn_text": "SHOP ALL",
+        "bg": "shopify://shop_images/sbc_bg.jpg"
+      }
+    },
+    "33e41a9e-6191-4360-948a-4644f1a3af68": {
+      "type": "comparison-table",
+      "blocks": {
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-1": {
+          "type": "row",
+          "settings": {
+            "title": "Label",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-2": {
+          "type": "row",
+          "settings": {
+            "title": "Label",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        },
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-3": {
+          "type": "row",
+          "settings": {
+            "title": "Label",
+            "column_1_icon": "check-mark",
+            "column_1_text": "",
+            "column_2_icon": "check_close",
+            "column_2_text": "",
+            "column_3_icon": "check_close",
+            "column_3_text": "",
+            "column_4_icon": "check_close",
+            "column_4_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-1",
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-2",
+        "template--20237412466979__33e41a9e-6191-4360-948a-4644f1a3af68-row-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "title": "Brite vs the other guys",
+        "highlighted_column": "1",
+        "column_1_title": "Column 1",
+        "column_2_title": "Column 2",
+        "enable_column_3": true,
+        "column_3_title": "Column 3",
+        "enable_column_4": false,
+        "column_4_title": "Column 4",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false,
+        "padding_bottom": 70,
+        "padding_bottom_mobile": 35
       }
     },
     "a56ce090-a916-44c4-b8ce-dd907815e36e": {
@@ -619,40 +798,40 @@
         "c6573561-1999-472a-978c-9f14419c2db4": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/B_A_March_2022_Jade.png",
+            "image": "shopify://shop_images/B_A_March_2022_Jade.png",
             "title": "PASTEL PURPLE",
             "description": "PURPOSE: Transform your hair into a pastel purple glow with color that lasts 5-30 washes. The hydrating formula conditions as it colours, leaving your hair silky smooth.\n<br><br>\nBEST FOR: Blonde or pre-lightened hair.",
-            "link": "shopify:\/\/products\/instant-color-100ml",
+            "link": "shopify://products/instant-color-100ml",
             "button_text": "SHOP INSTANT COLOR"
           }
         },
         "93ff809f-e03f-4363-a2b4-177d60e469f7": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/B_A_March_2022_Nat_1.jpg",
+            "image": "shopify://shop_images/B_A_March_2022_Nat_1.jpg",
             "title": "PASTEL PINK",
             "description": "PURPOSE: Transform your hair into a pastel pink glow with color that lasts 5-30 washes. The hydrating formula conditions as it colours, leaving your hair silky smooth.\n<br><br>\nBEST FOR: Blonde or pre-lightened hair.",
-            "link": "shopify:\/\/products\/instant-color-100ml",
+            "link": "shopify://products/instant-color-100ml",
             "button_text": "SHOP INSTANT COLOR"
           }
         },
         "d5d366f0-258e-46aa-9ccf-4f4dcb6a100b": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/B_A_March_2022_Ben.jpg",
+            "image": "shopify://shop_images/B_A_March_2022_Ben.jpg",
             "title": "TURQUOISE",
             "description": "PURPOSE: Transform your hair an incredible turquoise color hit to turn heads with color that lasts 5-30 washes. The hydrating formula conditions as it colours, leaving your hair silky smooth.\n<br><br>\nBEST FOR: Blonde or pre-lightened hair or dark hair for a tonal result",
-            "link": "shopify:\/\/products\/instant-color-100ml",
+            "link": "shopify://products/instant-color-100ml",
             "button_text": "SHOP INSTANT COLOR"
           }
         },
         "84c4b3b4-ee4b-4545-9f13-ae1277b99381": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/B_A_March_2022_Kas.jpg",
+            "image": "shopify://shop_images/B_A_March_2022_Kas.jpg",
             "title": "COILY BLEACH",
             "description": "PURPOSE: Low-odor, high-performance bleach kit that includes our bond-building Briteplex to help condition and protect your hair as you lighten it by up to 8 levels.\n<br><br>\nBEST FOR: Textured and curly hair.",
-            "link": "shopify:\/\/products\/bleach-kits",
+            "link": "shopify://products/bleach-kits",
             "button_text": "SHOP BLEACH"
           }
         },
@@ -660,7 +839,7 @@
           "type": "column",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/rose_toner_-_before_and_after.jpg",
+            "image": "shopify://shop_images/rose_toner_-_before_and_after.jpg",
             "title": "ROSE TONER",
             "description": "PURPOSE: PPD free toner to add soft rose tones to blonde hair\n<br><br>\nBEST FOR: hair that has recently been bleached or is a very light white-blonde.",
             "link": "#",
@@ -671,7 +850,7 @@
           "type": "column",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/rose_toner_-_before_and_after.jpg",
+            "image": "shopify://shop_images/rose_toner_-_before_and_after.jpg",
             "title": "ROSE TONER",
             "description": "PURPOSE: PPD free toner to add soft rose tones to blonde hair\n<br><br>\nBEST FOR: hair that has recently been bleached or is a very light white-blonde.",
             "link": "#",
@@ -682,7 +861,7 @@
           "type": "column",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/rose_toner_-_before_and_after.jpg",
+            "image": "shopify://shop_images/rose_toner_-_before_and_after.jpg",
             "title": "ROSE TONER",
             "description": "PURPOSE: PPD free toner to add soft rose tones to blonde hair\n<br><br>\nBEST FOR: hair that has recently been bleached or is a very light white-blonde.",
             "link": "#",
@@ -706,12 +885,11 @@
     },
     "16644402366062ca99": {
       "type": "video",
-      "disabled": true,
       "settings": {
         "title": "But don't take our word for it",
         "style": "full",
-        "cover_image": "shopify:\/\/shop_images\/Screen_Shot_2022-09-29_at_6.32.03_pm.png",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=p2Qq3u3GkZo&t=38s",
+        "cover_image": "shopify://shop_images/Screen_Shot_2022-09-29_at_6.32.03_pm.png",
+        "video_url": "https://www.youtube.com/watch?v=p2Qq3u3GkZo&t=38s",
         "aspect_ratio": "2.39:1",
         "color_scheme": "tertiary",
         "use_gradient_background": false
@@ -723,7 +901,7 @@
         "a523bcdb-ffc8-49bf-9801-cdfcb090c33a": {
           "type": "feedback",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/beauty-crew-logo.png",
+            "logo": "shopify://shop_images/beauty-crew-logo.png",
             "content_1": "\"Cruelty-free, vegan and organic,",
             "content_2": "this is our top pick for the<br> conscious beauty lover.\""
           }
@@ -731,7 +909,7 @@
         "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9": {
           "type": "feedback",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Byrdie_Logo.png",
+            "logo": "shopify://shop_images/Byrdie_Logo.png",
             "content_1": "\"Best Bargain: Brite Instant Color\"",
             "content_2": ""
           }
@@ -739,7 +917,7 @@
         "4d8c98bf-c157-4d15-9d4a-375e018d5587": {
           "type": "feedback",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/mamamia.png",
+            "logo": "shopify://shop_images/mamamia.png",
             "content_1": "“Ideal for even the biggest <br>hair-dye commitment phobes”",
             "content_2": ""
           }
@@ -752,8 +930,8 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_1.png",
-        "background": "shopify:\/\/shop_images\/feedback_scroll_bg.jpg"
+        "image": "shopify://shop_images/Group_1.png",
+        "background": "shopify://shop_images/feedback_scroll_bg.jpg"
       }
     },
     "1650891804363a2769": {
@@ -777,7 +955,7 @@
       ],
       "settings": {
         "title": "JOIN OUR COMMUNITY OF DYE-HARDS",
-        "richtext": "<p>Sign up for exclusive access to new releases and hair colour tips. Don't worry - we hate spam as much as we hate boring hair, so you won't receive any. <\/p>",
+        "richtext": "<p>Sign up for exclusive access to new releases and hair colour tips. Don't worry - we hate spam as much as we hate boring hair, so you won't receive any. </p>",
         "display_on_card": false,
         "color_scheme": "tertiary",
         "use_gradient_background": false
@@ -789,69 +967,69 @@
         "915d7f58-cd33-4d1a-aaca-1fb9e41c663e": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/image_243.png"
+            "logo": "shopify://shop_images/image_243.png"
           }
         },
         "014c10be-0e1f-4808-a01f-debb75bbecb8": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Walmart_logo.png"
+            "logo": "shopify://shop_images/Walmart_logo.png"
           }
         },
         "6f581651-40d2-49fa-a7a8-fcb26e813b39": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Woolworths-logo-png-horizontal.png"
+            "logo": "shopify://shop_images/Woolworths-logo-png-horizontal.png"
           }
         },
         "5b3e6826-7256-4501-8daf-f71eff96673f": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Chemist_Warehouse_logo.png"
+            "logo": "shopify://shop_images/Chemist_Warehouse_logo.png"
           }
         },
         "cc12183e-1502-4f11-b42d-ba5f46074580": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/image_269.png"
+            "logo": "shopify://shop_images/image_269.png"
           }
         },
         "a291ff53-697e-4237-81c2-82a021900df9": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/1200px-JCPenney_logo.png"
+            "logo": "shopify://shop_images/1200px-JCPenney_logo.png"
           }
         },
         "fe8bc6b7-676d-44d1-88f3-9f17368d7139": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Meijer_logo.png"
+            "logo": "shopify://shop_images/Meijer_logo.png"
           }
         },
         "af432955-75a5-4dae-ae38-11c7883101bd": {
           "type": "logo",
           "disabled": true,
           "settings": {
-            "logo": "shopify:\/\/shop_images\/sally-beauty-logo-freelogovectors.png"
+            "logo": "shopify://shop_images/sally-beauty-logo-freelogovectors.png"
           }
         },
         "6d27901a-4bdc-4d85-a961-97fabbf14c7e": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/image_271.png"
+            "logo": "shopify://shop_images/image_271.png"
           }
         },
         "bc1183fb-0975-4059-9828-4ce7cb48544b": {
           "type": "logo",
           "disabled": true,
           "settings": {
-            "logo": "shopify:\/\/shop_images\/1200px-CVS_Logo_2016.png"
+            "logo": "shopify://shop_images/1200px-CVS_Logo_2016.png"
           }
         },
         "22118c80-1c4e-4904-b07b-145c3043e5e4": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Dollar-General-Logo.png"
+            "logo": "shopify://shop_images/Dollar-General-Logo.png"
           }
         }
       },
@@ -874,15 +1052,16 @@
     }
   },
   "order": [
+    "1650891033bae15b05",
     "e22dddce-3187-42a5-bc01-102c0d303878",
     "1691058444d1e54179",
     "fe3bd225-479c-4281-9a75-bb19df843dc0",
-    "4d27f5ea-174a-4bd2-8dda-f89c065c473a",
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57",
     "3220b078-22e1-4aef-ac2f-dd15d5b30399",
     "2817ea07-97bc-4841-b262-c58c8db83450",
     "276ebf26-6bf7-475c-8b06-2bf6bf585819",
-    "collage_qkdepx",
+    "4d27f5ea-174a-4bd2-8dda-f89c065c473a",
+    "33e41a9e-6191-4360-948a-4644f1a3af68",
     "a56ce090-a916-44c4-b8ce-dd907815e36e",
     "16644402366062ca99",
     "ab60c2c7-5754-4171-aa13-027011164036",

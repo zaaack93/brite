@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -16,9 +25,9 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify:\/\/shop_images\/Woolworths_TFFP_stacked_CMYK_small_7ceaad6b-3749-45ee-a525-e1614724a666.webp",
+            "image": "shopify://shop_images/Woolworths_TFFP_stacked_CMYK_small_7ceaad6b-3749-45ee-a525-e1614724a666.webp",
             "title": "Woolworths",
-            "text": "<p>Woolworths Online <a href=\"http:\/\/www2.woolworthsonline.com.au\/#url=\/Shop\/SearchProducts%3Fsearch%3Dbrite%2Borganix\">Click Here<\/a><\/p>",
+            "text": "<p>Woolworths Online <a href=\"http://www2.woolworthsonline.com.au/#url=/Shop/SearchProducts%3Fsearch%3Dbrite%2Borganix\">Click Here</a></p>",
             "cta_link": "",
             "cta_text": "Shop Now",
             "color_scheme": "same_as_section"
@@ -29,8 +38,8 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Peppermayo Online<\/p>",
-            "cta_link": "shopify:\/\/pages\/frontpage",
+            "text": "<p>Peppermayo Online</p>",
+            "cta_link": "shopify://pages/frontpage",
             "cta_text": "Shop Now",
             "color_scheme": "same_as_section"
           }
@@ -40,7 +49,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -51,7 +60,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -84,7 +93,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -95,7 +104,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -106,7 +115,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
@@ -117,7 +126,7 @@
           "settings": {
             "show_image": true,
             "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
             "cta_link": "",
             "cta_text": "",
             "color_scheme": "same_as_section"
