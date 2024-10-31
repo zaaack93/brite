@@ -98,15 +98,39 @@
         },
         "75822277-d417-4ea9-8313-5fc4e2f57483": {
           "type": "announcement-box",
+          "disabled": true,
           "settings": {
             "text": "{{ product.metafields.custom.promo_heading.value }}",
             "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
+          }
+        },
+        "tolstoy_shoppable_video_ugc_stories_block_hw8FrL": {
+          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "mjk3tncfjcebx"
+          }
+        },
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "",
+            "icon": "none"
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
           "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
+          }
+        },
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "truncate_description": false,
+            "text_align": "text-left"
           }
         },
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23": {
@@ -116,6 +140,16 @@
             "icon": "none",
             "heading": "Description",
             "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_TpDrkC": {
+          "type": "collapsible_tab",
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "heading": "Key Benefits",
+            "content": "{{ product.metafields.custom.key_benefits | metafield_tag }}",
             "page": ""
           }
         },
@@ -139,6 +173,28 @@
             "page": ""
           }
         },
+        "47038e2f-b337-41bd-920d-c5c616182ccf": {
+          "type": "shape_divider",
+          "disabled": true,
+          "settings": {
+            "target_section": "below",
+            "target_section_color_scheme": "tertiary",
+            "style": "medium-waves_1200x43",
+            "flip_horizontal": false,
+            "enable_animation": true,
+            "animation_direction": ""
+          }
+        },
+        "f78e4d5f-feea-42db-a79f-6e04087ef15b": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "icon": "none",
+            "text": "Click to watch our Bleach Application Process",
+            "page": ""
+          }
+        },
         "9a87895d-c01d-4b6b-af9e-c51c4737669c": {
           "type": "background_pattern",
           "disabled": true,
@@ -149,6 +205,35 @@
             "opacity": 15,
             "enable_parallax": false,
             "parallax_speed": 4
+          }
+        },
+        "58f7cbf7-dfb8-4548-86c2-1d2dc3a63560": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% render 'complementary-products' product:product,title:'BUNDLE & SAVE' %}"
+          }
+        },
+        "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 190,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify://shop_images/Rainbow.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 59,
+            "vertical_position": 100,
+            "rotate": 14,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "rotate_when_scrolling",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
           }
         }
       },
@@ -164,11 +249,19 @@
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
         "75822277-d417-4ea9-8313-5fc4e2f57483",
+        "tolstoy_shoppable_video_ugc_stories_block_hw8FrL",
+        "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
+        "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
+        "collapsible_tab_TpDrkC",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
         "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
-        "9a87895d-c01d-4b6b-af9e-c51c4737669c"
+        "47038e2f-b337-41bd-920d-c5c616182ccf",
+        "f78e4d5f-feea-42db-a79f-6e04087ef15b",
+        "9a87895d-c01d-4b6b-af9e-c51c4737669c",
+        "58f7cbf7-dfb8-4548-86c2-1d2dc3a63560",
+        "8f0bd916-df2c-4bd6-83ca-738f1d66b2ea"
       ],
       "settings": {
         "sync_color": true,
@@ -186,6 +279,52 @@
         "hide_media_shadow": false,
         "thumbnail_size": "standard",
         "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f": {
+      "type": "image-with-text-slideshow",
+      "blocks": {
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Brite-Squeeze.gif",
+            "image_shape": "scalloped_square",
+            "rotate_image": 0,
+            "image_position": "left",
+            "title": "ONE ROUTINE TO FIX DAMAGE FROM:",
+            "richtext": "<h4>💖 <strong>BLEACH DAMAGE</strong></h4><p>Bring back strength to bleached beauties.</p><h4>🧯 HEAT STYLING HARM</h4><p>Repair your locks from harmful heat damage.</p><h4>🌈 <strong>C</strong>OLOR FADING & DAMAGE</h4><p>Lock in color, lock out damage.</p>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1"
+      ],
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "",
+        "heading_size": "heading-template",
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "text_marquee_yRxRYp": {
+      "type": "text-marquee",
+      "settings": {
+        "text": "BEFORE AND AFTER",
+        "repeat_text": true,
+        "shape_between_text": "flower",
+        "animate_shape_between_text": true,
+        "link": "",
+        "font": "font-heading heading-secondary",
+        "text_size": "text-xl",
+        "speed": 40,
+        "direction": "",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     },
@@ -297,28 +436,124 @@
         "use_gradient_background": false
       }
     },
-    "d616a1f9-639f-4b23-bbbd-50365d969911": {
-      "type": "image-with-text",
-      "disabled": true,
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd": {
+      "type": "before-after-with-text-slideshow",
+      "blocks": {
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_after": "shopify://shop_images/Before.jpg",
+            "image": "shopify://shop_images/After_1.jpg",
+            "image_shape": "default",
+            "rotate_image": 0,
+            "image_position": "right",
+            "title": "SAY GOODBYE TO DAMAGED HAIR",
+            "richtext": "<h6>Turn your hair woes into hair wows<em>. </em></h6>",
+            "enable_color_option": false,
+            "text_alignment": "text-center",
+            "button_link": "",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1"
+      ],
       "settings": {
-        "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/Try_Now.jpg",
-        "crop": "aspect-w-1 aspect-h-1",
-        "image_shape": "wave_tear",
-        "blob_type": 3,
-        "rotate_image": 6,
-        "image_position": "right",
         "image_size": "half",
-        "disable_media_style": false,
-        "title": "Try Our Instant <br> Color Range Now",
-        "title_mobile": "Try Our Instant Color Range Now",
+        "crop": "aspect-w-1 aspect-h-1",
         "heading_size": "heading-base",
-        "richtext": "<p>Simply click the button below and find the shade that speaks to you!</p>",
-        "text_alignment": "text-left",
-        "button_link": "shopify://pages/virtual-try-on",
-        "button_label": "Test Instant Color Now",
-        "color_scheme": "tertiary",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false
+      }
+    },
+    "testimonials_HBitjJ": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_C8AwNF": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Conditioner_3.jpg",
+            "rating": "5_stars",
+            "quote": "<p>After rinsing and drying my hair it felt so soft, smooth and had more volume. It has made my hair look and feel more healthier and has brought it back to life.</p>",
+            "source": "LISA Z"
+          }
+        },
+        "testimonial_xUH9cM": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Leave_In_Mask_2.jpg",
+            "rating": "5_stars",
+            "quote": "<p>Brite Bonds is Amazing it takes away the orange hues I get in my hair after bleaching it to blonde. I highly recommend it for anybody trying to remove brassy tones.</p>",
+            "source": "TONI"
+          }
+        },
+        "testimonial_gFnqXQ": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/No_Yellow_Mask_2.jpg",
+            "rating": "5_stars",
+            "quote": "<p>This hair mask smells so good! It smells warm and cozy, but it’s not overwhelming. My hair feels really good after using it. I’ve been letting my hair air dry and it looks better when I use this.</p>",
+            "source": "BECCA"
+          }
+        },
+        "testimonial_mrrHEG": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Shampoo.jpg",
+            "rating": "5_stars",
+            "quote": "<p>I can not believe how soft my hair was after just one use of this Brite Bonds hair conditioner. My hair felt strong, bouncy, and light. I only squeezed just a little bit into my hand and managed to completely saturate my extra long and thick hair.</p>",
+            "source": "TASH"
+          }
+        },
+        "testimonial_earULH": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Shampoo.jpg",
+            "rating": "5_stars",
+            "quote": "<p>I'm really pleased with this shampoo. I color my hair, so the ends of my hair tend to be dry. This seems to have restored my hairs strength and texture. My hair also has a nice shine to it. It just looks and feels so much healthier.</p>",
+            "source": "RAE ANNE"
+          }
+        },
+        "testimonial_AfMaVX": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Leave_In_Mask_2.jpg",
+            "rating": "5_stars",
+            "quote": "<p>Leather it up on your hair and leave it for a couple of minutes then rinse. The smell is amazing, smells like coconut to me, very pleasing. After washing leaves hair clean shiny and full looking, I'm quite impressed.</p>",
+            "source": "PEACHY"
+          }
+        },
+        "testimonial_JPdKfh": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Conditioner_3.jpg",
+            "rating": "5_stars",
+            "quote": "<p>It has a very light fragrance almost like a very light coconut, and it rinses out nicely The way the bottle opens, You just twisted and the nozzle will open up and just about the right thickness. I will continue to buy this.</p>",
+            "source": "OLIVIA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_C8AwNF",
+        "testimonial_xUH9cM",
+        "testimonial_gFnqXQ",
+        "testimonial_mrrHEG",
+        "testimonial_earULH",
+        "testimonial_AfMaVX",
+        "testimonial_JPdKfh"
+      ],
+      "settings": {
+        "display_on_card": true,
+        "title": "But Don't Take our word for it...",
+        "max_width": 300,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "scalloped_circle_1",
+        "desktop_slide_width": 30,
+        "autoscroll_mode": "1",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     },
@@ -328,29 +563,29 @@
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-0": {
           "type": "question",
           "settings": {
-            "question": "{{ product.metafields.custom.faq_q1.value }}",
-            "answer": "{{ product.metafields.custom.faq_a1 | metafield_tag }}"
+            "question": "HOW OFTEN SHOULD I USE BRITE BONDS?",
+            "answer": "<p>Dive into the Repair Shampoo and Conditioner duo with every wash for maximum impact. The Leave-In Hair Mask is your new daily hero, and the No Yellow Hair Mask should be used weekly to keep those cool tones in check.</p>"
           }
         },
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5": {
           "type": "question",
           "settings": {
-            "question": "{{ product.metafields.custom.faq_q2.value }}",
-            "answer": "{{ product.metafields.custom.faq_a2 | metafield_tag }}"
+            "question": "ARE BRITE BONDS SUITABLE FOR ALL HAIR TYPES?",
+            "answer": "<p>You bet! Our products are crafted to bring joy (and repair) to every hair type under the sun. Curly, straight, thick, or fine - we’ve got you covered. </p>"
           }
         },
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2": {
           "type": "question",
           "settings": {
-            "question": "{{ product.metafields.custom.faq_q3.value }}",
-            "answer": "{{ product.metafields.custom.faq_a3 | metafield_tag }}"
+            "question": "WHAT MAKES BRITE BONDS DIFFERENT FROM OTHER HAIR REPAIR PRODUCTS?",
+            "answer": "<p>It’s all in the blend! Our unique mix of peptides and bond complex targets hair damage at its core, offering a salon-quality revival without the salon price tag.</p>"
           }
         },
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3": {
           "type": "question",
           "settings": {
-            "question": "{{ product.metafields.custom.faq_q4.value }}",
-            "answer": "{{ product.metafields.custom.faq_a4 | metafield_tag }}"
+            "question": "IS THE BRITE BONDS RANGE VEGAN AND CRUELTY-FREE?",
+            "answer": "<p>Always - duh! We’re proud to say our entire range is vegan, cruelty-free, and ready to bring some ethical sparkle to your hair care routine.</p>"
           }
         },
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4": {
@@ -419,7 +654,7 @@
         "two_columns_desktop": false,
         "title": "FAQ",
         "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
-        "color_scheme": "quaternary",
+        "color_scheme": "tertiary",
         "use_gradient_background": false,
         "padding_bottom": 100,
         "padding_bottom_mobile": 67
@@ -497,6 +732,28 @@
             "column_4_icon": "",
             "column_4_text": ""
           }
+        },
+        "11dd58ec-5393-459a-be54-0c6da5c9d8e3": {
+          "type": "sticker",
+          "disabled": true,
+          "settings": {
+            "text": "Sticker",
+            "shape": "star_1",
+            "width": 230,
+            "sticker_font_size": "1.563rem",
+            "image": "shopify://shop_images/Loveit.png",
+            "half_image_width_on_mobile": true,
+            "horizontal_position": 14,
+            "vertical_position": 49,
+            "rotate": 0,
+            "show_sticker_on_mobile": true,
+            "show_sticker_on_desktop": true,
+            "rotation_animation": "none",
+            "enable_parallax": false,
+            "parallax_speed": 3,
+            "color": "bg-scheme-accent text-scheme-accent-overlay",
+            "color_scheme": "same_as_section"
+          }
         }
       },
       "block_order": [
@@ -504,7 +761,8 @@
         "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
-        "142db635-746a-4827-88ff-c90c1c20c2e7"
+        "142db635-746a-4827-88ff-c90c1c20c2e7",
+        "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
       ],
       "settings": {
         "display_on_card": false,
@@ -568,15 +826,18 @@
         "autoscroll_mode": "1",
         "product_tiles_aspect_ratio": "aspect-w-1 aspect-h-1",
         "image_shape": "default_archway",
-        "color_scheme": "primary",
+        "color_scheme": "secondary",
         "use_gradient_background": false
       }
     }
   },
   "order": [
     "main",
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
+    "text_marquee_yRxRYp",
     "4feb5dc3-92d7-42d6-b8a6-e4363c192c83",
-    "d616a1f9-639f-4b23-bbbd-50365d969911",
+    "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
+    "testimonials_HBitjJ",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "b9840557-6047-445f-8e23-ec62568e83c0"

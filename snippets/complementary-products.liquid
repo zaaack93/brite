@@ -1,9 +1,10 @@
 
 {% assign complementaryProducts = product.metafields.conversion.complementary_products.value %}
+{% assign boxTitle = title |  default :'Complete the Routine'%}
     {% if complementaryProducts != blank %}
 <div class="rdc-cp-main rdc-mt-10p">
        <div class="rdc-cp-title rdc-mb-20 rdc-d-flex rdc-jc-sb rdc-ai-c">
-  <h3 class="font-heading heading-secondary">Complete the Routine</h3>
+  <h3 class="font-heading heading-secondary">{{boxTitle}}</h3>
          <div class="rdc-cp-navs rdc-d-flex">
       <span class="rdc-cp-nav-prev rdc-cursor-p rdc-d-none">{% render 'icon-chevron-down' %}</span>
       <span class="rdc-cp-nav-next rdc-ml-20 rdc-cursor-p">{% render 'icon-chevron-down' %}</span>
@@ -31,7 +32,9 @@
     
       <h4>{{ cp.title }}</h4>
       <div><span class="rdc-cp-price rdc-d-flex rdc-my-10px">{{ cp.first_available_variant.price | money | remove: ".00 AUD" }}</span></div>
-      <div><span class="rdc-cp-colors">{{ colorCount }} Colours</span></div>
+      {% if colorCount !=blank %}
+        <div><span class="rdc-cp-colors">{{ colorCount }} Colours</span></div>
+      {%endif%}
     </div>
                     </div>
       </a>

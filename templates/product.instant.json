@@ -60,6 +60,14 @@
             "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
           }
         },
+        "75822277-d417-4ea9-8313-5fc4e2f57483": {
+          "type": "announcement-box",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.metafields.custom.promo_heading.value }}",
+            "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -94,22 +102,6 @@
             "show_price": true,
             "enable_payment_button": false,
             "show_pickup_availability": false
-          }
-        },
-        "75822277-d417-4ea9-8313-5fc4e2f57483": {
-          "type": "announcement-box",
-          "disabled": true,
-          "settings": {
-            "text": "{{ product.metafields.custom.promo_heading.value }}",
-            "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
-          }
-        },
-        "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
-          "type": "text",
-          "settings": {
-            "display_on_card": false,
-            "text": "",
-            "icon": "none"
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
@@ -228,12 +220,11 @@
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
+        "75822277-d417-4ea9-8313-5fc4e2f57483",
         "variant_picker",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
-        "75822277-d417-4ea9-8313-5fc4e2f57483",
-        "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
@@ -848,21 +839,6 @@
     },
     "loox-product-reviews-app-section": {
       "type": "apps",
-      "blocks": {
-        "loox-product-reviews": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 920
-          }
-        }
-      },
-      "block_order": [
-        "loox-product-reviews"
-      ],
       "disabled": true,
       "settings": {
       }
@@ -935,16 +911,6 @@
     },
     "1691705782b1a68713": {
       "type": "apps",
-      "blocks": {
-        "92abd682-2549-4eb6-a685-db2df1513cf0": {
-          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "92abd682-2549-4eb6-a685-db2df1513cf0"
-      ],
       "disabled": true,
       "settings": {
       }

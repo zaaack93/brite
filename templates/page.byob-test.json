@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "display_on_card": false,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "ed55ea32-085b-40f2-96f7-04e6d68a118a": {
+      "type": "image-with-text",
+      "settings": {
+        "show_text_bg_mobile": false,
+        "display_on_card": false,
+        "image": "shopify://shop_images/12.png",
+        "crop": "",
+        "image_shape": "default",
+        "blob_type": 1,
+        "rotate_image": 0,
+        "image_position": "right",
+        "image_size": "half",
+        "disable_media_style": true,
+        "title": "Choose any <br> 3+ products <br> for 20% off!",
+        "title_mobile": "Bundle any <br> 3+ products for 20% off!",
+        "heading_size": "heading-template",
+        "richtext": "<p>Each and every bundle also receives a free gift on us!</p>",
+        "text_alignment": "text-left",
+        "button_link": "",
+        "button_label": "Shop Now",
+        "color_scheme": "tertiary",
+        "use_gradient_background": false
+      }
+    },
+    "4aae8836-efc7-4572-9dde-9a35cf893ac2": {
+      "type": "text-marquee",
+      "settings": {
+        "text": "Build a Bundle",
+        "repeat_text": true,
+        "shape_between_text": "flower",
+        "animate_shape_between_text": true,
+        "link": "",
+        "font": "font-heading heading-secondary",
+        "text_size": "text-xl",
+        "speed": 60,
+        "direction": "",
+        "color_scheme": "quaternary",
+        "use_gradient_background": false
+      }
+    },
+    "fe96b71a-faea-4d8a-a32a-70ecce3da9e7": {
+      "type": "build-your-bundle",
+      "settings": {
+        "title": "Brite-n your day below",
+        "richtext": "<p>It's easy as 1-2-3 (simply follow the 3 easy steps below). </p>",
+        "first_step_title": "Choose Products",
+        "second_step_title": "Choose Free Gift",
+        "third_step_title": "Add to Cart",
+        "collection": "product-bundle-list-items",
+        "gift_collection": "gift-products-list",
+        "numbre_of_products": 3,
+        "discount_amount": 100,
+        "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ed55ea32-085b-40f2-96f7-04e6d68a118a",
+    "4aae8836-efc7-4572-9dde-9a35cf893ac2",
+    "fe96b71a-faea-4d8a-a32a-70ecce3da9e7"
+  ]
+}
