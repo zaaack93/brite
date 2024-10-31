@@ -274,6 +274,21 @@
                     block_base_classes: block_base_classes,
                   %}
                   </div>
+                {% if product.metafields.custom.additional_button_text != blank and product.metafields.custom.additional_button_link != blank %}
+                  <a href="{{product.metafields.custom.additional_button_link}}" class="mb-1 mt-4 add-to-cart-btn push-btn theme-button theme-button w-full
+                    " type="submit" >
+                    <span class="rdc-atc-btn push-btn-surface w-full">
+                    {{product.metafields.custom.additional_button_text}}
+                      </span>
+                  </a>
+                {% elsif product.metafields.custom.additional_button_text != blank %}
+                  <button class="mb-1 mt-4 add-to-cart-btn push-btn theme-button theme-button w-full
+                    " type="submit">
+                    <span class="rdc-atc-btn push-btn-surface w-full">
+                    {{product.metafields.custom.additional_button_text}}
+                      </span>
+                  </button>
+                {% endif %}
                   
                 {% if product.metafields.info.atc_benefit != blank %}
                 <div class="br-atc-benefit rdc-m-20 rdc-ta-c"><span>{{ product.metafields.info.atc_benefit }}</span></div>

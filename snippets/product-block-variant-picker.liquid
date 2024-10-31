@@ -13,7 +13,7 @@
           assign option_downcase = option.name | downcase
           if option_downcase contains swatch_trigger
             assign is_color = true
-          elsif swatch_trigger == 'color' and option_downcase contains 'colour'
+          elsif swatch_trigger == 'color' and option_downcase contains 'colour' or option_downcase=='fragrance'
             assign is_color = true
           endif
         endif

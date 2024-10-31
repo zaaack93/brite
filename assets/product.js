@@ -489,7 +489,7 @@ window["ThemeSection_Product"] = ({
       const product_container = document.querySelector(
         '.product-content[sync-color="true"]'
       );
-      if (product_container && color && (name.includes("Color") || name.includes("color"))) {
+      if (product_container && color && (name.includes("Color") || name.includes("color") || name.toLowerCase().includes("fragrance"))) {
         this.currentColor=color
         const rgbaColor = this.hexToRGBA(color, 1);
 
