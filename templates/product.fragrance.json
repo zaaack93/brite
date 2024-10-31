@@ -129,7 +129,7 @@
             "display_on_card": false,
             "icon": "heart",
             "heading": "Fragrance Notes",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes}}\n</div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes | metafield_tag }}\n</div>\n{% endfor %}",
             "page": ""
           }
         },
