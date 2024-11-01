@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -37,11 +28,11 @@
           "disabled": true,
           "settings": {
             "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
-            "avatar_3": "shopify://shop_images/7.jpg",
-            "avatar_4": "shopify://shop_images/23.jpg",
-            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
+            "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
+            "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
+            "avatar_3": "shopify:\/\/shop_images\/7.jpg",
+            "avatar_4": "shopify:\/\/shop_images\/23.jpg",
+            "avatar_5": "shopify:\/\/shop_images\/PASTEL_PURPLE_3.png"
           }
         },
         "title": {
@@ -64,14 +55,14 @@
           "disabled": true,
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n</div>\n{% endfor %}"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}</span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}</span>\n{%endif%}\n</div>\n{% endfor %}"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
           }
         },
         "77814407-81ac-45cc-bec9-3c912089591b": {
@@ -118,7 +109,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -129,7 +120,7 @@
             "display_on_card": false,
             "icon": "heart",
             "heading": "Fragrance Notes",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes | metafield_tag }}\n</div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes | metafield_tag }}\n<\/div>\n{% endfor %}",
             "page": ""
           }
         },
@@ -225,8 +216,8 @@
     "image_with_text_overlay_VgjXWG": {
       "type": "image-with-text-overlay",
       "settings": {
-        "image": "shopify://shop_images/Brite_October_-145.jpg",
-        "image_mobile": "shopify://shop_images/Brite_October_-25.jpg",
+        "image": "shopify:\/\/shop_images\/Brite_October_-145.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Brite_October_-25.jpg",
         "display_on_card": false,
         "display_content_below_image_on_mobile": false,
         "style": "full",
@@ -309,7 +300,7 @@
             "shape": "star_1",
             "width": 190,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/S-26.png",
+            "image": "shopify:\/\/shop_images\/S-26.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 89,
             "vertical_position": 10,
@@ -339,7 +330,7 @@
         "heading_text_style": "heading",
         "two_columns_desktop": false,
         "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
         "color_scheme": "quaternary",
         "use_gradient_background": false,
         "padding_bottom": 100,
@@ -432,7 +423,7 @@
         "title": "Brite vs the other dyes",
         "highlighted_column": "1",
         "column_1_title": "",
-        "column_1_image": "shopify://shop_images/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
         "column_2_title": "Other Brands",
         "enable_column_3": true,
         "column_3_title": "Salons",
@@ -454,7 +445,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Sparkle.png",
+            "image": "shopify:\/\/shop_images\/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
             "vertical_position": 90,

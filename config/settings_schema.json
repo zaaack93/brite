@@ -4,8 +4,8 @@
     "theme_name": "Shapes",
     "theme_version": "1.3.0",
     "theme_author": "Switch Themes",
-    "theme_documentation_url": "http://support.switchthemes.co",
-    "theme_support_url": "http://support.switchthemes.co"
+    "theme_documentation_url": "http:\/\/support.switchthemes.co",
+    "theme_support_url": "http:\/\/support.switchthemes.co"
   },
   {
     "name": "Colors",
@@ -300,23 +300,23 @@
           },
           {
             "value": "2xl:3xl",
-            "label": "2XL / desktop 3XL"
+            "label": "2XL \/ desktop 3XL"
           },
           {
             "value": "2xl:4xl",
-            "label": "2XL / desktop 4XL"
+            "label": "2XL \/ desktop 4XL"
           },
           {
             "value": "2xl:5xl",
-            "label": "2XL / desktop 5XL"
+            "label": "2XL \/ desktop 5XL"
           },
           {
             "value": "2xl:6xl",
-            "label": "2XL / desktop 6XL"
+            "label": "2XL \/ desktop 6XL"
           },
           {
             "value": "2xl:7xl",
-            "label": "2XL / desktop 7XL"
+            "label": "2XL \/ desktop 7XL"
           }
         ],
         "default": "lg:lg",
@@ -349,31 +349,31 @@
           },
           {
             "value": "2xl:3xl",
-            "label": "2XL / desktop 3XL"
+            "label": "2XL \/ desktop 3XL"
           },
           {
             "value": "2xl:4xl",
-            "label": "2XL / desktop 4XL"
+            "label": "2XL \/ desktop 4XL"
           },
           {
             "value": "2xl:5xl",
-            "label": "2XL / desktop 5XL"
+            "label": "2XL \/ desktop 5XL"
           },
           {
             "value": "2xl:6xl",
-            "label": "2XL / desktop 6XL"
+            "label": "2XL \/ desktop 6XL"
           },
           {
             "value": "2xl:7xl",
-            "label": "2XL / desktop 7XL"
+            "label": "2XL \/ desktop 7XL"
           },
           {
             "value": "2xl:8xl",
-            "label": "2XL / desktop 8XL"
+            "label": "2XL \/ desktop 8XL"
           },
           {
             "value": "2xl:9xl",
-            "label": "2XL / desktop 9XL"
+            "label": "2XL \/ desktop 9XL"
           }
         ],
         "default": "2xl:3xl",
@@ -1538,7 +1538,7 @@
             "group": "Miscellaneous"
           }
         ],
-        "info": "Selecting some shapes will crop the image. [Learn more](https://help.switchthemes.co/shapes/guides/style-images-with-shapes.html)"
+        "info": "Selecting some shapes will crop the image. [Learn more](https:\/\/help.switchthemes.co\/shapes\/guides\/style-images-with-shapes.html)"
       },
       {
         "type": "header",
@@ -1878,7 +1878,7 @@
         "type": "text",
         "id": "product_tile_metafield_badge",
         "label": "Metafield key",
-        "info": "Add metafield key with the namespace shapes_theme. [Learn more](https://help.switchthemes.co/shapes/guides/show-custom-badges.html)"
+        "info": "Add metafield key with the namespace shapes_theme. [Learn more](https:\/\/help.switchthemes.co\/shapes\/guides\/show-custom-badges.html)"
       },
       {
         "type": "select",
@@ -2188,61 +2188,61 @@
         "type": "text",
         "id": "social_instagram_link",
         "label": "Instagram",
-        "info": "https://instagram.com/shopify"
+        "info": "https:\/\/instagram.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook",
-        "info": "https://www.facebook.com/shopify"
+        "info": "https:\/\/www.facebook.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
         "label": "Twitter",
-        "info": "https://www.twitter.com/shopify"
+        "info": "https:\/\/www.twitter.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
         "label": "Pinterest",
-        "info": "https://www.pinterest.com/shopify"
+        "info": "https:\/\/www.pinterest.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_snapchat_link",
         "label": "Snapchat",
-        "info": "https://www.snapchat.com/add/shopify"
+        "info": "https:\/\/www.snapchat.com\/add\/shopify"
       },
       {
         "type": "text",
         "id": "social_tiktok_link",
         "label": "TikTok",
-        "info": "https://www.tiktok.com/@shopify"
+        "info": "https:\/\/www.tiktok.com\/@shopify"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
         "label": "Tumblr",
-        "info": "https://shopify.tumblr.com"
+        "info": "https:\/\/shopify.tumblr.com"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
         "label": "Youtube",
-        "info": "https://www.youtube.com/user/shopify"
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
         "label": "Vimeo",
-        "info": "https://vimeo.com/shopify"
+        "info": "https:\/\/vimeo.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_linkedin_link",
         "label": "LinkedIn",
-        "info": "https://www.linkedin.com/in/shopify"
+        "info": "https:\/\/www.linkedin.com\/in\/shopify"
       },
       {
         "type": "text",
@@ -2281,7 +2281,7 @@
         "type": "checkbox",
         "id": "enable_accelerated_checkout",
         "label": "Enable accelerated checkout buttons",
-        "info": "Disable this if you’d like the buttons to appear on your checkout page. [Learn more](https://help.shopify.com/en/manual/payments/accelerated-checkouts)",
+        "info": "Disable this if you’d like the buttons to appear on your checkout page. [Learn more](https:\/\/help.shopify.com\/en\/manual\/payments\/accelerated-checkouts)",
         "default": true
       },
       {

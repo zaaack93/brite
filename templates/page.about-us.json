@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "9b3cdfd5-13ce-4099-b764-a3ed68aaf617": {
@@ -15,7 +6,7 @@
         "template--21366353592611__9b3cdfd5-13ce-4099-b764-a3ed68aaf617-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Brite_-_Bleach_rose_toner_4721bae5-fe73-496d-8b74-69daad77c602.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_-_Bleach_rose_toner_4721bae5-fe73-496d-8b74-69daad77c602.jpg",
             "title": "About Us",
             "richtext": "",
             "cta_url": "",
@@ -46,7 +37,7 @@
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/Made_from_Plants_31db9222-0db6-4587-8ac2-256326eb72ad.jpg",
+        "image": "shopify:\/\/shop_images\/Made_from_Plants_31db9222-0db6-4587-8ac2-256326eb72ad.jpg",
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "scalloped_circle_1",
         "blob_type": 1,
@@ -57,7 +48,7 @@
         "title": "Our Genesis: The Brite Spark",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>It all started in 2012 with a eureka moment – a world where vivacious hair didn't come at Mother Nature's expense. Imagine a hair dye that’s more 'eco-chic' than 'eco-bleak.' Brite splashed onto the scene, bringing a kaleidoscope of cruelty-free colors that turned heads and hearts towards a more responsible way of being bold and beautiful.</p>",
+        "richtext": "<p>It all started in 2012 with a eureka moment – a world where vivacious hair didn't come at Mother Nature's expense. Imagine a hair dye that’s more 'eco-chic' than 'eco-bleak.' Brite splashed onto the scene, bringing a kaleidoscope of cruelty-free colors that turned heads and hearts towards a more responsible way of being bold and beautiful.<\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -71,7 +62,7 @@
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/bex_dog.jpg",
+        "image": "shopify:\/\/shop_images\/bex_dog.jpg",
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "scalloped_circle_1",
         "blob_type": 1,
@@ -82,7 +73,7 @@
         "title": "Meet Our Founder: Bex Gold",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>Not all superheroes wear capes—some wield tint brushes and a killer business plan. Meet Bex Gold: the colorista-cum-eco-preneur behind Brite. With a trophy case that's got more bling than a glitter factory, including Telstra Young Business Woman of the Year and Pantene Businesswoman of the Year, Bex has transformed the game from the roots up. She’s less about 'painting by numbers' and more about painting the town every shade under the sun. </p>",
+        "richtext": "<p>Not all superheroes wear capes—some wield tint brushes and a killer business plan. Meet Bex Gold: the colorista-cum-eco-preneur behind Brite. With a trophy case that's got more bling than a glitter factory, including Telstra Young Business Woman of the Year and Pantene Businesswoman of the Year, Bex has transformed the game from the roots up. She’s less about 'painting by numbers' and more about painting the town every shade under the sun. <\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -96,7 +87,7 @@
         "template--21366353592611__cc951a2e-a67c-4cbe-9b0d-3cd4576d3e05-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Brite_-_Bleach_white_toner.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_-_Bleach_white_toner.jpg",
             "image_shape": "default",
             "rotate_image": 0,
             "image_position": "right",
@@ -134,17 +125,17 @@
       "type": "video-with-text-overlay",
       "disabled": true,
       "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/93f59ad46df646318ef75f6ed4292dba.mp4",
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/93f59ad46df646318ef75f6ed4292dba.mp4",
         "crop": "four-three",
         "crop_desktop": "cinematic",
-        "fallback_image": "shopify://shop_images/Screen_Shot_2022-12-08_at_2.48.52_pm.png",
+        "fallback_image": "shopify:\/\/shop_images\/Screen_Shot_2022-12-08_at_2.48.52_pm.png",
         "display_on_card": false,
         "style": "full",
         "place_content": "place-content-center-center",
         "text_align": "text-center",
         "title": "ABOUT US",
         "heading_size": "heading-template",
-        "richtext": "<p>We are all about ethical hair colour and empowerment. </p>",
+        "richtext": "<p>We are all about ethical hair colour and empowerment. <\/p>",
         "cta_url": "",
         "cta_text": "Shop Now",
         "color_scheme": "secondary",
@@ -157,7 +148,7 @@
       "settings": {
         "title": "Color with a Conscience",
         "heading_size": "heading-base",
-        "rich_text": "<p>At Brite, we stand for more than just color; we represent a commitment to vegan and cruelty-free beauty that doesn't compromise on performance. Our products are testament to our dedication to high-quality, accessible hair care. With every Brite product, we mix conscience with color, ethics with aesthetics, and responsibility with revelry.</p>",
+        "rich_text": "<p>At Brite, we stand for more than just color; we represent a commitment to vegan and cruelty-free beauty that doesn't compromise on performance. Our products are testament to our dedication to high-quality, accessible hair care. With every Brite product, we mix conscience with color, ethics with aesthetics, and responsibility with revelry.<\/p>",
         "display_on_card": false,
         "content_width_desktop": "lg:w-full",
         "button_link": "",
@@ -171,7 +162,7 @@
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/CLEAN_Color_d7c6e66c-542f-4294-a818-d6f19efc920d.jpg",
+        "image": "shopify:\/\/shop_images\/CLEAN_Color_d7c6e66c-542f-4294-a818-d6f19efc920d.jpg",
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "scalloped_circle_4",
         "blob_type": 1,
@@ -182,7 +173,7 @@
         "title": "From Aus to the World",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>Brite has blossomed from Australian markets to a global presence, gracing the shelves of Target, Walmart, Woolworths, Coles, Priceline, Chemist Warehouse, Kmart, and JCPenney. As we evolve, our sights are set on fostering a beauty brand that shines brightly in every aspect—making each day Briter for everyone that comes into contact with our products.</p>",
+        "richtext": "<p>Brite has blossomed from Australian markets to a global presence, gracing the shelves of Target, Walmart, Woolworths, Coles, Priceline, Chemist Warehouse, Kmart, and JCPenney. As we evolve, our sights are set on fostering a beauty brand that shines brightly in every aspect—making each day Briter for everyone that comes into contact with our products.<\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -195,7 +186,7 @@
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/2_2077b7b7-2bfa-45f9-b74c-95408c7b71df.jpg",
+        "image": "shopify:\/\/shop_images\/2_2077b7b7-2bfa-45f9-b74c-95408c7b71df.jpg",
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "scalloped_circle_4",
         "blob_type": 1,
@@ -206,7 +197,7 @@
         "title": "Looking Ahead: The Brite Future",
         "title_mobile": "",
         "heading_size": "heading-template",
-        "richtext": "<p>We're not just anticipating the future; we're creating it. Brite is on a mission to expand, innovate, and diversify. And as for what's in store in the future? Think AI, think community-led innovations, think your fav hair color and care with a paintbrush in one hand and a green manifesto in the other. So buckle up – Brite’s future isn't just bright, it's full-blown radiant. </p>",
+        "richtext": "<p>We're not just anticipating the future; we're creating it. Brite is on a mission to expand, innovate, and diversify. And as for what's in store in the future? Think AI, think community-led innovations, think your fav hair color and care with a paintbrush in one hand and a green manifesto in the other. So buckle up – Brite’s future isn't just bright, it's full-blown radiant. <\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",

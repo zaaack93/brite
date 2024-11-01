@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -16,11 +7,11 @@
           "type": "social-prof",
           "settings": {
             "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
-            "avatar_3": "shopify://shop_images/7.jpg",
-            "avatar_4": "shopify://shop_images/23.jpg",
-            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
+            "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
+            "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
+            "avatar_3": "shopify:\/\/shop_images\/7.jpg",
+            "avatar_4": "shopify:\/\/shop_images\/23.jpg",
+            "avatar_5": "shopify:\/\/shop_images\/PASTEL_PURPLE_3.png"
           }
         },
         "title": {
@@ -43,14 +34,14 @@
           "disabled": true,
           "settings": {
             "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n</div>\n{% endfor %}"
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
           }
         },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}</span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}</span>\n{%endif%}\n</div>\n{% endfor %}"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
           }
         },
         "77814407-81ac-45cc-bec9-3c912089591b": {
@@ -113,7 +104,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "mrry5f504imco"
           }
@@ -210,12 +201,12 @@
         "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5-1.jpg",
+            "image": "shopify:\/\/shop_images\/5-1.jpg",
             "image_shape": "scalloped_square",
             "rotate_image": 2,
             "image_position": "left",
             "title": "",
-            "richtext": "<h4><strong>Instant Transformation</strong></h4><p>Achieve vibrant pastel hues in moments with our easy-to-apply mousse, perfect for blondes, highlighted, or gray hair.</p><h4><strong>Mess-Free Application</strong></h4><p>The quick-dry mousse leaves your hair soft and natural-looking, free from any sticky residues or color transfer to clothing.</p>",
+            "richtext": "<h4><strong>Instant Transformation<\/strong><\/h4><p>Achieve vibrant pastel hues in moments with our easy-to-apply mousse, perfect for blondes, highlighted, or gray hair.<\/p><h4><strong>Mess-Free Application<\/strong><\/h4><p>The quick-dry mousse leaves your hair soft and natural-looking, free from any sticky residues or color transfer to clothing.<\/p>",
             "text_alignment": "text-left",
             "button_link": "",
             "button_label": ""
@@ -240,13 +231,13 @@
         "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
           "type": "slide",
           "settings": {
-            "image_after": "shopify://shop_images/Brite_October_-2_12.jpg",
-            "image": "shopify://shop_images/Brite_October_-81_1.jpg",
+            "image_after": "shopify:\/\/shop_images\/Brite_October_-2_12.jpg",
+            "image": "shopify:\/\/shop_images\/Brite_October_-81_1.jpg",
             "image_shape": "default",
             "rotate_image": 0,
             "image_position": "right",
             "title": "Before & Brite-er!",
-            "richtext": "<p>Our unique formula is tailored for lighter hair shades and washes out with just one shampoo, so you can flirt with color without any long-term flings</p>",
+            "richtext": "<p>Our unique formula is tailored for lighter hair shades and washes out with just one shampoo, so you can flirt with color without any long-term flings<\/p>",
             "enable_color_option": true,
             "text_alignment": "text-left",
             "button_link": "",
@@ -332,7 +323,7 @@
             "shape": "star_1",
             "width": 190,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/S-26.png",
+            "image": "shopify:\/\/shop_images\/S-26.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 89,
             "vertical_position": 10,
@@ -362,7 +353,7 @@
         "heading_text_style": "heading",
         "two_columns_desktop": false,
         "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
         "color_scheme": "quaternary",
         "use_gradient_background": false,
         "padding_bottom": 100,
@@ -450,7 +441,7 @@
             "shape": "star_1",
             "width": 230,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Loveit.png",
+            "image": "shopify:\/\/shop_images\/Loveit.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 14,
             "vertical_position": 49,
@@ -478,7 +469,7 @@
         "title": "Brite vs the other dyes",
         "highlighted_column": "1",
         "column_1_title": "",
-        "column_1_image": "shopify://shop_images/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
         "column_2_title": "Other Brands",
         "enable_column_3": true,
         "column_3_title": "Salons",
@@ -500,7 +491,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Sparkle.png",
+            "image": "shopify:\/\/shop_images\/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
             "vertical_position": 90,

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -23,7 +14,7 @@
       "settings": {
         "show_text_bg_mobile": false,
         "display_on_card": false,
-        "image": "shopify://shop_images/12.png",
+        "image": "shopify:\/\/shop_images\/12.png",
         "crop": "",
         "image_shape": "default",
         "blob_type": 1,
@@ -34,7 +25,7 @@
         "title": "Choose any <br> 3+ products <br> for 20% off!",
         "title_mobile": "Bundle any <br> 3+ products for 20% off!",
         "heading_size": "heading-template",
-        "richtext": "<p>Each and every bundle also receives a free gift on us!</p>",
+        "richtext": "<p>Each and every bundle also receives a free gift on us!<\/p>",
         "text_alignment": "text-left",
         "button_link": "",
         "button_label": "Shop Now",
@@ -62,7 +53,7 @@
       "type": "build-your-bundle",
       "settings": {
         "title": "Brite-n your day below",
-        "richtext": "<p>It's easy as 1-2-3 (simply follow the 3 easy steps below). </p>",
+        "richtext": "<p>It's easy as 1-2-3 (simply follow the 3 easy steps below). <\/p>",
         "first_step_title": "Choose Products",
         "second_step_title": "Choose Free Gift",
         "third_step_title": "Add to Cart",
