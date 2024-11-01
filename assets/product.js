@@ -338,11 +338,14 @@ window["ThemeSection_Product"] = ({
         });
 
         //working on add to cart button
-        const add_to_cart_btn = product_container.querySelector(".rdc-atc-btn");
-        if (add_to_cart_btn) {
-          add_to_cart_btn.style.color = "white";
-          add_to_cart_btn.style.background = rgbaColor;
-        }
+        const add_to_cart_btns = product_container.querySelectorAll(".rdc-atc-btn");
+        add_to_cart_btns.forEach((add_to_cart_btn) => {
+          debugger
+          if (add_to_cart_btn) {
+            add_to_cart_btn.style.color = "white";
+            add_to_cart_btn.style.background = rgbaColor;
+          }
+        });
 
         //reset style for all
         const allbuttons = product_container.querySelectorAll(
@@ -510,11 +513,14 @@ window["ThemeSection_Product"] = ({
         });
 
         //working on add to cart button
-        const add_to_cart_btn = product_container.querySelector(".rdc-atc-btn");
-        if (add_to_cart_btn) {
-          add_to_cart_btn.style.color = "white";
-          add_to_cart_btn.style.background = rgbaColor;
-        }
+        const add_to_cart_btns = product_container.querySelectorAll(".rdc-atc-btn");
+        add_to_cart_btns.forEach((add_to_cart_btn) => {
+          debugger
+          if (add_to_cart_btn) {
+            add_to_cart_btn.style.color = "white";
+            add_to_cart_btn.style.background = rgbaColor;
+          }
+        });
 
         //reset style for all
         const allbuttons = product_container.querySelectorAll(
