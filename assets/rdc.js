@@ -117,6 +117,8 @@ const variantLongDescs = document.querySelectorAll('.rdc-variant-long-desc');
 const variantHows = document.querySelectorAll('.rdc-variant-how');
 const variantIngredients = document.querySelectorAll('.rdc-variant-how');
 const variantPrices = document.querySelectorAll('.rdc-variant-price');
+const fragranceNotes = document.querySelectorAll('.rdc-fragrance_notes');
+const fragranceDupline = document.querySelectorAll('.rdc-dupeline');
 
 
 const showVariantDesc = function () {
@@ -128,16 +130,21 @@ const showVariantDesc = function () {
   // variantId = variantId[1].split('=');
   // variantId = variantId[1];
     const variantDescClass = `rdc-variant-desc-${variantId}`
+    const variantFragance = `rdc-fragrance_notes-${variantId}`
     const variantLongDescClass = `rdc-variant-long-desc-${variantId}`
     const variantHowClass = `rdc-variant-how-${variantId}`
     const variantIngredientClass = `rdc-ingredient-${variantId}`
     const variantPriceClass = `rdc-variant-price-${variantId}`
+    const variantDupline = `rdc-dupeline-${variantId}`
 
 variantDescs.forEach(variantDesc => {variantDesc.classList.add('rdc-d-none')})
 variantLongDescs.forEach(variantLongDesc => {variantLongDesc.classList.add('rdc-d-none')})
 variantHows.forEach(variantHow => {variantHow.classList.add('rdc-d-none')})
 variantIngredients.forEach(variantIngredient => {variantIngredient.classList.add('rdc-d-none')})
 variantPrices.forEach(variantPrice => {variantPrice.classList.add('rdc-d-none')})
+fragranceNotes.forEach(fragranceNote => {fragranceNote.classList.add('rdc-d-none')})
+fragranceDupline.forEach(fragranceDup => {fragranceDup.classList.add('rdc-d-none')})
+
 
     
 for(let i=0; i<variantDescs.length; i++) {
@@ -157,7 +164,20 @@ for(let i=0; i<variantDescs.length; i++) {
   if(variantPrices[i] && variantPrices[i].classList.contains(variantPriceClass)) {
     variantPrices[i].classList.remove('rdc-d-none')
   }
+
 }
+for(let i=0; i<fragranceNotes.length; i++) {
+  if(fragranceNotes[i] && fragranceNotes[i].classList.contains(variantFragance)) {
+    fragranceNotes[i].classList.remove('rdc-d-none')
+  }
+}
+for(let i=0; i<fragranceDupline.length; i++) {
+  if(fragranceDupline[i] && fragranceDupline[i].classList.contains(variantDupline)) {
+    fragranceDupline[i].classList.remove('rdc-d-none')
+  }
+}
+
+
 
 //for price
 for(let i=0; i<variantPrices.length; i++) {
