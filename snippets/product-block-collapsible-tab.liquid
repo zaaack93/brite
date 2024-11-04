@@ -7,7 +7,7 @@
     class="py-2.5 border-b-input border-scheme-text appearance-none"
     x-data="{ open: false }"
     @toggle="open = $root.open"
-  {% if block.settings.heading == "Description" %}open{% endif %}>
+  {% if block.settings.heading == "Description" or block.settings.heading == "Fragrance Notes" %}open{% endif %}>
     <summary>
       <div class="text-theme-basic flex justify-between items-center">
         <div class="text-theme-basic flex items-center font-heading heading-secondary">
