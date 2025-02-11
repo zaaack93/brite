@@ -290,7 +290,7 @@ window["ThemeSection_Product"] = ({
           url
         );
 
-        this.$refs.singleVariantSelector.dispatchEvent(
+        this.$refs.singleVariantSelector?.dispatchEvent(
           new Event("change", {
             bubbles: true,
           })
@@ -393,7 +393,7 @@ window["ThemeSection_Product"] = ({
           url
         );
 
-        this.$refs.singleVariantSelector.dispatchEvent(
+        this.$refs.singleVariantSelector?.dispatchEvent(
           new Event("change", {
             bubbles: true,
           })

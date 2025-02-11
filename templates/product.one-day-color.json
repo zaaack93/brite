@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,13 +14,14 @@
       "blocks": {
         "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa": {
           "type": "social-prof",
+          "disabled": true,
           "settings": {
             "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
-            "avatar_3": "shopify:\/\/shop_images\/7.jpg",
-            "avatar_4": "shopify:\/\/shop_images\/23.jpg",
-            "avatar_5": "shopify:\/\/shop_images\/PASTEL_PURPLE_3.png"
+            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
+            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
+            "avatar_3": "shopify://shop_images/7.jpg",
+            "avatar_4": "shopify://shop_images/23.jpg",
+            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
           }
         },
         "title": {
@@ -19,6 +29,31 @@
           "settings": {
             "display_on_card": false,
             "text_align": "text-left"
+          }
+        },
+        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n</div>\n{% endfor %}"
+          }
+        },
+        "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}</span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}</span>\n{%endif%}\n</div>\n{% endfor %}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "display_on_card": false,
+            "option_style": "buttons",
+            "hide_option_labels": false,
+            "enable_color_swatches": true
           }
         },
         "5716c804-fde9-4d48-a456-78010b655570": {
@@ -29,21 +64,6 @@
             "icon": "none"
           }
         },
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
-          }
-        },
-        "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
-          "type": "liquid",
-          "settings": {
-            "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
-          }
-        },
         "77814407-81ac-45cc-bec9-3c912089591b": {
           "type": "liquid",
           "settings": {
@@ -51,17 +71,9 @@
             "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "display_on_card": false,
-            "option_style": "buttons",
-            "hide_option_labels": false,
-            "enable_color_swatches": true
-          }
-        },
         "7f38a05d-280c-468b-b35a-56aeb98824f8": {
           "type": "buy_buttons_quantity",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "show_price": true,
@@ -95,6 +107,13 @@
             "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
           }
         },
+        "additional_button_gccGMm": {
+          "type": "additional_button",
+          "settings": {
+            "button_text": "COMING SOON",
+            "button_link": ""
+          }
+        },
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
           "type": "text",
           "settings": {
@@ -104,18 +123,9 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
-            "publishId": "mrry5f504imco"
-          }
-        },
-        "a17e90c4-acc9-4f1d-af84-828ae4cb2289": {
-          "type": "description",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "truncate_description": false,
-            "text_align": "text-left"
+            "publishId": "w1p0r7yavqugq"
           }
         },
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23": {
@@ -159,18 +169,18 @@
       "block_order": [
         "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
         "title",
-        "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
-        "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
+        "5716c804-fde9-4d48-a456-78010b655570",
+        "77814407-81ac-45cc-bec9-3c912089591b",
         "7f38a05d-280c-468b-b35a-56aeb98824f8",
         "quantity_selector",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
         "75822277-d417-4ea9-8313-5fc4e2f57483",
+        "additional_button_gccGMm",
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
-        "a17e90c4-acc9-4f1d-af84-828ae4cb2289",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
         "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
@@ -195,49 +205,19 @@
         "use_gradient_background": false
       }
     },
-    "b75e11a0-4a7a-4836-ab57-fdf73c61726f": {
-      "type": "image-with-text-slideshow",
-      "blocks": {
-        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/5-1.jpg",
-            "image_shape": "scalloped_square",
-            "rotate_image": 2,
-            "image_position": "left",
-            "title": "",
-            "richtext": "<h4><strong>Instant Transformation<\/strong><\/h4><p>Achieve vibrant pastel hues in moments with our easy-to-apply mousse, perfect for blondes, highlighted, or gray hair.<\/p><h4><strong>Mess-Free Application<\/strong><\/h4><p>The quick-dry mousse leaves your hair soft and natural-looking, free from any sticky residues or color transfer to clothing.<\/p>",
-            "text_alignment": "text-left",
-            "button_link": "",
-            "button_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1"
-      ],
-      "settings": {
-        "display_on_card": false,
-        "image_size": "half",
-        "crop": "aspect-w-1 aspect-h-1",
-        "heading_size": "heading-template",
-        "color_scheme": "tertiary",
-        "use_gradient_background": false
-      }
-    },
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd": {
       "type": "before-after-with-text-slideshow",
       "blocks": {
         "template--20802243133731__55831fe7-19ac-45c2-95b5-a5708ff32ddd-slide-1": {
           "type": "slide",
           "settings": {
-            "image_after": "shopify:\/\/shop_images\/Brite_October_-2_12.jpg",
-            "image": "shopify:\/\/shop_images\/Brite_October_-81_1.jpg",
+            "image_after": "shopify://shop_images/Brite_October_-2_12.jpg",
+            "image": "shopify://shop_images/Brite_October_-81_1.jpg",
             "image_shape": "default",
             "rotate_image": 0,
             "image_position": "right",
             "title": "Before & Brite-er!",
-            "richtext": "<p>Our unique formula is tailored for lighter hair shades and washes out with just one shampoo, so you can flirt with color without any long-term flings<\/p>",
+            "richtext": "<p>Our unique formula is tailored for lighter hair shades and washes out with just one shampoo, so you can flirt with color without any long-term flings</p>",
             "enable_color_option": true,
             "text_alignment": "text-left",
             "button_link": "",
@@ -254,6 +234,36 @@
         "crop": "aspect-w-1 aspect-h-1",
         "heading_size": "heading-base",
         "color_scheme": "primary",
+        "use_gradient_background": false
+      }
+    },
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f": {
+      "type": "image-with-text-slideshow",
+      "blocks": {
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/5-1.jpg",
+            "image_shape": "scalloped_square",
+            "rotate_image": 2,
+            "image_position": "left",
+            "title": "",
+            "richtext": "<h4><strong>Instant Transformation</strong></h4><p>Achieve vibrant pastel hues in moments with our easy-to-apply mousse, perfect for blondes, highlighted, or gray hair.</p><h4><strong>Mess-Free Application</strong></h4><p>The quick-dry mousse leaves your hair soft and natural-looking, free from any sticky residues or color transfer to clothing.</p>",
+            "text_alignment": "text-left",
+            "button_link": "",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20370914869539__b75e11a0-4a7a-4836-ab57-fdf73c61726f-slide-1"
+      ],
+      "settings": {
+        "display_on_card": false,
+        "image_size": "half",
+        "crop": "aspect-w-1 aspect-h-1",
+        "heading_size": "heading-template",
+        "color_scheme": "tertiary",
         "use_gradient_background": false
       }
     },
@@ -294,48 +304,6 @@
             "question": "{{ product.metafields.custom.faq_q5.value }}",
             "answer": "{{ product.metafields.custom.faq_a5 | metafield_tag }}"
           }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q6.value }}",
-            "answer": "{{ product.metafields.custom.faq_a6 | metafield_tag }}"
-          }
-        },
-        "ab246adc-2d98-4f23-830e-061980e5c974": {
-          "type": "shape_divider",
-          "disabled": true,
-          "settings": {
-            "target_section": "above",
-            "target_section_color_scheme": "primary",
-            "style": "medium-waves_1200x43",
-            "flip_horizontal": false,
-            "enable_animation": false,
-            "animation_direction": ""
-          }
-        },
-        "ec8370ab-b71f-4870-89fa-28dce2889d27": {
-          "type": "sticker",
-          "disabled": true,
-          "settings": {
-            "text": "Sticker",
-            "shape": "star_1",
-            "width": 190,
-            "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/S-26.png",
-            "half_image_width_on_mobile": true,
-            "horizontal_position": 89,
-            "vertical_position": 10,
-            "rotate": 20,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "none",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
-          }
         }
       },
       "block_order": [
@@ -343,17 +311,14 @@
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
-        "ab246adc-2d98-4f23-830e-061980e5c974",
-        "ec8370ab-b71f-4870-89fa-28dce2889d27"
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4"
       ],
       "settings": {
         "display_on_card": true,
         "heading_text_style": "heading",
         "two_columns_desktop": false,
         "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
         "color_scheme": "quaternary",
         "use_gradient_background": false,
         "padding_bottom": 100,
@@ -432,28 +397,6 @@
             "column_4_icon": "",
             "column_4_text": ""
           }
-        },
-        "11dd58ec-5393-459a-be54-0c6da5c9d8e3": {
-          "type": "sticker",
-          "disabled": true,
-          "settings": {
-            "text": "Sticker",
-            "shape": "star_1",
-            "width": 230,
-            "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/Loveit.png",
-            "half_image_width_on_mobile": true,
-            "horizontal_position": 14,
-            "vertical_position": 49,
-            "rotate": 0,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "none",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
-          }
         }
       },
       "block_order": [
@@ -461,15 +404,14 @@
         "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
-        "142db635-746a-4827-88ff-c90c1c20c2e7",
-        "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
+        "142db635-746a-4827-88ff-c90c1c20c2e7"
       ],
       "settings": {
         "display_on_card": false,
         "title": "Brite vs the other dyes",
         "highlighted_column": "1",
         "column_1_title": "",
-        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_1_image": "shopify://shop_images/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
         "column_2_title": "Other Brands",
         "enable_column_3": true,
         "column_3_title": "Salons",
@@ -491,7 +433,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/Sparkle.png",
+            "image": "shopify://shop_images/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
             "vertical_position": 90,
@@ -529,12 +471,28 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
+    },
+    "1736832706c00ee20d": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_reviews_wc76zn": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_reviews_wc76zn"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
+    "1736832706c00ee20d",
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
+    "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "b9840557-6047-445f-8e23-ec62568e83c0"

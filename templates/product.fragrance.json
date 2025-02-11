@@ -1,40 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
-        "sticker_g9mYzX": {
-          "type": "sticker",
-          "settings": {
-            "text": "COMING SOON",
-            "shape": "ellipse",
-            "width": 120,
-            "sticker_font_size": "1rem",
-            "half_image_width_on_mobile": false,
-            "horizontal_position": 15,
-            "vertical_position": 5,
-            "rotate": 16,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "constantly_rotate",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-gradient text-scheme-text",
-            "color_scheme": "tertiary"
-          }
-        },
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa": {
-          "type": "social-prof",
-          "disabled": true,
-          "settings": {
-            "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify:\/\/shop_images\/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify:\/\/shop_images\/Silver_Toner.jpg",
-            "avatar_3": "shopify:\/\/shop_images\/7.jpg",
-            "avatar_4": "shopify:\/\/shop_images\/23.jpg",
-            "avatar_5": "shopify:\/\/shop_images\/PASTEL_PURPLE_3.png"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -42,34 +19,11 @@
             "text_align": "text-left"
           }
         },
-        "5716c804-fde9-4d48-a456-78010b655570": {
-          "type": "text",
-          "settings": {
-            "display_on_card": false,
-            "text": "{{ product.metafields.custom.short_description.value }}",
-            "icon": "none"
-          }
-        },
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n<\/div>\n{% endfor %}"
-          }
-        },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
           "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}<\/span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}<\/span>\n{%endif%}\n<\/div>\n{% endfor %}"
-          }
-        },
-        "77814407-81ac-45cc-bec9-3c912089591b": {
-          "type": "liquid",
-          "settings": {
-            "display_on_card": false,
-            "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
+            "liquid": "<div class=\"price_with_rating\">\n{% for variant in product.variants %}\n<div class=\"rdc-variant-price font-heading rdc-variant-price-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\"><span class=\"{% if variant.compare_at_price > variant.price %} onSlateProduct {%endif%}text-scheme-text rdctest text-base lg:text-lg\">{{variant.price | money | replace: ' AUD','' }}</span>\n{% if variant.compare_at_price > variant.price %}\n<span class=\"text-scheme-text rdctest text-base comparePricePdp\">{{variant.compare_at_price | money | replace: ' AUD','' }}</span>\n{%endif%}\n</div>\n{% endfor %}"
           }
         },
         "variant_picker": {
@@ -81,22 +35,11 @@
             "enable_color_swatches": true
           }
         },
-        "7f38a05d-280c-468b-b35a-56aeb98824f8": {
-          "type": "buy_buttons_quantity",
-          "disabled": true,
+        "liquid_i936Hq": {
+          "type": "liquid",
           "settings": {
             "display_on_card": false,
-            "show_price": true,
-            "enable_payment_button": false,
-            "show_pickup_availability": false
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "show_label": true
+            "liquid": "{% for variant in product.variants %}\n{% if variant.metafields.custom.variant_dupe_line != blank %}\n<div class=\"rdc-dupeline rdc-dupeline-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_dupe_line | metafield_tag }}\n</div>\n{% endif %}\n{% endfor %}"
           }
         },
         "baf3083e-d14d-435d-bca3-100d6ac490ce": {
@@ -108,20 +51,51 @@
             "show_pickup_availability": false
           }
         },
-        "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/stories-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "w1p0r7yavqugq"
-          }
-        },
         "collapsible_tab_7qknWh": {
           "type": "collapsible_tab",
           "settings": {
             "display_on_card": false,
-            "icon": "heart",
+            "icon": "none",
             "heading": "Fragrance Notes",
-            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes | metafield_tag }}\n<\/div>\n{% endfor %}",
+            "content": "{% for variant in product.variants %}\n<div class=\"rdc-fragrance_notes rdc-fragrance_notes-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.fragrance_notes | metafield_tag }}\n</div>\n{% endfor %}",
             "page": ""
+          }
+        },
+        "announcement_box_yd9raT": {
+          "type": "announcement-box",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.metafields.custom.promo_heading.value }}",
+            "sub_text": "{{ product.metafields.custom.promo_subheading.value }}"
+          }
+        },
+        "text_peQFWF": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "",
+            "icon": "none"
+          }
+        },
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
+          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "w1p0r7yavqugq"
+          }
+        },
+        "5716c804-fde9-4d48-a456-78010b655570": {
+          "type": "text",
+          "settings": {
+            "display_on_card": false,
+            "text": "{{ product.metafields.custom.short_description.value }}",
+            "icon": "none"
+          }
+        },
+        "77814407-81ac-45cc-bec9-3c912089591b": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% for benefit in product.metafields.custom.benefits_list.value %}\n{% assign text = benefit.text  | metafield_tag %}\n{% render 'benifit-item', text:text  %}\n{%endfor%}"
           }
         },
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23": {
@@ -154,18 +128,6 @@
             "page": ""
           }
         },
-        "9a87895d-c01d-4b6b-af9e-c51c4737669c": {
-          "type": "background_pattern",
-          "disabled": true,
-          "settings": {
-            "type": "checkerboard",
-            "color": "gradient",
-            "size": 600,
-            "opacity": 15,
-            "enable_parallax": false,
-            "parallax_speed": 4
-          }
-        },
         "liquid_e6hMCj": {
           "type": "liquid",
           "settings": {
@@ -175,23 +137,20 @@
         }
       },
       "block_order": [
-        "sticker_g9mYzX",
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
         "title",
-        "5716c804-fde9-4d48-a456-78010b655570",
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
-        "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
-        "7f38a05d-280c-468b-b35a-56aeb98824f8",
-        "quantity_selector",
+        "liquid_i936Hq",
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
-        "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "collapsible_tab_7qknWh",
+        "announcement_box_yd9raT",
+        "text_peQFWF",
+        "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
+        "5716c804-fde9-4d48-a456-78010b655570",
+        "77814407-81ac-45cc-bec9-3c912089591b",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
         "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
-        "9a87895d-c01d-4b6b-af9e-c51c4737669c",
         "liquid_e6hMCj"
       ],
       "settings": {
@@ -216,15 +175,15 @@
     "image_with_text_overlay_VgjXWG": {
       "type": "image-with-text-overlay",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Brite_October_-145.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Brite_October_-25.jpg",
+        "image": "shopify://shop_images/Brite_October_-145.jpg",
+        "image_mobile": "shopify://shop_images/Brite_October_-25.jpg",
         "display_on_card": false,
         "display_content_below_image_on_mobile": false,
         "style": "full",
         "height": "pt-half-screen-height",
         "place_content": "place-content-start-center",
         "text_align": "text-center",
-        "title": "COMING SOON",
+        "title": "",
         "heading_size": "heading-template",
         "richtext": "",
         "cta_url": "",
@@ -271,48 +230,6 @@
             "question": "{{ product.metafields.custom.faq_q5.value }}",
             "answer": "{{ product.metafields.custom.faq_a5 | metafield_tag }}"
           }
-        },
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7": {
-          "type": "question",
-          "disabled": true,
-          "settings": {
-            "question": "{{ product.metafields.custom.faq_q6.value }}",
-            "answer": "{{ product.metafields.custom.faq_a6 | metafield_tag }}"
-          }
-        },
-        "ab246adc-2d98-4f23-830e-061980e5c974": {
-          "type": "shape_divider",
-          "disabled": true,
-          "settings": {
-            "target_section": "above",
-            "target_section_color_scheme": "primary",
-            "style": "medium-waves_1200x43",
-            "flip_horizontal": false,
-            "enable_animation": false,
-            "animation_direction": ""
-          }
-        },
-        "ec8370ab-b71f-4870-89fa-28dce2889d27": {
-          "type": "sticker",
-          "disabled": true,
-          "settings": {
-            "text": "Sticker",
-            "shape": "star_1",
-            "width": 190,
-            "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/S-26.png",
-            "half_image_width_on_mobile": true,
-            "horizontal_position": 89,
-            "vertical_position": 10,
-            "rotate": 20,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "none",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
-          }
         }
       },
       "block_order": [
@@ -320,17 +237,14 @@
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-5",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-2",
         "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-3",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4",
-        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-7",
-        "ab246adc-2d98-4f23-830e-061980e5c974",
-        "ec8370ab-b71f-4870-89fa-28dce2889d27"
+        "template--14420446740564__618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6-1666163239eaa7a6b8-4"
       ],
       "settings": {
         "display_on_card": true,
         "heading_text_style": "heading",
         "two_columns_desktop": false,
         "title": "FAQ",
-        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"\/pages\/frontpage\" target=\"_blank\" title=\"Contact Us\">here<\/a>. <\/p>",
+        "richtext": "<p>Got a question? Check our FAQ's below or hit us up <a href=\"/pages/frontpage\" target=\"_blank\" title=\"Contact Us\">here</a>. </p>",
         "color_scheme": "quaternary",
         "use_gradient_background": false,
         "padding_bottom": 100,
@@ -423,7 +337,7 @@
         "title": "Brite vs the other dyes",
         "highlighted_column": "1",
         "column_1_title": "",
-        "column_1_image": "shopify:\/\/shop_images\/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
+        "column_1_image": "shopify://shop_images/Brite_logo_2018_bw_f8391a50-b54c-4958-aecd-208bf043fefd.png",
         "column_2_title": "Other Brands",
         "enable_column_3": true,
         "column_3_title": "Salons",
@@ -445,7 +359,7 @@
             "shape": "star_1",
             "width": 200,
             "sticker_font_size": "1.563rem",
-            "image": "shopify:\/\/shop_images\/Sparkle.png",
+            "image": "shopify://shop_images/Sparkle.png",
             "half_image_width_on_mobile": true,
             "horizontal_position": 80,
             "vertical_position": 90,
@@ -483,12 +397,28 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
+    },
+    "1736831219c8464e27": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_reviews_XmWRPp": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_reviews_XmWRPp"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "image_with_text_overlay_VgjXWG",
+    "1736831219c8464e27",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
+    "image_with_text_overlay_VgjXWG",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "b9840557-6047-445f-8e23-ec62568e83c0"
   ]

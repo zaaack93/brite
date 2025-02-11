@@ -43,17 +43,17 @@
         "2d1bf953-5104-42c5-a4fc-9af772583332"
       ],
       "settings": {
-        "no_products": 24,
+        "no_products": 16,
         "display_on_card": false,
         "enable_quick_buy": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "enable_filtering": true,
-        "enable_sorting": true,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 2,
+        "enable_filtering": false,
+        "enable_sorting": false,
         "expand_filters": false,
-        "show_filter_count": true,
+        "show_filter_count": false,
         "enable_color_swatch_filters": true,
-        "color_scheme": "secondary",
+        "color_scheme": "tertiary",
         "use_gradient_background": false
       }
     }

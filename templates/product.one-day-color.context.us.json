@@ -8,13 +8,20 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "pf-357edcfb": {
-      "type": "pf-357edcfb",
-      "settings": {}
-    }
+  "parent": "product.one-day-color.json",
+  "context": {
+    "market": "us"
   },
-  "order": [
-    "pf-357edcfb"
-  ]
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "additional_button_gccGMm": {
+          "settings": {
+            "button_link": ""
+          }
+        }
+      }
+    }
+  }
 }

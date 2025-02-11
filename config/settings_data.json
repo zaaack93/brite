@@ -187,13 +187,13 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement_bar": false,
-          "home_page_only": false,
-          "display": "marquee",
-          "text": "SHOP THE HALLOWEEN SPECIAL",
-          "link": "shopify://products/halloween-special-liquid-hair-chalks",
+          "show_announcement_bar": true,
+          "home_page_only": true,
+          "display": "static",
+          "text": "HAIR & BODY FRAGRANCE   |   NOW AT WOOLWORTHS",
+          "link": "shopify://products/hair-body-fragrance-repairing-peptides",
           "color_scheme": "quaternary",
-          "use_gradient_background": true,
+          "use_gradient_background": false,
           "repeat_text": true,
           "shape_between_text": "10_point_star",
           "animate_shape_between_text": false,
@@ -381,31 +381,30 @@
           "5bd2fecb-932b-46f1-bcf4-2080dd7d0ada",
           "bde877bf-b4db-4ca1-b8f7-7ddda3629610"
         ],
-        "settings": {
-        }
+        "settings": {}
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "4705145147225299685": {
         "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/widget-block/06fa8282-42ff-403e-b67c-1936776aed11",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "pagefly-page-builder": {
         "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": true,
-        "settings": {
-        }
+        "disabled": false,
+        "settings": {}
+      },
+      "7570552984445421165": {
+        "type": "shopify://apps/yotpo-product-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
@@ -872,9 +871,7 @@
           }
         }
       },
-      "content_for_index": [
-
-      ]
+      "content_for_index": []
     },
     "Muted": {
       "color_primary_text": "#1c1c1d",
@@ -1117,9 +1114,7 @@
           }
         }
       },
-      "content_for_index": [
-
-      ]
+      "content_for_index": []
     }
   }
 }

@@ -8,13 +8,14 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "pf-357edcfb": {
-      "type": "pf-357edcfb",
-      "settings": {}
-    }
+  "parent": "product.fragrance.json",
+  "context": {
+    "market": "us"
   },
-  "order": [
-    "pf-357edcfb"
-  ]
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {}
+    }
+  }
 }
