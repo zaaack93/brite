@@ -450,12 +450,23 @@ const pmThumbnails = document.querySelectorAll(".rdc-pm-thumbnail")
 
 const changePMDisplay = function () {
   let thisImageSrc = this.children[0].src;
+  let videoPlayer= this.querySelector('video');
 //   thisImageSrc = thisImageSrc.split("_")
 // thisImageSrc[thisImageSrc.length-1] = "1000x"
 // thisImageSrc = thisImageSrc.join("_")
 
 let pmImageDisplayed = this.closest('.rdc-product-media-main').querySelector('.rdc-product-media-viewer').children[0]
-  pmImageDisplayed.src=`${thisImageSrc}`
+  if (videoPlayer) {
+    videoPlayer.classList.remove('hidden')
+    pmImageDisplayed.replaceWith(videoPlayer.cloneNode(true));
+    videoPlayer.play();
+  } else {
+    const imgTag = document.createElement('img');
+    imgTag.src = `${thisImageSrc}`;
+    pmImageDisplayed.replaceWith(imgTag);
+  }
+
+
   this.closest('.rdc-product-media-thumbnails').querySelectorAll('.rdc-pm-thumbnail').forEach(pmThumbnail => {
     pmThumbnail.classList.remove('current-thumb')
   })

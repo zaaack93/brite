@@ -123,7 +123,26 @@
 
          {% if variant.metafields.details.images.value != blank %}
       {% for varImage in variant.metafields.details.images.value %}
- <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"><img src="{{ varImage | img_url: "1000x" }}"></span>
+ <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p"
+  >
+    <img src="{{ varImage | img_url: "1000x" }}">
+  {% if varImage.sources != blank %}
+    <video
+      playsinline
+      loop
+      controls="false"
+      controlsList="nodownload"
+      poster="{{ varImage.preview_image | img_url }}"
+      autoplay
+      muted
+      class="product-video-mp4-sound hidden">
+      {%- for source in varImage.sources -%}
+        <source src="{{ source.url }}" type="{{ source.mime_type }}">
+      {%- endfor -%}
+      Your browser does not support the video tag.
+    </video>
+  {% endif %}
+  </span>
          {% assign dotCount = forloop.index | plus: 1 %}
           {% endfor %}
            {% endif %}
@@ -134,15 +153,31 @@
                <span class="rdc-pm-dot rdc-media-dot rdc-active">
            </span>
       {% for varImage in variant.metafields.details.images.value %}
-       
            <span class="rdc-pm-dot rdc-media-dot">
            </span>
              {% endfor %}
 
 
              {%else %}
-             <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p current-thumb"><img src="{{ variant.image | img_url: "1000x" }}"></span>
-
+             <span class="rdc-pm-thumbnail rdc-d-flex rdc-ai-c rdc-jc-c rdc-cursor-p current-thumb">
+              <img src="{{ variant.image | img_url: "1000x" }}">
+              {% if varImage.sources != blank %}
+                <video
+                  playsinline
+                  loop
+                  controls="false"
+                  controlsList="nodownload"
+                  poster="{{ varImage.preview_image | img_url }}"
+                  autoplay
+                  muted
+                  class="product-video-mp4-sound hidden">
+                  {%- for source in varImage.sources -%}
+                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                  {%- endfor -%}
+                  Your browser does not support the video tag.
+                </video>
+              {% endif %}
+            </span>
             {% endif %}
          </div>
 </div>
