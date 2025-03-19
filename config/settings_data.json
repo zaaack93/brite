@@ -148,6 +148,7 @@
         "blocks": {
           "f91fbdec-fc3d-458e-9911-ed02d5cf16ac": {
             "type": "feature_desktop_link",
+            "disabled": true,
             "settings": {
               "button_link": "shopify://pages/build-your-bundle",
               "button_label": "Build Your Bundle",
@@ -190,8 +191,8 @@
           "show_announcement_bar": true,
           "home_page_only": true,
           "display": "static",
-          "text": "HAIR & BODY FRAGRANCE   |   NOW AT WOOLWORTHS",
-          "link": "shopify://products/hair-body-fragrance-repairing-peptides",
+          "text": "BRITE HAIR CARE BEAR   |   NOW AT TARGET",
+          "link": "shopify://products/care-protect-leave-in-hair-treatment",
           "color_scheme": "quaternary",
           "use_gradient_background": false,
           "repeat_text": true,

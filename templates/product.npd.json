@@ -110,8 +110,8 @@
         "additional_button_gccGMm": {
           "type": "additional_button",
           "settings": {
-            "button_text": "COMING SOON",
-            "button_link": ""
+            "button_text": "{{ product.metafields.custom.additional_button_text.value }}",
+            "button_link": "{{ product.metafields.custom.additional_button_link.value }}"
           }
         },
         "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
@@ -218,6 +218,7 @@
       "block_order": [
         "yotpo_product_reviews_reviews_wc76zn"
       ],
+      "disabled": true,
       "settings": {}
     },
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {

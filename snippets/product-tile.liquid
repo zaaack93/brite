@@ -155,33 +155,6 @@
         color: 'bg-scheme-accent text-scheme-accent-overlay'
       %}
     {%- endif -%}
-    {%- unless available -%}
-      {%- liquid
-        assign text = 'products.product.sold_out' | t
-        assign id = 'sold-out-sticker-' | append: product.id
-        assign vertical_position = 15
-        assign horizontal_position = 10
-        if rotate > 0
-          assign rotate = -5
-        else
-          assign rotate = 5
-        endif
-        if display_on_card
-          assign vertical_position = 5
-        endif
-      -%}
-      {%- render 'static-sticker',
-        static_id: 'sold-out',
-        id: id,
-        text: text,
-        vertical_position: vertical_position,
-        horizontal_position: horizontal_position,
-        rotate: rotate,
-        width: 100,
-        font_size: '0.75rem',
-        color: 'bg-scheme-text text-scheme-text-overlay'
-      %}
-    {%- endunless -%}
     {% assign metafield_badge = settings.product_tile_metafield_badge %}
     {% if product.metafields.shapes_theme[metafield_badge] != blank %}
       {%- liquid

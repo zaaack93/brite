@@ -37,7 +37,7 @@
             "width": 130,
             "sticker_font_size": "1rem",
             "half_image_width_on_mobile": false,
-            "horizontal_position": 85,
+            "horizontal_position": 79,
             "vertical_position": 100,
             "rotate": 12,
             "show_sticker_on_mobile": true,
@@ -57,7 +57,7 @@
       "settings": {
         "show_text_bg_mobile": true,
         "display_on_card": false,
-        "image": "shopify://shop_images/Brite_October_-25.jpg",
+        "image": "shopify://shop_images/FlatPack-Brite-BearMaskHairSerum-10_Large_2d7e77ec-5749-40d1-810e-54676bab9906.jpg",
         "crop": "aspect-w-1 aspect-h-1",
         "image_shape": "default",
         "blob_type": 2,
@@ -65,13 +65,13 @@
         "image_position": "right",
         "image_size": "half",
         "disable_media_style": true,
-        "title": "HAIR & BODY <br> FRAGRANCE",
-        "title_mobile": "HAIR & BODY FRAGRANCE",
+        "title": "Discover <br> What's New",
+        "title_mobile": "Discover What's New",
         "heading_size": "heading-template",
-        "richtext": "<p>Say goodbye to dry colored hair (and dry shampoo)</p>",
+        "richtext": "<p>Leave-In Hair Treatment and Growth Scalp Serum available now. </p>",
         "text_alignment": "text-left",
-        "button_link": "shopify://products/hair-body-fragrance-repairing-peptides",
-        "button_label": "SHOP FRAGRANCE",
+        "button_link": "shopify://collections/new-arrivals",
+        "button_label": "SHOP NEW ARRIVALS",
         "color_scheme": "tertiary",
         "use_gradient_background": false
       }
@@ -81,9 +81,10 @@
       "blocks": {
         "c630e940-0dad-4356-b24b-79bbc81d8ea0": {
           "type": "background_pattern",
+          "disabled": true,
           "settings": {
             "type": "checkerboard",
-            "color": "gradient",
+            "color": "background",
             "size": 30,
             "opacity": 20,
             "enable_parallax": false,
@@ -134,7 +135,7 @@
         "autoscroll_mode": "1",
         "product_tiles_aspect_ratio": "",
         "image_shape": "",
-        "color_scheme": "primary",
+        "color_scheme": "quaternary",
         "use_gradient_background": false
       }
     },
@@ -142,7 +143,7 @@
       "type": "apps",
       "blocks": {
         "d646b995-400e-4ef3-9cfd-cbf5622c0b8e": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/carousel-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/carousel-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "xs4fw5jmdxndf"
           }
@@ -188,6 +189,7 @@
         },
         "a291ff53-697e-4237-81c2-82a021900df9": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "logo": "shopify://shop_images/1200px-JCPenney_logo.png"
           }
@@ -311,7 +313,7 @@
         "title": "HOT OFF THE PRESS!",
         "title_mobile": "HOT OFF THE PRESS!",
         "heading_size": "heading-base",
-        "richtext": "<p>Hands up 🙌 who's excited to try our new Hair Chalks? <br/><br/>Our temporary hair makeup is designed to paint on and wash off in the same day.<br/><br/>Stocked exclusively in Walmart,  Woolworths and now available online 💜💙💚💖</p>",
+        "richtext": "<p>Hands up 🙌 who's excited to try our new Hair Chalks? <br/><br/>Our temporary hair makeup is designed to paint on and wash off in the same day.<br/><br/>Stocked exclusively in Sally Beauty,  Woolworths and now available online 💜💙💚💖</p>",
         "text_alignment": "text-left",
         "button_link": "shopify://products/liquid-hair-chalk",
         "button_label": "Shop Liquid Hair Chalks",
@@ -326,8 +328,8 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify://shop_images/Screen_Shot_2023-08-03_at_5.16.58_pm.png",
-            "title": "@iamkristenrose",
+            "image": "shopify://shop_images/471715693_1245603996543598_1183820907787979659_n.jpg",
+            "title": "@roguest_w_imt3",
             "text": "",
             "cta_link": "",
             "cta_text": "",
@@ -338,8 +340,8 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify://shop_images/Wild.jpg",
-            "title": "@desmondisamazing",
+            "image": "shopify://shop_images/468803333_1380335942946621_4304601965710929867_n.jpg",
+            "title": "@anthonyvincenttt",
             "text": "",
             "cta_link": "",
             "cta_text": "",
@@ -350,8 +352,8 @@
           "type": "column",
           "settings": {
             "show_image": true,
-            "image": "shopify://shop_images/Screen_Shot_2023-08-03_at_5.20.35_pm.png",
-            "title": "@noyrhair",
+            "image": "shopify://shop_images/464894761_937129718290739_5055874413551547126_n.jpg",
+            "title": "@cyberangel_666",
             "text": "",
             "cta_link": "",
             "cta_text": "",
