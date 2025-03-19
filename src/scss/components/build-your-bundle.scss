@@ -738,7 +738,7 @@
       }
       .product-container-options{
         margin-top: 16px;
-        margin-bottom: 23px;
+        margin-bottom: 0px;
         display: flex;
         flex-direction: column;
         row-gap: 19px;
@@ -831,6 +831,7 @@
       .btn-add-to-set{
         --color-button-background:192, 153, 255;
         --button-border-width: 1.5px;
+        margin-top: 23px;
         .push-btn-surface{
           padding-block: 15px;
           color: #FFF;

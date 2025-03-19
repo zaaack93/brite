@@ -390,9 +390,9 @@ class ProductBundler extends HTMLElement {
   }
 }
 
-  updateLineItem(lineItem,variant,isGift){
+  updateLineItem(lineItem,variant,isGift,featuredImage){
     //update image
-    lineItem.querySelector('.product-image img').src= variant.featured_image.src
+    lineItem.querySelector('.product-image img').src= variant.featured_image ? variant.featured_image.src : featuredImage
     //update details
     lineItem.querySelector('.current-details .set-title').textContent= variant.name.replace(` - ${variant.title}`,'')
     lineItem.querySelector('.current-details .set-options').textContent= variant.title
@@ -584,7 +584,7 @@ class ProductBundler extends HTMLElement {
         lineItem.classList.add('selected')
         lineItem.setAttribute('js-starter-set-item',variant.id)
         this.productSelected++;
-        this.updateLineItem(lineItem,variant,isGift)
+        this.updateLineItem(lineItem,variant,isGift,e.detail.handleButton.closest('.product-tile').getAttribute('data-featured-media'))
 
         //update cart price
         this.updateCartValues(variant,isGift)

@@ -1438,7 +1438,7 @@ image-with-text-options{
 }
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .product-container-options, .gift-popup-wrapper .main-section-container .product-tile-bundle .product-container-options {
   margin-top: 16px;
-  margin-bottom: 23px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   row-gap: 19px;
@@ -1528,6 +1528,7 @@ image-with-text-options{
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .btn-add-to-set, .gift-popup-wrapper .main-section-container .product-tile-bundle .btn-add-to-set {
   --color-button-background:192, 153, 255;
   --button-border-width: 1.5px;
+  margin-top: 23px;
 }
 .section-build-your-bundle-main .main-section-container .product-tile-bundle .btn-add-to-set .push-btn-surface, .gift-popup-wrapper .main-section-container .product-tile-bundle .btn-add-to-set .push-btn-surface {
   padding-block: 15px;

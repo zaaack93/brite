@@ -43,7 +43,7 @@
 
   {%- if product and product != empty -%}
   <div
-    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %} {% if isGift %} product-gift-tile {%endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false" data-is-gift="{{isGift}}"
+    class="product-tile product-tile-bundle relative {{ class }} {% if display_on_card %}text-scheme-text card-container{% endif %} {% if isGift %} product-gift-tile {%endif %}" x-data="{ hover: false }"  @mouseleave="hover = false" @mouseover="hover = true" @focusin="hover = true" @focusout="hover = false" data-is-gift="{{isGift}}" data-featured-media="{{ featured_media | image_url }}"
   >
     <div
       {% if enable_quick_buy %}
