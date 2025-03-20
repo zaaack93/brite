@@ -292,13 +292,16 @@
                     block_base_classes: block_base_classes,
                   %}
                 {% when 'additional_button' %}
+                  <div class="buy-button-with-quantity-wrapper product-block">
                   {% if block.settings.button_text != blank and block.settings.button_link != blank %}
-                    <a href="{{block.settings.button_link}}" class="mb-1 mt-4 add-to-cart-btn push-btn theme-button theme-button w-full
-                      " type="submit" >
+                    <button href="{{block.settings.button_link}}" class="mb-1 add-to-cart-btn push-btn theme-button theme-button w-full
+                      " 
+                      onclick="window.location.href='{{ block.settings.button_link }}'"
+                    >
                       <span class="rdc-atc-btn push-btn-surface w-full">
                       {{block.settings.button_text}}
                         </span>
-                    </a>
+                    </button>
                   {% elsif block.settings.button_text != blank %}
                     <button class="mb-1 mt-4 add-to-cart-btn push-btn theme-button theme-button w-full
                       " type="submit">
@@ -307,6 +310,7 @@
                         </span>
                     </button>
                   {% endif %}
+                </div>
 
                 {% when 'buy_buttons_quantity' %}
                 <div class="buy-button-with-quantity-wrapper product-block">

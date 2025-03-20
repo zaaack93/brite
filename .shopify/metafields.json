@@ -42,26 +42,6 @@
       }
     },
     {
-      "key": "product_benefits",
-      "namespace": "custom",
-      "name": "Product Benefits",
-      "description": "Product Benefits",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_subtitle",
-      "namespace": "custom",
-      "name": "Product Subtitle",
-      "description": "Product Subtitle",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "video",
       "namespace": "custom",
       "name": "Video",
@@ -72,26 +52,6 @@
       }
     },
     {
-      "key": "atc_benefit",
-      "namespace": "info",
-      "name": "ATC Benefit",
-      "description": "Text below the ATC",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "image_benefit",
-      "namespace": "info",
-      "name": "Image Benefit",
-      "description": "Image at the bottom left of the product image",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "complementary_products",
       "namespace": "conversion",
       "name": "Complementary Products",
@@ -99,26 +59,6 @@
       "type": {
         "name": "list.product_reference",
         "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "product_benefit_2",
-      "namespace": "custom",
-      "name": "Product benefit 2",
-      "description": "Product benefit 2",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_benefit_3",
-      "namespace": "custom",
-      "name": "Product benefit 3",
-      "description": "Product benefit 3",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
       }
     },
     {
@@ -402,16 +342,6 @@
       }
     },
     {
-      "key": "key_benefits",
-      "namespace": "custom",
-      "name": "Key Benefits",
-      "description": "Accordion",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "custom_product",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Product",
@@ -551,26 +481,6 @@
       "type": {
         "name": "rich_text_field",
         "category": "TEXT"
-      }
-    },
-    {
-      "key": "variant_benefit",
-      "namespace": "custom",
-      "name": "variant benefit",
-      "description": "",
-      "type": {
-        "name": "list.mixed_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "color",
-      "namespace": "custom",
-      "name": "color",
-      "description": "",
-      "type": {
-        "name": "color",
-        "category": "COLOR"
       }
     },
     {

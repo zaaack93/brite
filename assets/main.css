@@ -343,6 +343,11 @@
   display: block;
   position: relative;
 }
+
+.template-product tolstoy-stories{
+  margin-top: 20px;
+  display: block;
+}
 .faq-section-main{
     .card-container{
         p{

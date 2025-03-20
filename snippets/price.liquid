@@ -11,20 +11,26 @@
     {% render 'price', product: product %}
 {% endcomment %}
 {% assign colorsAvail = false %}
+{% assign fragranceAvail = false %}
   {% for product_option in product.options_with_values %}
     {% if product_option.name == "Color" %} 
       {% assign colorsAvail = true %}
-  {% for value in product_option.values %}
-    {% assign colorCount = forloop.index %}
-  {% endfor %}
-       {% endif %}
+      {% for value in product_option.values %}
+        {% assign colorCount = forloop.index %}
+      {% endfor %}
+    {% elsif product_option.name == "FRAGRANCE" %}
+      {% assign fragranceAvail = true %}
+      {% for value in product_option.values %}
+        {% assign fragranceCount = forloop.index %}
+      {% endfor %}
+    {% endif %}
 {% endfor %}
 
 <div class="price
   {%- if price_class %} {{ price_class }}{% endif -%}
   {%- if compare_at_price > price %} price--on-sale rdc-d-flex rdc-jc-sb rdc-ai-c{% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare {% endif -%}
-  {% if colorsAvail %} rdc-d-flex rdc-jc-sb rdc-ai-c{% endif %}">
+  {% if colorsAvail or fragranceAvail %} rdc-d-flex rdc-jc-sb rdc-ai-c{% endif %}">
   <div class="price__container">
 
     {%- comment -%}
@@ -77,8 +83,12 @@
         <span>{{ colorCount }} Types</span>
         {% elsif colorCount != blank %}
          <span>{{ colorCount }} Colours</span>
-          {% endif %}
+        {% endif %}
          
+      </div>
+    {% elsif fragranceCount != blank %}
+      <div class="br-pc-color-count">
+        <span>{{ fragranceCount }} Scents</span>
       </div>
     {% endif %}
 </div>
