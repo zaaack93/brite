@@ -48,7 +48,6 @@
         },
         "variant_picker": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "display_on_card": false,
             "option_style": "buttons",
@@ -110,20 +109,12 @@
         "additional_button_gccGMm": {
           "type": "additional_button",
           "settings": {
-            "button_text": "COMING SOON",
-            "button_link": ""
-          }
-        },
-        "17a94fb1-324b-4fc8-bf7c-da115f6110bc": {
-          "type": "text",
-          "settings": {
-            "display_on_card": false,
-            "text": "",
-            "icon": "none"
+            "button_text": "SHOP FROM TARGET",
+            "button_link": "https://www.target.com/p/brite-one-day-temporary-hair-color-100ml-3-38fl-oz/-/A-94304841?preselect=90995505#lnk=sametab"
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -179,7 +170,6 @@
         "baf3083e-d14d-435d-bca3-100d6ac490ce",
         "75822277-d417-4ea9-8313-5fc4e2f57483",
         "additional_button_gccGMm",
-        "17a94fb1-324b-4fc8-bf7c-da115f6110bc",
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742",
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
@@ -218,7 +208,7 @@
             "image_position": "right",
             "title": "Before & Brite-er!",
             "richtext": "<p>Our unique formula is tailored for lighter hair shades and washes out with just one shampoo, so you can flirt with color without any long-term flings</p>",
-            "enable_color_option": true,
+            "enable_color_option": false,
             "text_alignment": "text-left",
             "button_link": "",
             "button_label": ""
@@ -324,6 +314,22 @@
         "padding_bottom": 100,
         "padding_bottom_mobile": 67
       }
+    },
+    "1736832706c00ee20d": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_reviews_wc76zn": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_reviews_wc76zn"
+      ],
+      "disabled": true,
+      "settings": {}
     },
     "25c2413a-a407-4a10-9700-034f0b659b31": {
       "type": "comparison-table",
@@ -471,29 +477,14 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
-    },
-    "1736832706c00ee20d": {
-      "type": "apps",
-      "blocks": {
-        "yotpo_product_reviews_reviews_wc76zn": {
-          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "yotpo_product_reviews_reviews_wc76zn"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "main",
-    "1736832706c00ee20d",
     "55831fe7-19ac-45c2-95b5-a5708ff32ddd",
     "b75e11a0-4a7a-4836-ab57-fdf73c61726f",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
+    "1736832706c00ee20d",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "b9840557-6047-445f-8e23-ec62568e83c0"
   ]

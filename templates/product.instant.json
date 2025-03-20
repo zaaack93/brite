@@ -12,18 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa": {
-          "type": "social-prof",
-          "disabled": true,
-          "settings": {
-            "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
-            "avatar_3": "shopify://shop_images/7.jpg",
-            "avatar_4": "shopify://shop_images/23.jpg",
-            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
-          }
-        },
         "yotpo_product_reviews_star_rating_r4q7qY": {
           "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
@@ -43,14 +31,6 @@
             "display_on_card": false,
             "text": "{{ product.metafields.custom.short_description.value }}",
             "icon": "none"
-          }
-        },
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "display_on_card": false,
-            "liquid": "{% for variant in product.variants %}\n<div class=\"rdc-variant-desc rdc-variant-desc-{{variant.id}} \n{% unless product.selected_or_first_available_variant.id == variant.id %}\nrdc-d-none\n{% endunless %}\n\">{{variant.metafields.custom.variant_short_description}}\n</div>\n{% endfor %}"
           }
         },
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0": {
@@ -86,7 +66,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -130,11 +110,9 @@
         }
       },
       "block_order": [
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
         "yotpo_product_reviews_star_rating_r4q7qY",
         "title",
         "5716c804-fde9-4d48-a456-78010b655570",
-        "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",
         "ec05e287-a8e5-4ae7-a406-b3598aa34ec0",
         "77814407-81ac-45cc-bec9-3c912089591b",
         "variant_picker",
@@ -287,37 +265,6 @@
       ],
       "settings": {}
     },
-    "b57f6700-98f6-4baf-8aa1-0427757249f1": {
-      "type": "image-with-text-slideshow",
-      "blocks": {
-        "template--21538910568739__b57f6700-98f6-4baf-8aa1-0427757249f1-slide-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2023-11-30_at_5.15.26_pm.png",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "image_position": "right",
-            "title": "Virtual Try-On",
-            "richtext": "<p>Click the button below to try BRITE Instant Color now on your phone. </p>",
-            "text_alignment": "text-center",
-            "button_link": "https://www.instagram.com/ar/895939718916611/?ch=YTM3MjVlNTRmOWJlOWU3YzQ0NWEzM2YxMGQ4ZmY1YjU%3D",
-            "button_label": "Try Hair Filter Now"
-          }
-        }
-      },
-      "block_order": [
-        "template--21538910568739__b57f6700-98f6-4baf-8aa1-0427757249f1-slide-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "display_on_card": true,
-        "image_size": "half",
-        "crop": "aspect-w-1 aspect-h-1",
-        "heading_size": "heading-base",
-        "color_scheme": "tertiary",
-        "use_gradient_background": false
-      }
-    },
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
       "type": "faq",
       "blocks": {
@@ -448,28 +395,6 @@
             "column_4_icon": "",
             "column_4_text": ""
           }
-        },
-        "11dd58ec-5393-459a-be54-0c6da5c9d8e3": {
-          "type": "sticker",
-          "disabled": true,
-          "settings": {
-            "text": "Sticker",
-            "shape": "star_1",
-            "width": 230,
-            "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/Loveit.png",
-            "half_image_width_on_mobile": true,
-            "horizontal_position": 14,
-            "vertical_position": 49,
-            "rotate": 0,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "none",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
-          }
         }
       },
       "block_order": [
@@ -477,8 +402,7 @@
         "c2acae48-f5eb-4a26-8cd8-0c3da9c1cfdc",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-2",
         "template--14420446740564__25c2413a-a407-4a10-9700-034f0b659b31-1666163239ca577d66-1",
-        "142db635-746a-4827-88ff-c90c1c20c2e7",
-        "11dd58ec-5393-459a-be54-0c6da5c9d8e3"
+        "142db635-746a-4827-88ff-c90c1c20c2e7"
       ],
       "settings": {
         "display_on_card": false,
@@ -551,7 +475,6 @@
     "main",
     "4feb5dc3-92d7-42d6-b8a6-e4363c192c83",
     "1691705782b1a68713",
-    "b57f6700-98f6-4baf-8aa1-0427757249f1",
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6",
     "25c2413a-a407-4a10-9700-034f0b659b31",
     "b9840557-6047-445f-8e23-ec62568e83c0"

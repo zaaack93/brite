@@ -78,46 +78,6 @@
     },
     "4edc06e4-79cb-4d51-accb-e1f38a8d2c57": {
       "type": "featured-collection",
-      "blocks": {
-        "c630e940-0dad-4356-b24b-79bbc81d8ea0": {
-          "type": "background_pattern",
-          "disabled": true,
-          "settings": {
-            "type": "checkerboard",
-            "color": "background",
-            "size": 30,
-            "opacity": 20,
-            "enable_parallax": false,
-            "parallax_speed": 3
-          }
-        },
-        "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29": {
-          "type": "sticker",
-          "disabled": true,
-          "settings": {
-            "text": "Sticker",
-            "shape": "star_1",
-            "width": 200,
-            "sticker_font_size": "1.563rem",
-            "image": "shopify://shop_images/BRITE_CleanColor_pink_00-removebg-preview.png",
-            "half_image_width_on_mobile": true,
-            "horizontal_position": 9,
-            "vertical_position": 100,
-            "rotate": 34,
-            "show_sticker_on_mobile": true,
-            "show_sticker_on_desktop": true,
-            "rotation_animation": "rotate_when_scrolling",
-            "enable_parallax": false,
-            "parallax_speed": 3,
-            "color": "bg-scheme-accent text-scheme-accent-overlay",
-            "color_scheme": "same_as_section"
-          }
-        }
-      },
-      "block_order": [
-        "c630e940-0dad-4356-b24b-79bbc81d8ea0",
-        "5fefe5c8-4bfc-4dc0-b99a-e013ca55ad29"
-      ],
       "settings": {
         "title": "Shop All Products",
         "subheading": "Browse our best sellers below.",
@@ -187,13 +147,6 @@
             "logo": "shopify://shop_images/image_269.png"
           }
         },
-        "a291ff53-697e-4237-81c2-82a021900df9": {
-          "type": "logo",
-          "disabled": true,
-          "settings": {
-            "logo": "shopify://shop_images/1200px-JCPenney_logo.png"
-          }
-        },
         "fe8bc6b7-676d-44d1-88f3-9f17368d7139": {
           "type": "logo",
           "settings": {
@@ -219,7 +172,6 @@
         "6f581651-40d2-49fa-a7a8-fcb26e813b39",
         "5b3e6826-7256-4501-8daf-f71eff96673f",
         "cc12183e-1502-4f11-b42d-ba5f46074580",
-        "a291ff53-697e-4237-81c2-82a021900df9",
         "fe8bc6b7-676d-44d1-88f3-9f17368d7139",
         "6d27901a-4bdc-4d85-a961-97fabbf14c7e",
         "22118c80-1c4e-4904-b07b-145c3043e5e4"
@@ -359,37 +311,12 @@
             "cta_text": "",
             "color_scheme": "same_as_section"
           }
-        },
-        "b7b998fc-ad86-44e0-9b03-dac9a67ea744": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "show_image": true,
-            "title": "",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
-            "cta_link": "",
-            "cta_text": "",
-            "color_scheme": "same_as_section"
-          }
-        },
-        "bdeb7348-8844-4ef6-9bf0-ce627212fdee": {
-          "type": "shape_divider",
-          "settings": {
-            "target_section": "below",
-            "target_section_color_scheme": "tertiary",
-            "style": "medium-waves_1200x43",
-            "flip_horizontal": false,
-            "enable_animation": false,
-            "animation_direction": ""
-          }
         }
       },
       "block_order": [
         "template--20237412466979__276ebf26-6bf7-475c-8b06-2bf6bf585819-column-1",
         "template--20237412466979__276ebf26-6bf7-475c-8b06-2bf6bf585819-column-2",
-        "template--20237412466979__276ebf26-6bf7-475c-8b06-2bf6bf585819-column-3",
-        "b7b998fc-ad86-44e0-9b03-dac9a67ea744",
-        "bdeb7348-8844-4ef6-9bf0-ce627212fdee"
+        "template--20237412466979__276ebf26-6bf7-475c-8b06-2bf6bf585819-column-3"
       ],
       "settings": {
         "display_on_card": false,
@@ -403,115 +330,8 @@
         "use_gradient_background": false
       }
     },
-    "collage_qkdepx": {
-      "type": "collage",
-      "blocks": {
-        "image_wYw87z": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Brite_-_Pastel_Pink.jpg",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop All Products",
-            "url": "shopify://collections/all"
-          }
-        },
-        "image_MeJibB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Frame_11_1.png",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop Brite Bonds",
-            "url": "shopify://collections/brite-bonds"
-          }
-        },
-        "image_TfUTV9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/2_79aa7794-21ea-4128-b8b3-d3b6a05afe28.jpg",
-            "image_shape": "default",
-            "rotate_image": 0,
-            "button_text": "Shop Bundles",
-            "url": "shopify://collections/bundles"
-          }
-        }
-      },
-      "block_order": [
-        "image_wYw87z",
-        "image_MeJibB",
-        "image_TfUTV9"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Shop By Collection",
-        "first_large_image_position": "top_right",
-        "crop": "aspect-w-1 aspect-h-1",
-        "button_style": "push-btn-surface",
-        "show_buttons_on_mobile": true,
-        "only_show_button_on_hover": false,
-        "color_scheme": "primary",
-        "use_gradient_background": false
-      }
-    },
-    "ab60c2c7-5754-4171-aa13-027011164036": {
-      "type": "feedback-scroll",
-      "blocks": {
-        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify://shop_images/beauty-crew-logo.png",
-            "content_1": "\"Cruelty-free, vegan and organic,",
-            "content_2": "this is our top pick for the<br> conscious beauty lover.\""
-          }
-        },
-        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify://shop_images/Byrdie_Logo.png",
-            "content_1": "\"Best Bargain: Brite Instant Color\"",
-            "content_2": ""
-          }
-        },
-        "4d8c98bf-c157-4d15-9d4a-375e018d5587": {
-          "type": "feedback",
-          "settings": {
-            "logo": "shopify://shop_images/mamamia.png",
-            "content_1": "“Ideal for even the biggest <br>hair-dye commitment phobes”",
-            "content_2": ""
-          }
-        }
-      },
-      "block_order": [
-        "a523bcdb-ffc8-49bf-9801-cdfcb090c33a",
-        "1cd129d1-ce87-44d3-9f21-c45a45e5a1b9",
-        "4d8c98bf-c157-4d15-9d4a-375e018d5587"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Group_1.png",
-        "background": "shopify://shop_images/feedback_scroll_bg.jpg"
-      }
-    },
     "1650891804363a2769": {
       "type": "newsletter",
-      "blocks": {
-        "a94a684a-0115-4b48-b33a-fde0afa08e1c": {
-          "type": "shape_divider",
-          "disabled": true,
-          "settings": {
-            "target_section": "above",
-            "target_section_color_scheme": "tertiary",
-            "style": "medium-waves_1200x43",
-            "flip_horizontal": false,
-            "enable_animation": false,
-            "animation_direction": ""
-          }
-        }
-      },
-      "block_order": [
-        "a94a684a-0115-4b48-b33a-fde0afa08e1c"
-      ],
       "settings": {
         "title": "JOIN OUR COMMUNITY OF DYE-HARDS",
         "richtext": "<p>Sign up for exclusive access to new releases and hair colour tips. Don't worry - we hate spam as much as we hate boring hair, so you won't receive any. </p>",
@@ -531,8 +351,6 @@
     "3220b078-22e1-4aef-ac2f-dd15d5b30399",
     "2817ea07-97bc-4841-b262-c58c8db83450",
     "276ebf26-6bf7-475c-8b06-2bf6bf585819",
-    "collage_qkdepx",
-    "ab60c2c7-5754-4171-aa13-027011164036",
     "1650891804363a2769"
   ]
 }

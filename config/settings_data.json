@@ -148,7 +148,6 @@
         "blocks": {
           "f91fbdec-fc3d-458e-9911-ed02d5cf16ac": {
             "type": "feature_desktop_link",
-            "disabled": true,
             "settings": {
               "button_link": "shopify://pages/build-your-bundle",
               "button_label": "Build Your Bundle",

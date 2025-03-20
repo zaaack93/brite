@@ -105,7 +105,7 @@
           }
         },
         "1a9eae25-6788-4d02-b63e-2cf2f5c11742": {
-          "type": "shopify://apps/tolstoy-shoppable-video-ugc/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "w1p0r7yavqugq"
           }
@@ -151,6 +151,13 @@
             "enable_parallax": false,
             "parallax_speed": 4
           }
+        },
+        "liquid_pUHAdq": {
+          "type": "liquid",
+          "settings": {
+            "display_on_card": false,
+            "liquid": "{% render 'complementary-products' product:product %}"
+          }
         }
       },
       "block_order": [
@@ -169,7 +176,8 @@
         "49d45fcd-5029-4c3e-bd72-ade2cd850a23",
         "682edc47-bae9-48f5-b971-93b9a703fec5",
         "f39a86bd-241c-47c0-90bd-3018ee04e3c6",
-        "9a87895d-c01d-4b6b-af9e-c51c4737669c"
+        "9a87895d-c01d-4b6b-af9e-c51c4737669c",
+        "liquid_pUHAdq"
       ],
       "settings": {
         "sync_color": true,
@@ -189,6 +197,21 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
+    },
+    "17368323418df5c454": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_reviews_k3P7Ty": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_reviews_k3P7Ty"
+      ],
+      "settings": {}
     },
     "618baa7a-4a5b-4c6f-8fe8-73b5d6a1dcf6": {
       "type": "faq",
@@ -439,21 +462,6 @@
         "color_scheme": "primary",
         "use_gradient_background": false
       }
-    },
-    "17368323418df5c454": {
-      "type": "apps",
-      "blocks": {
-        "yotpo_product_reviews_reviews_k3P7Ty": {
-          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "yotpo_product_reviews_reviews_k3P7Ty"
-      ],
-      "settings": {}
     }
   },
   "order": [
