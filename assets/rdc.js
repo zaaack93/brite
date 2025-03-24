@@ -719,8 +719,8 @@ const cartBtns = document.querySelectorAll('.rdc-other-cb')
 cartAgreement = document.querySelector('input.br-agreement-co-cb')
   cartAgreement.checked = false;
   cartAgreement.classList.remove('rdc-active')
-   cartCheckoutBtn.removeAttribute('type')
-  cartCheckoutBtn.parentElement.classList.add('rdc-disabled')
+  cartCheckoutBtn.setAttribute('type', 'submit')
+  cartCheckoutBtn.parentElement.classList.remove('rdc-disabled')
 
 cartBtns.forEach(cartBtn => {
   cartBtn.addEventListener('click', function () {

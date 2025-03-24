@@ -40,7 +40,8 @@
           <div class="br-agreement-co rdc-my-20">
             <div class="br-agreement-co-inner">
               <div class="br-agreement-co-upper rdc-d-flex">
-              <input class="br-agreement-co-cb rdc-mr-5" type="checkbox"><p>By placing your order you agree to our <a href="/policies/terms-of-service">Terms</a> and <a href="/policies/privacy-policy">Privacy Policy</a>.</p>
+              {% comment %} <input class="br-agreement-co-cb rdc-mr-5" type="checkbox"> {% endcomment %}
+              <p>By placing your order you agree to our <a href="/policies/terms-of-service">Terms</a> and <a href="/policies/privacy-policy">Privacy Policy</a>.</p>
               </div>
                 <p>For information on how we will handle the personal information you provide, please see our <a href="/pages/privacy-collection-notice">privacy collection notice</a>.</p>
           </div>
@@ -58,8 +59,8 @@
         <div class="col-span-14 row-start-3 {% if template == 'cart' %} md:row-start-2 md:col-span-6 md:col-end-last {% endif %}">
           <div class="relative z-10">
             <input class="no-js block ml-auto cursor-pointer px-5 py-2.5 border border-scheme-text" type="submit" name="update" value="{{ 'cart.general.update' | t }}" form="cart">
-            <div class="rdc-disabled push-btn inline-block relative w-full {% if template == 'cart' %} lg:mt-2.5 {% endif %}">
-              <input class="rdc-brite-co-btn push-btn-surface block ml-auto cursor-pointer w-full" name="checkout" value="{{ 'cart.general.checkout' | t }}" form="cart">
+            <div class="push-btn inline-block relative w-full {% if template == 'cart' %} lg:mt-2.5 {% endif %}">
+              <input class="rdc-brite-co-btn push-btn-surface block ml-auto cursor-pointer w-full" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}" form="cart">
             </div>
           </div>
 
