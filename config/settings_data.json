@@ -1116,5 +1116,10 @@
       },
       "content_for_index": []
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".template-index #MainContent{overflow-x:hidden;}"
+    ]
   }
 }

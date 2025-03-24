@@ -12,15 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa": {
-          "type": "social-prof",
+        "yotpo_product_reviews_star_rating_JcBM9Q": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
-            "text": "100,000+ Happy Customers",
-            "avatar_1": "shopify://shop_images/Brite_-_Pastel_Pink_1.jpg",
-            "avatar_2": "shopify://shop_images/Silver_Toner.jpg",
-            "avatar_3": "shopify://shop_images/7.jpg",
-            "avatar_4": "shopify://shop_images/23.jpg",
-            "avatar_5": "shopify://shop_images/PASTEL_PURPLE_3.png"
+            "product": "{{product}}"
           }
         },
         "title": {
@@ -161,7 +156,7 @@
         }
       },
       "block_order": [
-        "3018870f-e870-4dca-9a3c-8d4ddcc6fbfa",
+        "yotpo_product_reviews_star_rating_JcBM9Q",
         "title",
         "5716c804-fde9-4d48-a456-78010b655570",
         "bb2c3fff-3ef8-46f3-867f-e5e195e98eac",

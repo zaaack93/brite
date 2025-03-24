@@ -48,6 +48,7 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "display_on_card": false,
             "option_style": "buttons",

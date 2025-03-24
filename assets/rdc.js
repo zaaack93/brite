@@ -700,6 +700,7 @@ const variantPickerMore = document.querySelector(".rdc-vp-more")
 // })
 
 
+
 // Checkout Checkbox
 const cartIcon = document.querySelector('.rdc-cart-icon')
 const atcBtn = document.querySelector('.rdc-atc-btn')
